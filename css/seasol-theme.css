@@ -1,0 +1,80 @@
+
+/* Seasol Maritime - Blue Brand Theme */
+:root {
+  --theme-color1: #071B3A;
+  --theme-color2: #0757E8;
+  --theme-color3: #F2F7FF;
+
+  --bg-theme-color1: #071B3A;
+  --bg-theme-color2: #0757E8;
+  --bg-theme-color3: #F2F7FF;
+
+  --border-theme-color1: #071B3A;
+  --border-theme-color2: #0757E8;
+  --border-theme-color3: #F2F7FF;
+
+  --text-color-bg-theme-color1: #FFFFFF;
+  --text-color-bg-theme-color2: #FFFFFF;
+
+  --sec-title-subtitle-color: #0757E8;
+  --link-hover-color: #0757E8;
+}
+
+/* Primary buttons */
+.btn-style-one,
+.btn-style-two,
+.theme-btn.btn-style-one,
+.theme-btn.btn-style-two {
+  background-color: #0757E8 !important;
+  background: #0757E8 !important;
+  color: #FFFFFF !important;
+}
+
+.btn-style-one::before,
+.btn-style-two::before {
+  background-color: #071B3A !important;
+}
+
+.btn-style-one:hover,
+.btn-style-two:hover {
+  background-color: #071B3A !important;
+  color: #FFFFFF !important;
+}
+
+/* Button icon blocks */
+.btn-style-one .icon,
+.btn-style-two .icon {
+  background-color: #071B3A !important;
+  color: #FFFFFF !important;
+}
+
+/* Common theme accents */
+.color2,
+.list-style-one li i,
+.list-style-two li:before,
+.info-box-one .inner .icon,
+.social-icon-two li a {
+  color: #0757E8 !important;
+}
+
+/* Hover accents */
+a:hover,
+.info-box-one .inner .info a:hover,
+.social-icon-five li a:hover,
+.social-icon-six li a:hover {
+  color: #0757E8;
+}
+
+/* Scroll-to-top */
+.scroll-to-top {
+  background-color: #0757E8 !important;
+}
+
+.scroll-to-top:hover {
+  background-color: #071B3A !important;
+}
+
+/* Selected carousel indicators */
+.default-dots .owl-dots .owl-dot.active {
+  border-color: #0757E8 !important;
+}
