@@ -1,0 +1,88 @@
+# SEASOL WEBSITE — STEP 1: UPDATE SERVICE NAMES ONLY
+
+Project folder:
+`D:\xampp\htdocs\naman\transend1-php`
+
+I want to update my Seasol website section by section. For this step, work ONLY on the service names inside the existing "Our Services To Explore" carousel.
+
+Use the Seasol client profile PDF and the previously supplied company details as the source of truth.
+
+## 1. Replace the existing service names
+
+Find the existing Services carousel and update the titles of its existing service cards to use these six names, in this exact order:
+
+1. Air Freight
+2. Ocean Freight
+3. Breakbulk & Special Equipment
+4. Customs Brokerage & Cross Trading
+5. NVOCC & ISO Tanks
+6. 3PL & Integrated Logistics
+
+The current carousel contains repeated "Ocean Freight" titles and irrelevant template service names. Replace those titles with the appropriate names from this list.
+
+Update every existing service card in the carousel, including cards that are initially outside the visible screen area.
+
+If these six existing cards are already present, update their titles in place. Do not create duplicate cards or add new cards.
+
+## 2. STRICT DESIGN PRESERVATION
+
+I want to keep the exact original website design shown in my screenshot.
+
+Do NOT change:
+
+- The dark navy-blue Services section background.
+- The "SERVICE WE PROVIDE" label.
+- The "Our Services To Explore" heading.
+- The original card dimensions, layout or spacing.
+- The current images or image positioning.
+- The original typography, font sizes, colors or title styling.
+- The existing carousel arrows, movement or slide behavior.
+- Any CSS animations, hover effects, transitions or JavaScript.
+- Any other homepage section.
+
+Do not replace the existing horizontal image carousel with a grid of white cards or a light-blue background.
+
+Do not redesign, restyle or modernize the section.
+
+## 3. CHANGE TITLES ONLY
+
+For this step, change only the visible title text of the existing service cards.
+
+Do not modify service descriptions, bullet points, buttons, links, images, icons, HTML structure, CSS files or JavaScript files.
+
+I will update the descriptions, images and other content in separate steps after reviewing the titles.
+
+Keep the existing HTML elements, classes, IDs and attributes intact. Do not change shared styles that could affect other sections.
+
+If one of the title changes requires a layout adjustment, do not change the layout now. Preserve the existing styling and let the existing responsive rules handle the title.
+
+## 4. UPDATE THE RELEVANT VERSIONS
+
+Check these three pages:
+
+- `index-2.html`
+- `index-2-single.html`
+- `index-2-dark.html`
+
+Locate the corresponding Services carousel in each applicable page. Update the service titles consistently while preserving each page's original light or dark design and existing structure.
+
+Do not modify unrelated pages, the PHP backend, configuration files or other project functionality.
+
+## 5. VERIFY YOUR WORK
+
+After making the changes, confirm that:
+
+- All six service names match the specified list and order.
+- No repeated generic "Ocean Freight" titles remain unless they represent the single intended Ocean Freight card.
+- Only service-card title text was changed.
+- The original dark navy design, images, card layout and carousel arrows remain unchanged.
+- Existing animations, hover effects and transitions have not been modified.
+- The About Seasol section remains untouched.
+
+Use Git diff or a before-and-after source comparison to verify the changes.
+
+## FINAL INSTRUCTION
+
+This is Step 1 of my content-update process. Do not make any additional improvements or anticipate the next steps.
+
+**Change the six service names only, preserve the original website design, and stop for my review.**
