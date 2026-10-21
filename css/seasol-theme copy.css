@@ -1,0 +1,235 @@
+
+/* Seasol Maritime - Blue Brand Theme */
+:root {
+  --theme-color1: #071B3A;
+  --theme-color2: #0757E8;
+  --theme-color3: #F2F7FF;
+
+  --bg-theme-color1: #071B3A;
+  --bg-theme-color2: #0757E8;
+  --bg-theme-color3: #F2F7FF;
+
+  --border-theme-color1: #071B3A;
+  --border-theme-color2: #0757E8;
+  --border-theme-color3: #F2F7FF;
+
+  --text-color-bg-theme-color1: #FFFFFF;
+  --text-color-bg-theme-color2: #FFFFFF;
+
+  --sec-title-subtitle-color: #0757E8;
+  --link-hover-color: #0757E8;
+}
+
+/* Primary buttons */
+.btn-style-one,
+.btn-style-two,
+.theme-btn.btn-style-one,
+.theme-btn.btn-style-two {
+  background-color: #0757E8 !important;
+  background: #0757E8 !important;
+  color: #FFFFFF !important;
+}
+
+.btn-style-one::before,
+.btn-style-two::before {
+  background-color: #071B3A !important;
+}
+
+.btn-style-one:hover,
+.btn-style-two:hover {
+  background-color: #071B3A !important;
+  color: #FFFFFF !important;
+}
+
+/* Button icon blocks */
+.btn-style-one .icon,
+.btn-style-two .icon {
+  background-color: #071B3A !important;
+  color: #FFFFFF !important;
+}
+
+/* Common theme accents */
+.color2,
+.list-style-one li i,
+.list-style-two li:before,
+.info-box-one .inner .icon,
+.social-icon-two li a {
+  color: #0757E8 !important;
+}
+
+/* Hover accents */
+a:hover,
+.info-box-one .inner .info a:hover,
+.social-icon-five li a:hover,
+.social-icon-six li a:hover {
+  color: #0757E8;
+}
+
+/* Scroll-to-top */
+.scroll-to-top {
+  background-color: #0757E8 !important;
+}
+
+.scroll-to-top:hover {
+  background-color: #071B3A !important;
+}
+
+/* Selected carousel indicators */
+.default-dots .owl-dots .owl-dot.active {
+  border-color: #0757E8 !important;
+}
+
+/* =========================================
+   SEASOL - PREMIUM APPOINTMENT BANNER
+   ========================================= */
+
+/* Main heading: crisp white on navy */
+#contact .contact-info .sec-title h2 {
+    color: #FFFFFF !important;
+    font-size: clamp(30px, 3vw, 44px);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.7px;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.18);
+}
+
+/* GET A QUOTE: bright Seasol blue */
+#contact .contact-info .sec-title .sub-title {
+    color: #ffffff !important;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+}
+
+/* Accent line before GET A QUOTE */
+#contact .contact-info .sec-title .sub-title::before,
+#contact .contact-info .sec-title .sub-title::after {
+    background-color: #FFFFFF !important;
+}
+
+/* Supporting paragraph on the cream section */
+#contact .contact-info .tabs-content .text,
+#contact .contact-info .text {
+    color: #64748B !important;
+}
+
+/* Keep the form heading dark on white */
+#contact .contact-form h2,
+#contact .contact-form .sec-title h2 {
+    color: #071B3A !important;
+}
+
+/* Refined Seasol quote and tracking tabs */
+#contact .tab-buttons .tab-btn {
+    transition: background-color 0.3s ease,
+                color 0.3s ease;
+}
+
+#contact .tab-buttons .tab-btn.active-btn {
+    background-color: #0757E8 !important;
+    color: #FFFFFF !important;
+}
+
+#contact .tab-buttons .tab-btn:hover {
+    background-color: #071B3A;
+    color: #FFFFFF;
+}
+
+/* =========================================
+   SEASOL - PREMIUM APPOINTMENT SECTION
+   Restore content and improve readability
+   ========================================= */
+
+/* Outer section background */
+#contact .outer-box {
+    background-color: #071B3A !important;
+}
+
+/* Main information column */
+#contact .contact-info {
+    color: #FFFFFF;
+}
+
+/* Supporting paragraphs */
+#contact .contact-info p,
+#contact .contact-info .text {
+    color: #C7D8F2 !important;
+}
+
+/* Main appointment heading */
+#contact .contact-info .sec-title h2,
+#contact .contact-info h2,
+#contact .contact-info h3 {
+    color: #FFFFFF !important;
+}
+
+/* GET A QUOTE subtitle */
+#contact .contact-info .sec-title .sub-title {
+    color: #FFFFFF !important;
+}
+
+/* Phone number and contact details */
+#contact .contact-info .info-box .info,
+#contact .contact-info .info-box .info a,
+#contact .contact-info .info-box .info span,
+#contact .contact-info .content-box .info-box a {
+    color: #FFFFFF !important;
+}
+
+/* Service benefits: restore the text */
+#contact .contact-info li,
+#contact .contact-info li span,
+#contact .contact-info .list-style-one li,
+#contact .contact-info .list-style-two li {
+    color: #FFFFFF !important;
+}
+
+/* How We Work: restore step descriptions */
+#contact .contact-info .work-step,
+#contact .contact-info .work-step p,
+#contact .contact-info .work-step span,
+#contact .contact-info .work-progress,
+#contact .contact-info .work-progress p,
+#contact .contact-info .work-progress span {
+    color: #C7D8F2 !important;
+}
+
+/* Preserve blue icons and accents */
+#contact .contact-info i,
+#contact .contact-info .icon {
+    color: #48A5FF;
+}
+
+/* White numbered step circles */
+#contact .contact-info .work-progress .number,
+#contact .contact-info .work-step .number {
+    background-color: #FFFFFF;
+    color: #0757E8 !important;
+}
+
+/* Quote form stays white */
+#contact .contact-form {
+    background-color: #FFFFFF !important;
+}
+
+/* Form heading and labels */
+#contact .contact-form h2,
+#contact .contact-form h3,
+#contact .contact-form label {
+    color: #071B3A !important;
+}
+
+/* Form inputs */
+#contact .contact-form input,
+#contact .contact-form select,
+#contact .contact-form textarea {
+    background-color: #FFFFFF;
+    color: #071B3A;
+}
+
+/* Keep quote button on brand */
+#contact .contact-form button,
+#contact .contact-form input[type="submit"] {
+    background-color: #0757E8;
+    color: #FFFFFF;
+}

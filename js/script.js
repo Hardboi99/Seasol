@@ -600,15 +600,15 @@ var THEMEMASCOT = {};
 	if ($('.banner-carousel-two').length) {
 		$('.banner-carousel-two').owlCarousel({
 			rtl: THEMEMASCOT.isRTL.check(),
-			animateOut: 'fadeOut',
-	    animateIn: 'fadeIn',
-			loop:true,
-			margin:0,
-			nav:false,
-			smartSpeed: 500,
-			autoHeight: true,
+			loop: true,
+			margin: 0,
+			nav: false,
+			dots: false,
+			smartSpeed: 1000,
+			autoHeight: false,
 			autoplay: true,
-			autoplayTimeout:10000,
+			autoplayTimeout: 5000,
+			autoplayHoverPause: true,
 			navText: [ '<span class="fa fa-long-arrow-alt-left"></span>', '<span class="fa fa-long-arrow-alt-right"></span>' ],
 			responsive:{
 				0:{

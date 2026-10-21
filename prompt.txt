@@ -1,88 +1,225 @@
-# SEASOL WEBSITE — STEP 1: UPDATE SERVICE NAMES ONLY
+# SEASOL MARITIME — IMPROVE MISSION, VISION & CORE VALUES SECTION
 
-Project folder:
-`D:\xampp\htdocs\naman\transend1-php`
+**Project folder:** `D:\xampp\htdocs\naman\transend1-php`
 
-I want to update my Seasol website section by section. For this step, work ONLY on the service names inside the existing "Our Services To Explore" carousel.
+I want to improve the existing Mission, Vision & Values section of my Seasol Maritime website. Use the second reference screenshot from the client's Seasol Profile PDF as the design reference and the first screenshot as the current website implementation.
 
-Use the Seasol client profile PDF and the previously supplied company details as the source of truth.
+The current section already has a good foundation, but I want it to look more professional, visually balanced, modern and engaging.
 
-## 1. Replace the existing service names
+**Important: Work ONLY on this section. Do not redesign the entire website.**
 
-Find the existing Services carousel and update the titles of its existing service cards to use these six names, in this exact order:
+## 1. FIRST ANALYZE THE EXISTING IMPLEMENTATION
 
-1. Air Freight
-2. Ocean Freight
-3. Breakbulk & Special Equipment
-4. Customs Brokerage & Cross Trading
-5. NVOCC & ISO Tanks
-6. 3PL & Integrated Logistics
+Find the exact HTML section, its CSS selectors, images, icons and JavaScript behavior.
 
-The current carousel contains repeated "Ocean Freight" titles and irrelevant template service names. Replace those titles with the appropriate names from this list.
+Inspect the existing CSS before writing anything new. Reuse the current theme, typography, spacing system, colors, container widths, icon library and existing animation utilities wherever possible.
 
-Update every existing service card in the carousel, including cards that are initially outside the visible screen area.
+Identify which CSS rules specifically control this section. Avoid changing shared rules that affect other sections.
 
-If these six existing cards are already present, update their titles in place. Do not create duplicate cards or add new cards.
+Before editing, inspect Git status and preserve any existing uncommitted work. Make changes only after identifying the relevant section and its dependencies.
 
-## 2. STRICT DESIGN PRESERVATION
+## 2. DESIGN DIRECTION — FOLLOW THE CLIENT REFERENCE
 
-I want to keep the exact original website design shown in my screenshot.
+Use the client's Mission, Vision & Core Values graphic as the visual reference.
 
-Do NOT change:
+Create a polished layout inspired by its three clearly distinguished content groups:
 
-- The dark navy-blue Services section background.
-- The "SERVICE WE PROVIDE" label.
-- The "Our Services To Explore" heading.
-- The original card dimensions, layout or spacing.
-- The current images or image positioning.
-- The original typography, font sizes, colors or title styling.
-- The existing carousel arrows, movement or slide behavior.
-- Any CSS animations, hover effects, transitions or JavaScript.
-- Any other homepage section.
+- Mission
+- Vision
+- Core Values
 
-Do not replace the existing horizontal image carousel with a grid of white cards or a light-blue background.
+The result should feel like a premium maritime and freight-forwarding corporate website, consistent with Seasol's existing navy-blue, bright-blue, white and light-grey theme.
 
-Do not redesign, restyle or modernize the section.
+### Visual improvements
 
-## 3. CHANGE TITLES ONLY
+- Create a clear section heading with a small blue eyebrow label.
+- Establish a strong visual hierarchy between the heading, group labels and descriptions.
+- Give Mission, Vision and Core Values distinct, well-aligned content areas.
+- Use clean spacing, subtle dividers and restrained blue accents.
+- Use attractive icon containers or icon illustrations for each group.
+- Keep text comfortably readable with appropriate line lengths.
+- Align icons, headings and descriptions precisely.
+- Use rounded corners, subtle borders and light shadows only where they complement the existing design.
+- Add a restrained decorative background element inspired by the diagonal grey shapes in the client's reference graphic, if it fits the existing site.
+- Keep the section's overall appearance consistent with the surrounding homepage.
 
-For this step, change only the visible title text of the existing service cards.
+Do not insert the client's screenshot as a background image. Recreate the layout using the existing HTML elements and actual text so that it remains responsive and accessible.
 
-Do not modify service descriptions, bullet points, buttons, links, images, icons, HTML structure, CSS files or JavaScript files.
+Do not add a second Seasol logo inside the section.
 
-I will update the descriptions, images and other content in separate steps after reviewing the titles.
+## 3. USE THE EXACT CLIENT-APPROVED CONTENT
 
-Keep the existing HTML elements, classes, IDs and attributes intact. Do not change shared styles that could affect other sections.
+Use the following information from the supplied Seasol Profile PDF. Preserve the intended meaning and do not invent additional company claims.
 
-If one of the title changes requires a layout adjustment, do not change the layout now. Preserve the existing styling and let the existing responsive rules handle the title.
+### Mission
 
-## 4. UPDATE THE RELEVANT VERSIONS
+**Heading:** Our Mission
 
-Check these three pages:
+**Text:**
+To deliver precision-driven freight forwarding solutions across CIS markets, built on operational excellence, trusted partnerships, and seamless cross-border connectivity.
 
-- `index-2.html`
-- `index-2-single.html`
-- `index-2-dark.html`
+### Vision
 
-Locate the corresponding Services carousel in each applicable page. Update the service titles consistently while preserving each page's original light or dark design and existing structure.
+**Heading:** Our Vision
 
-Do not modify unrelated pages, the PHP backend, configuration files or other project functionality.
+**Text:**
+To be the preferred logistics partner for CIS trade, recognized for regional expertise, reliability, and sustainable business growth.
 
-## 5. VERIFY YOUR WORK
+### Core Values
 
-After making the changes, confirm that:
+**Heading:** Our Core Values
 
-- All six service names match the specified list and order.
-- No repeated generic "Ocean Freight" titles remain unless they represent the single intended Ocean Freight card.
-- Only service-card title text was changed.
-- The original dark navy design, images, card layout and carousel arrows remain unchanged.
-- Existing animations, hover effects and transitions have not been modified.
-- The About Seasol section remains untouched.
+Display these six values clearly:
 
-Use Git diff or a before-and-after source comparison to verify the changes.
+- Reliability
+- Integrity
+- Expertise
+- Precision
+- Partnership
+- Service Excellence
+
+Do not omit, rename or invent core values.
+
+## 4. ADD APPROPRIATE ICONS
+
+Use the icon library already present in the project. Do not install another library.
+
+Choose icons that communicate the meaning of each group:
+
+**Mission:** Target, bullseye or compass icon.
+
+**Vision:** Eye, eye-of-sight, or forward-looking vision icon.
+
+**Core Values:** Gem, shield-check, handshake or another suitable trust-and-integrity icon.
+
+Use consistent icon sizing and stroke weight. Apply Seasol blue as the primary icon accent, with navy or white where appropriate.
+
+Place the icons inside well-designed circular or softly rounded containers. Ensure good contrast and alignment.
+
+If the project already uses Font Awesome, Bootstrap Icons, Line Awesome or another icon library, use the available icon set rather than introducing unnecessary dependencies.
+
+Do not use emoji as substitutes for professional website icons.
+
+## 5. ADD POLISHED ANIMATIONS AND TRANSITIONS
+
+I specifically want this section to feel more engaging. You may add subtle, professional animations to this section only.
+
+Reuse the existing animation libraries and JavaScript utilities if available. Add narrowly scoped CSS and minimal JavaScript only where necessary.
+
+### A. Section entrance
+
+When the section enters the viewport, reveal the heading, Mission, Vision and Core Values with a subtle fade-in and upward movement.
+
+Use a short stagger between the three groups so the content appears in a coordinated sequence rather than all at once.
+
+### B. Icon animation
+
+Animate each icon container gently as it enters the viewport. A small scale-and-fade effect is sufficient.
+
+On hover, allow the icon or its container to respond with a restrained scale, color or shadow transition.
+
+### C. Content interaction
+
+Add subtle hover effects to the Mission, Vision and Core Values content areas, such as a slight border-color change, a gentle shadow or a small icon movement.
+
+Avoid excessive movement, large zoom effects, flashing colors or effects that make reading difficult.
+
+### D. Divider and accent animation
+
+Where appropriate, use a short, subtle transition for blue divider lines or decorative accents as the section becomes visible.
+
+### Animation requirements
+
+- Use smooth transitions with professional easing.
+- Keep durations short and consistent.
+- Trigger entrance animations only when appropriate; do not repeatedly restart animations while scrolling.
+- Avoid layout shifts and content jumping.
+- Do not change any existing animations outside this section.
+- Respect `prefers-reduced-motion` and provide a usable reduced-motion experience.
+- Ensure the content remains visible if JavaScript or an animation library fails.
+
+Do not add another animation library if the existing project already provides what is needed.
+
+## 6. CSS IMPLEMENTATION REQUIREMENTS
+
+Reuse the existing stylesheet and its variables wherever possible. Add new CSS only when needed to achieve the requested result.
+
+Scope new selectors to the Mission, Vision & Core Values section using its existing section ID or a unique class.
+
+For example, if appropriate for the existing markup, use a section-specific naming convention such as:
+
+- `.mission-vision-values`
+- `.mission-vision-values__item`
+- `.mission-vision-values__icon`
+
+Treat these as naming examples, not a requirement to rename existing classes.
+
+Do not overwrite or replace the complete stylesheet.
+
+Do not add broad global rules for `section`, `h2`, `p`, `.container`, `.row`, `.icon` or other shared selectors that could unexpectedly change the rest of the website.
+
+Avoid duplicate CSS declarations, unnecessary `!important` rules and conflicting media queries.
+
+If the existing project already has suitable styles or utility classes, reuse them instead of duplicating them.
+
+## 7. IMAGES AND THE EXISTING 2007 ELEMENT
+
+Inspect the current left-side image collage and the blue "2007 — Year founded" element.
+
+Keep the establishment year accurate.
+
+Improve the image treatment only if it helps the section fit the client's reference and creates a more balanced layout. If you retain the image collage, preserve its role and ensure it does not compete visually with the Mission, Vision and Core Values content.
+
+Do not change image assets used by other sections. Do not replace the collage with unrelated imagery or make the section unnecessarily crowded.
+
+If the client's reference is better served by a more structured three-group layout, make that adjustment within this section only, while preserving the overall website's visual identity.
+
+## 8. RESPONSIVE DESIGN
+
+Make this section look polished across desktop, tablet and mobile.
+
+- Desktop: balanced content groups, consistent spacing and clean alignment.
+- Tablet: comfortable text widths, appropriate icon placement and no cramped columns.
+- Mobile: stack the content in a natural order with readable text, correctly sized icons and suitable spacing.
+
+Prevent text overflow, overlapping icons, clipped decorations and horizontal scrolling.
+
+Use the existing responsive breakpoints wherever possible.
+
+## 9. STRICT SCOPE PROTECTION
+
+Modify only the HTML, CSS and minimal JavaScript required for this section.
+
+Do not change:
+
+- The About Seasol section.
+- The hero section, background image or carousel.
+- The Services carousel.
+- The navigation bar or footer.
+- The Call Us / Email contact boxes.
+- The Network & Coverage section.
+- Other homepage sections or unrelated pages.
+- Existing global animation definitions or shared styles in ways that alter other sections.
+- PHP backend code, database settings, configuration or dependencies.
+
+Do not deploy the website.
+
+## 10. VERIFY THE FINISHED RESULT
+
+After implementing the section:
+
+1. Check that all Mission, Vision and Core Values text matches the client PDF.
+2. Verify that all six core values appear.
+3. Test entrance animations, icon interactions, hover transitions and scrolling.
+4. Check the section on desktop, tablet and mobile viewports.
+5. Confirm that the existing 2007 establishment fact remains accurate if displayed.
+6. Compare Git diff to ensure that only the intended section and necessary scoped styles were changed.
+7. Inspect adjacent sections to ensure that no layout, animation, transition or shared CSS behavior was unintentionally affected.
 
 ## FINAL INSTRUCTION
 
-This is Step 1 of my content-update process. Do not make any additional improvements or anticipate the next steps.
+Make the Mission, Vision & Core Values section more attractive and professional by following the client's reference image, using appropriate icons, reusing existing CSS and adding carefully scoped animations.
 
-**Change the six service names only, preserve the original website design, and stop for my review.**
+**Improve this section only. Preserve the rest of my Seasol website and its existing functionality.**
+
+When complete, report the modified files, the visual improvements, the animations added and the responsive checks performed. Then stop and wait for my next instructions.

@@ -16649,3 +16649,16 @@ Sidebar
   position: absolute;
   left: 0;
 }
+/* Seasol: keep the Call/Email box buttons from shrinking and let long emails wrap */
+.call-to-action-two .contact-info-block .content-box {
+  min-width: 0;
+}
+.call-to-action-two .contact-info-block .info-box a {
+  overflow-wrap: anywhere;
+}
+@media (min-width: 576px) {
+  .call-to-action-two .contact-info-block .inner .theme-btn {
+    flex-shrink: 0;
+    margin-left: 20px;
+  }
+}
