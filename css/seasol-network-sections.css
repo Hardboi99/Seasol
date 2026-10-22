@@ -1,0 +1,724 @@
+/*
+ * Seasol Maritime: CIS Gateway Network + Associate Offices Across India
+ * Every rule is scoped to .cis-gateway-section or .india-office-network.
+ * Headings, container and grid come from the theme (sec-title, auto-container, row/col).
+ * Initial animation states apply only under .js-reveal-ready, which
+ * js/seasol-network-sections.js adds, so content stays visible without JS.
+ */
+
+/* ============ Shared section shell ============ */
+.cis-gateway-section,
+.india-office-network {
+  position: relative;
+  padding: 110px 0 120px;
+  background-color: #fff;
+  background-image:
+    radial-gradient(rgba(7, 27, 58, 0.06) 1px, transparent 1.4px),
+    linear-gradient(180deg, #fff 0%, var(--theme-color3, #F2F7FF) 100%);
+  background-size: 22px 22px, 100% 100%;
+}
+.india-office-network {
+  background-image:
+    radial-gradient(rgba(7, 27, 58, 0.06) 1px, transparent 1.4px),
+    linear-gradient(180deg, var(--theme-color3, #F2F7FF) 0%, #fff 100%);
+}
+@media (max-width: 991.98px) {
+  .cis-gateway-section,
+  .india-office-network {
+    padding: 80px 0 90px;
+  }
+}
+.cis-gateway-section .sec-title,
+.india-office-network .sec-title {
+  max-width: 760px;
+  margin: 0 auto 50px;
+}
+.cis-gateway-section .sec-title .text,
+.india-office-network .sec-title .text {
+  margin-top: 20px;
+}
+
+/* ============ Section 1: CIS gateway ============ */
+.cis-gateway-section .cis-map-stage {
+  position: relative;
+  margin: 0;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.75);
+  border: 1px solid #e3e9f2;
+  border-radius: 10px;
+  box-shadow: 0 16px 40px rgba(7, 27, 58, 0.06);
+}
+.cis-gateway-section .cis-map {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 640 / 420;
+  overflow: visible;
+}
+.cis-gateway-section .cis-map__dot {
+  fill: rgba(7, 27, 58, 0.16);
+}
+.cis-gateway-section .cis-map__land {
+  fill: url(#cis-dots);
+}
+.cis-gateway-section .cis-map__routes {
+  filter: drop-shadow(0 0 3px rgba(7, 27, 58, 0.3));
+}
+.cis-gateway-section .cis-route {
+  fill: none;
+  stroke: var(--theme-color2, #0757E8);
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  opacity: 0.55;
+  transition: opacity 0.2s ease, stroke-width 0.2s ease;
+}
+.cis-gateway-section .cis-route.is-active {
+  opacity: 1;
+  stroke-width: 2.6;
+}
+.cis-gateway-section .cis-origin__halo {
+  fill: rgba(7, 87, 232, 0.15);
+}
+.cis-gateway-section .cis-origin__dot {
+  fill: var(--theme-color1, #071B3A);
+  stroke: var(--theme-color2, #0757E8);
+  stroke-width: 3;
+}
+.cis-gateway-section .cis-node {
+  cursor: pointer;
+  outline: none;
+}
+.cis-gateway-section .cis-node__mark,
+.cis-gateway-section .cis-node__halo {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+.cis-gateway-section .cis-node__halo {
+  fill: rgba(7, 87, 232, 0.18);
+  opacity: 0;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+.cis-gateway-section .cis-node__ring {
+  fill: #fff;
+  stroke: var(--theme-color2, #0757E8);
+  stroke-width: 2;
+  transition: stroke-width 0.2s ease;
+}
+.cis-gateway-section .cis-node__dot {
+  fill: var(--theme-color2, #0757E8);
+}
+.cis-gateway-section .cis-node.is-active .cis-node__halo {
+  opacity: 1;
+  transform: scale(1.25);
+}
+.cis-gateway-section .cis-node.is-active .cis-node__ring {
+  stroke-width: 3;
+}
+.cis-gateway-section .cis-node:focus-visible .cis-node__halo {
+  opacity: 1;
+  fill: none;
+  stroke: var(--theme-color1, #071B3A);
+  stroke-width: 2;
+}
+.cis-gateway-section .cis-map__label {
+  fill: #3b4250;
+  paint-order: stroke;
+  stroke: rgba(255, 255, 255, 0.92);
+  stroke-width: 4px;
+  stroke-linejoin: round;
+  font-family: var(--text-font, "Kumbh Sans", sans-serif);
+  font-size: 12.5px;
+  font-weight: 600;
+  pointer-events: none;
+}
+.cis-gateway-section .cis-map__label--origin {
+  fill: var(--theme-color1, #071B3A);
+  font-family: var(--title-font, "Fira Sans", sans-serif);
+  font-size: 14px;
+  font-weight: 600;
+}
+.cis-gateway-section .cis-map-note {
+  margin-top: 12px;
+  color: #5f646b;
+  font-size: 14px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* Destination panel */
+.cis-gateway-section .cis-dest-panel {
+  padding-left: 10px;
+}
+.cis-gateway-section .cis-dest-panel__origin {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+  color: var(--theme-color1, #071B3A);
+  font-family: var(--title-font, "Fira Sans", sans-serif);
+  font-weight: 600;
+}
+.cis-gateway-section .cis-dest-panel__origin i {
+  color: var(--theme-color2, #0757E8);
+  font-size: 18px;
+}
+.cis-gateway-section .cis-dest-panel__title {
+  margin-bottom: 18px;
+  color: var(--theme-color1, #071B3A);
+  font-size: 22px;
+}
+.cis-gateway-section .cis-dest-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.cis-gateway-section .cis-dest {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-height: 64px;
+  justify-content: center;
+  padding: 12px 16px 12px 18px;
+  background-color: #fff;
+  border: 1px solid #e3e9f2;
+  border-left: 3px solid var(--theme-color2, #0757E8);
+  border-radius: 6px;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.cis-gateway-section .cis-dest__country {
+  color: var(--theme-color1, #071B3A);
+  font-family: var(--title-font, "Fira Sans", sans-serif);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+.cis-gateway-section .cis-dest__city {
+  color: #5f646b;
+  font-size: 14px;
+  line-height: 1.4;
+}
+.cis-gateway-section .cis-dest.is-active {
+  border-color: var(--theme-color2, #0757E8);
+  box-shadow: 0 10px 24px rgba(7, 27, 58, 0.1);
+}
+.cis-gateway-section .cis-dest:focus-visible {
+  box-shadow: 0 0 0 3px rgba(7, 87, 232, 0.35);
+}
+@media (max-width: 991.98px) {
+  .cis-gateway-section .cis-dest-panel {
+    padding-left: 0;
+    margin-top: 40px;
+  }
+}
+@media (max-width: 767.98px) {
+  .cis-gateway-section .cis-map-stage {
+    padding: 12px;
+  }
+  .cis-gateway-section .cis-map__label {
+    display: none;
+  }
+  .cis-gateway-section .cis-dest-list {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* ============ Section 2: India office network ============ */
+.india-office-network .ion-map-stage {
+  margin: 0;
+  padding: 24px;
+  background-color: rgba(255, 255, 255, 0.75);
+  border: 1px solid #e3e9f2;
+  border-radius: 10px;
+  box-shadow: 0 16px 40px rgba(7, 27, 58, 0.06);
+}
+.india-office-network .ion-map {
+  display: block;
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+  aspect-ratio: 500 / 520;
+  margin: 0 auto;
+  overflow: visible;
+}
+.india-office-network .ion-map__land {
+  fill: rgba(7, 87, 232, 0.08);
+  stroke: rgba(7, 27, 58, 0.35);
+  stroke-width: 1.5;
+  stroke-linejoin: round;
+}
+.india-office-network .ion-marker {
+  cursor: pointer;
+  outline: none;
+}
+.india-office-network .ion-marker__mark {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+.india-office-network .ion-marker__shape {
+  stroke: #fff;
+  stroke-width: 2;
+  transition: stroke 0.2s ease, stroke-width 0.2s ease;
+}
+.india-office-network .ion-marker--associate .ion-marker__shape {
+  fill: var(--theme-color2, #0757E8);
+}
+.india-office-network .ion-marker--sales .ion-marker__shape {
+  fill: var(--theme-color1, #071B3A);
+}
+.india-office-network .ion-marker__region {
+  fill: rgba(7, 27, 58, 0.06);
+  stroke: rgba(7, 27, 58, 0.45);
+  stroke-width: 1.2;
+  stroke-dasharray: 4 3;
+}
+.india-office-network .ion-marker.is-active .ion-marker__shape {
+  stroke: var(--theme-color2, #0757E8);
+  stroke-width: 4;
+}
+.india-office-network .ion-marker--associate.is-active .ion-marker__shape {
+  stroke: var(--theme-color1, #071B3A);
+}
+.india-office-network .ion-marker:focus-visible .ion-marker__shape {
+  stroke: #ffb400;
+  stroke-width: 4;
+}
+.india-office-network .ion-map__label {
+  fill: #3b4250;
+  paint-order: stroke;
+  stroke: rgba(255, 255, 255, 0.92);
+  stroke-width: 4px;
+  stroke-linejoin: round;
+  font-family: var(--text-font, "Kumbh Sans", sans-serif);
+  font-size: 13px;
+  font-weight: 600;
+  pointer-events: none;
+}
+.india-office-network .ion-marker.is-active .ion-map__label {
+  fill: var(--theme-color2, #0757E8);
+}
+
+/* Legend + disclaimer */
+.india-office-network .ion-legend {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px 22px;
+  margin: 18px 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: 14px;
+  color: #3b4250;
+}
+.india-office-network .ion-legend li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.india-office-network .ion-legend svg {
+  width: 16px;
+  height: 16px;
+  flex: 0 0 16px;
+}
+.india-office-network .ion-legend__associate {
+  fill: var(--theme-color2, #0757E8);
+}
+.india-office-network .ion-legend__sales {
+  fill: var(--theme-color1, #071B3A);
+}
+.india-office-network .ion-legend__upcoming {
+  fill: none;
+  stroke: #8a8f98;
+  stroke-width: 1.5;
+  stroke-dasharray: 3 2;
+}
+.india-office-network .ion-map-note {
+  margin-top: 12px;
+  color: #5f646b;
+  font-size: 14px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* Office groups */
+.india-office-network .ion-groups {
+  display: grid;
+  gap: 20px;
+}
+.india-office-network .ion-group {
+  padding: 26px 28px;
+  background-color: #fff;
+  border: 1px solid #e3e9f2;
+  border-radius: 8px;
+  box-shadow: 0 6px 24px rgba(7, 27, 58, 0.04);
+}
+.india-office-network .ion-group__head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+.india-office-network .ion-group__icon {
+  flex: 0 0 46px;
+  width: 46px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: var(--theme-color3, #F2F7FF);
+  color: var(--theme-color2, #0757E8);
+  font-size: 20px;
+}
+.india-office-network .ion-group__title {
+  flex: 1 1 0;
+  min-width: 0;
+  margin-bottom: 0;
+  color: var(--theme-color1, #071B3A);
+  font-size: 19px;
+  line-height: 1.3;
+}
+.india-office-network .ion-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.india-office-network .ion-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border: 1px solid #e3e9f2;
+  border-radius: 6px;
+  color: var(--theme-color1, #071B3A);
+  font-family: var(--title-font, "Fira Sans", sans-serif);
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.3;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.india-office-network .ion-item i {
+  flex: 0 0 auto;
+  color: var(--theme-color2, #0757E8);
+  font-size: 15px;
+}
+.india-office-network .ion-group--associate .ion-item,
+.india-office-network .ion-group--sales .ion-item {
+  cursor: pointer;
+}
+.india-office-network .ion-item.is-active {
+  border-color: var(--theme-color2, #0757E8);
+  box-shadow: 0 8px 20px rgba(7, 27, 58, 0.1);
+}
+.india-office-network .ion-item:focus-visible {
+  box-shadow: 0 0 0 3px rgba(7, 87, 232, 0.35);
+}
+
+/* Upcoming: dashed, neutral, clearly not active */
+.india-office-network .ion-group--upcoming {
+  background-color: #f7f8fa;
+  border: 1.5px dashed #b9bec7;
+  box-shadow: none;
+}
+.india-office-network .ion-group--upcoming .ion-group__icon {
+  background-color: #eceef2;
+  color: #6b7079;
+}
+.india-office-network .ion-group--upcoming .ion-group__title {
+  color: #4a4f57;
+}
+.india-office-network .ion-tag {
+  display: inline-block;
+  margin-left: auto;
+  padding: 3px 10px;
+  border: 1px solid #b9bec7;
+  border-radius: 20px;
+  color: #4a4f57;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.india-office-network .ion-group--upcoming .ion-item {
+  background-color: transparent;
+  border-style: dashed;
+  border-color: #c8ccd3;
+  color: #4a4f57;
+}
+.india-office-network .ion-group--upcoming .ion-item i {
+  color: #6b7079;
+}
+.india-office-network .ion-group__note {
+  margin: 12px 0 0;
+  color: #5f646b;
+  font-size: 14px;
+  line-height: 1.5;
+}
+@media (max-width: 991.98px) {
+  .india-office-network .ion-groups {
+    margin-top: 40px;
+  }
+}
+@media (max-width: 767.98px) {
+  .india-office-network .ion-map-stage {
+    padding: 14px;
+  }
+  .india-office-network .ion-map__label {
+    display: none;
+  }
+}
+@media (max-width: 575.98px) {
+  .india-office-network .ion-group {
+    padding: 22px 18px;
+  }
+  .india-office-network .ion-group__head {
+    flex-wrap: wrap;
+  }
+  .india-office-network .ion-group__title {
+    flex-basis: calc(100% - 60px);
+  }
+  .india-office-network .ion-tag {
+    margin-left: 60px;
+    font-size: 14px;
+  }
+  .india-office-network .ion-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* ============ Reveal (only once JS has added .js-reveal-ready) ============ */
+.cis-gateway-section.js-reveal-ready .cis-reveal,
+.cis-gateway-section.js-reveal-ready .cis-map-stage,
+.cis-gateway-section.js-reveal-ready .cis-node__mark,
+.cis-gateway-section.js-reveal-ready .cis-dest,
+.india-office-network.js-reveal-ready .ion-reveal,
+.india-office-network.js-reveal-ready .ion-map-stage,
+.india-office-network.js-reveal-ready .ion-marker__mark,
+.india-office-network.js-reveal-ready .ion-group {
+  opacity: 0;
+  transition-property: opacity, transform, border-color, box-shadow;
+  transition-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+.cis-gateway-section.js-reveal-ready .cis-reveal,
+.india-office-network.js-reveal-ready .ion-reveal {
+  transform: translateY(20px);
+  transition-duration: 0.6s;
+}
+.cis-gateway-section.js-reveal-ready .cis-map-stage,
+.india-office-network.js-reveal-ready .ion-map-stage {
+  transform: scale(0.98);
+  transition-duration: 0.6s, 0.6s, 0.2s, 0.2s;
+  transition-delay: 0.2s, 0.2s, 0s, 0s;
+}
+.cis-gateway-section.js-reveal-ready .cis-route {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  transition: stroke-dashoffset 1.2s cubic-bezier(0.22, 0.61, 0.36, 1) calc(0.5s + var(--i, 0) * 90ms), opacity 0.2s ease, stroke-width 0.2s ease;
+}
+.cis-gateway-section.js-reveal-ready .cis-node__mark,
+.india-office-network.js-reveal-ready .ion-marker__mark {
+  transform: scale(0.6);
+  transition-duration: 0.4s;
+}
+.cis-gateway-section.js-reveal-ready .cis-node__mark {
+  transition-delay: calc(1.3s + var(--i, 0) * 60ms);
+}
+.india-office-network.js-reveal-ready .ion-marker__mark {
+  transition-delay: calc(0.6s + var(--i, 0) * 70ms);
+}
+.cis-gateway-section.js-reveal-ready .cis-map__label,
+.india-office-network.js-reveal-ready .ion-map__label {
+  opacity: 0;
+  transition: opacity 0.4s ease 1.6s, fill 0.2s ease;
+}
+.cis-gateway-section.js-reveal-ready .cis-dest {
+  transform: translateY(12px);
+  transition-duration: 0.45s, 0.45s, 0.2s, 0.2s;
+  transition-delay: calc(1.5s + var(--i, 0) * 55ms), calc(1.5s + var(--i, 0) * 55ms), 0s, 0s;
+}
+.india-office-network.js-reveal-ready .ion-group {
+  transform: translateY(20px);
+  transition-duration: 0.6s, 0.6s, 0.2s, 0.2s;
+  transition-delay: calc(0.4s + var(--g, 0) * 150ms), calc(0.4s + var(--g, 0) * 150ms), 0s, 0s;
+}
+/* Revealed */
+.cis-gateway-section.js-reveal-ready.is-revealed .cis-reveal,
+.cis-gateway-section.js-reveal-ready.is-revealed .cis-map-stage,
+.cis-gateway-section.js-reveal-ready.is-revealed .cis-node__mark,
+.cis-gateway-section.js-reveal-ready.is-revealed .cis-dest,
+.cis-gateway-section.js-reveal-ready.is-revealed .cis-map__label,
+.india-office-network.js-reveal-ready.is-revealed .ion-reveal,
+.india-office-network.js-reveal-ready.is-revealed .ion-map-stage,
+.india-office-network.js-reveal-ready.is-revealed .ion-marker__mark,
+.india-office-network.js-reveal-ready.is-revealed .ion-map__label,
+.india-office-network.js-reveal-ready.is-revealed .ion-group {
+  opacity: 1;
+  transform: none;
+}
+.cis-gateway-section.js-reveal-ready.is-revealed .cis-route {
+  stroke-dashoffset: 0;
+}
+
+/* ============ Dark variant (index-2-dark.html adds the --dark modifier) ============ */
+.cis-gateway-section.cis-gateway-section--dark,
+.india-office-network.india-office-network--dark {
+  background-color: var(--dark-color1, #2d2b3e);
+  background-image:
+    radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1.4px),
+    linear-gradient(180deg, var(--dark-color1, #2d2b3e) 0%, var(--dark-color2, #292738) 100%);
+}
+.cis-gateway-section--dark .cis-map-stage,
+.india-office-network--dark .ion-map-stage,
+.cis-gateway-section--dark .cis-dest,
+.india-office-network--dark .ion-group {
+  background-color: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow: none;
+}
+.cis-gateway-section--dark .cis-dest {
+  border-left-color: var(--theme-color2, #0757E8);
+}
+.cis-gateway-section--dark .cis-map__dot {
+  fill: rgba(255, 255, 255, 0.16);
+}
+.cis-gateway-section--dark .cis-route {
+  stroke: #5b93ff;
+}
+.cis-gateway-section--dark .cis-map__routes {
+  filter: drop-shadow(0 0 3px rgba(91, 147, 255, 0.35));
+}
+.cis-gateway-section--dark .cis-node__ring {
+  fill: var(--dark-color2, #292738);
+  stroke: #5b93ff;
+}
+.cis-gateway-section--dark .cis-node__dot {
+  fill: #5b93ff;
+}
+.cis-gateway-section--dark .cis-origin__dot {
+  fill: #fff;
+}
+.cis-gateway-section--dark .cis-node:focus-visible .cis-node__halo {
+  stroke: #fff;
+}
+.cis-gateway-section--dark .cis-map__label,
+.india-office-network--dark .ion-map__label,
+.india-office-network--dark .ion-legend {
+  fill: #d6d9e0;
+  color: #d6d9e0;
+}
+.cis-gateway-section--dark .cis-map__label,
+.india-office-network--dark .ion-map__label {
+  stroke: var(--dark-color1, #2d2b3e);
+}
+.cis-gateway-section--dark .cis-map__label--origin,
+.cis-gateway-section--dark .cis-dest-panel__origin,
+.cis-gateway-section--dark .cis-dest-panel__title,
+.cis-gateway-section--dark .cis-dest__country,
+.india-office-network--dark .ion-group__title,
+.india-office-network--dark .ion-item {
+  fill: #fff;
+  color: #fff;
+}
+.cis-gateway-section--dark .cis-dest__city,
+.cis-gateway-section--dark .cis-map-note,
+.india-office-network--dark .ion-map-note,
+.india-office-network--dark .ion-group__note {
+  color: #b9bcc6;
+}
+.india-office-network--dark .ion-map__land {
+  fill: rgba(91, 147, 255, 0.12);
+  stroke: rgba(255, 255, 255, 0.45);
+}
+.india-office-network--dark .ion-marker__shape {
+  stroke: var(--dark-color1, #2d2b3e);
+}
+.india-office-network--dark .ion-marker--sales .ion-marker__shape,
+.india-office-network--dark .ion-legend__sales {
+  fill: #fff;
+}
+.india-office-network--dark .ion-marker__region {
+  fill: rgba(255, 255, 255, 0.06);
+  stroke: rgba(255, 255, 255, 0.5);
+}
+.india-office-network--dark .ion-marker.is-active .ion-marker__shape {
+  stroke: #5b93ff;
+}
+.india-office-network--dark .ion-group__icon {
+  background-color: rgba(7, 87, 232, 0.2);
+  color: #8fb4ff;
+}
+.india-office-network--dark .ion-item {
+  border-color: rgba(255, 255, 255, 0.14);
+}
+.india-office-network--dark .ion-item i {
+  color: #8fb4ff;
+}
+.india-office-network--dark .ion-group--upcoming {
+  background-color: transparent;
+  border-color: rgba(255, 255, 255, 0.3);
+}
+.india-office-network--dark .ion-group--upcoming .ion-group__icon {
+  background-color: rgba(255, 255, 255, 0.08);
+  color: #b9bcc6;
+}
+.india-office-network--dark .ion-group--upcoming .ion-group__title,
+.india-office-network--dark .ion-group--upcoming .ion-item,
+.india-office-network--dark .ion-tag {
+  color: #c4c7cf;
+  border-color: rgba(255, 255, 255, 0.3);
+}
+.india-office-network--dark .ion-group--upcoming .ion-item i {
+  color: #b9bcc6;
+}
+.india-office-network--dark .ion-legend__upcoming {
+  stroke: #b9bcc6;
+}
+
+/* ============ Reduced motion: everything shown, colour changes instant ============ */
+@media (prefers-reduced-motion: reduce) {
+  .cis-gateway-section.js-reveal-ready .cis-reveal,
+  .cis-gateway-section.js-reveal-ready .cis-map-stage,
+  .cis-gateway-section.js-reveal-ready .cis-node__mark,
+  .cis-gateway-section.js-reveal-ready .cis-map__label,
+  .cis-gateway-section.js-reveal-ready .cis-dest,
+  .india-office-network.js-reveal-ready .ion-reveal,
+  .india-office-network.js-reveal-ready .ion-map-stage,
+  .india-office-network.js-reveal-ready .ion-marker__mark,
+  .india-office-network.js-reveal-ready .ion-map__label,
+  .india-office-network.js-reveal-ready .ion-group {
+    opacity: 1;
+    transform: none;
+  }
+  .cis-gateway-section.js-reveal-ready .cis-route {
+    stroke-dashoffset: 0;
+  }
+  .cis-gateway-section .cis-reveal,
+  .cis-gateway-section .cis-map-stage,
+  .cis-gateway-section .cis-node__mark,
+  .cis-gateway-section .cis-node__halo,
+  .cis-gateway-section .cis-node__ring,
+  .cis-gateway-section .cis-map__label,
+  .cis-gateway-section .cis-route,
+  .cis-gateway-section .cis-dest,
+  .india-office-network .ion-reveal,
+  .india-office-network .ion-map-stage,
+  .india-office-network .ion-marker__mark,
+  .india-office-network .ion-marker__shape,
+  .india-office-network .ion-map__label,
+  .india-office-network .ion-group,
+  .india-office-network .ion-item {
+    transition: none !important;
+  }
+  .cis-gateway-section .cis-node.is-active .cis-node__halo {
+    transform: none;
+  }
+}

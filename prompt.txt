@@ -1,225 +1,108 @@
-# SEASOL MARITIME — IMPROVE MISSION, VISION & CORE VALUES SECTION
+# TASK: Redesign ONLY the "Our Core Values" panel on the Seasol Maritime homepage(s)
 
-**Project folder:** `D:\xampp\htdocs\naman\transend1-php`
+**Project directory:** `D:\xampp\htdocs\naman\transend1-php`
 
-I want to improve the existing Mission, Vision & Values section of my Seasol Maritime website. Use the second reference screenshot from the client's Seasol Profile PDF as the design reference and the first screenshot as the current website implementation.
+The "Our Core Values" panel currently sits under the "Mission, Vision & Values" block (year-founded badge + image collage + Our Mission / Our Vision cards). It is a dark-navy rounded panel with a diamond icon + "Our Core Values" title on the left and six plain tiles on the right (Reliability, Integrity, Expertise, Precision, Partnership, Service Excellence). Each tile is only an icon + a label, so it feels flat and unfinished next to the polished Mission/Vision cards.
 
-The current section already has a good foundation, but I want it to look more professional, visually balanced, modern and engaging.
+**Goal:** make this one panel look premium, modern and on-theme, and make it fit perfectly with the Mission/Vision block above it.
 
-**Important: Work ONLY on this section. Do not redesign the entire website.**
+**Hard rule:** I have had unwanted redesigns before. Change **only** the Core Values panel. Do not touch the year-founded badge, the image collage, the Our Mission / Our Vision cards, the heading, header, footer, or any other section. Stop when the panel is done.
 
-## 1. FIRST ANALYZE THE EXISTING IMPLEMENTATION
+---
 
-Find the exact HTML section, its CSS selectors, images, icons and JavaScript behavior.
+## PHASE 1 — INSPECT (before editing anything)
 
-Inspect the existing CSS before writing anything new. Reuse the current theme, typography, spacing system, colors, container widths, icon library and existing animation utilities wherever possible.
+1. Find every page that contains the Core Values panel (search for `Core Values`, `Reliability`, `Service Excellence` across `*.html`/`*.php`). Expected: `index-2.html`, `index-2-single.html`, `index-2-dark.html`, possibly an About page. List them.
+2. Open the panel's markup and identify its wrapper class, the left title block, the tile grid, the tile classes, the icon classes (which icon library/font each of the six icons uses) and where the section actually ends. **The panel continues below the visible second row of tiles — check what is there (bottom padding, extra content, a closing strip) and preserve it.**
+3. Find the CSS that currently styles it (file + selectors) and the theme variables for navy, Seasol blue, text and border colours. Note how the **dark** variant overrides them.
+4. Identify the existing scroll-reveal mechanism (WOW/AOS/GSAP/IntersectionObserver/custom) and the animation classes used by the Mission/Vision cards, so the panel's entrance matches.
+5. Note the breakpoints the theme uses, and `git status` (preserve uncommitted work).
 
-Identify which CSS rules specifically control this section. Avoid changing shared rules that affect other sections.
+Give me a short findings summary (≤12 lines), then implement.
 
-Before editing, inspect Git status and preserve any existing uncommitted work. Make changes only after identifying the relevant section and its dependencies.
+---
 
-## 2. DESIGN DIRECTION — FOLLOW THE CLIENT REFERENCE
+## PHASE 2 — FILE STRATEGY
 
-Use the client's Mission, Vision & Core Values graphic as the visual reference.
+- Create a **new stylesheet**: `<existing-css-folder>/seasol-core-values.css`, linked after the theme's main CSS on each affected page, using the same link/version convention as the others.
+- All new selectors must be **scoped under the panel's real wrapper class** (add one extra hook class such as `.core-values-panel` to the existing wrapper if needed). No global/element selectors, no `*`, no `body`.
+- Reuse existing theme variables, fonts, container and animation classes. Fall back to hard-coded values only as a variable fallback, e.g. `var(--theme-blue, #0b5ed7)`.
+- Prefer overriding through the new scoped file. Do **not** edit or delete the old core-values rules in shared CSS unless an override is truly impossible; if you must, report exactly what and why.
+- If a tiny script is needed (it probably isn't), keep it scoped in a new file; otherwise use the existing reveal library or pure CSS.
 
-Create a polished layout inspired by its three clearly distinguished content groups:
+---
 
-- Mission
-- Vision
-- Core Values
+## PHASE 3 — DESIGN SPEC
 
-The result should feel like a premium maritime and freight-forwarding corporate website, consistent with Seasol's existing navy-blue, bright-blue, white and light-grey theme.
+Keep the navy rounded panel, same width as the Mission/Vision block above (the screenshot shows it spans the same container, ~1220px) and the existing icon style. Elevate it:
 
-### Visual improvements
+**Panel**
+- Keep the deep-navy base. Add depth with a subtle layered treatment already hinted by the diagonal sheen: a soft diagonal light band and/or a very faint dot or line-grid pattern at ~4–6% opacity, plus a faint blue radial glow in one corner. Pure CSS (gradients/pseudo-elements); no new images.
+- Consistent inner padding (~48–56px desktop), same corner radius as the Mission/Vision cards.
 
-- Create a clear section heading with a small blue eyebrow label.
-- Establish a strong visual hierarchy between the heading, group labels and descriptions.
-- Give Mission, Vision and Core Values distinct, well-aligned content areas.
-- Use clean spacing, subtle dividers and restrained blue accents.
-- Use attractive icon containers or icon illustrations for each group.
-- Keep text comfortably readable with appropriate line lengths.
-- Align icons, headings and descriptions precisely.
-- Use rounded corners, subtle borders and light shadows only where they complement the existing design.
-- Add a restrained decorative background element inspired by the diagonal grey shapes in the client's reference graphic, if it fits the existing site.
-- Keep the section's overall appearance consistent with the surrounding homepage.
+**Left intro column (≈ 28–32% width)**
+- Keep the diamond icon in its blue circle; give it a thin outer ring for polish.
+- Eyebrow above the title in the theme's eyebrow style: `WHAT GUIDES US`.
+- Title "Our Core Values" in the same heading font; keep the short blue underline accent.
+- Add one concise supporting line beneath: *"The principles behind how we move cargo and build relationships across CIS markets."*
+- Optional: small "06" count or a short vertical divider between the intro column and the grid. Keep it quiet.
 
-Do not insert the client's screenshot as a background image. Recreate the layout using the existing HTML elements and actual text so that it remains responsive and accessible.
+**Value tiles (3×2 grid, equal height, 16–20px gap)**
+- Upgrade each tile from "icon + label" to a proper card, still dark and glassy: slightly lighter navy fill (`rgba(255,255,255,0.04–0.06)`), 1px border `rgba(255,255,255,0.10)`, radius ≈ 10–12px.
+- Contents per tile (top to bottom): icon in the existing blue circle (keep the six current icons, just re-seat them), a small index number `01`–`06` in the top-right at low opacity, the value name (bold, white), and a one-line description in muted light-blue/grey (`rgba(255,255,255,0.65)`), 13–14px, max 2 lines.
+- Hover/focus (and `:focus-within`): tile lifts 3–4px, border turns Seasol blue, a thin blue top accent line scales in from the left, the icon circle gains a soft blue glow ring, and the number brightens. Transitions 200–300ms ease. No scaling of text, no content that appears *only* on hover.
+- Tiles are not links, so don't add pointer cursors; if you make them focusable for the hover state, use `tabindex="0"` sparingly — otherwise use `:hover` only plus `:focus-within`.
 
-Do not add a second Seasol logo inside the section.
+**Value descriptions (draft copy, derived only from the site's own mission statement, no factual claims, numbers or certifications):**
 
-## 3. USE THE EXACT CLIENT-APPROVED CONTENT
+| # | Value | Description |
+|---|---|---|
+| 01 | Reliability | Dependable handling and consistent follow-through on every cargo movement. |
+| 02 | Integrity | Honest, transparent dealings with customers and partners. |
+| 03 | Expertise | Practical freight-forwarding knowledge for CIS trade. |
+| 04 | Precision | Careful planning, documentation and execution at every step. |
+| 05 | Partnership | Long-term relationships built on trust and open communication. |
+| 06 | Service Excellence | Responsive, customer-focused support from enquiry to delivery. |
 
-Use the following information from the supplied Seasol Profile PDF. Preserve the intended meaning and do not invent additional company claims.
+Keep the six value names exactly as they are. Flag the descriptions as **draft copy for client approval** in your report.
 
-### Mission
+**Responsive**
+- ≥1200px: intro column + 3×2 grid.
+- 768–1199px: intro column on top (title and supporting line in a row), grid becomes 3×2 or 2×3 depending on width, no cramped text.
+- <768px: stack everything; tiles go to 1 column (or 2 columns at ≥480px if descriptions still fit on 2 lines). Min 14px text, 44px+ tap-friendly spacing, no horizontal overflow.
 
-**Heading:** Our Mission
+**Dark variant (`index-2-dark.html`)**
+The panel is already dark there, so make sure it still separates from the page: slightly lighter or bordered panel edge, readable contrast (≥ 4.5:1 for body text). Implement via whatever dark-mode mechanism that page actually uses.
 
-**Text:**
-To deliver precision-driven freight forwarding solutions across CIS markets, built on operational excellence, trusted partnerships, and seamless cross-border connectivity.
+---
 
-### Vision
+## PHASE 4 — MOTION
 
-**Heading:** Our Vision
+- Reuse the same reveal style as the Mission/Vision cards: panel fades and rises once (~500–600ms), intro column first, then tiles in a stagger (50–70ms per tile, left-to-right then row 2).
+- Icon circles get a short fade/scale-in with their tile. The underline accent draws from 0 to full width once.
+- No looping, pulsing or parallax. No layout shift (reserve space; animate only `opacity`/`transform`).
+- Content must be fully visible if JS fails: apply any "hidden" initial state only via a class added by JS or by the existing reveal library, never in base CSS.
+- Wrap motion in `@media (prefers-reduced-motion: reduce)` → show instantly; keep only colour/border changes.
+- Do not alter any existing keyframes or animation definitions.
 
-**Text:**
-To be the preferred logistics partner for CIS trade, recognized for regional expertise, reliability, and sustainable business growth.
+---
 
-### Core Values
+## PHASE 5 — ACCESSIBILITY
 
-**Heading:** Our Core Values
+- Keep a real heading (`h2`/`h3` per the page's hierarchy) for "Our Core Values"; present the tiles as a `<ul>`/list; value names as headings or strong text (not just styled `div`s).
+- Icons are decorative: `aria-hidden="true"`.
+- Maintain colour contrast; don't rely on colour alone for hover/focus; visible `:focus-visible` styles.
 
-Display these six values clearly:
+---
 
-- Reliability
-- Integrity
-- Expertise
-- Precision
-- Partnership
-- Service Excellence
+## PHASE 6 — VERIFY & REPORT
 
-Do not omit, rename or invent core values.
+1. Run `git diff --stat`: only the affected HTML files (this panel's markup + one `<link>`) and the new CSS file may differ. Show the stat.
+2. Confirm the Mission/Vision cards, collage, year badge and neighbouring sections are unchanged (compare diffs).
+3. Check at 1440 / 1024 / 768 / 390px: no overflow, equal-height tiles, no truncated or overlapping text, correct alignment with the Mission/Vision block above.
+4. Check light and dark pages, hover/focus states and reduced-motion.
+5. Only report tests you actually ran; say how (real browser / DevTools emulation / static review) and what you could not test.
 
-## 4. ADD APPROPRIATE ICONS
+**Final report:** files changed/created, what was visually changed, which existing classes/variables were reused, animation and responsive behaviour, and anything needing client approval (the six draft descriptions, the "WHAT GUIDES US" eyebrow and the supporting line).
 
-Use the icon library already present in the project. Do not install another library.
-
-Choose icons that communicate the meaning of each group:
-
-**Mission:** Target, bullseye or compass icon.
-
-**Vision:** Eye, eye-of-sight, or forward-looking vision icon.
-
-**Core Values:** Gem, shield-check, handshake or another suitable trust-and-integrity icon.
-
-Use consistent icon sizing and stroke weight. Apply Seasol blue as the primary icon accent, with navy or white where appropriate.
-
-Place the icons inside well-designed circular or softly rounded containers. Ensure good contrast and alignment.
-
-If the project already uses Font Awesome, Bootstrap Icons, Line Awesome or another icon library, use the available icon set rather than introducing unnecessary dependencies.
-
-Do not use emoji as substitutes for professional website icons.
-
-## 5. ADD POLISHED ANIMATIONS AND TRANSITIONS
-
-I specifically want this section to feel more engaging. You may add subtle, professional animations to this section only.
-
-Reuse the existing animation libraries and JavaScript utilities if available. Add narrowly scoped CSS and minimal JavaScript only where necessary.
-
-### A. Section entrance
-
-When the section enters the viewport, reveal the heading, Mission, Vision and Core Values with a subtle fade-in and upward movement.
-
-Use a short stagger between the three groups so the content appears in a coordinated sequence rather than all at once.
-
-### B. Icon animation
-
-Animate each icon container gently as it enters the viewport. A small scale-and-fade effect is sufficient.
-
-On hover, allow the icon or its container to respond with a restrained scale, color or shadow transition.
-
-### C. Content interaction
-
-Add subtle hover effects to the Mission, Vision and Core Values content areas, such as a slight border-color change, a gentle shadow or a small icon movement.
-
-Avoid excessive movement, large zoom effects, flashing colors or effects that make reading difficult.
-
-### D. Divider and accent animation
-
-Where appropriate, use a short, subtle transition for blue divider lines or decorative accents as the section becomes visible.
-
-### Animation requirements
-
-- Use smooth transitions with professional easing.
-- Keep durations short and consistent.
-- Trigger entrance animations only when appropriate; do not repeatedly restart animations while scrolling.
-- Avoid layout shifts and content jumping.
-- Do not change any existing animations outside this section.
-- Respect `prefers-reduced-motion` and provide a usable reduced-motion experience.
-- Ensure the content remains visible if JavaScript or an animation library fails.
-
-Do not add another animation library if the existing project already provides what is needed.
-
-## 6. CSS IMPLEMENTATION REQUIREMENTS
-
-Reuse the existing stylesheet and its variables wherever possible. Add new CSS only when needed to achieve the requested result.
-
-Scope new selectors to the Mission, Vision & Core Values section using its existing section ID or a unique class.
-
-For example, if appropriate for the existing markup, use a section-specific naming convention such as:
-
-- `.mission-vision-values`
-- `.mission-vision-values__item`
-- `.mission-vision-values__icon`
-
-Treat these as naming examples, not a requirement to rename existing classes.
-
-Do not overwrite or replace the complete stylesheet.
-
-Do not add broad global rules for `section`, `h2`, `p`, `.container`, `.row`, `.icon` or other shared selectors that could unexpectedly change the rest of the website.
-
-Avoid duplicate CSS declarations, unnecessary `!important` rules and conflicting media queries.
-
-If the existing project already has suitable styles or utility classes, reuse them instead of duplicating them.
-
-## 7. IMAGES AND THE EXISTING 2007 ELEMENT
-
-Inspect the current left-side image collage and the blue "2007 — Year founded" element.
-
-Keep the establishment year accurate.
-
-Improve the image treatment only if it helps the section fit the client's reference and creates a more balanced layout. If you retain the image collage, preserve its role and ensure it does not compete visually with the Mission, Vision and Core Values content.
-
-Do not change image assets used by other sections. Do not replace the collage with unrelated imagery or make the section unnecessarily crowded.
-
-If the client's reference is better served by a more structured three-group layout, make that adjustment within this section only, while preserving the overall website's visual identity.
-
-## 8. RESPONSIVE DESIGN
-
-Make this section look polished across desktop, tablet and mobile.
-
-- Desktop: balanced content groups, consistent spacing and clean alignment.
-- Tablet: comfortable text widths, appropriate icon placement and no cramped columns.
-- Mobile: stack the content in a natural order with readable text, correctly sized icons and suitable spacing.
-
-Prevent text overflow, overlapping icons, clipped decorations and horizontal scrolling.
-
-Use the existing responsive breakpoints wherever possible.
-
-## 9. STRICT SCOPE PROTECTION
-
-Modify only the HTML, CSS and minimal JavaScript required for this section.
-
-Do not change:
-
-- The About Seasol section.
-- The hero section, background image or carousel.
-- The Services carousel.
-- The navigation bar or footer.
-- The Call Us / Email contact boxes.
-- The Network & Coverage section.
-- Other homepage sections or unrelated pages.
-- Existing global animation definitions or shared styles in ways that alter other sections.
-- PHP backend code, database settings, configuration or dependencies.
-
-Do not deploy the website.
-
-## 10. VERIFY THE FINISHED RESULT
-
-After implementing the section:
-
-1. Check that all Mission, Vision and Core Values text matches the client PDF.
-2. Verify that all six core values appear.
-3. Test entrance animations, icon interactions, hover transitions and scrolling.
-4. Check the section on desktop, tablet and mobile viewports.
-5. Confirm that the existing 2007 establishment fact remains accurate if displayed.
-6. Compare Git diff to ensure that only the intended section and necessary scoped styles were changed.
-7. Inspect adjacent sections to ensure that no layout, animation, transition or shared CSS behavior was unintentionally affected.
-
-## FINAL INSTRUCTION
-
-Make the Mission, Vision & Core Values section more attractive and professional by following the client's reference image, using appropriate icons, reusing existing CSS and adding carefully scoped animations.
-
-**Improve this section only. Preserve the rest of my Seasol website and its existing functionality.**
-
-When complete, report the modified files, the visual improvements, the animations added and the responsive checks performed. Then stop and wait for my next instructions.
+**Final instruction:** improve only the Our Core Values panel with a new scoped CSS file plus existing theme styles, keep the six value names and icons, preserve everything else, and stop when done.

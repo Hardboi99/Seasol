@@ -571,15 +571,15 @@ var THEMEMASCOT = {};
 	if ($('.banner-carousel').length) {
 		$('.banner-carousel').owlCarousel({
 			rtl: THEMEMASCOT.isRTL.check(),
-			animateOut: 'fadeOut',
-	    animateIn: 'fadeIn',
+			// animateOut: 'fadeOut',
+	    	// animateIn: 'fadeIn',
 			loop:true,
 			margin:0,
 			nav:true,
 			smartSpeed: 500,
 			autoHeight: true,
 			autoplay: true,
-			autoplayTimeout:10000,
+			autoplayTimeout:3000,
 			navText: [ '<span class="fa fa-long-arrow-alt-left"></span>', '<span class="fa fa-long-arrow-alt-right"></span>' ],
 			responsive:{
 				0:{
@@ -600,15 +600,17 @@ var THEMEMASCOT = {};
 	if ($('.banner-carousel-two').length) {
 		$('.banner-carousel-two').owlCarousel({
 			rtl: THEMEMASCOT.isRTL.check(),
-			loop: true,
-			margin: 0,
-			nav: false,
-			dots: false,
-			smartSpeed: 1000,
-			autoHeight: false,
+			// animateOut: 'fadeOut',
+	    	// animateIn: 'fadeIn',
+			loop:true,
+			margin:0,
+			nav:false,
+			smartSpeed: 500,
+			autoHeight: true,
 			autoplay: true,
-			autoplayTimeout: 5000,
-			autoplayHoverPause: true,
+			autoplayTimeout:3000,
+			autoplaySpeed: 900,
+			autoplayHoverPause: false,
 			navText: [ '<span class="fa fa-long-arrow-alt-left"></span>', '<span class="fa fa-long-arrow-alt-right"></span>' ],
 			responsive:{
 				0:{
@@ -629,15 +631,16 @@ var THEMEMASCOT = {};
 	if ($('.banner-carousel-three').length) {
 		$('.banner-carousel-three').owlCarousel({
 			rtl: THEMEMASCOT.isRTL.check(),
-			animateOut: 'fadeOut',
-	    animateIn: 'fadeIn',
+			// animateOut: 'fadeOut',
+	    	// animateIn: 'fadeIn',
 			loop:true,
 			margin:0,
 			nav:false,
 			smartSpeed: 500,
 			autoHeight: true,
 			autoplay: true,
-			autoplayTimeout:10000,
+			autoplayTimeout:3000,
+			autoplayHoverPause: false,
 			navText: [ '<span class="fa fa-long-arrow-alt-left"></span>', '<span class="fa fa-long-arrow-alt-right"></span>' ],
 			responsive:{
 				0:{

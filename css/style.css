@@ -4275,8 +4275,8 @@ Section Title
           transition-delay: 300ms;
 }
 .owl-carousel .active .animate-3 {
-  -webkit-transition-delay: 600ms;
-          transition-delay: 600ms;
+  -webkit-transition-delay: 100ms;
+          transition-delay: 200ms;
 }
 .owl-carousel .active .animate-4 {
   -webkit-transition-delay: 900ms;
@@ -4579,6 +4579,66 @@ Section Title
         -ms-flex-pack: center;
             justify-content: center;
   }
+}
+
+/* Banner Section Two - Left to Right Smooth Motion & Refined Text Animations */
+.banner-carousel-two.owl-rtl .slide-item,
+.banner-carousel-two.owl-rtl .content-box {
+  direction: ltr !important;
+  text-align: left !important;
+}
+.banner-carousel-two.owl-rtl .content-box .btn-box {
+  direction: ltr !important;
+  -webkit-box-pack: start !important;
+  -ms-flex-pack: start !important;
+  justify-content: flex-start !important;
+}
+@media (max-width: 767.98px) {
+  .banner-carousel-two.owl-rtl .content-box {
+    text-align: center !important;
+  }
+  .banner-carousel-two.owl-rtl .content-box .btn-box {
+    -webkit-box-pack: center !important;
+    -ms-flex-pack: center !important;
+    justify-content: center !important;
+  }
+}
+.banner-carousel-two .slide-item {
+  overflow: hidden;
+}
+.banner-carousel-two .owl-item .slide-item .animate-1,
+.banner-carousel-two .owl-item .slide-item .animate-2,
+.banner-carousel-two .owl-item .slide-item .animate-3 {
+  opacity: 0;
+  -webkit-transform: translateY(30px);
+          transform: translateY(30px);
+  -webkit-transition: opacity 500ms ease 300ms, -webkit-transform 500ms ease 300ms;
+  transition: opacity 500ms ease 300ms, transform 500ms ease 300ms;
+}
+.banner-carousel-two .owl-item.active .slide-item .animate-1,
+.banner-carousel-two .owl-item.active .slide-item .animate-2,
+.banner-carousel-two .owl-item.active .slide-item .animate-3 {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+.banner-carousel-two .owl-item.active .slide-item .animate-1 {
+  -webkit-transition: opacity 700ms cubic-bezier(0.2, 0.8, 0.2, 1) 350ms,
+                      -webkit-transform 700ms cubic-bezier(0.2, 0.8, 0.2, 1) 350ms;
+  transition: opacity 700ms cubic-bezier(0.2, 0.8, 0.2, 1) 350ms,
+              transform 700ms cubic-bezier(0.2, 0.8, 0.2, 1) 350ms;
+}
+.banner-carousel-two .owl-item.active .slide-item .animate-2 {
+  -webkit-transition: opacity 750ms cubic-bezier(0.2, 0.8, 0.2, 1) 600ms,
+                      -webkit-transform 750ms cubic-bezier(0.2, 0.8, 0.2, 1) 600ms;
+  transition: opacity 750ms cubic-bezier(0.2, 0.8, 0.2, 1) 600ms,
+              transform 750ms cubic-bezier(0.2, 0.8, 0.2, 1) 600ms;
+}
+.banner-carousel-two .owl-item.active .slide-item .animate-3 {
+  -webkit-transition: opacity 750ms cubic-bezier(0.2, 0.8, 0.2, 1) 850ms,
+                      -webkit-transform 750ms cubic-bezier(0.2, 0.8, 0.2, 1) 850ms;
+  transition: opacity 750ms cubic-bezier(0.2, 0.8, 0.2, 1) 850ms,
+              transform 750ms cubic-bezier(0.2, 0.8, 0.2, 1) 850ms;
 }
 
 /*** 
@@ -10440,7 +10500,7 @@ Section Title
   margin-bottom: 0;
 }
 .why-choose-us .image-column .inner-column .experience .inner .content strong {
-  color: var(--theme-color2);
+  color: #e77900 !important;
   font-family: var(--title-font);
   font-size: 36px;
   font-weight: 600;
@@ -16660,5 +16720,521 @@ Sidebar
   .call-to-action-two .contact-info-block .inner .theme-btn {
     flex-shrink: 0;
     margin-left: 20px;
+  }
+}
+
+/*** Seasol: Mission, Vision & Core Values (scoped to .mission-vision-values) ***/
+.mission-vision-values {
+  overflow: hidden;
+}
+.mission-vision-values > .auto-container {
+  position: relative;
+  z-index: 1;
+}
+/* Diagonal grey shapes, after the client profile graphic */
+.mission-vision-values::before,
+.mission-vision-values::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  pointer-events: none;
+  -webkit-transform: skewX(-24deg);
+          transform: skewX(-24deg);
+}
+.mission-vision-values::before {
+  right: -8%;
+  width: 34%;
+  height: 58%;
+  background: linear-gradient(160deg, rgba(7, 27, 58, 0.05), rgba(7, 27, 58, 0));
+}
+.mission-vision-values::after {
+  right: 28%;
+  width: 6%;
+  height: 34%;
+  background: linear-gradient(160deg, rgba(7, 27, 58, 0.035), rgba(7, 27, 58, 0));
+}
+@media (min-width: 1200px) {
+  .mission-vision-values .image-column .inner-column .image-box {
+    height: 540px;
+  }
+}
+
+/* Mission & Vision */
+.mission-vision-values .mvv-list {
+  display: grid;
+  gap: 20px;
+}
+.mission-vision-values .mvv-item {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 22px;
+  padding: 26px 28px;
+  background-color: #fff;
+  border: 1px solid #e3e9f2;
+  border-radius: 8px;
+  box-shadow: 0 6px 24px rgba(7, 27, 58, 0.04);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.mission-vision-values .mvv-item::before {
+  content: "";
+  position: absolute;
+  left: -1px;
+  top: 26px;
+  width: 3px;
+  height: 46px;
+  background-color: var(--theme-color2);
+  border-radius: 0 3px 3px 0;
+  -webkit-transform-origin: top;
+          transform-origin: top;
+}
+.mission-vision-values .mvv-item:hover {
+  border-color: rgba(7, 87, 232, 0.35);
+  box-shadow: 0 14px 34px rgba(7, 27, 58, 0.08);
+}
+.mission-vision-values .mvv-icon {
+  flex: 0 0 64px;
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: var(--theme-color3);
+  box-shadow: inset 0 0 0 1px rgba(7, 87, 232, 0.12);
+  color: var(--theme-color2);
+  font-size: 27px;
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+.mission-vision-values .mvv-icon i {
+  transition: transform 0.3s ease;
+}
+.mission-vision-values .mvv-item:hover .mvv-icon,
+.mission-vision-values .mvv-values-head:hover .mvv-icon {
+  background-color: var(--theme-color2);
+  box-shadow: 0 8px 20px rgba(7, 87, 232, 0.25);
+  color: #fff;
+}
+.mission-vision-values .mvv-item:hover .mvv-icon i,
+.mission-vision-values .mvv-values-head:hover .mvv-icon i {
+  -webkit-transform: translateY(-2px);
+          transform: translateY(-2px);
+}
+.mission-vision-values .mvv-content {
+  min-width: 0;
+}
+.mission-vision-values .mvv-title {
+  color: var(--theme-color1);
+  font-size: 22px;
+  margin-bottom: 8px;
+}
+.mission-vision-values .mvv-text {
+  margin-bottom: 0;
+  line-height: 1.75;
+}
+
+/* Core Values panel */
+.mission-vision-values .mvv-values {
+  position: relative;
+  display: grid;
+  grid-template-columns: 250px minmax(0, 1fr);
+  align-items: center;
+  gap: 30px 40px;
+  margin-top: 110px;
+  padding: 40px 44px;
+  background-color: var(--theme-color1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.mission-vision-values .mvv-values::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: -60px;
+  width: 36%;
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0));
+  -webkit-transform: skewX(-24deg);
+          transform: skewX(-24deg);
+  pointer-events: none;
+}
+.mission-vision-values .mvv-values > * {
+  position: relative;
+}
+.mission-vision-values .mvv-values-head {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+.mission-vision-values .mvv-values-head .mvv-icon {
+  background-color: var(--theme-color2);
+  box-shadow: none;
+  color: #fff;
+}
+.mission-vision-values .mvv-values-head .mvv-title {
+  color: #fff;
+  margin-bottom: 0;
+}
+.mission-vision-values .mvv-values-head .mvv-title::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 2px;
+  margin-top: 12px;
+  background-color: var(--theme-color2);
+  -webkit-transform-origin: left;
+          transform-origin: left;
+}
+.mission-vision-values .mvv-values-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.mission-vision-values .mvv-value {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 6px;
+  color: #fff;
+  font-family: var(--title-font);
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.3;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+.mission-vision-values .mvv-value i {
+  flex: 0 0 40px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: var(--theme-color2);
+  color: #fff;
+  font-size: 17px;
+  transition: transform 0.3s ease;
+}
+.mission-vision-values .mvv-value:hover {
+  background-color: rgba(255, 255, 255, 0.09);
+  border-color: rgba(7, 87, 232, 0.8);
+}
+.mission-vision-values .mvv-value:hover i {
+  -webkit-transform: scale(1.08);
+          transform: scale(1.08);
+}
+@media (max-width: 1199.98px) {
+  .mission-vision-values .mvv-values {
+    margin-top: 50px;
+  }
+}
+@media (max-width: 991.98px) {
+  .mission-vision-values .mvv-values {
+    grid-template-columns: minmax(0, 1fr);
+    padding: 34px 30px;
+  }
+}
+@media (max-width: 767.98px) {
+  .mission-vision-values .mvv-values-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 575.98px) {
+  .mission-vision-values .mvv-item {
+    flex-direction: column;
+    gap: 14px;
+    padding: 24px 22px;
+  }
+  .mission-vision-values .mvv-icon {
+    flex-basis: 54px;
+    width: 54px;
+    height: 54px;
+    font-size: 23px;
+  }
+  .mission-vision-values .mvv-title {
+    font-size: 20px;
+  }
+  .mission-vision-values .mvv-values {
+    padding: 28px 20px;
+  }
+  .mission-vision-values .mvv-values-list {
+    gap: 10px;
+  }
+  .mission-vision-values .mvv-value {
+    gap: 10px;
+    padding: 12px;
+    font-size: 15px;
+  }
+  .mission-vision-values .mvv-value i {
+    flex-basis: 34px;
+    width: 34px;
+    height: 34px;
+    font-size: 15px;
+  }
+}
+
+/* Entrance animations (triggered once by the existing wow.js) */
+.mission-vision-values .mvv-fade-up {
+  -webkit-animation-name: mvvFadeUp;
+          animation-name: mvvFadeUp;
+}
+.mission-vision-values .mvv-icon-in {
+  -webkit-animation-name: mvvIconIn;
+          animation-name: mvvIconIn;
+}
+.mission-vision-values .animated {
+  -webkit-animation-duration: 0.7s;
+          animation-duration: 0.7s;
+  -webkit-animation-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1);
+          animation-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+.mission-vision-values .mvv-item.animated::before {
+  -webkit-animation: mvvAccentY 0.6s cubic-bezier(0.22, 0.61, 0.36, 1) 0.6s both;
+          animation: mvvAccentY 0.6s cubic-bezier(0.22, 0.61, 0.36, 1) 0.6s both;
+}
+.mission-vision-values .mvv-values.animated .mvv-values-head .mvv-title::after {
+  -webkit-animation: mvvAccentX 0.6s cubic-bezier(0.22, 0.61, 0.36, 1) 0.6s both;
+          animation: mvvAccentX 0.6s cubic-bezier(0.22, 0.61, 0.36, 1) 0.6s both;
+}
+@keyframes mvvFadeUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 24px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes mvvIconIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes mvvAccentY {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+@keyframes mvvAccentX {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .mission-vision-values .wow,
+  .mission-vision-values .mvv-item::before,
+  .mission-vision-values .mvv-values-head .mvv-title::after {
+    visibility: visible !important;
+    -webkit-animation: none !important;
+            animation: none !important;
+  }
+  .mission-vision-values .mvv-item,
+  .mission-vision-values .mvv-icon,
+  .mission-vision-values .mvv-icon i,
+  .mission-vision-values .mvv-value,
+  .mission-vision-values .mvv-value i {
+    transition-duration: 0.01ms;
+  }
+}
+
+/*** Seasol: feature cards below the hero (scoped to .seasol-feature-cards) ***/
+.seasol-feature-cards .contact-info-block .inner {
+  position: relative;
+  height: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 26px;
+  padding: 38px 40px;
+  background-color: var(--theme-color1);
+  box-shadow: 0 18px 40px rgba(7, 27, 58, 0.18);
+  overflow: hidden;
+  transition: transform 0.4s cubic-bezier(0.22, 0.61, 0.36, 1), box-shadow 0.4s ease;
+}
+/* Diagonal light shape */
+.seasol-feature-cards .contact-info-block .inner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: -70px;
+  width: 42%;
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0));
+  -webkit-transform: skewX(-24deg);
+          transform: skewX(-24deg);
+  pointer-events: none;
+  transition: right 0.6s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+/* Blue top accent that extends on hover */
+.seasol-feature-cards .contact-info-block .inner::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: var(--theme-color2);
+  -webkit-transform: scaleX(0.15);
+          transform: scaleX(0.15);
+  -webkit-transform-origin: left;
+          transform-origin: left;
+  transition: transform 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+.seasol-feature-cards .contact-info-block .inner > * {
+  position: relative;
+  z-index: 1;
+}
+.seasol-feature-cards .contact-info-block .inner:hover {
+  -webkit-transform: translateY(-6px);
+          transform: translateY(-6px);
+  box-shadow: 0 26px 50px rgba(7, 27, 58, 0.28);
+}
+.seasol-feature-cards .contact-info-block .inner:hover::before {
+  right: -40px;
+}
+.seasol-feature-cards .contact-info-block .inner:hover::after {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+}
+.seasol-feature-cards .contact-info-block .content-box {
+  align-items: flex-start;
+}
+.seasol-feature-cards .contact-info-block .content-box .icon {
+  flex: 0 0 70px;
+  background-color: var(--theme-color2);
+  color: #fff;
+  box-shadow: 0 0 0 0 rgba(7, 87, 232, 0.35);
+}
+.seasol-feature-cards .contact-info-block .inner:hover .content-box .icon {
+  box-shadow: 0 0 0 8px rgba(7, 87, 232, 0.2);
+}
+.seasol-feature-cards .sfc-title {
+  color: #fff;
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+.seasol-feature-cards .sfc-text {
+  color: rgba(255, 255, 255, 0.72);
+  line-height: 1.7;
+  margin-bottom: 0;
+}
+.seasol-feature-cards .contact-info-block .inner .theme-btn {
+  margin-left: 90px;
+}
+/* Keep "transition: all" from delaying visibility when wow.js reveals the card */
+.seasol-feature-cards .theme-btn,
+.seasol-feature-cards .theme-btn .icon {
+  transition-property: color, background-color, box-shadow, transform;
+}
+/* Light hover fill so the button stays visible on the navy card */
+.seasol-feature-cards .theme-btn.btn-style-one::before {
+  background-color: #fff !important;
+}
+.seasol-feature-cards .theme-btn.btn-style-one:hover {
+  color: var(--theme-color1) !important;
+}
+.seasol-feature-cards .theme-btn.btn-style-one:hover .icon {
+  background-color: var(--theme-color2) !important;
+}
+@media (max-width: 1199.98px) {
+  .seasol-feature-cards .contact-info-block .inner {
+    padding: 30px 28px;
+  }
+}
+@media (max-width: 575.98px) {
+  .seasol-feature-cards .contact-info-block .inner {
+    align-items: center;
+    gap: 0;
+    padding: 30px 22px;
+  }
+  .seasol-feature-cards .contact-info-block .content-box {
+    align-items: center;
+  }
+  .seasol-feature-cards .contact-info-block .inner .theme-btn {
+    margin-left: 0;
+  }
+  .seasol-feature-cards .sfc-title {
+    font-size: 21px;
+  }
+}
+
+/* Entrance animations (triggered once by the existing wow.js) */
+.seasol-feature-cards .sfc-fade-up {
+  -webkit-animation-name: sfcFadeUp;
+          animation-name: sfcFadeUp;
+}
+.seasol-feature-cards .animated {
+  -webkit-animation-duration: 0.7s;
+          animation-duration: 0.7s;
+  -webkit-animation-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1);
+          animation-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+/* "backwards" so the existing hover flip on the icon still works afterwards */
+.seasol-feature-cards .animated .content-box .icon {
+  -webkit-animation: sfcIconIn 0.6s cubic-bezier(0.22, 0.61, 0.36, 1) 0.35s backwards;
+          animation: sfcIconIn 0.6s cubic-bezier(0.22, 0.61, 0.36, 1) 0.35s backwards;
+}
+.seasol-feature-cards .animated .inner::after {
+  -webkit-animation: sfcAccentX 0.6s cubic-bezier(0.22, 0.61, 0.36, 1) 0.5s backwards;
+          animation: sfcAccentX 0.6s cubic-bezier(0.22, 0.61, 0.36, 1) 0.5s backwards;
+}
+@keyframes sfcFadeUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 24px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes sfcIconIn {
+  from {
+    opacity: 0;
+    transform: scale(0.75);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes sfcAccentX {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(0.15);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .seasol-feature-cards .wow,
+  .seasol-feature-cards .content-box .icon,
+  .seasol-feature-cards .inner::after {
+    visibility: visible !important;
+    -webkit-animation: none !important;
+            animation: none !important;
+  }
+  .seasol-feature-cards .contact-info-block .inner,
+  .seasol-feature-cards .contact-info-block .inner:hover {
+    -webkit-transform: none;
+            transform: none;
   }
 }
