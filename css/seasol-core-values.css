@@ -39,11 +39,12 @@
 
 /* ============ Heading ============ */
 .sc-core-values__head {
-  max-width: 680px;
-  margin: 0 auto;
-  text-align: center;
+  max-width: 780px;
+  margin: 0 0 40px 0;
+  text-align: left;
 }
 .sc-core-values__eyebrow {
+  position: relative;
   display: inline-block;
   color: var(--sc-cv-blue);
   font-family: var(--text-font, "Kumbh Sans", sans-serif);
@@ -52,6 +53,18 @@
   line-height: 1.2;
   letter-spacing: 0.1em;
   text-transform: uppercase;
+  padding-left: 28px;
+}
+.sc-core-values__eyebrow::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 3px;
+  background-color: var(--sea-amber, #FF9A1F);
+  border-radius: 2px;
 }
 .sc-core-values__title {
   margin: 14px 0 0;
@@ -60,20 +73,24 @@
   font-size: var(--sec-title-font-size, 48px);
   font-weight: 600;
   line-height: 1.2;
+  text-align: left;
 }
 .sc-core-values__line {
   display: block;
   width: 48px;
   height: 3px;
-  margin: 22px auto 0;
+  margin: 18px 0 0 0;
   border-radius: 3px;
   background-color: var(--sc-cv-blue);
+  transform-origin: left;
 }
 .sc-core-values__lead {
-  margin: 22px 0 0;
+  margin: 18px 0 0;
   color: var(--sc-cv-slate);
   font-size: 17px;
   line-height: 1.75;
+  text-align: left;
+  max-width: 720px;
 }
 
 /* ============ Cards ============ */

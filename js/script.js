@@ -45,12 +45,16 @@ var THEMEMASCOT = {};
 
 	//Hide Loading Box (Preloader)
 	function handlePreloader() {
-		if($('.preloader').length){
-			$('.preloader').delay(200).fadeOut(500);
+		var $loader = $('.preloader');
+		if($loader.length && !$loader.hasClass('is-loaded')){
+			$loader.addClass('is-loaded');
+			$loader.fadeOut(300, function() {
+				$(this).remove();
+			});
 		}
 	}
-	// Failsafe: ensure preloader is dismissed within 2s even if external assets stall
-	setTimeout(handlePreloader, 2000);
+	// Snappy dismiss: visible for a brief elegant 500ms entrance, then immediately reveals site
+	setTimeout(handlePreloader, 500);
 	
 	//Update Header Style and Scroll to Top
 	function headerStyle() {
