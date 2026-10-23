@@ -1,0 +1,424 @@
+/*
+ * Seasol Maritime - Premium Navbar & Footer Enhancements
+ * Scoped to .main-header, .sticky-header, and .main-footer
+ */
+
+/* ==========================================================================
+   1. Header Top Bar (.main-header .header-top)
+   ========================================================================== */
+.main-header .header-top {
+  background: #071B3A !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+  padding: 0 !important;
+}
+
+.main-header .header-top .inner-container {
+  background: transparent !important;
+  padding: 9px 0 !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+}
+
+.main-header .header-top .top-left {
+  display: flex !important;
+  align-items: center !important;
+  gap: 18px !important;
+}
+
+.main-header .header-top .top-left .top-tagline {
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 13px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.main-header .header-top .top-left .top-tagline i {
+  color: #0AA5D6;
+  font-size: 13px;
+}
+
+.main-header .header-top .top-right {
+  display: flex !important;
+  align-items: center !important;
+  gap: 20px !important;
+}
+
+.main-header .header-top .top-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.main-header .header-top .top-item i {
+  color: #0AA5D6;
+  font-size: 13px;
+}
+
+.main-header .header-top .top-item a {
+  color: #FFFFFF !important;
+  font-weight: 600;
+  transition: color 0.25s ease;
+}
+
+.main-header .header-top .top-item a:hover {
+  color: #0AA5D6 !important;
+}
+
+.main-header .header-top .top-divider {
+  width: 1px;
+  height: 14px;
+  background: rgba(255, 255, 255, 0.22);
+}
+
+/* ==========================================================================
+   2. Header Lower / Main Navbar (.main-header .header-lower)
+   ========================================================================== */
+.main-header .header-lower {
+  background: #FFFFFF !important;
+  border-bottom: 1px solid #EBF1FA !important;
+  box-shadow: 0 4px 20px rgba(7, 27, 58, 0.05) !important;
+  position: relative !important;
+  z-index: 10 !important;
+}
+
+.main-header .header-lower .inner-container {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding: 10px 0 !important;
+}
+
+/* Logo container & sizing */
+.main-header .header-lower .logo-box {
+  display: flex !important;
+  align-items: center !important;
+  min-width: auto !important;
+  padding: 4px 0 !important;
+}
+
+.main-header .header-lower .logo-box .logo img,
+.sticky-header .logo img {
+  height: 48px !important;
+  max-height: 48px !important;
+  width: auto !important;
+  object-fit: contain !important;
+  display: block !important;
+  transition: transform 0.3s ease;
+}
+
+.main-header .header-lower .logo-box .logo:hover img {
+  transform: scale(1.02);
+}
+
+/* Navigation Menu */
+.main-header .main-menu .navigation {
+  display: flex !important;
+  align-items: center !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  gap: 4px !important;
+}
+
+.main-header .main-menu .navigation > li {
+  margin: 0 !important;
+  padding: 0 !important;
+  float: none !important;
+}
+
+.main-header .main-menu .navigation > li::before {
+  display: none !important;
+}
+
+.main-header .main-menu .navigation > li > a {
+  position: relative !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  padding: 10px 16px !important;
+  color: #071B3A !important;
+  font-family: var(--title-font, 'Fira Sans', sans-serif) !important;
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.01em !important;
+  border-radius: 8px !important;
+  box-shadow: none !important;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  background: transparent !important;
+}
+
+.main-header .main-menu .navigation > li > a:hover {
+  color: #0757E8 !important;
+  background: rgba(7, 87, 232, 0.06) !important;
+}
+
+.main-header .main-menu .navigation > li.current > a {
+  color: #0757E8 !important;
+  background: rgba(7, 87, 232, 0.08) !important;
+}
+
+.main-header .main-menu .navigation > li.current > a::after {
+  content: "" !important;
+  position: absolute !important;
+  bottom: 3px !important;
+  left: 16px !important;
+  right: 16px !important;
+  height: 2.5px !important;
+  background: #0757E8 !important;
+  border-radius: 4px !important;
+}
+
+/* Header Action Button (Request A Quote) */
+.main-header .header-lower .outer-box {
+  padding: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 14px !important;
+}
+
+.main-header .header-lower .btn-nav-quote {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  background: linear-gradient(135deg, #0757E8 0%, #0AA5D6 100%) !important;
+  color: #FFFFFF !important;
+  font-family: var(--title-font, 'Fira Sans', sans-serif) !important;
+  font-size: 13.5px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.04em !important;
+  text-transform: uppercase !important;
+  padding: 11px 24px !important;
+  border-radius: 50px !important;
+  border: none !important;
+  box-shadow: 0 6px 18px rgba(7, 87, 232, 0.28) !important;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.main-header .header-lower .btn-nav-quote:hover {
+  background: linear-gradient(135deg, #0646BF 0%, #0757E8 100%) !important;
+  color: #FFFFFF !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 10px 24px rgba(7, 87, 232, 0.42) !important;
+}
+
+.main-header .header-lower .btn-nav-quote i {
+  font-size: 13px !important;
+  transition: transform 0.25s ease !important;
+}
+
+.main-header .header-lower .btn-nav-quote:hover i {
+  transform: translateX(4px) !important;
+}
+
+/* ==========================================================================
+   3. Sticky Header (.sticky-header)
+   ========================================================================== */
+.sticky-header {
+  background: rgba(255, 255, 255, 0.96) !important;
+  backdrop-filter: blur(14px) !important;
+  -webkit-backdrop-filter: blur(14px) !important;
+  box-shadow: 0 4px 20px rgba(7, 27, 58, 0.08) !important;
+  border-bottom: 1px solid #EBF1FA !important;
+}
+
+.sticky-header .inner-container {
+  padding: 10px 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+}
+
+.sticky-header .main-menu .navigation > li > a {
+  color: #071B3A !important;
+  font-weight: 600 !important;
+  font-size: 15px !important;
+  padding: 8px 14px !important;
+  border-radius: 6px !important;
+}
+
+.sticky-header .main-menu .navigation > li > a:hover {
+  color: #0757E8 !important;
+  background: rgba(7, 87, 232, 0.06) !important;
+}
+
+.sticky-header .main-menu .navigation > li.current > a {
+  color: #0757E8 !important;
+  background: rgba(7, 87, 232, 0.08) !important;
+}
+
+/* ==========================================================================
+   4. Footer Enhancements (.main-footer)
+   ========================================================================== */
+.main-footer {
+  background: linear-gradient(160deg, #071B3A 0%, #0A2F66 50%, #071B3A 100%) !important;
+  color: rgba(255, 255, 255, 0.88) !important;
+  position: relative !important;
+  padding-top: 80px !important;
+}
+
+.main-footer .widgets-section {
+  padding-bottom: 50px !important;
+}
+
+/* Logo badge in footer */
+.main-footer .footer-widget.about-widget .logo {
+  display: inline-block !important;
+  background: #FFFFFF !important;
+  padding: 12px 20px !important;
+  border-radius: 12px !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25) !important;
+  margin-bottom: 22px !important;
+  transition: transform 0.3s ease !important;
+}
+
+.main-footer .footer-widget.about-widget .logo:hover {
+  transform: translateY(-2px) !important;
+}
+
+.main-footer .footer-widget.about-widget .logo img {
+  height: 40px !important;
+  width: auto !important;
+  display: block !important;
+  object-fit: contain !important;
+}
+
+.main-footer .footer-widget.about-widget .text {
+  color: rgba(255, 255, 255, 0.78) !important;
+  font-size: 14.5px !important;
+  line-height: 1.7 !important;
+  margin-bottom: 20px !important;
+}
+
+/* Titles */
+.main-footer .widget-title {
+  color: #FFFFFF !important;
+  font-family: var(--title-font, 'Fira Sans', sans-serif) !important;
+  font-size: 19px !important;
+  font-weight: 700 !important;
+  position: relative !important;
+  padding-bottom: 14px !important;
+  margin-bottom: 24px !important;
+}
+
+.main-footer .widget-title::after {
+  content: "" !important;
+  position: absolute !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  width: 36px !important;
+  height: 3px !important;
+  background: #0AA5D6 !important;
+  border-radius: 2px !important;
+}
+
+/* Links */
+.main-footer .user-links li {
+  margin-bottom: 11px !important;
+}
+
+.main-footer .user-links li a {
+  color: rgba(255, 255, 255, 0.78) !important;
+  font-size: 14.5px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  transition: all 0.25s ease !important;
+}
+
+.main-footer .user-links li a:hover {
+  color: #0AA5D6 !important;
+  transform: translateX(4px) !important;
+}
+
+/* Contact Info list */
+.main-footer .contact-widget .footer-contact-item {
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 12px !important;
+  margin-bottom: 14px !important;
+  color: rgba(255, 255, 255, 0.82) !important;
+  font-size: 14px !important;
+  line-height: 1.6 !important;
+}
+
+.main-footer .contact-widget .footer-contact-item i {
+  color: #0AA5D6 !important;
+  font-size: 15px !important;
+  margin-top: 3px !important;
+  flex-shrink: 0 !important;
+}
+
+.main-footer .contact-widget .footer-contact-item a {
+  color: rgba(255, 255, 255, 0.9) !important;
+  transition: color 0.25s ease !important;
+}
+
+.main-footer .contact-widget .footer-contact-item a:hover {
+  color: #0AA5D6 !important;
+}
+
+/* Office addresses in footer */
+.main-footer .address-widget .office-card {
+  margin-bottom: 16px !important;
+}
+
+.main-footer .address-widget .office-card h5 {
+  color: #FFFFFF !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  margin-bottom: 4px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+}
+
+.main-footer .address-widget .office-card h5 i {
+  color: #0AA5D6 !important;
+  font-size: 13px !important;
+}
+
+.main-footer .address-widget .office-card p {
+  color: rgba(255, 255, 255, 0.75) !important;
+  font-size: 13px !important;
+  line-height: 1.55 !important;
+  margin: 0 !important;
+}
+
+/* Footer Bottom Bar */
+.main-footer .footer-bottom {
+  background: rgba(4, 15, 33, 0.7) !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+  padding: 22px 0 !important;
+}
+
+.main-footer .footer-bottom .inner-container {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  flex-wrap: wrap !important;
+  gap: 15px !important;
+}
+
+.main-footer .footer-bottom .copyright-text p {
+  color: rgba(255, 255, 255, 0.7) !important;
+  font-size: 13.5px !important;
+  margin: 0 !important;
+}
+
+.main-footer .footer-bottom .copyright-right {
+  display: flex !important;
+  gap: 20px !important;
+}
+
+.main-footer .footer-bottom .copyright-right a {
+  color: rgba(255, 255, 255, 0.7) !important;
+  font-size: 13.5px !important;
+  transition: color 0.25s ease !important;
+}
+
+.main-footer .footer-bottom .copyright-right a:hover {
+  color: #0AA5D6 !important;
+}
