@@ -236,43 +236,93 @@ a:hover,
 
 /* Seasol Maritime - Valued Customers Carousel */
 .valued-customers {
-    padding: 35px 0 40px;
+    padding: 65px 0 60px;
     background: #f5f8fc;
     overflow: hidden;
+    position: relative;
 }
 
-.valued-customers-title {
+.valued-customers .sec-title {
+    margin-bottom: 35px;
+}
+
+.valued-customers .sec-title .sub-title {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #1d4ed8;
+    background: rgba(29, 78, 216, 0.08);
+    padding: 6px 18px;
+    border-radius: 50px;
+    display: inline-block;
+    margin-bottom: 14px;
+    margin-left: 0;
+}
+
+.valued-customers .sec-title .sub-title:after,
+.valued-customers .sec-title .sub-title:before {
+    display: none;
+}
+
+.valued-customers-title,
+.valued-customers .sec-title h2 {
     text-align: center;
     color: #071b3a;
-    font-size: 22px;
+    font-size: 40px;
     font-weight: 700;
-    margin: 0 0 25px;
+    line-height: 1.25;
+    letter-spacing: -0.5px;
+    margin: 0 0 12px;
+    font-family: 'Kumbh Sans', 'Inter', system-ui, sans-serif;
+}
+
+.valued-customers-title .accent-text,
+.valued-customers .sec-title h2 .accent-text {
+    color: #1d4ed8;
+}
+
+.valued-customers .sec-title .text {
+    max-width: 650px;
+    margin: 0 auto;
+    font-size: 16px;
+    color: #55627a;
+    line-height: 1.6;
 }
 
 .customer-marquee {
     width: 100%;
     overflow: hidden;
+    padding: 10px 0 15px;
 }
 
 .customer-track {
     display: flex;
     align-items: center;
-    gap: 40px;
+    gap: 30px;
     width: max-content;
     animation: customer-scroll 35s linear infinite;
 }
 
 .customer-logo {
-    width: 240px;
-    height: 140px;
-    flex: 0 0 240px;
+    width: 230px;
+    height: 125px;
+    flex: 0 0 230px;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 20px;
+    padding: 18px 24px;
     background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 18px rgba(7, 27, 58, 0.07);
+    border-radius: 12px;
+    box-shadow: 0 4px 18px rgba(7, 27, 58, 0.06);
+    border: 1px solid rgba(15, 27, 61, 0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.customer-logo:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(7, 27, 58, 0.12);
+    border-color: rgba(29, 78, 216, 0.25);
 }
 
 .customer-logo img {
@@ -282,6 +332,11 @@ a:hover,
     width: auto;
     height: auto;
     object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.customer-logo:hover img {
+    transform: scale(1.04);
 }
 
 @keyframes customer-scroll {
@@ -298,25 +353,38 @@ a:hover,
     animation-play-state: paused;
 }
 
+@media (max-width: 991px) {
+    .valued-customers {
+        padding: 50px 0 45px;
+    }
+    .valued-customers-title,
+    .valued-customers .sec-title h2 {
+        font-size: 32px;
+    }
+}
+
 @media (max-width: 767px) {
     .valued-customers {
-        padding: 25px 0;
+        padding: 40px 0 35px;
     }
 
-    .valued-customers-title {
-        font-size: 18px;
+    .valued-customers-title,
+    .valued-customers .sec-title h2 {
+        font-size: 24px;
+        letter-spacing: -0.3px;
     }
 
     .customer-track {
-        gap: 20px;
+        gap: 16px;
         animation-duration: 25s;
     }
 
     .customer-logo {
-        width: 170px;
-        height: 100px;
-        flex-basis: 170px;
-        padding: 14px;
+        width: 165px;
+        height: 95px;
+        flex-basis: 165px;
+        padding: 12px 16px;
+        border-radius: 8px;
     }
 }
 

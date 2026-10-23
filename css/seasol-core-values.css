@@ -1,220 +1,344 @@
 /*
- * Seasol Maritime: "Our Core Values" panel (index-2.html, Mission, Vision & Values section).
- * Scoped to .mission-vision-values .core-values-panel. Builds on the existing
- * .mvv-values panel styles in style.css; those rules are not edited.
- * Reveal uses the existing wow.js classes (wow mvv-fade-up / mvv-icon-in).
+ * Seasol Maritime: "Our Core Values" section (index-2.html, follows Mission & Vision).
+ * Light corporate styling scoped to .sc-core-values; no global rules are touched.
+ * Scroll reveal: js/seasol-core-values.js adds .sc-core-values--js (hidden start state)
+ * and .is-inview. Without JS the content simply renders visible.
  */
 
-/* ============ Panel ============ */
-.mission-vision-values .core-values-panel {
-  grid-template-columns: minmax(220px, 24%) minmax(0, 1fr);
-  align-items: stretch;
-  gap: 0;
-  padding: 48px;
-  background-color: var(--theme-color1, #071B3A);
+.sc-core-values {
+  --sc-cv-navy: #092B53;
+  --sc-cv-blue: #0866F5;
+  --sc-cv-blue-bright: #2F80FF;
+  --sc-cv-blue-soft: #EAF2FF;
+  --sc-cv-slate: #58677B;
+  --sc-cv-border: #E0E8F4;
+  --sc-cv-ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  position: relative;
+  padding: 0 0 120px;
+  background-color: #fff;
+  overflow: hidden;
+}
+/* Barely-there blue haze + dot grid behind the cards */
+.sc-core-values::before {
+  content: "";
+  position: absolute;
+  inset: 120px 0 0;
+  pointer-events: none;
   background-image:
-    radial-gradient(circle at 100% 0%, rgba(7, 87, 232, 0.32) 0%, rgba(7, 87, 232, 0) 42%),
-    radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1.4px);
-  background-size: 100% 100%, 18px 18px;
-  box-shadow: 0 24px 50px rgba(7, 27, 58, 0.18);
+    radial-gradient(ellipse 40% 50% at 8% 70%, rgba(8, 102, 245, 0.05), rgba(8, 102, 245, 0) 70%),
+    radial-gradient(ellipse 36% 45% at 94% 30%, rgba(8, 102, 245, 0.045), rgba(8, 102, 245, 0) 70%),
+    radial-gradient(rgba(9, 43, 83, 0.07) 1px, transparent 1.4px);
+  background-size: 100% 100%, 100% 100%, 22px 22px;
+  -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 30%, #000 70%, transparent 100%);
+          mask-image: linear-gradient(180deg, transparent 0%, #000 30%, #000 70%, transparent 100%);
+}
+.sc-core-values > .auto-container {
+  position: relative;
+  z-index: 1;
 }
 
-/* ============ Intro column ============ */
-.mission-vision-values .core-values-panel .cvp-intro {
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  gap: 22px;
-  padding-right: 34px;
-  margin-right: 34px;
-  border-right: 1px solid rgba(255, 255, 255, 0.1);
+/* ============ Heading ============ */
+.sc-core-values__head {
+  max-width: 680px;
+  margin: 0 auto;
+  text-align: center;
 }
-.mission-vision-values .core-values-panel .cvp-intro .mvv-icon {
-  box-shadow: 0 0 0 6px rgba(7, 87, 232, 0.18), 0 0 0 7px rgba(255, 255, 255, 0.08);
+.sc-core-values__eyebrow {
+  display: inline-block;
+  color: var(--sc-cv-blue);
+  font-family: var(--text-font, "Kumbh Sans", sans-serif);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
 }
-.mission-vision-values .core-values-panel .cvp-intro__text {
-  margin-bottom: 0;
+.sc-core-values__title {
+  margin: 14px 0 0;
+  color: var(--sc-cv-navy);
+  font-family: var(--title-font, "Fira Sans", sans-serif);
+  font-size: var(--sec-title-font-size, 48px);
+  font-weight: 600;
+  line-height: 1.2;
 }
-.mission-vision-values .core-values-panel .cvp-intro__text .sub-title {
-  margin-bottom: 12px;
-  color: #7fa8ff;
+.sc-core-values__line {
+  display: block;
+  width: 48px;
+  height: 3px;
+  margin: 22px auto 0;
+  border-radius: 3px;
+  background-color: var(--sc-cv-blue);
 }
-.mission-vision-values .core-values-panel .cvp-intro .mvv-title {
-  font-size: 26px;
-}
-.mission-vision-values .core-values-panel .cvp-intro__lead {
-  margin: 18px 0 0;
-  color: rgba(255, 255, 255, 0.72);
-  font-size: 15px;
-  line-height: 1.7;
+.sc-core-values__lead {
+  margin: 22px 0 0;
+  color: var(--sc-cv-slate);
+  font-size: 17px;
+  line-height: 1.75;
 }
 
-/* ============ Value tiles ============ */
-.mission-vision-values .core-values-panel .cvp-grid {
+/* ============ Cards ============ */
+.sc-core-values__grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   grid-auto-rows: 1fr;
-  gap: 16px;
-  margin: 0;
+  gap: 24px;
+  margin: 56px 0 0;
   padding: 0;
   list-style: none;
 }
-.mission-vision-values .core-values-panel .cvp-tile {
-  display: flex;
-}
-.mission-vision-values .core-values-panel .cvp-tile__inner {
+.sc-core-values__item {
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  width: 100%;
-  padding: 22px 20px 20px;
-  background-color: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 12px;
+  min-width: 0;
+  padding: 30px 28px 28px;
+  background-color: #fff;
+  border: 1px solid #e6eef9;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(7, 27, 58, 0.04);
   overflow: hidden;
-  transition: transform 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
+  transition: transform 350ms ease, box-shadow 350ms ease, border-color 350ms ease;
 }
-/* Blue top accent, scales in from the left on hover/focus */
-.mission-vision-values .core-values-panel .cvp-tile__inner::before {
+/* accent bar slides in on hover matching Comprehensive Logistics Solutions */
+.sc-core-values__item::before {
   content: "";
   position: absolute;
-  top: 0;
   left: 0;
-  width: 100%;
-  height: 2px;
-  background-color: var(--theme-color2, #0757E8);
-  -webkit-transform: scaleX(0);
-          transform: scaleX(0);
-  -webkit-transform-origin: left;
-          transform-origin: left;
-  transition: transform 0.3s ease;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background-color: var(--sc-cv-blue);
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 350ms ease;
 }
-.mission-vision-values .core-values-panel .cvp-tile__inner i {
-  width: 48px;
-  height: 48px;
+.sc-core-values__icon {
+  flex: 0 0 auto;
+  width: 76px;
+  height: 76px;
+  min-width: 76px;
+  line-height: 76px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 18px;
+  text-align: center;
+  margin-bottom: 22px;
   border-radius: 50%;
-  background-color: var(--theme-color2, #0757E8);
-  color: #fff;
-  font-size: 20px;
-  box-shadow: 0 0 0 0 rgba(7, 87, 232, 0.3);
-  transition: box-shadow 0.3s ease;
+  background-color: var(--theme-color3, #f4f8fe);
+  border: 1px solid #dce8f8;
+  color: var(--sc-cv-blue);
+  font-size: 30px;
+  box-shadow: none;
+  position: relative;
+  transition: all 400ms ease;
 }
-.mission-vision-values .core-values-panel .cvp-tile__num {
+/* soft pulsing ring matching Comprehensive Logistics Solutions */
+.sc-core-values__icon::after {
+  content: "";
   position: absolute;
-  top: 20px;
-  right: 20px;
-  color: rgba(255, 255, 255, 0.28);
+  inset: 0;
+  border-radius: 50%;
+  border: 2px solid var(--sc-cv-blue);
+  opacity: 0;
+  animation: aboutRingPulse 2.8s ease-out infinite;
+  pointer-events: none;
+}
+.sc-core-values__num {
+  position: absolute;
+  top: 26px;
+  right: 26px;
+  color: #A9B6C8;
   font-family: var(--title-font, "Fira Sans", sans-serif);
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.08em;
-  transition: color 0.3s ease;
+  line-height: 1;
+  transition: color 350ms ease, transform 350ms ease;
 }
-.mission-vision-values .core-values-panel .cvp-tile__title {
-  margin-bottom: 6px;
-  color: #fff;
-  font-size: 18px;
+.sc-core-values__item-title {
+  margin: 0 0 10px;
+  color: var(--theme-color1, #071b3a);
+  font-family: var(--title-font, "Fira Sans", sans-serif);
+  font-size: 20px;
+  font-weight: 700;
   line-height: 1.3;
+  transition: color 300ms ease;
 }
-.mission-vision-values .core-values-panel .cvp-tile__text {
-  margin-bottom: 0;
-  color: rgba(255, 255, 255, 0.65);
-  font-size: 14px;
-  line-height: 1.6;
+.sc-core-values__text {
+  margin: 0;
+  color: var(--text-color, #667085);
+  font-size: 14.5px;
+  line-height: 24px;
 }
-.mission-vision-values .core-values-panel .cvp-tile:hover .cvp-tile__inner,
-.mission-vision-values .core-values-panel .cvp-tile:focus-within .cvp-tile__inner {
-  -webkit-transform: translateY(-4px);
-          transform: translateY(-4px);
-  background-color: rgba(255, 255, 255, 0.07);
-  border-color: var(--theme-color2, #0757E8);
+
+/* Hover / keyboard focus: smooth lift, glowing border + shadow, card flip */
+.sc-core-values__item:hover,
+.sc-core-values__item:focus-within {
+  transform: translateY(-6px);
+  border-color: #cfe0f6;
+  box-shadow: 0 18px 40px rgba(7, 27, 58, 0.1);
 }
-.mission-vision-values .core-values-panel .cvp-tile:hover .cvp-tile__inner::before,
-.mission-vision-values .core-values-panel .cvp-tile:focus-within .cvp-tile__inner::before {
-  -webkit-transform: scaleX(1);
-          transform: scaleX(1);
+.sc-core-values__item:hover::before,
+.sc-core-values__item:focus-within::before {
+  transform: scaleY(1);
 }
-.mission-vision-values .core-values-panel .cvp-tile:hover i,
-.mission-vision-values .core-values-panel .cvp-tile:focus-within i {
-  box-shadow: 0 0 0 6px rgba(7, 87, 232, 0.25);
+.sc-core-values__item:hover .sc-core-values__icon,
+.sc-core-values__item:focus-within .sc-core-values__icon {
+  transform: scale(-1) rotate(180deg);
 }
-.mission-vision-values .core-values-panel .cvp-tile:hover .cvp-tile__num,
-.mission-vision-values .core-values-panel .cvp-tile:focus-within .cvp-tile__num {
-  color: rgba(255, 255, 255, 0.75);
+.sc-core-values__item:hover .sc-core-values__num,
+.sc-core-values__item:focus-within .sc-core-values__num {
+  color: var(--sc-cv-blue);
+  transform: translateY(-2px);
+}
+.sc-core-values__item:hover .sc-core-values__item-title,
+.sc-core-values__item:focus-within .sc-core-values__item-title {
+  color: var(--sc-cv-blue);
+}
+
+/* ============ Scroll reveal (only when the script has run) ============ */
+.sc-core-values--js:not(.is-inview) .sc-core-values__head > *,
+.sc-core-values--js:not(.is-inview) .sc-core-values__item {
+  opacity: 0;
+}
+.sc-core-values--js.is-inview .sc-core-values__head > * {
+  -webkit-animation: scCvFadeUp 0.7s var(--sc-cv-ease) backwards;
+          animation: scCvFadeUp 0.7s var(--sc-cv-ease) backwards;
+}
+.sc-core-values--js.is-inview .sc-core-values__title { -webkit-animation-delay: 80ms; animation-delay: 80ms; }
+.sc-core-values--js.is-inview .sc-core-values__line {
+  -webkit-animation: scCvLine 0.6s var(--sc-cv-ease) 260ms backwards;
+          animation: scCvLine 0.6s var(--sc-cv-ease) 260ms backwards;
+}
+.sc-core-values--js.is-inview .sc-core-values__lead { -webkit-animation-delay: 200ms; animation-delay: 200ms; }
+/* "backwards" fill only, so the hover transform works once the entrance has finished */
+.sc-core-values--js.is-inview .sc-core-values__item {
+  -webkit-animation: scCvFadeUp 0.7s var(--sc-cv-ease) backwards;
+          animation: scCvFadeUp 0.7s var(--sc-cv-ease) backwards;
+  -webkit-animation-delay: calc(320ms + var(--sc-cv-i, 0) * 90ms);
+          animation-delay: calc(320ms + var(--sc-cv-i, 0) * 90ms);
+}
+@keyframes scCvFadeUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 24px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes scCvLine {
+  from {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+  to {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+@keyframes scCvAccent {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
 }
 
 /* ============ Responsive ============ */
 @media (max-width: 1199.98px) {
-  .mission-vision-values .core-values-panel {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 36px;
-    padding: 44px 40px;
+  .sc-core-values__grid {
+    gap: 20px;
   }
-  .mission-vision-values .core-values-panel .cvp-intro {
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 26px;
-    padding: 0 0 32px;
-    margin: 0;
-    border-right: 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  .sc-core-values__item {
+    padding: 28px 24px 26px;
   }
-  .mission-vision-values .core-values-panel .cvp-intro .mvv-icon {
-    flex: 0 0 64px;
-  }
-  .mission-vision-values .core-values-panel .cvp-intro__lead {
-    max-width: 640px;
+  .sc-core-values__num {
+    right: 24px;
   }
 }
 @media (max-width: 991.98px) {
-  .mission-vision-values .core-values-panel .cvp-grid {
+  .sc-core-values {
+    padding-bottom: 90px;
+  }
+  .sc-core-values::before {
+    top: 90px;
+  }
+  .sc-core-values__title {
+    font-size: 36px;
+  }
+  .sc-core-values__lead {
+    font-size: 16px;
+  }
+  .sc-core-values__grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-top: 44px;
   }
 }
-@media (max-width: 767.98px) {
-  .mission-vision-values .core-values-panel {
-    gap: 28px;
-    padding: 34px 22px;
+@media (max-width: 575.98px) {
+  .sc-core-values {
+    padding-bottom: 70px;
   }
-  .mission-vision-values .core-values-panel .cvp-intro {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 18px;
-    padding-bottom: 26px;
+  .sc-core-values__title {
+    font-size: 32px;
   }
-  .mission-vision-values .core-values-panel .cvp-intro .mvv-icon {
-    flex: 0 0 auto;
+  .sc-core-values__line {
+    margin-top: 18px;
   }
-  .mission-vision-values .core-values-panel .cvp-intro .mvv-title {
-    font-size: 24px;
+  .sc-core-values__lead {
+    margin-top: 18px;
+    font-size: 15px;
   }
-  .mission-vision-values .core-values-panel .cvp-grid {
+  .sc-core-values__grid {
     grid-template-columns: minmax(0, 1fr);
     grid-auto-rows: auto;
-    gap: 14px;
+    gap: 16px;
+    margin-top: 36px;
   }
-  .mission-vision-values .core-values-panel .cvp-tile__inner {
-    padding: 20px;
+  .sc-core-values__item {
+    padding: 24px 22px 22px;
+  }
+  .sc-core-values__icon {
+    width: 64px;
+    height: 64px;
+    min-width: 64px;
+    line-height: 64px;
+    margin-bottom: 18px;
+    font-size: 26px;
+  }
+  .sc-core-values__num {
+    top: 24px;
+    right: 22px;
+  }
+  .sc-core-values__item-title {
+    font-size: 19px;
   }
 }
 
-/* ============ Reduced motion: no lift, colour/border changes only ============ */
+/* ============ Reduced motion: no movement, colour/border changes only ============ */
 @media (prefers-reduced-motion: reduce) {
-  .mission-vision-values .core-values-panel .cvp-tile__inner,
-  .mission-vision-values .core-values-panel .cvp-tile__inner::before,
-  .mission-vision-values .core-values-panel .cvp-tile__inner i,
-  .mission-vision-values .core-values-panel .cvp-tile__num {
-    transition: none;
+  .sc-core-values__head > *,
+  .sc-core-values__item,
+  .sc-core-values__item::before {
+    opacity: 1 !important;
+    -webkit-animation: none !important;
+            animation: none !important;
   }
-  .mission-vision-values .core-values-panel .cvp-tile:hover .cvp-tile__inner,
-  .mission-vision-values .core-values-panel .cvp-tile:focus-within .cvp-tile__inner {
+  .sc-core-values__item,
+  .sc-core-values__item::before {
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+  }
+  .sc-core-values__item:hover,
+  .sc-core-values__item:focus-within {
     -webkit-transform: none;
             transform: none;
   }
+}
+
+@keyframes aboutRingPulse {
+  0%   { transform: scale(1);    opacity: 0.45; }
+  100% { transform: scale(1.35); opacity: 0; }
 }

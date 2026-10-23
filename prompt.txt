@@ -1,108 +1,155 @@
-# TASK: Redesign ONLY the "Our Core Values" panel on the Seasol Maritime homepage(s)
+# Redesign the Core Values Section — Seasol Maritime India Pvt. Ltd.
 
-**Project directory:** `D:\xampp\htdocs\naman\transend1-php`
+Act as an expert UI/UX designer and front-end animation developer. Inspect my existing website and redesign ONLY the Core Values section to match the existing Mission & Vision section's light, clean, premium corporate design.
 
-The "Our Core Values" panel currently sits under the "Mission, Vision & Values" block (year-founded badge + image collage + Our Mission / Our Vision cards). It is a dark-navy rounded panel with a diamond icon + "Our Core Values" title on the left and six plain tiles on the right (Reliability, Integrity, Expertise, Precision, Partnership, Service Excellence). Each tile is only an icon + a label, so it feels flat and unfinished next to the polished Mission/Vision cards.
+IMPORTANT: **Do NOT make this section dark. Do NOT use a dark navy background.** My website uses a white background, dark navy headings, and electric-blue accents. The Core Values section must blend naturally with this theme.
 
-**Goal:** make this one panel look premium, modern and on-theme, and make it fit perfectly with the Mission/Vision block above it.
+## 1. Inspect the existing design first
 
-**Hard rule:** I have had unwanted redesigns before. Change **only** the Core Values panel. Do not touch the year-founded badge, the image collage, the Our Mission / Our Vision cards, the heading, header, footer, or any other section. Stop when the panel is done.
+Before coding:
+- Inspect the current Mission & Vision section and the existing Core Values section.
+- Identify the project's framework, CSS files, layout conventions, typography, available icons, and current animation setup.
+- Match the existing site's font family, heading styles, blue accents, container width, and spacing.
+- Make changes directly in the existing project and preserve the rest of the website.
 
----
+## 2. Visual direction: premium light corporate UI
 
-## PHASE 1 — INSPECT (before editing anything)
+Create a single cohesive section titled **“Our Core Values”** that visually complements the white-background Mission & Vision section.
 
-1. Find every page that contains the Core Values panel (search for `Core Values`, `Reliability`, `Service Excellence` across `*.html`/`*.php`). Expected: `index-2.html`, `index-2-single.html`, `index-2-dark.html`, possibly an About page. List them.
-2. Open the panel's markup and identify its wrapper class, the left title block, the tile grid, the tile classes, the icon classes (which icon library/font each of the six icons uses) and where the section actually ends. **The panel continues below the visible second row of tiles — check what is there (bottom padding, extra content, a closing strip) and preserve it.**
-3. Find the CSS that currently styles it (file + selectors) and the theme variables for navy, Seasol blue, text and border colours. Note how the **dark** variant overrides them.
-4. Identify the existing scroll-reveal mechanism (WOW/AOS/GSAP/IntersectionObserver/custom) and the animation classes used by the Mission/Vision cards, so the panel's entrance matches.
-5. Note the breakpoints the theme uses, and `git status` (preserve uncommitted work).
+Use this color palette:
+- Main background: pure white #FFFFFF or very light grey #F7F9FC.
+- Headings: deep corporate navy #092B53.
+- Primary accent: electric blue #0866F5.
+- Secondary accent: soft blue #EAF2FF.
+- Body text: muted slate #58677B.
+- Card borders: subtle blue-grey #E0E8F4.
+- Shadows: very soft, light grey-blue shadows.
 
-Give me a short findings summary (≤12 lines), then implement.
+Use navy and blue selectively. The overall appearance must remain bright, spacious, elegant, and professional.
 
----
+Avoid:
+- Dark navy section backgrounds.
+- Black or dark cards.
+- Heavy blue gradients covering the entire section.
+- Excessive glassmorphism, neon glow, or thick borders.
+- Oversized icons, unnecessary illustrations, and excessive decorative elements.
 
-## PHASE 2 — FILE STRATEGY
+## 3. Build one unified section
 
-- Create a **new stylesheet**: `<existing-css-folder>/seasol-core-values.css`, linked after the theme's main CSS on each affected page, using the same link/version convention as the others.
-- All new selectors must be **scoped under the panel's real wrapper class** (add one extra hook class such as `.core-values-panel` to the existing wrapper if needed). No global/element selectors, no `*`, no `body`.
-- Reuse existing theme variables, fonts, container and animation classes. Fall back to hard-coded values only as a variable fallback, e.g. `var(--theme-blue, #0b5ed7)`.
-- Prefer overriding through the new scoped file. Do **not** edit or delete the old core-values rules in shared CSS unless an override is truly impossible; if you must, report exactly what and why.
-- If a tiny script is needed (it probably isn't), keep it scoped in a new file; otherwise use the existing reveal library or pure CSS.
+Create a clean, centered layout with:
 
----
+Eyebrow:
+WHAT GUIDES US
 
-## PHASE 3 — DESIGN SPEC
+Main heading:
+Our Core Values
 
-Keep the navy rounded panel, same width as the Mission/Vision block above (the screenshot shows it spans the same container, ~1220px) and the existing icon style. Elevate it:
+Subtitle:
+“The principles that guide every shipment, strengthen every partnership, and shape the way we serve our clients across CIS markets.”
 
-**Panel**
-- Keep the deep-navy base. Add depth with a subtle layered treatment already hinted by the diagonal sheen: a soft diagonal light band and/or a very faint dot or line-grid pattern at ~4–6% opacity, plus a faint blue radial glow in one corner. Pure CSS (gradients/pseudo-elements); no new images.
-- Consistent inner padding (~48–56px desktop), same corner radius as the Mission/Vision cards.
+Add a thin electric-blue accent line beneath the heading or eyebrow.
 
-**Left intro column (≈ 28–32% width)**
-- Keep the diamond icon in its blue circle; give it a thin outer ring for polish.
-- Eyebrow above the title in the theme's eyebrow style: `WHAT GUIDES US`.
-- Title "Our Core Values" in the same heading font; keep the short blue underline accent.
-- Add one concise supporting line beneath: *"The principles behind how we move cargo and build relationships across CIS markets."*
-- Optional: small "06" count or a short vertical divider between the intro column and the grid. Keep it quiet.
+Keep the content within the site's existing maximum-width container. Use comfortable vertical spacing and ensure the section sits naturally between the surrounding website sections.
 
-**Value tiles (3×2 grid, equal height, 16–20px gap)**
-- Upgrade each tile from "icon + label" to a proper card, still dark and glassy: slightly lighter navy fill (`rgba(255,255,255,0.04–0.06)`), 1px border `rgba(255,255,255,0.10)`, radius ≈ 10–12px.
-- Contents per tile (top to bottom): icon in the existing blue circle (keep the six current icons, just re-seat them), a small index number `01`–`06` in the top-right at low opacity, the value name (bold, white), and a one-line description in muted light-blue/grey (`rgba(255,255,255,0.65)`), 13–14px, max 2 lines.
-- Hover/focus (and `:focus-within`): tile lifts 3–4px, border turns Seasol blue, a thin blue top accent line scales in from the left, the icon circle gains a soft blue glow ring, and the number brightens. Transitions 200–300ms ease. No scaling of text, no content that appears *only* on hover.
-- Tiles are not links, so don't add pointer cursors; if you make them focusable for the hover state, use `tabindex="0"` sparingly — otherwise use `:hover` only plus `:focus-within`.
+Do not create a separate dark panel or duplicate the Mission & Vision content.
 
-**Value descriptions (draft copy, derived only from the site's own mission statement, no factual claims, numbers or certifications):**
+## 4. Six animated value cards
 
-| # | Value | Description |
-|---|---|---|
-| 01 | Reliability | Dependable handling and consistent follow-through on every cargo movement. |
-| 02 | Integrity | Honest, transparent dealings with customers and partners. |
-| 03 | Expertise | Practical freight-forwarding knowledge for CIS trade. |
-| 04 | Precision | Careful planning, documentation and execution at every step. |
-| 05 | Partnership | Long-term relationships built on trust and open communication. |
-| 06 | Service Excellence | Responsive, customer-focused support from enquiry to delivery. |
+Display six consistent cards in a three-column, two-row grid on desktop.
 
-Keep the six value names exactly as they are. Flag the descriptions as **draft copy for client approval** in your report.
+Design each card with:
+- White background.
+- Rounded corners with a subtle, professional radius.
+- A thin light blue-grey border.
+- A soft shadow that does not make the card look elevated excessively.
+- A light-blue circular icon container with an electric-blue line icon.
+- A small, muted two-digit number from 01 to 06.
+- A bold navy heading.
+- A short, readable description in slate-grey text.
+- A small blue accent detail, such as a short underline or subtle left-edge indicator.
 
-**Responsive**
-- ≥1200px: intro column + 3×2 grid.
-- 768–1199px: intro column on top (title and supporting line in a row), grid becomes 3×2 or 2×3 depending on width, no cramped text.
-- <768px: stack everything; tiles go to 1 column (or 2 columns at ≥480px if descriptions still fit on 2 lines). Min 14px text, 44px+ tap-friendly spacing, no horizontal overflow.
+All six cards should have consistent padding, alignment, icon sizing, and visual hierarchy.
 
-**Dark variant (`index-2-dark.html`)**
-The panel is already dark there, so make sure it still separates from the page: slightly lighter or bordered panel edge, readable contrast (≥ 4.5:1 for body text). Implement via whatever dark-mode mechanism that page actually uses.
+Use these exact values and descriptions:
 
----
+**01 — Reliability**
+“Dependable handling and consistent follow-through on every cargo movement.”
+Icon: Shield or shield-check.
 
-## PHASE 4 — MOTION
+**02 — Integrity**
+“Honest, transparent dealings with customers and partners.”
+Icon: Scales or check-circle.
 
-- Reuse the same reveal style as the Mission/Vision cards: panel fades and rises once (~500–600ms), intro column first, then tiles in a stagger (50–70ms per tile, left-to-right then row 2).
-- Icon circles get a short fade/scale-in with their tile. The underline accent draws from 0 to full width once.
-- No looping, pulsing or parallax. No layout shift (reserve space; animate only `opacity`/`transform`).
-- Content must be fully visible if JS fails: apply any "hidden" initial state only via a class added by JS or by the existing reveal library, never in base CSS.
-- Wrap motion in `@media (prefers-reduced-motion: reduce)` → show instantly; keep only colour/border changes.
-- Do not alter any existing keyframes or animation definitions.
+**03 — Expertise**
+“Practical freight-forwarding knowledge for CIS trade.”
+Icon: Compass or award.
 
----
+**04 — Precision**
+“Careful planning, accurate documentation, and execution at every step.”
+Icon: Target or crosshair.
 
-## PHASE 5 — ACCESSIBILITY
+**05 — Partnership**
+“Long-term relationships built on trust and open communication.”
+Icon: Handshake or linked hands.
 
-- Keep a real heading (`h2`/`h3` per the page's hierarchy) for "Our Core Values"; present the tiles as a `<ul>`/list; value names as headings or strong text (not just styled `div`s).
-- Icons are decorative: `aria-hidden="true"`.
-- Maintain colour contrast; don't rely on colour alone for hover/focus; visible `:focus-visible` styles.
+**06 — Service Excellence**
+“Responsive, customer-focused support from enquiry to delivery.”
+Icon: Medal, badge-check, or headset.
 
----
+Use the icon library already installed in the project. Do not use emoji as icons or install a new dependency unnecessarily.
 
-## PHASE 6 — VERIFY & REPORT
+## 5. Smooth, refined animations
 
-1. Run `git diff --stat`: only the affected HTML files (this panel's markup + one `<link>`) and the new CSS file may differ. Show the stat.
-2. Confirm the Mission/Vision cards, collage, year badge and neighbouring sections are unchanged (compare diffs).
-3. Check at 1440 / 1024 / 768 / 390px: no overflow, equal-height tiles, no truncated or overlapping text, correct alignment with the Mission/Vision block above.
-4. Check light and dark pages, hover/focus states and reduced-motion.
-5. Only report tests you actually ran; say how (real browser / DevTools emulation / static review) and what you could not test.
+The animation should feel professional, premium, and lightweight.
 
-**Final report:** files changed/created, what was visually changed, which existing classes/variables were reused, animation and responsive behaviour, and anything needing client approval (the six draft descriptions, the "WHAT GUIDES US" eyebrow and the supporting line).
+### On scroll
+- Fade in the section heading and subtitle with a slight upward movement.
+- Reveal the six cards in a smooth staggered sequence.
+- Trigger animations when the section enters the viewport.
+- Ensure the content remains visible if JavaScript fails.
 
-**Final instruction:** improve only the Our Core Values panel with a new scoped CSS file plus existing theme styles, keep the six value names and icons, preserve everything else, and stop when done.
+### On hover
+- Move the selected card upward by approximately 3–5 pixels.
+- Slightly strengthen its light-blue border and soft shadow.
+- Transition the icon from blue to a slightly brighter blue.
+- Animate the small accent line smoothly.
+- Keep the card's white background intact.
+- Avoid aggressive scaling, rotation, flashing, or large movements.
+
+### Background details
+- Optionally add a barely visible geometric pattern or soft blue abstract shapes in the background.
+- Keep decorative elements extremely subtle and behind the content.
+- Use restrained transitions rather than a constantly moving background.
+
+Use CSS transitions and IntersectionObserver unless the project already contains an appropriate animation library such as GSAP. Respect `prefers-reduced-motion`.
+
+## 6. Responsive layout
+
+Desktop:
+- Three columns and two rows.
+- Balanced card heights and consistent spacing.
+
+Tablet:
+- Two columns, with comfortable spacing and readable descriptions.
+
+Mobile:
+- A single column by default, or two columns only when the content remains comfortably readable.
+- Reduce padding and heading sizes proportionally.
+- Prevent horizontal scrolling, overlapping content, and clipped text.
+- Keep the animations subtle and ensure the cards remain easy to read and tap.
+
+Use the existing responsive breakpoints whenever possible.
+
+## 7. Integration and quality checks
+
+- Use namespaced CSS classes following the project's existing conventions, for example `.sc-core-values`, `.sc-core-values__grid`, and `.sc-core-values__item`.
+- Do not modify global heading, card, section, or icon styles.
+- Avoid changing the navbar, hero, Mission & Vision section, footer, or other existing animations.
+- Preserve all existing website functionality.
+- Check the design on desktop, tablet, and mobile.
+- Verify that all six descriptions fit correctly, icons render properly, scroll animations trigger, and no console errors occur.
+- Check the final section alongside the Mission & Vision section to ensure that the transition between the two is visually consistent.
+
+Implement the changes in the actual project, then report the files modified and the checks completed.
+
+FINAL DESIGN GOAL: A bright, elegant white-background Core Values section with navy typography, electric-blue accents, subtle light-blue cards, soft shadows, and smooth animations. It must look like a natural continuation of the existing Seasol website, not a separate dark-themed component.

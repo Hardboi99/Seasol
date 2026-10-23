@@ -1,0 +1,345 @@
+/*
+ * Seasol Maritime - Light Corporate Theme for 3 Sections:
+ * 1. #network.fun-fact-section.style-two (Network & Coverage - Connecting India to Central Asia)
+ * 2. #services.services-section-two (Freight Forwarding Division - Our Services To Explore)
+ * 3. .work-section-two (Our Comprehensive Range - Other Services We Offer)
+ *
+ * Scoped precisely to these 3 sections. Seamlessly aligns with the website's light theme:
+ * Navy typography (#071B3A / #092B53), Electric-Blue accents (#0757E8), Soft-Blue cards & containers (#EAF2FF),
+ * Muted-Slate text (#58677B), subtle borders (#E0E8F4), and gentle shadows.
+ */
+
+/* ==========================================================================
+   1. Network & Coverage Section (.fun-fact-section.style-two / #network)
+   ========================================================================== */
+.fun-fact-section.style-two {
+  background-color: #FFFFFF !important;
+  background-image:
+    radial-gradient(rgba(7, 27, 58, 0.05) 1px, transparent 1.2px),
+    linear-gradient(180deg, #FFFFFF 0%, #F5F9FF 100%) !important;
+  background-size: 22px 22px, 100% 100% !important;
+  padding: 100px 0 40px !important;
+  position: relative;
+  border-top: 1px solid #EBF1FA;
+}
+
+.fun-fact-section.style-two .shape-11 {
+  opacity: 0.12;
+  filter: grayscale(1);
+}
+
+/* Headings */
+.fun-fact-section.style-two .sec-title .sub-title {
+  color: var(--theme-color2, #0757E8) !important;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.fun-fact-section.style-two .sec-title h2,
+.fun-fact-section.style-two .sec-title.light h2 {
+  color: var(--theme-color1, #071B3A) !important;
+  font-weight: 700;
+}
+
+/* Divider & Fun Fact Box */
+.fun-fact-section.style-two .fun-fact-box {
+  border-top: 1px solid #E0E8F4 !important;
+  padding-top: 50px !important;
+  padding-bottom: 20px !important;
+}
+
+/* Stat Cards */
+.fun-fact-section.style-two .counter-block {
+  margin-bottom: 30px;
+}
+
+.fun-fact-section.style-two .counter-block .inner {
+  background: #FFFFFF;
+  border: 1px solid #E0E8F4;
+  border-radius: 16px;
+  padding: 24px 22px;
+  box-shadow: 0 10px 25px rgba(7, 27, 58, 0.04);
+  transition: all 300ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.fun-fact-section.style-two .counter-block .inner:hover {
+  transform: translateY(-5px);
+  border-color: var(--theme-color2, #0757E8);
+  box-shadow: 0 16px 36px rgba(7, 87, 232, 0.12);
+}
+
+/* Stat Icon Circle */
+.fun-fact-section.style-two .counter-block .icon-box {
+  background-color: #EAF2FF !important;
+  border: 1px solid #D6E4FF;
+  border-radius: 50%;
+  width: 66px;
+  height: 66px;
+  margin-right: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 300ms ease;
+}
+
+.fun-fact-section.style-two .counter-block .icon-box .icon {
+  color: var(--theme-color2, #0757E8) !important;
+  font-size: 32px;
+  line-height: 1;
+  transition: all 300ms ease;
+}
+
+.fun-fact-section.style-two .counter-block .inner:hover .icon-box {
+  background-color: var(--theme-color2, #0757E8) !important;
+  border-color: var(--theme-color2, #0757E8);
+  transform: scale(1.05);
+}
+
+.fun-fact-section.style-two .counter-block .inner:hover .icon-box .icon {
+  color: #FFFFFF !important;
+}
+
+/* Stat Numbers & Label */
+.fun-fact-section.style-two .counter-block .count-box .count-text {
+  color: var(--theme-color1, #071B3A) !important;
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
+.fun-fact-section.style-two .counter-block .counter-title {
+  color: #58677B !important;
+  font-size: 15px;
+  font-weight: 500;
+  margin-top: 4px;
+}
+
+
+/* ==========================================================================
+   2. Services Section Two (.services-section-two / #services)
+   ========================================================================== */
+.services-section-two {
+  background-color: #F8FAFD !important;
+  background-image:
+    radial-gradient(rgba(7, 27, 58, 0.04) 1px, transparent 1.2px),
+    linear-gradient(180deg, #F5F9FF 0%, #FFFFFF 100%) !important;
+  background-size: 22px 22px, 100% 100% !important;
+  border-top: 1px solid #EBF1FA;
+  border-bottom: 1px solid #EBF1FA;
+  padding: 100px 0 110px !important;
+  position: relative;
+}
+
+/* Headings */
+.services-section-two .sec-title .sub-title {
+  color: var(--theme-color2, #0757E8) !important;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.services-section-two .sec-title h2,
+.services-section-two .sec-title.light h2 {
+  color: var(--theme-color1, #071B3A) !important;
+  font-weight: 700;
+}
+
+/* Navigation Controls & Progress Counter */
+.services-section-two .sst-progress {
+  color: #58677B !important;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.services-section-two .sst-btn-prev,
+.services-section-two .sst-btn-next {
+  background: #FFFFFF !important;
+  border: 1px solid #D6E4FF !important;
+  color: var(--theme-color1, #071B3A) !important;
+  box-shadow: 0 4px 12px rgba(7, 27, 58, 0.05);
+  transition: all 250ms ease !important;
+}
+
+.services-section-two .sst-btn-prev:hover:not(:disabled),
+.services-section-two .sst-btn-next:hover:not(:disabled) {
+  background: var(--theme-color2, #0757E8) !important;
+  border-color: var(--theme-color2, #0757E8) !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 6px 16px rgba(7, 87, 232, 0.3) !important;
+  transform: translateY(-2px);
+}
+
+.services-section-two .sst-btn-prev:disabled,
+.services-section-two .sst-btn-next:disabled {
+  opacity: 0.35 !important;
+  cursor: not-allowed !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+/* Service Slide Cards */
+.services-block-two .inner-box {
+  background: #FFFFFF;
+  border: 1px solid #E0E8F4;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(7, 27, 58, 0.06);
+  transition: all 350ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.services-block-two .inner-box:hover {
+  transform: translateY(-6px);
+  border-color: rgba(7, 87, 232, 0.3);
+  box-shadow: 0 20px 45px rgba(7, 87, 232, 0.16);
+}
+
+/* Hover overlay & text contrast */
+.services-block-two .inner-box:before {
+  background-color: var(--theme-color2, #0757E8) !important;
+}
+
+.services-block-two .content-box .title a {
+  color: #FFFFFF !important;
+  text-shadow: 0 2px 10px rgba(7, 27, 58, 0.6);
+  font-weight: 700;
+  transition: all 250ms ease;
+}
+
+.services-block-two .inner-box:hover .content-box .title a {
+  color: #FFFFFF !important;
+  text-shadow: none;
+}
+
+.services-block-two .inner-box:hover .content-box .text {
+  color: rgba(255, 255, 255, 0.95) !important;
+}
+
+.services-block-two .inner-box:hover .content-box .list-style-two li {
+  color: #FFFFFF !important;
+}
+
+.services-block-two .inner-box:hover .content-box .list-style-two li:before {
+  color: #FFFFFF !important;
+}
+
+.services-block-two .content-box .theme-btn.btn-style-two.dark-bg {
+  background: #FFFFFF !important;
+  color: var(--theme-color2, #0757E8) !important;
+  border: none !important;
+  font-weight: 700;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+}
+
+.services-block-two .content-box .theme-btn.btn-style-two.dark-bg:hover {
+  background: var(--theme-color1, #071B3A) !important;
+  color: #FFFFFF !important;
+}
+
+.services-block-two .content-box .theme-btn.btn-style-two.dark-bg .icon {
+  background-color: #EAF2FF !important;
+  color: var(--theme-color2, #0757E8) !important;
+}
+
+.services-block-two .content-box .theme-btn.btn-style-two.dark-bg:hover .icon {
+  background-color: var(--theme-color2, #0757E8) !important;
+  color: #FFFFFF !important;
+}
+
+
+/* ==========================================================================
+   3. Other Services We Offer (.work-section-two)
+   ========================================================================== */
+.work-section-two {
+  background-color: #FFFFFF !important;
+  background-image:
+    radial-gradient(rgba(7, 27, 58, 0.05) 1px, transparent 1.2px) !important;
+  background-size: 22px 22px !important;
+  padding: 100px 0 110px !important;
+  position: relative;
+}
+
+.work-section-two .shape-12 {
+  opacity: 0.12;
+  filter: grayscale(1);
+}
+
+/* Headings */
+.work-section-two .sec-title .sub-title {
+  color: var(--theme-color2, #0757E8) !important;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.work-section-two .sec-title h2,
+.work-section-two .sec-title.light h2 {
+  color: var(--theme-color1, #071B3A) !important;
+  font-weight: 700;
+}
+
+/* Four Circular Service Blocks */
+.work-block-two .inner-box {
+  background-color: #FFFFFF !important;
+  border: 2px solid #E0E8F4 !important;
+  box-shadow: 0 12px 35px rgba(7, 27, 58, 0.06) !important;
+  transition: all 350ms cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.work-block-two .inner-box:hover {
+  background-color: #F8FAFD !important;
+  border-color: var(--theme-color2, #0757E8) !important;
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 48px rgba(7, 87, 232, 0.16) !important;
+}
+
+/* Number badge (01, 02, 03, 04) */
+.work-block-two .inner-box .number {
+  background-color: var(--theme-color2, #0757E8) !important;
+  color: #FFFFFF !important;
+  border: 5px solid #FFFFFF !important;
+  box-shadow: 0 4px 14px rgba(7, 87, 232, 0.3) !important;
+  font-weight: 700;
+  transition: all 300ms ease;
+}
+
+.work-block-two .inner-box:hover .number {
+  transform: scale(1.08);
+  box-shadow: 0 6px 18px rgba(7, 87, 232, 0.45) !important;
+}
+
+/* Service Icon */
+.work-block-two .inner-box .icon-box .icon {
+  color: var(--theme-color2, #0757E8) !important;
+  font-size: 62px;
+  transition: all 300ms ease;
+}
+
+.work-block-two .inner-box:hover .icon-box .icon {
+  color: var(--theme-color2, #0757E8) !important;
+  filter: drop-shadow(0 4px 12px rgba(7, 87, 232, 0.35));
+}
+
+/* Service Title & Text */
+.work-block-two .inner-box .title,
+.work-block-two .inner-box .title a {
+  color: var(--theme-color1, #071B3A) !important;
+  font-weight: 700 !important;
+  font-size: 20px !important;
+  line-height: 1.35 !important;
+  transition: color 250ms ease;
+}
+
+.work-block-two .inner-box:hover .title a {
+  color: var(--theme-color2, #0757E8) !important;
+}
+
+.work-block-two .inner-box .text {
+  color: #58677B !important;
+}
+
+.work-block-two .inner-box:hover .text {
+  color: #58677B !important;
+}

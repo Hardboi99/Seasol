@@ -49,6 +49,8 @@ var THEMEMASCOT = {};
 			$('.preloader').delay(200).fadeOut(500);
 		}
 	}
+	// Failsafe: ensure preloader is dismissed within 2s even if external assets stall
+	setTimeout(handlePreloader, 2000);
 	
 	//Update Header Style and Scroll to Top
 	function headerStyle() {
@@ -374,36 +376,138 @@ var THEMEMASCOT = {};
 		});
 	}
 
-	//service-carousel Two
+	//service-carousel Two — 2 cards per view, advance by 2 per click
 	if ($('.service-two-slider').length) {
-		var swiper = new Swiper(".service-two-slider", {
-			slidesPerView: 1,
-			spaceBetween: 30,
-			navigation: {
-	      nextEl: '.swiper-button-next',
-	      prevEl: '.swiper-button-prev',
-	    },
+		var sstEl = document.querySelector('.service-two-slider');
+		var sstPrev = document.getElementById('sst-prev');
+		var sstNext = document.getElementById('sst-next');
+		var sstProgress = document.getElementById('sst-progress');
+
+		var prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+		/**
+		 * Update the progress label, button disabled states, and accessibility attributes.
+		 */
+		function sstUpdateUI(swiper) {
+			swiper = swiper || sstSwiper;
+			if (!swiper || !swiper.slides) { return; }
+
+			var total = swiper.slides.length || 0;
+			var perView = (swiper.params && swiper.params.slidesPerView === 'auto')
+				? 2
+				: parseInt(swiper.params && swiper.params.slidesPerView, 10) || 1;
+			var first = (swiper.activeIndex || 0) + 1;
+			var last  = Math.min((swiper.activeIndex || 0) + perView, total);
+			var pad   = function(n) { return n < 10 ? '0' + n : '' + n; };
+
+			if (sstProgress && total > 0) {
+				var label = (first === last)
+					? pad(first)
+					: (pad(first) + '\u2013' + pad(last));
+				sstProgress.textContent = label + '\u00a0/\u00a0' + pad(total);
+			}
+			if (sstPrev) { sstPrev.disabled = !!swiper.isBeginning; }
+			if (sstNext) { sstNext.disabled = !!swiper.isEnd; }
+
+			// Accessible focus management: disable tab focus inside off-screen slides
+			var start = swiper.activeIndex || 0;
+			var end = start + perView;
+			for (var i = 0; i < total; i++) {
+				var slide = swiper.slides[i];
+				if (!slide) { continue; }
+				var isVisible = (i >= start && i < end);
+				slide.setAttribute('aria-hidden', isVisible ? 'false' : 'true');
+				var focusables = slide.querySelectorAll ? slide.querySelectorAll('a, button, [tabindex]') : [];
+				for (var j = 0; j < focusables.length; j++) {
+					if (isVisible) {
+						focusables[j].removeAttribute('tabindex');
+					} else {
+						focusables[j].setAttribute('tabindex', '-1');
+					}
+				}
+			}
+		}
+
+		var sstSwiper = new Swiper('.service-two-slider', {
+			slidesPerView: 2,
+			slidesPerGroup: 2,
+			spaceBetween: 28,
+			speed: prefersReducedMotion ? 0 : 600,
+			cssEase: 'cubic-bezier(0.22, 1, 0.36, 1)',
+			watchOverflow: true,
+			// No built-in swiper nav — driven via custom accessible buttons below
 			breakpoints: {
-				320: {
+				// 0 – 767 px: one card at a time
+				0: {
 					slidesPerView: 1,
+					slidesPerGroup: 1,
+					spaceBetween: 16,
 				},
-				576: {
-					slidesPerView: 1,
-				},
+				// 768 px and up: exactly two cards
 				768: {
 					slidesPerView: 2,
+					slidesPerGroup: 2,
+					spaceBetween: 28,
 				},
-				992: {
-					slidesPerView: 2,
-				},
-				1023: {
-					slidesPerView: 3,
-				},
-				1400: {
-					slidesPerView: 3,
+			},
+			on: {
+				init: function() { sstUpdateUI(this); },
+				slideChange: function() { sstUpdateUI(this); },
+				resize: function() {
+					var perView = parseInt(this.params && this.params.slidesPerView, 10) || 1;
+					if (perView === 2 && this.activeIndex % 2 !== 0) {
+						this.slideTo(this.activeIndex - 1, 0);
+					}
+					sstUpdateUI(this);
 				},
 			},
 		});
+
+		// Initial UI sync
+		sstUpdateUI(sstSwiper);
+
+		// Dynamic prefers-reduced-motion listener
+		if (window.matchMedia) {
+			var motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+			if (motionQuery.addEventListener) {
+				motionQuery.addEventListener('change', function(e) {
+					sstSwiper.params.speed = e.matches ? 0 : 600;
+				});
+			}
+		}
+
+		// Keyboard navigation on carousel container
+		if (sstEl) {
+			sstEl.setAttribute('tabindex', '0');
+			sstEl.setAttribute('role', 'region');
+			sstEl.setAttribute('aria-roledescription', 'carousel');
+			sstEl.setAttribute('aria-label', 'Freight Forwarding Services');
+			sstEl.addEventListener('keydown', function(e) {
+				if (e.key === 'ArrowLeft') {
+					e.preventDefault();
+					if (!sstSwiper.animating && !sstSwiper.isBeginning) { sstSwiper.slidePrev(); }
+				} else if (e.key === 'ArrowRight') {
+					e.preventDefault();
+					if (!sstSwiper.animating && !sstSwiper.isEnd) { sstSwiper.slideNext(); }
+				}
+			});
+		}
+
+		// Wire up custom nav buttons with debounce protection
+		if (sstPrev) {
+			sstPrev.addEventListener('click', function() {
+				if (!sstSwiper.animating && !sstSwiper.isBeginning) {
+					sstSwiper.slidePrev();
+				}
+			});
+		}
+		if (sstNext) {
+			sstNext.addEventListener('click', function() {
+				if (!sstSwiper.animating && !sstSwiper.isEnd) {
+					sstSwiper.slideNext();
+				}
+			});
+		}
 	}
 
 	//team-carousel
