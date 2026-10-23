@@ -4,11 +4,86 @@
  */
 
 /* ==========================================================================
-   1. Header Top Bar (Hidden / Removed as requested)
+   1. Header Top Bar - Seasol top information bar
    ========================================================================== */
-.header-style-two .header-top,
-.header-top {
-  display: none !important;
+.header-style-two .header-top {
+  background: linear-gradient(90deg, #04122b 0%, #071B3A 45%, #0a2a5e 100%) !important;
+  padding: 0 !important;
+  border-bottom: 2px solid transparent !important;
+  border-image: linear-gradient(90deg, #0757E8, #3fa9ff 50%, #0757E8) 1 !important;
+}
+.header-style-two .header-top .inner-container {
+  background: transparent !important;
+  padding: 0 !important;
+  min-height: 42px;
+  gap: 24px;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+}
+.header-style-two .header-top .top-tagline {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: rgba(255, 255, 255, .88);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: .02em;
+}
+.header-style-two .header-top .top-tagline i {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #0757E8;
+  color: #fff;
+  font-size: 11px;
+  box-shadow: 0 0 0 3px rgba(63, 169, 255, .22);
+}
+.header-style-two .header-top .top-right {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  padding: 0;
+  margin: 0;
+}
+.header-style-two .header-top .top-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255, 255, 255, .85);
+  font-size: 13px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+.header-style-two .header-top .top-item i {
+  color: #3fa9ff;
+  font-size: 12px;
+}
+.header-style-two .header-top .top-item a {
+  color: inherit;
+  transition: color 250ms ease;
+}
+.header-style-two .header-top .top-item a:hover,
+.header-style-two .header-top .top-item a:focus-visible {
+  color: #3fa9ff;
+}
+.header-style-two .header-top .top-divider {
+  width: 1px;
+  height: 16px;
+  margin: 0 18px;
+  background: rgba(255, 255, 255, .22);
+}
+@media (max-width: 1199.98px) {
+  .header-style-two .header-top .top-tagline { font-size: 12px; }
+  .header-style-two .header-top .top-item { font-size: 12px; }
+  .header-style-two .header-top .top-divider { margin: 0 12px; }
+}
+@media (max-width: 767.98px) {
+  .header-style-two .header-top .top-tagline { display: none; }
+  .header-style-two .header-top .inner-container { justify-content: center !important; min-height: 38px; }
 }
 
 /* ==========================================================================
@@ -524,17 +599,27 @@
 
 .main-footer .footer-bottom .copyright-right {
   display: flex !important;
-  gap: 20px !important;
+  align-items: center !important;
+}
+
+.main-footer .footer-bottom .copyright-right p {
+  color: rgba(255, 255, 255, 0.7) !important;
+  font-size: 13.5px !important;
+  margin: 0 !important;
 }
 
 .main-footer .footer-bottom .copyright-right a {
-  color: rgba(255, 255, 255, 0.7) !important;
+  color: #0AA5D6 !important;
   font-size: 13.5px !important;
-  transition: color 0.25s ease !important;
+  font-weight: 600 !important;
+  margin-left: 4px !important;
+  text-decoration: none !important;
+  transition: all 0.25s ease !important;
 }
 
 .main-footer .footer-bottom .copyright-right a:hover {
-  color: #0AA5D6 !important;
+  color: #FF9A1F !important;
+  text-decoration: underline !important;
 }
 
 /* ==========================================================================
@@ -920,3 +1005,242 @@
   }
 }
 
+
+/* ==========================================================================
+   Dropdown arrows - small circular chevrons that flip and fill on hover
+   ========================================================================== */
+.header-style-two .header-lower .navigation > li.dropdown > a::after,
+.sticky-header .navigation > li.dropdown > a::after {
+  content: "\f107" !important;
+  font-family: "Font Awesome 6 Pro", "Font Awesome 5 Free", "FontAwesome" !important;
+  font-weight: 900 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 18px !important;
+  height: 18px !important;
+  margin-left: 8px !important;
+  border-radius: 50% !important;
+  background: rgba(7, 87, 232, .1) !important;
+  color: #0757E8 !important;
+  font-size: 10px !important;
+  line-height: 1 !important;
+  padding-top: 1px !important;
+  position: static !important;
+  transition: transform .3s cubic-bezier(.16, 1, .3, 1), background .25s ease, color .25s ease, box-shadow .25s ease !important;
+}
+.header-style-two .header-lower .navigation > li.dropdown:hover > a::after,
+.sticky-header .navigation > li.dropdown:hover > a::after {
+  background: #0757E8 !important;
+  color: #fff !important;
+  transform: rotate(180deg) !important;
+  box-shadow: 0 3px 8px rgba(7, 87, 232, .35) !important;
+}
+/* nested (right-pointing) arrows inside dropdown cards */
+.header-style-two .header-lower .navigation > li > ul > li.dropdown > a::after {
+  content: "\f105" !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 20px !important;
+  height: 20px !important;
+  border-radius: 50% !important;
+  background: rgba(7, 87, 232, .1) !important;
+  color: #0757E8 !important;
+  font-size: 11px !important;
+  padding: 0 !important;
+}
+.header-style-two .header-lower .navigation > li > ul > li.dropdown:hover > a::after {
+  background: #0757E8 !important;
+  color: #fff !important;
+  transform: translateX(3px) !important;
+}
+
+/* reset template offsets that lifted the arrows above the text baseline */
+.header-style-two .header-lower .navigation > li.dropdown > a::after,
+.sticky-header .navigation > li.dropdown > a::after {
+  top: auto !important;
+  right: auto !important;
+  margin-top: 0 !important;
+  transform: none !important;
+}
+.header-style-two .header-lower .navigation > li.dropdown:hover > a::after,
+.sticky-header .navigation > li.dropdown:hover > a::after {
+  transform: rotate(180deg) !important;
+}
+
+/* ==========================================================================
+   Desktop navbar v2 - underline links, animated dropdown cards, tidy chevrons
+   ========================================================================== */
+@media (min-width: 1200px) {
+  :is(.header-style-two .header-lower, .sticky-header) .navigation {
+    display: flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+  }
+
+  :is(.header-style-two .header-lower, .sticky-header) .navigation > li {
+    margin: 0 !important;
+    padding: 28px 14px !important;
+    display: flex !important;
+    align-items: center !important;
+    position: relative !important;
+  }
+
+  /* the bottom bar from the old style is replaced by a text underline */
+  :is(.header-style-two .header-lower, .sticky-header) .navigation > li::after,
+  :is(.header-style-two .header-lower, .sticky-header) .navigation > li::before {
+    display: none !important;
+  }
+
+  :is(.header-style-two .header-lower, .sticky-header) .navigation > li > a {
+    position: relative !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 7px !important;
+    margin: 0 !important;
+    padding: 4px 0 !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    line-height: 24px !important;
+    text-transform: none !important;
+    color: var(--sea-navy, #0B2A6F) !important;
+  }
+
+  /* animated underline that grows from the left under the label */
+  :is(.header-style-two .header-lower, .sticky-header) .navigation > li > a::before {
+    content: "" !important;
+    display: block !important;
+    position: absolute !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: -4px !important;
+    height: 2px !important;
+    border-radius: 2px !important;
+    background: #0757E8 !important;
+    transform: scaleX(0) !important;
+    transform-origin: left center !important;
+    transition: transform .35s cubic-bezier(.16, 1, .3, 1) !important;
+  }
+  :is(.header-style-two .header-lower, .sticky-header) .navigation > li:hover > a::before,
+  :is(.header-style-two .header-lower, .sticky-header) .navigation > li:focus-within > a::before,
+  :is(.header-style-two .header-lower, .sticky-header) .navigation > li.current > a::before {
+    transform: scaleX(1) !important;
+  }
+  :is(.header-style-two .header-lower, .sticky-header) .navigation > li:hover > a,
+  :is(.header-style-two .header-lower, .sticky-header) .navigation > li:focus-within > a,
+  :is(.header-style-two .header-lower, .sticky-header) .navigation > li.current > a {
+    color: #0757E8 !important;
+  }
+
+  /* chevron: plain, inline, flips up while the menu is open */
+  :is(.header-style-two .header-lower, .sticky-header) .navigation > li.dropdown > a {
+    margin-right: 0 !important;
+    padding-right: 0 !important;
+  }
+  :is(.header-style-two .header-lower, .sticky-header) .navigation > li.dropdown > a::after {
+    content: "\f078" !important;
+    font-family: "Font Awesome 6 Pro", "Font Awesome 5 Free", "FontAwesome" !important;
+    font-weight: 900 !important;
+    font-size: 9px !important;
+    line-height: 1 !important;
+    width: auto !important;
+    height: auto !important;
+    margin: 1px 0 0 !important;
+    padding: 0 !important;
+    position: static !important;
+    display: inline-block !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    color: currentColor !important;
+    transform: none !important;
+    transition: transform .3s cubic-bezier(.16, 1, .3, 1) !important;
+  }
+  :is(.header-style-two .header-lower, .sticky-header) .navigation > li.dropdown:hover > a::after,
+  :is(.header-style-two .header-lower, .sticky-header) .navigation > li.dropdown:focus-within > a::after {
+    background: transparent !important;
+    box-shadow: none !important;
+    color: #0757E8 !important;
+    transform: rotate(180deg) !important;
+  }
+
+  /* dropdown card */
+  :is(.header-style-two .header-lower, .sticky-header) .navigation > li > ul {
+    display: block !important;
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    width: auto !important;
+    min-width: 250px !important;
+    margin: 0 !important;
+    padding: 10px 0 12px !important;
+    background: #fff !important;
+    border: 0 !important;
+    border-top: 3px solid #0757E8 !important;
+    border-radius: 0 0 16px 16px !important;
+    box-shadow: 0 22px 48px rgba(11, 42, 111, .18) !important;
+    overflow: hidden !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    transform: translateY(14px) !important;
+    transition: opacity .28s ease, transform .35s cubic-bezier(.16, 1, .3, 1), visibility 0s linear .35s !important;
+    z-index: 110 !important;
+  }
+  :is(.header-style-two .header-lower, .sticky-header) .navigation > li.dropdown:hover > ul,
+  :is(.header-style-two .header-lower, .sticky-header) .navigation > li.dropdown:focus-within > ul {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    transform: translateY(0) !important;
+    transition: opacity .28s ease, transform .35s cubic-bezier(.16, 1, .3, 1), visibility 0s !important;
+  }
+
+  :is(.header-style-two .header-lower, .sticky-header) .navigation > li > ul > li {
+    border: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    opacity: 0;
+    transform: translateX(-8px);
+    transition: opacity .3s ease, transform .35s cubic-bezier(.16, 1, .3, 1);
+  }
+  :is(.header-style-two .header-lower, .sticky-header) .navigation > li.dropdown:hover > ul > li,
+  :is(.header-style-two .header-lower, .sticky-header) .navigation > li.dropdown:focus-within > ul > li {
+    opacity: 1;
+    transform: none;
+  }
+  /* staggered item reveal */
+  .navigation > li.dropdown:hover > ul > li:nth-child(1) { transition-delay: .04s; }
+  .navigation > li.dropdown:hover > ul > li:nth-child(2) { transition-delay: .08s; }
+  .navigation > li.dropdown:hover > ul > li:nth-child(3) { transition-delay: .12s; }
+  .navigation > li.dropdown:hover > ul > li:nth-child(4) { transition-delay: .16s; }
+  .navigation > li.dropdown:hover > ul > li:nth-child(5) { transition-delay: .20s; }
+  .navigation > li.dropdown:hover > ul > li:nth-child(6) { transition-delay: .24s; }
+
+  :is(.header-style-two .header-lower, .sticky-header) .navigation > li > ul > li > a {
+    display: block !important;
+    margin: 0 !important;
+    padding: 11px 28px !important;
+    font-size: 15.5px !important;
+    font-weight: 500 !important;
+    line-height: 24px !important;
+    text-transform: none !important;
+    white-space: nowrap !important;
+    color: var(--sea-navy, #0B2A6F) !important;
+    background: transparent !important;
+    box-shadow: inset 3px 0 0 transparent !important;
+    transition: color .22s ease, background .22s ease, padding-left .25s ease, box-shadow .22s ease !important;
+  }
+  :is(.header-style-two .header-lower, .sticky-header) .navigation > li > ul > li > a:hover,
+  :is(.header-style-two .header-lower, .sticky-header) .navigation > li > ul > li > a:focus-visible {
+    color: #0757E8 !important;
+    background: #F1F6FF !important;
+    padding-left: 34px !important;
+    box-shadow: inset 3px 0 0 #0757E8 !important;
+  }
+
+  /* the Request A Quote button lines up with the menu */
+  .header-style-two .header-lower .inner-container { align-items: center !important; }
+  .header-style-two .header-lower .main-box { margin-left: auto !important; margin-right: 24px !important; }
+}

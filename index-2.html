@@ -43,10 +43,6 @@
 			--border-theme-color1: #0B2A6F;
 		}
 
-		/* Top bar: deep corporate navy */
-		.main-header .header-top { background: #071B3A !important; }
-		.main-header .header-top, .main-header .header-top a { color: #fff; }
-
 		/* Buttons: cobalt -> cyan gradient; header quote button = amber accent */
 		.theme-btn.btn-style-one { background: linear-gradient(135deg, var(--sea-cobalt) 0%, var(--sea-cyan) 100%) !important; border-color: transparent !important; color: #fff !important; box-shadow: 0 8px 20px rgba(7, 87, 232, .25); }
 		.theme-btn.btn-style-one:hover { background: linear-gradient(135deg, var(--sea-cobalt-deep) 0%, var(--sea-cobalt) 100%) !important; }
@@ -95,32 +91,15 @@
 
 		/* ---- Navbar / sidebar / footer polish (loads after css/seasol-navbar-footer.css) ---- */
 
-		/* Top bar removed as requested */
-		.header-style-two .header-top { display: none !important; }
-
 		/* Navbar: amber quote button, cobalt hover line with amber tip */
 		.header-style-two .header-lower .outer-box .btn-style-one { background: linear-gradient(135deg, var(--sea-amber) 0%, var(--sea-amber-deep) 100%) !important; box-shadow: 0 6px 20px rgba(255, 154, 31, .35) !important; }
 		.header-style-two .header-lower .outer-box .btn-style-one:hover { background: linear-gradient(135deg, var(--sea-amber-deep) 0%, #D96E00 100%) !important; box-shadow: 0 10px 25px rgba(240, 127, 0, .45) !important; }
 		.header-style-two .header-lower .navigation > li > a { color: var(--sea-navy) !important; }
 		/* Mobile menu styling fully managed in css/seasol-navbar-footer.css */
 		.header-style-two .header-lower .grid-nav-btn .inner { background: linear-gradient(135deg, var(--sea-cobalt), var(--sea-cyan)) !important; }
-
-		/* Footer: bright brand blue (not black) with an amber/cyan top edge */
-		.main-footer { background: linear-gradient(160deg, #0A3FB8 0%, #0757E8 55%, #0A86C8 100%) !important; border-top: 4px solid var(--sea-amber); }
-		.main-footer .bg.bg-pattern-1 { background-image: none !important; }
-		.main-footer .contact-widget .footer-contact-item > div { min-width: 0; overflow-wrap: anywhere; }
-		.main-footer .widget-title::after { background: var(--sea-amber) !important; }
-		.main-footer .user-links li a, .main-footer .contact-widget .footer-contact-item a, .main-footer .address-widget .office-card p, .main-footer .footer-widget.about-widget .text { color: rgba(255, 255, 255, .9) !important; }
-		.main-footer .user-links li a:hover, .main-footer .contact-widget .footer-contact-item a:hover, .main-footer .footer-bottom .copyright-right a:hover { color: var(--sea-amber) !important; }
-		.main-footer .user-links li a i { color: var(--sea-amber); font-size: 10px; }
-		.main-footer .contact-widget .footer-contact-item i, .main-footer .address-widget .office-card h5 i { color: var(--sea-amber) !important; }
-		.main-footer .address-widget .office-card { background: rgba(255, 255, 255, .1); border: 1px solid rgba(255, 255, 255, .16); border-radius: 12px; padding: 12px 14px; }
-		.main-footer .btn-locations { color: #fff !important; background: rgba(255, 255, 255, .16); padding: 8px 14px; border-radius: 50px; }
-		.main-footer .btn-locations:hover { background: var(--sea-amber); }
-		.main-footer .footer-bottom { background: rgba(11, 42, 111, .55) !important; border-top: 1px solid rgba(255, 255, 255, .16) !important; }
-		.main-footer .footer-bottom .copyright-text p, .main-footer .footer-bottom .copyright-right a { color: rgba(255, 255, 255, .9) !important; }
 		.scroll-to-top { background: linear-gradient(135deg, var(--sea-amber), var(--sea-amber-deep)) !important; color: #fff !important; }
 	</style>
+	<link href="css/seasol-footer.css" rel="stylesheet">
 
 
 	<link rel="shortcut icon" href="images/seasol-favicon.png" type="image/png">
@@ -166,8 +145,27 @@
 				setTimeout(dismissLoader, 600);
 			})();
 		</script>
+
 		<!-- Main Header-->
 		<header class="main-header header-style-two" id="home">
+			<!-- Header Top -->
+			<div class="header-top">
+				<div class="auto-container">
+					<div class="inner-container">
+
+						<div class="top-left">
+							<div class="top-tagline"><i class="fa-solid fa-ship"></i> Freight Forwarding &amp; Maritime Logistics – India to CIS Markets</div>
+						</div>
+
+						<div class="top-right">
+							<div class="top-item"><i class="fa-solid fa-phone-volume"></i> <a href="tel:+919898286205">+91 98982 86205</a></div>
+							<div class="top-divider" aria-hidden="true"></div>
+							<div class="top-item"><i class="fa-solid fa-envelope"></i> <a href="mailto:venkat@seasolmaritime.com">venkat@seasolmaritime.com</a></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Header Top -->
 			<!-- Header Lower -->
 			<div class="header-lower">
 				<div class="auto-container">
@@ -186,52 +184,38 @@
 
 								<nav class="nav main-menu">
 									<ul class="navigation">
-										<li class="current">
-											<a href="index.html">Home</a>
-										</li>
-										<li class="dropdown"><a href="#">Pages</a>
+										<li class="current"><a href="#home">Home</a></li>
+										<li class="dropdown"><a href="#about">About Us</a>
 											<ul>
-												<li><a href="page-about.html">About</a></li>
-												<li class="dropdown"><a href="#">Projects</a>
-													<ul>
-														<li><a href="page-projects.html">Projects List</a></li>
-														<li><a href="page-project-details.html">Project Details</a></li>
-													</ul>
-												</li>
-												<li class="dropdown"><a href="#">Team</a>
-													<ul>
-														<li><a href="page-team.html">Team List</a></li>
-														<li><a href="page-team-details.html">Team Details</a></li>
-													</ul>
-												</li>
-												<li><a href="page-testimonial.html">Testimonial</a></li>
-												<li><a href="page-pricing.html">Pricing</a></li>
-												<li><a href="page-faq.html">FAQ</a></li>
-												<li><a href="page-404.html">Page 404</a></li>
+												<li><a href="#about">Our Company</a></li>
+												<li><a href="#team">Our Team</a></li>
+												<li><a href="#core-values">Core Values</a></li>
 											</ul>
 										</li>
-										<li class="dropdown"><a href="#">Services</a>
+										<li class="dropdown"><a href="#services">Services</a>
 											<ul>
-												<li><a href="page-services.html">Service List</a></li>
-												<li><a href="page-service-details.html">Service Details</a></li>
+												<li><a href="ocean-freight.html">Ocean Freight</a></li>
+												<li><a href="air-freight.html">Air Freight</a></li>
+												<li><a href="#services">Road Freight</a></li>
+												<li><a href="#services">Rail Freight</a></li>
+												<li><a href="#services">Customs Clearance</a></li>
+												<li><a href="#services">Warehousing and Distribution</a></li>
 											</ul>
 										</li>
-										<li class="dropdown"><a href="#">Blog</a>
+										<li class="dropdown"><a href="#network">Network &amp; Coverage</a>
 											<ul>
-												<li><a href="news-grid.html">News Grid</a></li>
-												<li><a href="news-details.html">News Details</a></li>
+												<li><a href="#india-offices">India</a></li>
+												<li><a href="#cis-gateway">CIS Countries</a></li>
+												<li><a href="#network">International Network</a></li>
 											</ul>
 										</li>
-										<li class="dropdown"><a href="#">Shop</a>
+										<li class="dropdown"><a href="#customers">Customers</a>
 											<ul>
-												<li><a href="shop-products.html">Products</a></li>
-												<li><a href="shop-products-sidebar.html">Products with Sidebar</a></li>
-												<li><a href="shop-product-details.html">Product Details</a></li>
-												<li><a href="shop-cart.html">Cart</a></li>
-												<li><a href="shop-checkout.html">Checkout</a></li>
+												<li><a href="#customers">Customer Industries</a></li>
+												<li><a href="#customers">Partners</a></li>
 											</ul>
 										</li>
-										<li><a href="page-contact.html">Contact</a></li>
+										<li><a href="#contact">Contact</a></li>
 									</ul>
 								</nav>
 								<!-- Main Menu End-->
@@ -641,11 +625,11 @@
 								<div class="services-block-two">
 									<div class="inner-box">
 										<div class="image-box">
-											<figure class="image mb-0"><a href="#contact"><img
+											<figure class="image mb-0"><a href="air-freight.html"><img
 													src="images/warehouse_foreman_in_safety_gear_390x380/airliner_container_canyon_550x345.png" alt="Cargo aircraft taking off"></a></figure>
 										</div>
 										<div class="content-box">
-											<h4 class="title"><a href="#contact">Air Freight</a></h4>
+											<h4 class="title"><a href="air-freight.html">Air Freight</a></h4>
 											<div class="text">Air cargo forwarding for time-sensitive shipments.</div>
 											<ul class="list-style-two">
 												<li>Air Exports</li>
@@ -665,11 +649,11 @@
 								<div class="services-block-two">
 									<div class="inner-box">
 										<div class="image-box">
-											<figure class="image mb-0"><a href="#contact"><img
+											<figure class="image mb-0"><a href="ocean-freight.html"><img
 													src="images/warehouse_foreman_in_safety_gear_390x380/container_ship_550x345.png" alt="Container ship at sea near a port"></a></figure>
 										</div>
 										<div class="content-box">
-											<h4 class="title"><a href="#contact">Ocean Freight</a></h4>
+											<h4 class="title"><a href="ocean-freight.html">Ocean Freight</a></h4>
 											<div class="text">Sea freight forwarding through international ports.</div>
 											<ul class="list-style-two">
 												<li>Ocean Exports</li>
@@ -916,7 +900,6 @@
 				<div class="sc-core-values__head">
 					<span class="sc-core-values__eyebrow">What Guides Us</span>
 					<h2 class="sc-core-values__title" id="sc-core-values-title">Our Core Values</h2>
-					<span class="sc-core-values__line" aria-hidden="true"></span>
 					<p class="sc-core-values__lead">The principles that guide every shipment, strengthen every partnership, and shape the way we serve our clients across CIS markets.</p>
 				</div>
 				<ul class="sc-core-values__grid">
@@ -1836,7 +1819,7 @@
 							</div>
 							<div class="experience bounce-y">
 								<div class="inner">
-									<figure class="image overlay-anim"><img src="images/resource/experience-1.jpg" alt=""></figure>
+									<figure class="image overlay-anim"><img src="images/warehouse_foreman_in_safety_gear_390x380/indian_warehouse_team_clean_115x104_web.png" alt=""></figure>
 									<div class="content">
 										<strong>1.5M</strong>
 										<div class="text">Happy Client’s</div>
@@ -1852,78 +1835,99 @@
 
 		<!--End Valued Customers Slider -->
 		<!-- Main Footer -->
-		<footer class="main-footer" id="contact">
-			<div class="bg bg-pattern-1"></div>
+		<footer class="main-footer seasol-footer" id="contact">
 
-			<!--Widgets Section-->
-			<div class="widgets-section">
+			<!-- CTA band -->
+			<div class="auto-container">
+				<div class="sf-cta">
+					<div class="sf-cta__text">
+						<span class="sf-cta__eyebrow">Get a free quote</span>
+						<h3>Ready to move your cargo from India to CIS markets?</h3>
+						<p>Tell us your route and cargo &ndash; our team replies with a tailored freight plan.</p>
+					</div>
+					<div class="sf-cta__actions">
+						<a class="sf-btn sf-btn--amber" href="mailto:venkat@seasolmaritime.com?subject=Quote%20request"><i class="fa-solid fa-paper-plane"></i> Request A Quote</a>
+						<a class="sf-btn sf-btn--ghost" href="tel:+919898286205"><i class="fa-solid fa-phone-volume"></i> +91 98982 86205</a>
+					</div>
+				</div>
+			</div>
+
+			<!-- Link columns -->
+			<div class="sf-main">
 				<div class="auto-container">
-					<div class="row">
+					<div class="sf-grid">
 
-						<!--Footer Column: About & Logo-->
-						<div class="footer-column col-xl-4 col-lg-4 col-md-6 col-sm-12">
-							<div class="footer-widget about-widget">
-								<div class="logo"><a href="#home"><img src="images/Seasol Maritime Logo.png"
-											alt="Seasol Maritime India Pvt. Ltd."></a></div>
-								<div class="text">Seasol Maritime India Pvt. Ltd. provides comprehensive freight forwarding and maritime logistics – air &amp; ocean freight, breakbulk, NVOCC, ISO tanks, and contract logistics connecting India to Central Asia &amp; CIS trade corridors.</div>
-							</div>
+						<div class="sf-col sf-about">
+							<a class="sf-logo" href="#home"><img src="images/Seasol Maritime Logo.png" alt="Seasol Maritime India Pvt. Ltd."></a>
+							<p>Seasol Maritime India Pvt. Ltd. provides comprehensive freight forwarding and maritime logistics &ndash; air &amp; ocean freight, breakbulk, NVOCC, ISO tanks and contract logistics connecting India to Central Asia &amp; CIS trade corridors.</p>
+							<ul class="sf-social" aria-label="Social media">
+								<li><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+								<li><a href="#" aria-label="X"><i class="fa fa-x"></i></a></li>
+								<li><a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a></li>
+								<li><a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a></li>
+							</ul>
 						</div>
 
-						<!--Footer Column: Quick Links-->
-						<div class="footer-column col-xl-2 col-lg-2 col-md-6 col-sm-6">
-							<div class="footer-widget company-widget">
-								<h3 class="widget-title">Quick Links</h3>
-								<ul class="user-links">
-									<li><a href="#about"><i class="fa-solid fa-chevron-right"></i> About Us</a></li>
-									<li><a href="#services"><i class="fa-solid fa-chevron-right"></i> Services</a></li>
-									<li><a href="#network"><i class="fa-solid fa-chevron-right"></i> Network</a></li>
-									<li><a href="#core-values"><i class="fa-solid fa-chevron-right"></i> Core Values</a></li>
-									<li><a href="#customers"><i class="fa-solid fa-chevron-right"></i> Customers</a></li>
-									<li><a href="#contact"><i class="fa-solid fa-chevron-right"></i> Contact Us</a></li>
-								</ul>
-							</div>
+						<div class="sf-col">
+							<h3 class="widget-title">Explore</h3>
+							<ul class="sf-links">
+								<li><a href="#home">Home</a></li>
+								<li><a href="#about">About Us</a></li>
+								<li><a href="#team">Our Team</a></li>
+								<li><a href="#core-values">Core Values</a></li>
+								<li><a href="#network">Network &amp; Coverage</a></li>
+								<li><a href="#customers">Customers</a></li>
+							</ul>
 						</div>
 
-						<!--Footer Column: Contact Details-->
-						<div class="footer-column col-xl-3 col-lg-3 col-md-6 col-sm-6">
-							<div class="footer-widget contact-widget">
-								<h3 class="widget-title">Get In Touch</h3>
-								<div class="footer-contact-item">
-									<i class="fa-solid fa-phone-volume"></i>
-									<div>
-										<a href="tel:+919898286205">+91 98982 86205</a><br>
-										<a href="tel:+919619991339">+91 96199 91339</a>
-									</div>
-								</div>
-								<div class="footer-contact-item">
-									<i class="fa-solid fa-envelope"></i>
-									<div>
-										<a href="mailto:venkat@seasolmaritime.com">venkat@seasolmaritime.com</a><br>
-										<a href="mailto:cs2@seasolmartime.com">cs2@seasolmartime.com</a>
-									</div>
-								</div>
-								<div class="footer-contact-item">
-									<i class="fa-solid fa-clock"></i>
-									<div>Mon – Sat: 9:30 AM – 6:30 PM<br>Sunday: Closed</div>
-								</div>
-							</div>
+						<div class="sf-col">
+							<h3 class="widget-title">Our Services</h3>
+							<ul class="sf-links">
+								<li><a href="ocean-freight.html">Ocean Freight</a></li>
+								<li><a href="air-freight.html">Air Freight</a></li>
+								<li><a href="#services">Road Freight</a></li>
+								<li><a href="#services">Rail Freight</a></li>
+								<li><a href="#services">Customs Clearance</a></li>
+								<li><a href="#services">Warehousing &amp; Distribution</a></li>
+							</ul>
 						</div>
 
-						<!--Footer Column: Locations-->
-						<div class="footer-column col-xl-3 col-lg-3 col-md-6 col-sm-12">
-							<div class="footer-widget address-widget">
-								<h3 class="widget-title">Our Offices</h3>
-								<div class="office-card">
-									<h5><i class="fa-solid fa-location-dot"></i> Registered Office (Gujarat)</h5>
-									<p>203, Amba Arcade, Ward 12A, Gandhidham, Kachchh, Gujarat – 370201</p>
-								</div>
-								<div class="office-card">
-									<h5><i class="fa-solid fa-building"></i> Corporate Office (Mumbai)</h5>
-									<p>404, Goodwill Infinity, Sector 12, Kharghar, Navi Mumbai – 410210</p>
-								</div>
-								<a class="btn-locations" href="#network" style="color: #0AA5D6; font-size: 13px; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; margin-top: 6px;"><i class="fa-solid fa-map-location-dot"></i> View Pan-India Network</a>
+						<div class="sf-col">
+							<h3 class="widget-title">Get In Touch</h3>
+							<ul class="sf-contact">
+								<li>
+									<span class="sf-ico"><i class="fa-solid fa-phone-volume"></i></span>
+									<div><a href="tel:+919898286205">+91 98982 86205</a><a href="tel:+919619991339">+91 96199 91339</a></div>
+								</li>
+								<li>
+									<span class="sf-ico"><i class="fa-solid fa-envelope"></i></span>
+									<div><a href="mailto:venkat@seasolmaritime.com">venkat@seasolmaritime.com</a><a href="mailto:cs2@seasolmartime.com">cs2@seasolmartime.com</a></div>
+								</li>
+								<li>
+									<span class="sf-ico"><i class="fa-solid fa-clock"></i></span>
+									<div><span>Mon &ndash; Sat: 9:30 AM &ndash; 6:30 PM</span><span>Sunday: Closed</span></div>
+								</li>
+							</ul>
+						</div>
+					</div>
+
+					<!-- Offices strip -->
+					<div class="sf-offices">
+						<div class="sf-office">
+							<span class="sf-ico"><i class="fa-solid fa-location-dot"></i></span>
+							<div>
+								<h5>Registered Office &ndash; Gujarat</h5>
+								<p>203, Amba Arcade, Ward 12A, Gandhidham, Kachchh, Gujarat &ndash; 370201</p>
 							</div>
 						</div>
+						<div class="sf-office">
+							<span class="sf-ico"><i class="fa-solid fa-building"></i></span>
+							<div>
+								<h5>Corporate Office &ndash; Mumbai</h5>
+								<p>404, Goodwill Infinity, Sector 12, Kharghar, Navi Mumbai &ndash; 410210</p>
+							</div>
+						</div>
+						<a class="sf-btn sf-btn--blue" href="#india-offices"><i class="fa-solid fa-map-location-dot"></i> View Pan-India Network</a>
 					</div>
 				</div>
 			</div>
@@ -1936,10 +1940,7 @@
 							<p>Copyright © 2026 Seasol Maritime India Pvt. Ltd. All Rights Reserved.</p>
 						</div>
 						<div class="copyright-right">
-							<a href="#home">Back to Top</a>
-							<a href="#about">About Us</a>
-							<a href="#services">Services</a>
-							<a href="#contact">Contact</a>
+							<p>Developed by <a href="https://www.hsdigitalmedia.com/" target="_blank" rel="noopener noreferrer">HS Digital Media</a></p>
 						</div>
 					</div>
 				</div>

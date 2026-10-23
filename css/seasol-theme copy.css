@@ -393,3 +393,79 @@ a:hover,
         animation: none;
     }
 }
+
+/* ==========================================================================
+   Seasol top information bar
+   ========================================================================== */
+.header-style-two .header-top {
+  background: linear-gradient(90deg, #04122b 0%, #071B3A 45%, #0a2a5e 100%);
+  padding: 0;
+  border-bottom: 2px solid transparent;
+  border-image: linear-gradient(90deg, #0757E8, #3fa9ff 50%, #0757E8) 1;
+}
+.header-style-two .header-top .inner-container {
+  background: transparent;
+  padding: 0;
+  min-height: 42px;
+  gap: 24px;
+}
+.header-style-two .header-top .top-tagline {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: rgba(255, 255, 255, .88);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: .02em;
+}
+.header-style-two .header-top .top-tagline i {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #0757E8;
+  color: #fff;
+  font-size: 11px;
+  box-shadow: 0 0 0 3px rgba(63, 169, 255, .22);
+}
+.header-style-two .header-top .top-right {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  padding: 0;
+  margin: 0;
+}
+.header-style-two .header-top .top-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255, 255, 255, .85);
+  font-size: 13px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+.header-style-two .header-top .top-item i {
+  color: #3fa9ff;
+  font-size: 12px;
+}
+.header-style-two .header-top .top-item a {
+  color: inherit;
+  transition: color 250ms ease;
+}
+.header-style-two .header-top .top-item a:hover,
+.header-style-two .header-top .top-item a:focus-visible {
+  color: #3fa9ff;
+}
+.header-style-two .header-top .top-divider {
+  width: 1px;
+  height: 16px;
+  margin: 0 18px;
+  background: rgba(255, 255, 255, .22);
+}
+@media (max-width: 1199.98px) {
+  .header-style-two .header-top .top-tagline { font-size: 12px; }
+  .header-style-two .header-top .top-item { font-size: 12px; }
+  .header-style-two .header-top .top-divider { margin: 0 12px; }
+}

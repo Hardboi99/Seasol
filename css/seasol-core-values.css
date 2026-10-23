@@ -14,7 +14,7 @@
   --sc-cv-border: #E0E8F4;
   --sc-cv-ease: cubic-bezier(0.22, 0.61, 0.36, 1);
   position: relative;
-  padding: 0 0 120px;
+  padding: 100px 0 120px;
   background-color: #fff;
   overflow: hidden;
 }
@@ -22,7 +22,7 @@
 .sc-core-values::before {
   content: "";
   position: absolute;
-  inset: 120px 0 0;
+  inset: 0 0 0;
   pointer-events: none;
   background-image:
     radial-gradient(ellipse 40% 50% at 8% 70%, rgba(8, 102, 245, 0.05), rgba(8, 102, 245, 0) 70%),
@@ -54,6 +54,7 @@
   letter-spacing: 0.1em;
   text-transform: uppercase;
   padding-left: 28px;
+  margin-bottom: 12px;
 }
 .sc-core-values__eyebrow::before {
   content: "";
@@ -67,7 +68,7 @@
   border-radius: 2px;
 }
 .sc-core-values__title {
-  margin: 14px 0 0;
+  margin: 0;
   color: var(--sc-cv-navy);
   font-family: var(--title-font, "Fira Sans", sans-serif);
   font-size: var(--sec-title-font-size, 48px);
@@ -76,13 +77,7 @@
   text-align: left;
 }
 .sc-core-values__line {
-  display: block;
-  width: 48px;
-  height: 3px;
-  margin: 18px 0 0 0;
-  border-radius: 3px;
-  background-color: var(--sc-cv-blue);
-  transform-origin: left;
+  display: none !important;
 }
 .sc-core-values__lead {
   margin: 18px 0 0;
@@ -279,10 +274,7 @@
 }
 @media (max-width: 991.98px) {
   .sc-core-values {
-    padding-bottom: 90px;
-  }
-  .sc-core-values::before {
-    top: 90px;
+    padding: 70px 0 90px;
   }
   .sc-core-values__title {
     font-size: 36px;
@@ -297,13 +289,10 @@
 }
 @media (max-width: 575.98px) {
   .sc-core-values {
-    padding-bottom: 70px;
+    padding: 55px 0 70px;
   }
   .sc-core-values__title {
     font-size: 32px;
-  }
-  .sc-core-values__line {
-    margin-top: 18px;
   }
   .sc-core-values__lead {
     margin-top: 18px;

@@ -432,13 +432,18 @@ var THEMEMASCOT = {};
 			}
 		}
 
+		var sliderSpeed = prefersReducedMotion ? 0 : 380;
+
 		var sstSwiper = new Swiper('.service-two-slider', {
 			slidesPerView: 2,
 			slidesPerGroup: 2,
 			spaceBetween: 28,
-			speed: prefersReducedMotion ? 0 : 600,
-			cssEase: 'cubic-bezier(0.22, 1, 0.36, 1)',
+			speed: sliderSpeed,
+			grabCursor: true,
+			watchSlidesProgress: true,
+			watchSlidesVisibility: true,
 			watchOverflow: true,
+			resistanceRatio: 0.85,
 			// No built-in swiper nav — driven via custom accessible buttons below
 			breakpoints: {
 				// 0 – 767 px: one card at a time
@@ -457,6 +462,8 @@ var THEMEMASCOT = {};
 			on: {
 				init: function() { sstUpdateUI(this); },
 				slideChange: function() { sstUpdateUI(this); },
+				slideChangeTransitionStart: function() { sstUpdateUI(this); },
+				slideChangeTransitionEnd: function() { sstUpdateUI(this); },
 				resize: function() {
 					var perView = parseInt(this.params && this.params.slidesPerView, 10) || 1;
 					if (perView === 2 && this.activeIndex % 2 !== 0) {
@@ -475,7 +482,7 @@ var THEMEMASCOT = {};
 			var motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
 			if (motionQuery.addEventListener) {
 				motionQuery.addEventListener('change', function(e) {
-					sstSwiper.params.speed = e.matches ? 0 : 600;
+					sstSwiper.params.speed = e.matches ? 0 : 380;
 				});
 			}
 		}
@@ -489,26 +496,28 @@ var THEMEMASCOT = {};
 			sstEl.addEventListener('keydown', function(e) {
 				if (e.key === 'ArrowLeft') {
 					e.preventDefault();
-					if (!sstSwiper.animating && !sstSwiper.isBeginning) { sstSwiper.slidePrev(); }
+					if (!sstSwiper.isBeginning) { sstSwiper.slidePrev(380); }
 				} else if (e.key === 'ArrowRight') {
 					e.preventDefault();
-					if (!sstSwiper.animating && !sstSwiper.isEnd) { sstSwiper.slideNext(); }
+					if (!sstSwiper.isEnd) { sstSwiper.slideNext(380); }
 				}
 			});
 		}
 
-		// Wire up custom nav buttons with debounce protection
+		// Wire up custom nav buttons
 		if (sstPrev) {
-			sstPrev.addEventListener('click', function() {
-				if (!sstSwiper.animating && !sstSwiper.isBeginning) {
-					sstSwiper.slidePrev();
+			sstPrev.addEventListener('click', function(e) {
+				e.preventDefault();
+				if (!sstSwiper.isBeginning) {
+					sstSwiper.slidePrev(380);
 				}
 			});
 		}
 		if (sstNext) {
-			sstNext.addEventListener('click', function() {
-				if (!sstSwiper.animating && !sstSwiper.isEnd) {
-					sstSwiper.slideNext();
+			sstNext.addEventListener('click', function(e) {
+				e.preventDefault();
+				if (!sstSwiper.isEnd) {
+					sstSwiper.slideNext(380);
 				}
 			});
 		}
