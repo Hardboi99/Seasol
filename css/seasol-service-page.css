@@ -436,3 +436,45 @@ html { scroll-behavior: smooth; }
 @media (max-width: 991.98px) {
   .sp-visual { position: relative; top: auto; }
 }
+
+/* ---- Compact hero (smaller than the home banner) ---- */
+.sp-hero { min-height: 500px; }
+.sp-hero__inner { padding-top: 38px; padding-bottom: 116px; gap: 28px; }
+.sp-crumbs { margin-bottom: 18px; padding: 6px 15px; font-size: 13px; }
+.sp-hero h1 { margin: 12px 0 14px; font-size: 48px; line-height: 1.1; }
+.sp-hero p { max-width: 560px; margin-bottom: 22px; font-size: 16.5px; line-height: 1.65; }
+.sp-hero__btns { gap: 12px; margin-bottom: 22px; }
+.sp-hero .sp-btn { padding: 13px 26px; font-size: 14.5px; }
+.sp-chips li { padding: 6px 14px; font-size: 13px; }
+.sp-float { gap: 16px; }
+.sp-fcard { width: min(280px, 100%); padding: 14px 18px; border-radius: 18px; }
+.sp-fcard i { width: 44px; height: 44px; border-radius: 14px; font-size: 18px; }
+.sp-fcard strong { font-size: 16px; }
+.sp-waves { height: 84px; }
+.sp-stats { margin-top: -66px; }
+@media (max-width: 1199.98px) {
+  .sp-hero h1 { font-size: 42px; }
+}
+@media (max-width: 767.98px) {
+  .sp-hero { min-height: 0; }
+  .sp-hero__inner { padding-top: 30px; padding-bottom: 100px; }
+  .sp-hero h1 { font-size: 34px; }
+  .sp-hero p { font-size: 15.5px; }
+}
+@media (max-width: 575.98px) {
+  .sp-hero h1 { font-size: 30px; }
+  .sp-stats { margin-top: -56px; }
+}
+
+/* ---- Glide: the image card slides down smoothly while you read the left column ---- */
+.page-wrapper { overflow: visible; overflow-x: clip; }   /* template's overflow:hidden would block sticky/glide */
+.sp-glide .sp-visual { position: relative; top: auto; will-change: transform; }
+.sp-glide .sp-visual__img img { object-position: 50% var(--sp-opy, 50%); }
+.sp-panel.is-active .sp-visual__img { animation: sp-drop 1.1s var(--sp-ease) .2s both; }
+.sp-panel.is-active .sp-visual__tag { animation: sp-drop-sm .9s var(--sp-ease) .75s both; }
+.sp-panel.is-active .sp-visual__float { animation: sp-drop-sm .9s var(--sp-ease) .95s both, sp-bob 6s ease-in-out 1.9s infinite; }
+@keyframes sp-drop { from { opacity: 0; transform: translateY(-70px) scale(.96); clip-path: inset(0 0 100% 0 round 28px); } to { opacity: 1; transform: none; clip-path: inset(0 0 0 0 round 28px); } }
+@keyframes sp-drop-sm { from { opacity: 0; transform: translateY(-26px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) {
+  .sp-panel.is-active .sp-visual__img, .sp-panel.is-active .sp-visual__tag, .sp-panel.is-active .sp-visual__float { animation: none !important; }
+}

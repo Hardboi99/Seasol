@@ -1,0 +1,345 @@
+/*
+ * Seasol Maritime - mobile polish for index-2.html
+ * Loaded last. Phones/tablets only (max-width media queries + hover:none), desktop is untouched.
+ * Pairs with js/seasol-mobile.js (scroll animations that wow.js skips on mobile, tap-to-open service cards).
+ */
+
+html { -webkit-text-size-adjust: 100%; }
+body { overflow-x: hidden; }
+a, button, .theme-btn { -webkit-tap-highlight-color: rgba(7, 87, 232, .12); touch-action: manipulation; }
+
+/* ==========================================================================
+   Scroll reveal for mobile (replaces wow.js, which is switched off on phones)
+   ========================================================================== */
+.sm-js .sm-rev { opacity: 0; transform: translateY(34px); transition: opacity .8s ease, transform .9s cubic-bezier(.16, 1, .3, 1); will-change: transform, opacity; }
+.sm-js .sm-rev.sm-in { opacity: 1; transform: none; }
+.sm-js .sm-rev[data-sm="left"]  { transform: translateX(-36px); }
+.sm-js .sm-rev[data-sm="right"] { transform: translateX(36px); }
+.sm-js .sm-rev[data-sm="zoom"]  { transform: scale(.92); }
+.sm-js .sm-rev.sm-in[data-sm] { transform: none; }
+
+@media (max-width: 991.98px) {
+  /* ---------- header: logo, quote button and menu icon fit on one row ---------- */
+  .header-style-two .header-lower .inner-container { gap: 10px; flex-wrap: nowrap !important; }
+  .header-style-two .header-lower .logo-box { flex: 0 0 auto !important; padding: 10px 0 !important; }
+  .header-style-two .header-lower .logo-box .logo img { height: 38px !important; width: auto !important; max-width: none; }
+  .header-style-two .header-lower .outer-box { flex: 1 1 auto; justify-content: flex-end; gap: 10px !important; padding: 12px 0 !important; min-width: 0; }
+  .header-style-two .header-lower .outer-box .btn-style-one { padding: 10px 18px !important; font-size: 12.5px !important; letter-spacing: .03em !important; white-space: nowrap; }
+  .header-style-two .header-lower .outer-box .btn-style-one .icon { display: none !important; }
+}
+@media (max-width: 360px) {
+  .header-style-two .header-lower .outer-box .btn-style-one { padding: 9px 12px !important; font-size: 11.5px !important; }
+}
+
+@media (max-width: 767.98px) {
+  /* ---------- global rhythm ---------- */
+  .about-section-two, .fun-fact-section.style-two, .services-section-two, .work-section-two, .mission-vision-values, .team-section-two, .sc-core-values, .cis-gateway-section, .india-office-network {
+    padding-top: 56px !important; padding-bottom: 56px !important;
+  }
+  .sec-title h2 { font-size: 28px !important; line-height: 1.22 !important; }
+  .sec-title .sub-title { font-size: 12.5px !important; letter-spacing: .12em; }
+  .auto-container { padding-left: 16px; padding-right: 16px; }
+
+  /* ---------- hero ---------- */
+  .banner-section-two .content-box { padding-top: 56px; padding-bottom: 56px; }
+  .banner-section-two .title { font-size: 28px !important; line-height: 1.22 !important; }
+  .banner-section-two .sub-title { font-size: 12px !important; letter-spacing: .1em; line-height: 1.5; }
+  .banner-section-two .btn-box { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+
+  /* ---------- feature cards under the hero ---------- */
+  .seasol-feature-cards { margin-top: -34px; position: relative; z-index: 3; }
+  .seasol-feature-cards .contact-info-block { margin-bottom: 14px !important; }
+
+  /* ---------- counters: compact 2 x 2 grid ---------- */
+  .fun-fact-section .fact-counter .row { display: grid !important; grid-template-columns: 1fr 1fr; gap: 12px; margin: 0; }
+  .fun-fact-section .counter-block { width: auto !important; max-width: none !important; flex: none !important; padding: 0 !important; margin: 0 !important; }
+  .fun-fact-section .counter-block .inner { flex-direction: column; justify-content: center !important; text-align: center; gap: 8px; padding: 18px 8px !important; height: 100%; }
+  .fun-fact-section .counter-block .icon-box { margin: 0 auto !important; }
+  .fun-fact-section .counter-block .content-box { text-align: center; }
+  .fun-fact-section .count-box { font-size: 30px !important; line-height: 1.1; }
+  .fun-fact-section .counter-title { font-size: 12.5px !important; margin-top: 2px; }
+
+  /* ---------- Other services (circle cards): 2 per row ---------- */
+  .work-section-two .inner-outer > .row { display: grid !important; grid-template-columns: 1fr 1fr; gap: 14px; margin: 0; }
+  .work-section-two .work-block-two { width: auto !important; max-width: none !important; flex: none !important; padding: 0 !important; margin: 0 !important; }
+  .work-section-two .work-block-two .inner-box { width: 100% !important; height: auto !important; aspect-ratio: 1 / 1; padding: 14px 10px !important; margin: 0 !important; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 50%; }
+  .work-section-two .work-block-two .icon-box { transform: scale(.78); margin-bottom: 0 !important; }
+  .work-section-two .work-block-two .title { font-size: 13.5px !important; line-height: 1.25 !important; margin-top: -4px; }
+  .work-section-two .work-block-two .number { top: 8% !important; left: 8% !important; transform: scale(.8); transform-origin: top left; }
+
+  /* ---------- services carousel ---------- */
+  .sst-header { gap: 14px; }
+  .services-section-two .services-block-two .content-box .title { font-size: 24px !important; }
+  .services-section-two .services-block-two .inner-box { min-height: 340px; }
+  .sst-pager { margin-top: 22px; }
+
+  /* tap-to-open service card (touch has no hover) */
+  .services-block-two .inner-box.sm-open:before { height: 100%; }
+  .services-block-two .inner-box.sm-open .content-box .text,
+  .services-block-two .inner-box.sm-open .content-box .list-style-two,
+  .services-block-two .inner-box.sm-open .content-box .theme-btn { opacity: 1; visibility: visible; transform: translate(0); }
+  .services-block-two .inner-box.sm-open .content-box .title a { text-shadow: none; }
+  .services-block-two .inner-box.sm-open .content-box .text { color: rgba(255, 255, 255, .95) !important; }
+  .services-block-two .inner-box.sm-open .content-box .list-style-two li { color: #fff !important; }
+  .services-block-two .inner-box.sm-open .content-box .list-style-two li:before { color: #fff !important; }
+  .services-block-two .inner-box::after {
+    content: "+"; position: absolute; right: 14px; top: 14px; z-index: 3; width: 34px; height: 34px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center; font-size: 22px; font-weight: 700; line-height: 1;
+    color: #fff; background: rgba(255, 255, 255, .22); backdrop-filter: blur(6px); border: 1px solid rgba(255, 255, 255, .45);
+    transition: transform .45s cubic-bezier(.16, 1, .3, 1), background .3s ease; animation: sm-pulse 2.4s ease-out infinite;
+  }
+  .services-block-two .inner-box.sm-open::after { transform: rotate(45deg); background: rgba(255, 255, 255, .35); animation: none; }
+
+  /* ---------- mission / vision ---------- */
+  .mission-vision-values .mvv-item { margin-bottom: 14px; }
+
+  /* ---------- CIS map: bigger, swipe sideways; destinations in 2 columns ---------- */
+  .cis-gateway-section .cis-map-stage { position: relative; padding: 10px; overflow: hidden; }
+  .cis-gateway-section .cis-map-wrapper { overflow-x: auto; aspect-ratio: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+  .cis-gateway-section .cis-map-wrapper::-webkit-scrollbar { display: none; }
+  .cis-gateway-section #cis-map, .cis-gateway-section .cis-map { width: 640px; max-width: none; }
+  .cis-gateway-section .cis-map-stage::after {
+    content: "Swipe to explore the map"; position: absolute; left: 50%; bottom: 8px; transform: translateX(-50%); z-index: 4;
+    padding: 5px 12px; border-radius: 50px; font-size: 11.5px; font-weight: 700; color: #0B2A6F; background: rgba(255, 255, 255, .92);
+    box-shadow: 0 6px 16px rgba(11, 42, 111, .15); pointer-events: none; animation: sm-hint 4s ease-in-out 1.5s both;
+  }
+  .cis-gateway-section .cis-dest-list { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 10px; }
+  .cis-gateway-section .cis-dest { padding: 10px 12px; }
+  .cis-gateway-section .cis-dest__country { font-size: 14px; }
+  .cis-gateway-section .cis-dest__city { font-size: 12.5px; }
+
+  /* ---------- team ---------- */
+  .team-section-two .team-block .inner-box { margin-bottom: 0; }
+
+  /* ---------- customers marquee ---------- */
+  .valued-customers .sec-title h2 { font-size: 26px !important; }
+
+  /* ---------- why choose us ---------- */
+  .why-choose-us .experience, .experience.bounce-y { transform: scale(.85); transform-origin: bottom right; }
+}
+
+/* ---------- touch devices: no hover, so give instant press feedback ---------- */
+@media (hover: none) {
+  .theme-btn:active, .sp-btn:active { transform: scale(.96); }
+  .work-block-two .inner-box:active, .mvv-item:active, .sc-core-values__card:active, .team-block .inner-box:active, .cis-dest:active { transform: scale(.98); transition: transform .15s ease; }
+  .services-block-two .inner-box:hover { transform: none; }
+}
+
+@keyframes sm-pulse { 0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, .55); } 100% { box-shadow: 0 0 0 14px rgba(255, 255, 255, 0); } }
+@keyframes sm-hint { 0%, 100% { opacity: 0; } 12%, 80% { opacity: 1; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .sm-js .sm-rev { opacity: 1; transform: none; transition: none; }
+  .services-block-two .inner-box::after, .cis-gateway-section .cis-map-stage::after { animation: none; }
+}
+
+/* ==========================================================================
+   Compact mobile pass v2 - smaller blocks so the page is quicker to scroll
+   ========================================================================== */
+@media (max-width: 767.98px) {
+  /* feature cards under the hero: slim single-row cards (icon + title + small button) */
+  .seasol-feature-cards { margin-top: -26px; }
+  .seasol-feature-cards .outer-box { padding: 0; }
+  .seasol-feature-cards .inner { display: flex !important; flex-direction: row !important; align-items: center; justify-content: space-between; gap: 10px; padding: 12px 14px !important; min-height: 0 !important; text-align: left; border-radius: 14px; }
+  .seasol-feature-cards .content-box { display: flex !important; align-items: center; gap: 10px; flex: 1 1 auto; min-width: 0; margin: 0 !important; padding: 0 !important; }
+  .seasol-feature-cards .content-box .icon { flex: 0 0 38px; width: 38px !important; height: 38px !important; line-height: 38px !important; font-size: 18px !important; margin: 0 !important; }
+  .seasol-feature-cards .sfc-title, .seasol-feature-cards .info-box h4 { font-size: 14.5px !important; line-height: 1.25 !important; margin: 0 !important; text-align: left; }
+  .seasol-feature-cards .theme-btn { flex: 0 0 auto; width: auto !important; margin: 0 !important; padding: 8px 12px !important; font-size: 11.5px !important; border-radius: 50px !important; }
+  .seasol-feature-cards .theme-btn .icon { display: none !important; }
+  .seasol-feature-cards .contact-info-block { margin-bottom: 10px !important; }
+
+  /* hero */
+  .banner-section-two .content-box { padding-top: 42px; padding-bottom: 46px; }
+  .banner-section-two .title { font-size: 24px !important; }
+
+  /* section rhythm: tighter */
+  .about-section-two, .fun-fact-section.style-two, .services-section-two, .work-section-two, .mission-vision-values, .team-section-two, .sc-core-values, .cis-gateway-section, .india-office-network {
+    padding-top: 40px !important; padding-bottom: 40px !important;
+  }
+  .sec-title h2 { font-size: 24px !important; }
+  .sec-title { margin-bottom: 20px !important; }
+  p, .text { font-size: 14.5px; line-height: 1.65; }
+
+  /* about */
+  .about-section-two .image-box img, .about-section-two .image-box .image img { max-height: 280px; width: 100%; object-fit: cover; }
+  .about-section-two .about-block { padding: 14px !important; }
+
+  /* counters */
+  .fun-fact-section .counter-block .inner { padding: 12px 6px !important; gap: 4px; }
+  .fun-fact-section .count-box { font-size: 24px !important; }
+  .fun-fact-section .counter-block .icon-box { transform: scale(.8); }
+
+  /* services carousel */
+  .services-section-two .services-block-two .inner-box { min-height: 270px; }
+  .services-section-two .services-block-two .image-box img { height: 270px; object-fit: cover; }
+  .services-section-two .services-block-two .content-box .title { font-size: 20px !important; }
+
+  /* other services circles */
+  .work-section-two .work-block-two .title { font-size: 12.5px !important; }
+  .work-section-two .work-block-two .icon-box { transform: scale(.66); }
+
+  /* mission / vision */
+  .mission-vision-values .image-column img { max-height: 240px; object-fit: cover; }
+  .mission-vision-values .mvv-item { padding: 14px 16px !important; margin-bottom: 10px; }
+  .mission-vision-values .mvv-icon { transform: scale(.8); }
+
+  /* core values */
+  .sc-core-values__grid { gap: 10px !important; }
+  .sc-core-values__card { padding: 16px 16px !important; }
+
+  /* team */
+  .team-section-two .team-block .image img { max-height: 280px; width: 100%; object-fit: cover; object-position: top; }
+
+  /* map + destinations */
+  .cis-gateway-section #cis-map, .cis-gateway-section .cis-map { width: 560px; }
+  .cis-gateway-section .cis-dest { padding: 8px 10px; }
+
+  /* customers + why choose */
+  .valued-customers { padding-top: 40px !important; padding-bottom: 30px !important; }
+  .why-choose-us-section, [class*="why-choose"] { padding-top: 40px !important; padding-bottom: 40px !important; }
+  .experience.bounce-y { transform: scale(.7); }
+
+  /* footer */
+  .seasol-footer .sf-cta { margin-top: 36px; padding: 24px 20px; }
+  .seasol-footer .sf-cta h3 { font-size: 20px; }
+  .seasol-footer .sf-main { padding: 36px 0 20px; }
+  .seasol-footer .sf-grid { gap: 26px; }
+  .seasol-footer .sf-offices { margin-top: 28px; padding: 18px 16px; gap: 16px; }
+  .seasol-footer .sf-logo img { height: 46px; }
+}
+@media (max-width: 767.98px) {
+  .seasol-feature-cards .theme-btn { align-self: center !important; height: auto !important; min-height: 0 !important; display: inline-flex !important; align-items: center; justify-content: center; line-height: 1.2 !important; }
+  .seasol-feature-cards .theme-btn .btn-title { line-height: 1.2 !important; }
+  .seasol-feature-cards .content-box .icon { display: flex !important; align-items: center; justify-content: center; border-radius: 50%; background: rgba(255, 255, 255, .16); color: #fff !important; }
+  .seasol-feature-cards .content-box .icon::before { line-height: 1; }
+}
+@media (max-width: 767.98px) {
+  .seasol-feature-cards .content-box { flex-direction: row !important; text-align: left !important; justify-content: flex-start !important; }
+  .seasol-feature-cards .content-box .info-box { flex: 1; margin: 0 !important; padding: 0 !important; text-align: left !important; }
+  .seasol-feature-cards { padding-bottom: 0 !important; margin-bottom: 0 !important; }
+  .about-section-two { padding-top: 24px !important; }
+}
+
+/* ==========================================================================
+   Mission/Vision photo collage + CIS map - mobile layouts (v3)
+   ========================================================================== */
+@media (max-width: 767.98px) {
+  /* collage: 2007 badge + truck side by side, wide aircraft photo underneath */
+  .mission-vision-values .image-column { margin-bottom: 26px; }
+  .mission-vision-values .image-column .image-box {
+    position: static !important; display: grid !important; grid-template-columns: 1fr 1.25fr; grid-template-rows: 150px 150px; gap: 10px;
+    width: 100% !important; height: auto !important; padding: 0 !important; margin: 0 !important;
+  }
+  .mission-vision-values .image-box figure { position: static !important; margin: 0 !important; width: 100% !important; height: 100% !important; border-radius: 14px; overflow: hidden; transform: none !important; }
+  .mission-vision-values .image-box figure img { width: 100% !important; height: 100% !important; object-fit: cover; display: block; }
+  .mission-vision-values .image-box .experience {
+    position: static !important; grid-column: 1; grid-row: 1; width: 100% !important; height: 100% !important; margin: 0 !important; padding: 16px !important;
+    display: flex; flex-direction: column; justify-content: flex-end; border-radius: 14px; background: linear-gradient(160deg, #0757E8, #0AA5D6) !important; transform: none !important;
+  }
+  .mission-vision-values .image-box .experience strong { font-size: 40px !important; line-height: 1; color: #fff !important; }
+  .mission-vision-values .image-box .experience .text { font-size: 14px !important; line-height: 1.3; color: rgba(255, 255, 255, .92) !important; margin-top: 6px; }
+  .mission-vision-values .image-box .image-1 { grid-column: 2; grid-row: 1; }
+  .mission-vision-values .image-box .image-3 { grid-column: 1 / -1; grid-row: 2; }
+  .mission-vision-values .image-box .image-2 { display: none !important; }
+
+  /* CIS map: whole map visible, labels enlarged so they stay readable at phone width */
+  .cis-gateway-section .cis-map-wrapper { overflow: visible !important; aspect-ratio: 700 / 420 !important; }
+  .cis-gateway-section #cis-map, .cis-gateway-section .cis-map { width: 100% !important; max-width: 100%; }
+  .cis-gateway-section .cis-map-stage { padding: 8px !important; }
+  .cis-gateway-section .cis-map-stage::after { display: none !important; }
+  #cis-map .mk .lbl, #cis-map .mk .halo { font-size: 24px !important; font-weight: 700 !important; }
+  #cis-map .mk .halo { stroke-width: 6px !important; }
+  #cis-map .mk .dot { transform: scale(1.5); }
+}
+@media (max-width: 767.98px) {
+  .mission-vision-values .image-box figure { inset: auto !important; left: auto !important; right: auto !important; top: auto !important; bottom: auto !important; max-width: none !important; }
+  .mission-vision-values .image-box .image-3 { padding: 0 !important; }
+}
+
+/* ==========================================================================
+   Core values + Mission/Vision: compact rows on phones (v4)
+   ========================================================================== */
+@media (max-width: 767.98px) {
+  .sc-core-values__head { margin-bottom: 20px !important; }
+  .sc-core-values__title { font-size: 24px !important; }
+  .sc-core-values__lead { font-size: 14px !important; line-height: 1.6 !important; }
+  .sc-core-values__grid { display: grid !important; grid-template-columns: 1fr !important; gap: 10px !important; margin: 0 !important; padding: 0 !important; }
+  .sc-core-values__item {
+    display: grid !important; grid-template-columns: 44px 1fr; column-gap: 14px; row-gap: 2px; align-items: start;
+    padding: 14px 16px !important; min-height: 0 !important; border-radius: 14px !important; margin: 0 !important;
+  }
+  .sc-core-values__icon { grid-row: 1 / span 2; width: 44px !important; height: 44px !important; margin: 0 !important; font-size: 19px !important; }
+  .sc-core-values__num { position: absolute !important; right: 14px !important; top: 10px !important; font-size: 12px !important; }
+  .sc-core-values__item-title { grid-column: 2; margin: 0 !important; font-size: 17px !important; line-height: 1.25 !important; }
+  .sc-core-values__text { grid-column: 2; margin: 0 !important; font-size: 13.5px !important; line-height: 1.5 !important; }
+
+  .mission-vision-values .mvv-item {
+    display: grid !important; grid-template-columns: 44px 1fr; column-gap: 14px; align-items: start; text-align: left !important;
+    padding: 14px 16px !important; margin-bottom: 10px !important; border-radius: 14px !important;
+  }
+  .mission-vision-values .mvv-icon { width: 44px !important; height: 44px !important; margin: 0 !important; transform: none !important; font-size: 19px !important; box-shadow: none !important; }
+  .mission-vision-values .mvv-icon i { font-size: 19px !important; }
+  .mission-vision-values .mvv-content { text-align: left !important; }
+  .mission-vision-values .mvv-title { margin: 0 0 4px !important; font-size: 17px !important; text-align: left !important; }
+  .mission-vision-values .mvv-text { margin: 0 !important; font-size: 13.5px !important; line-height: 1.55 !important; text-align: left !important; }
+}
+@media (max-width: 767.98px) {
+  .mission-vision-values .mvv-icon, .sc-core-values__icon {
+    width: 44px !important; min-width: 44px !important; max-width: 44px !important; height: 44px !important; min-height: 44px !important; padding: 0 !important;
+    display: flex !important; align-items: center; justify-content: center; border-radius: 50% !important; box-sizing: border-box; overflow: visible;
+  }
+  .mission-vision-values .mvv-icon::before, .mission-vision-values .mvv-icon::after, .sc-core-values__icon::before, .sc-core-values__icon::after { inset: -4px !important; width: auto !important; height: auto !important; }
+  .mission-vision-values .mvv-item, .sc-core-values__item { column-gap: 16px !important; }
+}
+
+/* team slider dots (phones) */
+.sm-team-dots { display: flex; justify-content: center; gap: 8px; margin-top: 18px; }
+.sm-team-dots button { width: 9px; height: 9px; padding: 0; border: 0; border-radius: 9px; background: #C9DAF3; cursor: pointer; transition: width .4s cubic-bezier(.16, 1, .3, 1), background .3s ease; }
+.sm-team-dots button.is-active { width: 28px; background: linear-gradient(90deg, #0757E8, #0AA5D6); }
+@media (min-width: 768px) { .sm-team-dots { display: none; } }
+@media (max-width: 767.98px) {
+  .team-two-slider { overflow: hidden; padding-bottom: 4px; }
+  .team-two-slider .swiper-slide { height: auto; transition: transform .5s ease, opacity .5s ease; }
+  .team-two-slider .team-block-tow .inner-box { border-radius: 16px; overflow: hidden; box-shadow: 0 12px 28px rgba(11, 42, 111, .1); }
+  .team-two-slider .team-block-tow .image-box img { width: 100%; height: 260px; object-fit: cover; object-position: top; }
+  .team-two-slider .team-block-tow .info-box { padding: 14px 18px !important; }
+  .team-two-slider .team-block-tow .name { font-size: 18px !important; margin: 0 0 2px !important; }
+}
+
+/* ==========================================================================
+   About + Network blocks - smaller on phones (v5)
+   ========================================================================== */
+@media (max-width: 767.98px) {
+  /* about: image + badge */
+  .about-section-two .image-box { margin-bottom: 18px !important; }
+  .about-section-two .image-box .image img { height: 210px !important; max-height: 210px !important; width: 100%; object-fit: cover; border-radius: 14px; }
+  .about-section-two .image-box .experience { left: 12px !important; right: 12px !important; bottom: 12px !important; width: auto !important; padding: 10px 14px !important; border-width: 2px !important; }
+  .about-section-two .image-box .experience h4 { font-size: 15px !important; margin: 0 0 2px !important; }
+  .about-section-two .image-box .experience .text { font-size: 12px !important; line-height: 1.35 !important; }
+
+  /* about: copy */
+  .about-section-two .content-column .sec-title h2 { font-size: 22px !important; line-height: 1.25 !important; }
+  .about-section-two .content-column p { font-size: 13.5px !important; line-height: 1.6 !important; margin-bottom: 10px !important; }
+
+  /* about: feature blocks as compact rows (icon left, text right) */
+  .about-section-two .about-block {
+    display: grid !important; grid-template-columns: 46px 1fr; column-gap: 14px; align-items: start; text-align: left !important;
+    padding: 12px 14px !important; margin-bottom: 10px !important; border-radius: 14px !important;
+  }
+  .about-section-two .about-block .icon-box { width: 46px !important; min-width: 46px !important; height: 46px !important; margin: 0 !important; padding: 0 !important; display: flex; align-items: center; justify-content: center; border-radius: 50% !important; }
+  .about-section-two .about-block .icon-box::before, .about-section-two .about-block .icon-box::after { inset: -4px !important; }
+  .about-section-two .about-block .icon-box .icon { font-size: 22px !important; }
+  .about-section-two .about-block .content-box { text-align: left !important; }
+  .about-section-two .about-block .title { font-size: 15.5px !important; line-height: 1.3 !important; margin: 0 0 4px !important; text-align: left !important; }
+  .about-section-two .about-block .text { font-size: 13px !important; line-height: 1.5 !important; text-align: left !important; margin: 0 !important; }
+
+  /* network counters: smaller tiles */
+  .fun-fact-section .sec-title h2 { font-size: 22px !important; }
+  .fun-fact-section .fun-fact-box { padding: 0 !important; }
+  .fun-fact-section .fact-counter .row { gap: 10px !important; }
+  .fun-fact-section .counter-block .inner { padding: 10px 6px 12px !important; gap: 2px !important; border-radius: 12px !important; }
+  .fun-fact-section .counter-block .icon-box { width: 44px !important; height: 44px !important; margin: 0 auto !important; transform: none !important; display: flex; align-items: center; justify-content: center; border-radius: 50% !important; }
+  .fun-fact-section .counter-block .icon-box .icon { font-size: 22px !important; }
+  .fun-fact-section .count-box { font-size: 22px !important; line-height: 1.1 !important; }
+  .fun-fact-section .counter-title { font-size: 11.5px !important; margin: 0 !important; line-height: 1.25 !important; }
+}

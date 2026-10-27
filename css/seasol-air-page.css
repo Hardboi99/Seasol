@@ -79,3 +79,18 @@
   .sp-cloud, .sp-contrail, .sp-route--air .sp-route__ship, .sp-out__badge.pulse { animation: none !important; }
 }
 .sp-out b > span { display: inline; }
+
+/* ---- Compact hero for this page (title block only) ---- */
+.sp-hero { min-height: 340px; }
+.sp-hero__inner { padding-top: 30px; padding-bottom: 96px; }
+.sp-hero__bg { background-position: 68% 58%; }
+.sp-hero h1 { margin-bottom: 0; font-size: 46px; }
+.sp-crumbs { margin-bottom: 14px; }
+.sp-float { gap: 14px; padding-bottom: 0; }
+.sp-fcard:nth-child(2) { margin-right: 28px; }
+.sp-contrail { top: 18%; }
+@media (max-width: 767.98px) {
+  .sp-hero { min-height: 0; }
+  .sp-hero__inner { padding-top: 26px; padding-bottom: 84px; }
+  .sp-hero h1 { font-size: 32px; }
+}

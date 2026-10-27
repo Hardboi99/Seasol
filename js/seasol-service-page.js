@@ -39,13 +39,15 @@
     var run = function (el) {
       var target = parseInt(el.getAttribute('data-count'), 10) || 0;
       var suffix = el.getAttribute('data-suffix') || '';
-      if (reduce) { el.textContent = target + suffix; return; }
+      var comma = el.hasAttribute('data-comma');
+      var fmt = function (n) { return (comma ? n.toLocaleString('en-US') : n) + suffix; };
+      if (reduce) { el.textContent = fmt(target); return; }
       var dur = 1800, start = null;
       var step = function (ts) {
         if (start === null) { start = ts; }
         var p = Math.min((ts - start) / dur, 1);
         var eased = 1 - Math.pow(1 - p, 4);
-        el.textContent = Math.round(target * eased) + suffix;
+        el.textContent = fmt(Math.round(target * eased));
         if (p < 1) { requestAnimationFrame(step); }
       };
       requestAnimationFrame(step);
@@ -140,6 +142,47 @@
     update();
   }
 
+
+  /* ---------- glide: image card slides down smoothly while the left column scrolls ---------- */
+  function initGlide() {
+    var visuals = $$('.sp-visual');
+    if (!visuals.length || reduce) { return; }
+    var mq = window.matchMedia('(min-width: 992px)');
+    var TOP = 120;                       /* clears the sticky header */
+    var state = visuals.map(function (v) { return { v: v, cur: 0 }; });
+    var running = false;
+
+    function target(s) {
+      var panel = s.v.closest('.sp-panel');
+      if (!panel || !panel.classList.contains('is-active')) { return null; }
+      var rect = panel.getBoundingClientRect();
+      var max = Math.max(0, panel.offsetHeight - s.v.offsetHeight);
+      var want = Math.min(Math.max(TOP - rect.top, 0), max);
+      return { want: want, progress: max ? want / max : 0 };
+    }
+
+    function frame() {
+      var moving = false;
+      state.forEach(function (s) {
+        if (!mq.matches) { s.v.style.transform = ''; return; }
+        var t = target(s);
+        if (!t) { return; }
+        var diff = t.want - s.cur;
+        if (Math.abs(diff) > 0.15) { s.cur += diff * 0.1; moving = true; } else { s.cur = t.want; }
+        s.v.style.transform = 'translate3d(0,' + s.cur.toFixed(2) + 'px,0)';
+        s.v.style.setProperty('--sp-opy', (30 + t.progress * 40).toFixed(1) + '%');
+      });
+      if (moving) { requestAnimationFrame(frame); } else { running = false; }
+    }
+    function kick() { if (!running) { running = true; requestAnimationFrame(frame); } }
+
+    document.documentElement.classList.add('sp-glide');
+    window.addEventListener('scroll', kick, { passive: true });
+    window.addEventListener('resize', kick);
+    document.addEventListener('click', function (e) { if (e.target.closest && e.target.closest('.sp-tab')) { state.forEach(function (s) { s.cur = 0; }); setTimeout(kick, 60); } });
+    kick();
+  }
+
   /* ---------- cursor spotlight on cards ---------- */
   function initSpotlight() {
     if (reduce) { return; }
@@ -172,6 +215,7 @@
     initScroll();
     initSpotlight();
     initMarquee();
+    initGlide();
   }
 
   if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', init); } else { init(); }

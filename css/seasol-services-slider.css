@@ -1,0 +1,76 @@
+/*
+ * Seasol Maritime - "Our Services To Explore" auto-sliding carousel
+ * Extra visuals only: staggered card entrance, image zoom, pager with progress fill, loop wrap effect.
+ * Behaviour lives in js/seasol-services-slider.js (drives the existing Swiper instance).
+ */
+
+/* ---------- card entrance (applied to the visible group on every slide) ---------- */
+.services-section-two .services-block-two.sst-in {
+  animation: sst-card-in 1s cubic-bezier(.16, 1, .3, 1) both;
+  animation-delay: calc(var(--sst-i, 0) * 140ms);
+}
+.services-section-two .services-block-two.sst-in .image-box img {
+  animation: sst-img-in 1.8s cubic-bezier(.16, 1, .3, 1) both;
+  animation-delay: calc(var(--sst-i, 0) * 140ms);
+}
+.services-section-two .services-block-two.sst-in .content-box .title {
+  animation: sst-title-in .9s cubic-bezier(.16, 1, .3, 1) both;
+  animation-delay: calc(var(--sst-i, 0) * 140ms + 260ms);
+}
+@keyframes sst-card-in {
+  from { opacity: 0; transform: translateY(44px) scale(.95); }
+  to   { opacity: 1; transform: none; }
+}
+@keyframes sst-img-in {
+  from { transform: scale(1.16); }
+  to   { transform: scale(1); }
+}
+@keyframes sst-title-in {
+  from { opacity: 0; transform: translateY(18px); letter-spacing: .04em; }
+  to   { opacity: 1; transform: none; letter-spacing: normal; }
+}
+
+/* gentle zoom on the picture while hovering a card */
+.services-section-two .services-block-two .image-box { overflow: hidden; }
+.services-section-two .services-block-two .image-box img { transition: transform 1.2s cubic-bezier(.16, 1, .3, 1); }
+.services-section-two .services-block-two .inner-box:hover .image-box img { transform: scale(1.08); }
+
+/* ---------- loop wrap (last group -> first group) ---------- */
+.service-two-slider { transition: opacity .5s ease, transform .6s cubic-bezier(.16, 1, .3, 1), filter .5s ease; }
+.service-two-slider.sst-wrap-out { opacity: 0; transform: translateX(-60px) scale(.98); filter: blur(4px); }
+.service-two-slider.sst-wrap-in  { animation: sst-wrap-in .9s cubic-bezier(.16, 1, .3, 1) both; }
+@keyframes sst-wrap-in {
+  from { opacity: 0; transform: translateX(60px) scale(.98); filter: blur(4px); }
+  to   { opacity: 1; transform: none; filter: none; }
+}
+
+/* ---------- pager with progress fill ---------- */
+.sst-pager { display: flex; align-items: center; justify-content: center; gap: 10px; margin-top: 30px; }
+.sst-dot {
+  position: relative; width: 12px; height: 12px; padding: 0; border: 0; border-radius: 12px; cursor: pointer; overflow: hidden;
+  background: #C9DAF3; transition: width .5s cubic-bezier(.16, 1, .3, 1), background .3s ease, transform .3s ease;
+}
+.sst-dot:hover { background: #9DBBE8; transform: scale(1.15); }
+.sst-dot:focus-visible { outline: 3px solid rgba(7, 87, 232, .4); outline-offset: 3px; }
+.sst-dot.is-active { width: 64px; background: #C9DAF3; }
+.sst-dot i {
+  position: absolute; inset: 0; border-radius: 12px; transform-origin: left; transform: scaleX(0);
+  background: linear-gradient(90deg, #0757E8, #0AA5D6 70%, #FF9A1F);
+}
+.sst-dot.is-active i { animation: sst-fill var(--sst-interval, 5500ms) linear forwards; }
+.sst-pager.is-paused .sst-dot.is-active i { animation: none; transform: scaleX(1); }
+@keyframes sst-fill { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+
+/* pause / play button (same look as prev / next) */
+.services-section-two .sst-btn-pause { margin-right: 4px; }
+.services-section-two .sst-btn-pause .ico-play { display: none; }
+.services-section-two .sst-btn-pause.is-paused .ico-play { display: block; }
+.services-section-two .sst-btn-pause.is-paused .ico-pause { display: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .services-section-two .services-block-two.sst-in,
+  .services-section-two .services-block-two.sst-in .image-box img,
+  .services-section-two .services-block-two.sst-in .content-box .title,
+  .service-two-slider.sst-wrap-in { animation: none !important; }
+  .sst-dot.is-active i { animation: none; transform: scaleX(1); }
+}

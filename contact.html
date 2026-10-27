@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from https://php.kodesolution.com/2025/transend-php/index-2.php by HTTrack Website Copier/3.x [XR&CO], Mon, 19 Oct 2026 10:35:10 GMT -->
+<!-- Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+
+<head>
+	<meta charset="utf-8">
+	<title>Contact Us | Seasol Maritime India Pvt Ltd</title>
+	<meta name="description" content="Contact Seasol Maritime India Pvt Ltd for ocean freight, air freight, customs clearance and logistics across India and CIS markets.">
+
+	<!-- Stylesheets -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+
+
+	<link href="css/style.css" rel="stylesheet">
+		<link href="css/seasol-theme copy.css" rel="stylesheet">
+	<link href="css/seasol-network-sections.css" rel="stylesheet">
+	<link href="css/seasol-core-values.css" rel="stylesheet">
+	<link href="css/seasol-services-sections.css" rel="stylesheet">
+	<link href="css/seasol-navbar-footer.css" rel="stylesheet">
+
+	<!-- Seasol colour system (derived from the logo)
+		 Logo: cobalt #0757E8 + deep navy  -> primary (60%)
+		 Analogous: ocean cyan #0AA5D6     -> secondary (30%): "sea" feel, gradients, eyebrows, icons
+		 Complement of blue: amber #FF9A1F -> accent (10%): CTAs, badges, highlights
+		 Tints: sky / ice / cream          -> light alternating section backgrounds (no dark sections) -->
+	<style>
+		:root {
+			--sea-navy: #0B2A6F;
+			--sea-cobalt: #0757E8;
+			--sea-cobalt-deep: #0A3FB8;
+			--sea-cyan: #0AA5D6;
+			--sea-cyan-text: #0782A8;
+			--sea-amber: #FF9A1F;
+			--sea-amber-deep: #F07F00;
+			--sea-sky: #EAF3FF;
+			--sea-ice: #E6F6FB;
+			--sea-cream: #FFF6E8;
+			--theme-color1: #0B2A6F;
+			--bg-theme-color1: #0B2A6F;
+			--border-theme-color1: #0B2A6F;
+		}
+
+		/* Buttons: cobalt -> cyan gradient; header quote button = amber accent */
+		.theme-btn.btn-style-one { background: linear-gradient(135deg, var(--sea-cobalt) 0%, var(--sea-cyan) 100%) !important; border-color: transparent !important; color: #fff !important; box-shadow: 0 8px 20px rgba(7, 87, 232, .25); }
+		.theme-btn.btn-style-one:hover { background: linear-gradient(135deg, var(--sea-cobalt-deep) 0%, var(--sea-cobalt) 100%) !important; }
+		.main-header .outer-box > .theme-btn.btn-style-one,
+		.about-section-two .theme-btn.btn-style-one,
+		.contact-section .theme-btn.btn-style-one { background: linear-gradient(135deg, var(--sea-amber) 0%, var(--sea-amber-deep) 100%) !important; box-shadow: 0 8px 20px rgba(255, 154, 31, .35); }
+		.main-header .outer-box > .theme-btn.btn-style-one:hover,
+		.about-section-two .theme-btn.btn-style-one:hover,
+		.contact-section .theme-btn.btn-style-one:hover { background: linear-gradient(135deg, var(--sea-amber-deep) 0%, #D96E00 100%) !important; }
+
+		/* Navigation active/hover */
+		.main-menu .navigation > li.current > a,
+		.main-menu .navigation > li:hover > a { color: var(--sea-cobalt) !important; }
+
+		/* Eyebrow labels + headings */
+		.sec-title .sub-title { color: var(--sea-cyan-text) !important; }
+		.sec-title h2, .sec-title h3 { color: var(--sea-navy); }
+		.sec-title .sub-title::before, .sec-title .sub-title::after { background: var(--sea-amber) !important; }
+
+		/* Feature cards under hero */
+		.seasol-feature-cards .inner { background: linear-gradient(135deg, #0A3FB8 0%, #0757E8 60%, #0AA5D6 140%) !important; }
+		.seasol-feature-cards .theme-btn.btn-style-one { background: linear-gradient(135deg, var(--sea-amber) 0%, var(--sea-amber-deep) 100%) !important; }
+
+		/* Icon chips: cyan-tinted gradient with cobalt glyphs */
+		.icon-box, .mvv-icon, .sc-core-values__icon { background: linear-gradient(135deg, var(--sea-sky), var(--sea-ice)) !important; color: var(--sea-cobalt); border-color: #CFE6F5 !important; }
+
+		/* Section backgrounds: soft alternating tints (all light) */
+		.about-section-two { background: #fff; }
+		.fun-fact-section.style-two { background: linear-gradient(180deg, var(--sea-sky) 0%, var(--sea-ice) 100%) !important; }
+		.services-section-two { background: linear-gradient(180deg, #fff 0%, var(--sea-sky) 100%) !important; }
+		.work-section-two { background: var(--sea-cream) !important; }
+		.mission-vision-values { background: #fff; }
+		.sc-core-values { background: linear-gradient(180deg, var(--sea-sky) 0%, #fff 100%) !important; }
+		.team-section-two { background: #fff; }
+		.cis-gateway-section { background: linear-gradient(180deg, var(--sea-ice) 0%, var(--sea-sky) 100%) !important; }
+		.india-office-network { background: linear-gradient(180deg, #fff 0%, var(--sea-ice) 100%) !important; }
+		.valued-customers { background: var(--sea-cream) !important; }
+
+		/* Cards get a coloured top edge for depth */
+		.fun-fact-box .inner-box, .counter-block .inner { border-top: 3px solid var(--sea-cyan); }
+		.work-section-two .work-block .inner-box .icon-box { box-shadow: 0 0 0 6px rgba(255, 154, 31, .15); }
+		.work-section-two .count, .work-section-two .number, .work-section-two [class*="number"] { background: linear-gradient(135deg, var(--sea-amber), var(--sea-amber-deep)) !important; color: #fff !important; }
+
+		/* Year badge in mission block */
+		.mission-vision-values [class*="exp"], .mission-vision-values [class*="year"] { background: linear-gradient(160deg, var(--sea-cobalt), var(--sea-cyan)) !important; }
+
+		/* ---- Navbar / sidebar / footer polish (loads after css/seasol-navbar-footer.css) ---- */
+
+		/* Navbar: amber quote button, cobalt hover line with amber tip */
+		.header-style-two .header-lower .outer-box .btn-style-one { background: linear-gradient(135deg, var(--sea-amber) 0%, var(--sea-amber-deep) 100%) !important; box-shadow: 0 6px 20px rgba(255, 154, 31, .35) !important; }
+		.header-style-two .header-lower .outer-box .btn-style-one:hover { background: linear-gradient(135deg, var(--sea-amber-deep) 0%, #D96E00 100%) !important; box-shadow: 0 10px 25px rgba(240, 127, 0, .45) !important; }
+		.header-style-two .header-lower .navigation > li > a { color: var(--sea-navy) !important; }
+		/* Mobile menu styling fully managed in css/seasol-navbar-footer.css */
+		.header-style-two .header-lower .grid-nav-btn .inner { background: linear-gradient(135deg, var(--sea-cobalt), var(--sea-cyan)) !important; }
+		.scroll-to-top { background: linear-gradient(135deg, var(--sea-amber), var(--sea-amber-deep)) !important; color: #fff !important; }
+	</style>
+	<link href="css/seasol-footer.css" rel="stylesheet">
+
+
+	<link rel="shortcut icon" href="images/seasol-favicon.png" type="image/png">
+	<link rel="icon" href="images/seasol-favicon.png" type="image/png">
+
+	<!-- Responsive -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<!--[if lt IE 9]><script src="js/html5shiv.js"></script><![endif]-->
+	<!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
+	<link href="contact-section/contact.css" rel="stylesheet">
+</head>
+
+<body>
+	<div class="page-wrapper">
+
+		<!-- Preloader -->
+		<div class="preloader">
+			<div class="preloader__inner">
+				<div class="preloader__glow"></div>
+				<div class="preloader__logo-wrap">
+					<img src="images/Seasol Maritime Logo.png" alt="Seasol Maritime" class="preloader__logo">
+					<span class="preloader__wave preloader__wave--1"></span>
+					<span class="preloader__wave preloader__wave--2"></span>
+				</div>
+				<div class="preloader__progress">
+					<span class="preloader__progress-bar"></span>
+				</div>
+				<span class="preloader__text">Freight Forwarding &amp; Maritime Logistics</span>
+			</div>
+		</div>
+		<script>
+			// Snappy preloader dismissal: guarantees site reveal within 600ms
+			(function() {
+				function dismissLoader() {
+					var el = document.querySelector('.preloader');
+					if (el && !el.classList.contains('is-loaded')) {
+						el.classList.add('is-loaded');
+						el.style.opacity = '0';
+						setTimeout(function() { if (el && el.parentNode) el.parentNode.removeChild(el); }, 350);
+					}
+				}
+				window.addEventListener('load', dismissLoader);
+				setTimeout(dismissLoader, 600);
+			})();
+		</script>
+
+		<!-- Main Header-->
+		<header class="main-header header-style-two" id="home">
+			<!-- Header Top -->
+			<div class="header-top">
+				<div class="auto-container">
+					<div class="inner-container">
+
+						<div class="top-left">
+							<div class="top-tagline"><i class="fa-solid fa-ship"></i> Freight Forwarding &amp; Maritime Logistics – India to CIS Markets</div>
+						</div>
+
+						<div class="top-right">
+							<div class="top-item"><i class="fa-solid fa-phone-volume"></i> <a href="tel:+919898286205">+91 98982 86205</a></div>
+							<div class="top-divider" aria-hidden="true"></div>
+							<div class="top-item"><i class="fa-solid fa-envelope"></i> <a href="mailto:venkat@seasolmaritime.com">venkat@seasolmaritime.com</a></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Header Top -->
+			<!-- Header Lower -->
+			<div class="header-lower">
+				<div class="auto-container">
+					<div class="inner-container">
+						<div class="logo-box">
+							<div class="logo">
+								<a href="index-2.html" title="Seasol Maritime India Pvt. Ltd."><img src="images/Seasol Maritime Logo.png" alt=""
+										width="207" height="42" title=""></a>
+							</div>
+						</div>
+						<!-- Main box -->
+						<div class="main-box">
+
+							<!--Nav Box-->
+							<div class="nav-outer">
+
+								<nav class="nav main-menu">
+									<ul class="navigation">
+										<li><a href="index-2.html">Home</a></li>
+										<li class="dropdown"><a href="index-2.html#about">About Us</a>
+											<ul>
+												<li><a href="index-2.html#about">Our Company</a></li>
+												<li><a href="index-2.html#team">Our Team</a></li>
+												<li><a href="index-2.html#core-values">Core Values</a></li>
+											</ul>
+										</li>
+										<li class="dropdown"><a href="index-2.html#services">Services</a>
+											<ul>
+												<li><a href="index-2.html#services">Ocean Freight</a></li>
+												<li><a href="index-2.html#services">Air Freight</a></li>
+												<li><a href="index-2.html#services">Road Freight</a></li>
+												<li><a href="index-2.html#services">Rail Freight</a></li>
+												<li><a href="index-2.html#services">Customs Clearance</a></li>
+												<li><a href="index-2.html#services">Warehousing and Distribution</a></li>
+											</ul>
+										</li>
+										<li class="dropdown"><a href="index-2.html#network">Network &amp; Coverage</a>
+											<ul>
+												<li><a href="index-2.html#india-offices">India</a></li>
+												<li><a href="index-2.html#cis-gateway">CIS Countries</a></li>
+												<li><a href="index-2.html#network">International Network</a></li>
+											</ul>
+										</li>
+										<li class="dropdown"><a href="index-2.html#customers">Customers</a>
+											<ul>
+												<li><a href="index-2.html#customers">Customer Industries</a></li>
+												<li><a href="index-2.html#customers">Partners</a></li>
+											</ul>
+										</li>
+										<li><a href="contact.html">Contact</a></li>
+									</ul>
+								</nav>
+								<!-- Main Menu End-->
+							</div>
+						</div>
+
+
+						<div class="outer-box">
+							<a href="contact.html" class="theme-btn btn-style-one"><i
+									class="icon fa fas fa-plus"></i><span class="btn-title">Request A Quote</span></a>
+
+							<!-- Mobile Nav Btn -->
+							<div class="grid-nav-btn mobile-nav-toggler">
+								<div class="inner">
+									<img class="icons" src="images/icons/icon-1.png" alt="Icon">
+								</div>
+							</div>
+						</div>
+
+						<!-- Mobile Nav toggler -->
+						<div class="mobile-nav-toggler"><span class="icon lnr-icon-bars"></span></div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Mobile Menu  -->
+			<div class="mobile-menu">
+				<div class="menu-backdrop"></div>
+
+				<!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
+				<nav class="menu-box">
+					<div class="upper-box">
+						<div class="nav-logo"><a href="index-2.html"><img src="images/Seasol Maritime Logo.png" alt="" title=""></a></div>
+						<div class="close-btn"><i class="icon fa fa-times"></i></div>
+					</div>
+
+					<ul class="navigation clearfix">
+						<!--Keep This Empty / Menu will come through Javascript-->
+					</ul>
+					<ul class="contact-list-one">
+						<li>
+							<!-- Contact Info Box -->
+							<div class="contact-info-box">
+								<i class="icon lnr-icon-phone-handset"></i>
+								<span class="title">Call Now</span>
+								<a href="tel:+919898286205">+91 98982 86205</a>
+							</div>
+						</li>
+						<li>
+							<!-- Contact Info Box -->
+							<div class="contact-info-box">
+								<span class="icon lnr-icon-envelope1"></span>
+								<span class="title">Send Email</span>
+								<a href="mailto:venkat@seasolmaritime.com">venkat@seasolmaritime.com</a>
+							</div>
+						</li>
+						<li>
+							<!-- Contact Info Box -->
+							<div class="contact-info-box">
+								<span class="icon lnr-icon-clock"></span>
+								<span class="title">Working Hours</span>
+								Mon – Sat: 9:30 AM – 6:30 PM<br>Sunday: Closed
+							</div>
+						</li>
+					</ul>
+
+
+					<ul class="social-links">
+						<li><a href="#"><i class="fa fa-x"></i></a></li>
+						<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+						<li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+						<li><a href="#"><i class="fab fa-youtube"></i></a></li>
+					</ul>
+				</nav>
+			</div><!-- End Mobile Menu -->
+
+			<!-- Header Search -->
+			<div class="search-popup">
+				<span class="search-back-drop"></span>
+				<button class="close-search"><span class="fa fa-times"></span></button>
+
+				<div class="search-inner">
+					<form method="post" action="https://php.kodesolution.com/2025/transend-php/index.php">
+						<div class="form-group">
+							<input type="search" name="search-field" value="" placeholder="Search..." required="">
+							<button type="submit"><i class="fa fa-search"></i></button>
+						</div>
+					</form>
+				</div>
+			</div>
+			<!-- End Header Search -->
+
+			<!-- Sticky Header  -->
+			<div class="sticky-header">
+				<div class="auto-container">
+					<div class="inner-container">
+						<!--Logo-->
+						<div class="logo">
+							<a href="index-2.html" title="Seasol Maritime India Pvt. Ltd."><img src="images/Seasol Maritime Logo.png" alt=""
+									title=""></a>
+						</div>
+
+						<!--Right Col-->
+						<div class="nav-outer">
+							<!-- Main Menu -->
+							<nav class="main-menu">
+								<div class="navbar-collapse show collapse clearfix">
+									<ul class="navigation clearfix">
+										<!--Keep This Empty / Menu will come through Javascript-->
+									</ul>
+								</div>
+							</nav><!-- Main Menu End-->
+
+							<!--Mobile Navigation Toggler-->
+							<div class="mobile-nav-toggler"><span class="icon lnr-icon-bars"></span></div>
+						</div>
+					</div>
+				</div>
+			</div><!-- End Sticky Menu -->
+		</header>
+
+<!-- Contact page hero -->
+<section class="seasol-contact-hero" aria-labelledby="sch-title">
+	<div class="sch-bg" style="background-image: url('contact-section/contact.jpeg');"></div>
+	<div class="sch-overlay"></div>
+	<span class="sch-wave sch-wave--1" aria-hidden="true"></span>
+	<span class="sch-wave sch-wave--2" aria-hidden="true"></span>
+	<div class="sch-inner">
+		<nav class="sch-crumbs" aria-label="Breadcrumb">
+			<a href="index-2.html">Home</a><span aria-hidden="true">/</span><span aria-current="page">Contact</span>
+		</nav>
+		<h1 id="sch-title">Get in Touch with <em>Seasol Maritime</em></h1>
+		<p>Freight forwarding &amp; maritime logistics connecting India to CIS markets. Tell us your route and cargo &ndash; we reply with a tailored plan.</p>
+	</div>
+</section>
+
+<main>
+<section class="seasol-contact-section" id="contact" aria-labelledby="seasol-contact-title">
+    <div class="sc-container">
+
+      <!-- Left column: contact information -->
+      <div class="sc-info">
+        <p class="sc-eyebrow">Contact Us</p>
+        <h2 class="sc-title" id="seasol-contact-title">Let’s Move Your Business Forward</h2>
+        <p class="sc-lead">
+          Whether you are planning an ocean shipment, need air or rail capacity, or want a reliable
+          partner for customs and warehousing across India and the CIS, our team is ready to help.
+          Tell us about your requirements and we will get back to you.
+        </p>
+
+        <!-- Contact details taken from the site footer (index-2.html). -->
+        <ul class="sc-details">
+          <li class="sc-detail-map">
+            <a class="sc-map-card" target="_blank" rel="noopener noreferrer"
+               href="https://www.google.com/maps/search/?api=1&amp;query=Corporate+Maritime+Services+Pvt+Ltd%2C+Growmore+Tower%2C+Plot+No.+5%2C+Sector+2%2C+Kharghar%2C+Navi+Mumbai%2C+Maharashtra+410210%2C+India"
+               aria-label="Find Our Office: view Kharghar, Navi Mumbai on Google Maps (opens in a new tab)">
+              <span class="sc-map-preview" aria-hidden="true">
+                <svg class="sc-map-art" viewBox="0 0 320 120" preserveAspectRatio="xMidYMid slice" focusable="false">
+                  <rect width="320" height="120" fill="#e8f0fd"/>
+                  <path d="M-10 92 C70 70 120 112 200 84 S300 52 340 64" fill="none" stroke="#fff" stroke-width="10" stroke-linecap="round"/>
+                  <path d="M-10 92 C70 70 120 112 200 84 S300 52 340 64" fill="none" stroke="#c9d9f5" stroke-width="1.5" stroke-dasharray="6 6"/>
+                  <path d="M60 -10 L96 130" stroke="#fff" stroke-width="7"/>
+                  <path d="M230 -10 L206 130" stroke="#fff" stroke-width="7"/>
+                  <path d="M-10 30 L340 18" stroke="#fff" stroke-width="5"/>
+                  <rect x="112" y="36" width="52" height="26" rx="5" fill="#d4e3fb"/>
+                  <rect x="244" y="82" width="46" height="24" rx="5" fill="#d4e3fb"/>
+                  <rect x="14" y="52" width="34" height="22" rx="5" fill="#d4e3fb"/>
+                  <path d="M262 8 h50 v22 h-50z" fill="#cfe6f5" opacity=".8"/>
+                </svg>
+                <span class="sc-map-pulse"></span>
+                <svg class="sc-map-pin" viewBox="0 0 24 32" focusable="false"><path d="M12 31s10-9.4 10-19A10 10 0 0 0 2 12c0 9.6 10 19 10 19z" fill="#0757e8"/><circle cx="12" cy="12" r="4.2" fill="#fff"/></svg>
+              </span>
+              <span class="sc-map-body">
+                <span class="sc-map-head">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>
+                  <span class="sc-map-title">Find Our Office</span>
+                </span>
+                <span class="sc-map-text">Visit our office in Kharghar, Navi Mumbai.</span>
+                <span class="sc-map-cta">View on Google Maps
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6"/><path d="M20 4 10 14"/><path d="M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>
+                </span>
+              </span>
+            </a>
+          </li>
+          <li class="sc-detail">
+            <span class="sc-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+            </span>
+            <div>
+              <h3 class="sc-detail-label">Phone</h3>
+              <p class="sc-detail-value">
+                <a href="tel:+919898286205">+91 98982 86205</a><br>
+                <a href="tel:+919619991339">+91 96199 91339</a>
+              </p>
+            </div>
+          </li>
+          <li class="sc-detail">
+            <span class="sc-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+            </span>
+            <div>
+              <h3 class="sc-detail-label">Email</h3>
+              <p class="sc-detail-value">
+                <a href="mailto:venkat@seasolmaritime.com">venkat@seasolmaritime.com</a><br>
+                <a href="mailto:cs2@seasolmaritime.com">cs2@seasolmaritime.com</a>
+              </p>
+            </div>
+          </li>
+          <li class="sc-detail">
+            <span class="sc-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+            </span>
+            <div>
+              <h3 class="sc-detail-label">Business Hours</h3>
+              <p class="sc-detail-value">
+                Mon – Sat: 9:30 AM – 6:30 PM<br>
+                Sunday: Closed
+              </p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Right column: contact form -->
+      <div class="sc-card">
+        <h3 class="sc-card-title">Send an Inquiry</h3>
+        <p class="sc-card-sub">Fields marked <span class="sc-req" aria-hidden="true">*</span><span class="sc-sr-only">with an asterisk</span> are required.</p>
+
+        <form class="sc-form" id="seasol-contact-form" novalidate>
+          <div class="sc-grid">
+            <div class="sc-field">
+              <label for="sc-name">Full Name <span class="sc-req" aria-hidden="true">*</span></label>
+              <input type="text" id="sc-name" name="name" autocomplete="name" required aria-describedby="sc-name-error" placeholder="Your full name">
+              <p class="sc-error" id="sc-name-error" role="alert"></p>
+            </div>
+
+            <div class="sc-field">
+              <label for="sc-email">Business Email <span class="sc-req" aria-hidden="true">*</span></label>
+              <input type="email" id="sc-email" name="email" autocomplete="email" required aria-describedby="sc-email-error" placeholder="you@company.com">
+              <p class="sc-error" id="sc-email-error" role="alert"></p>
+            </div>
+
+            <div class="sc-field">
+              <label for="sc-phone">Phone Number</label>
+              <input type="tel" id="sc-phone" name="phone" autocomplete="tel" aria-describedby="sc-phone-error" placeholder="+91 98765 43210">
+              <p class="sc-error" id="sc-phone-error" role="alert"></p>
+            </div>
+
+            <div class="sc-field">
+              <label for="sc-company">Company Name</label>
+              <input type="text" id="sc-company" name="company" autocomplete="organization" placeholder="Your company">
+            </div>
+
+            <div class="sc-field">
+              <label for="sc-service">Service Required</label>
+              <select id="sc-service" name="service">
+                <option value="">Select a service</option>
+                <option>Ocean Freight</option>
+                <option>Air Freight</option>
+                <option>Road Freight</option>
+                <option>Rail Freight</option>
+                <option>Customs Clearance</option>
+                <option>Warehousing &amp; Distribution</option>
+                <option>Other</option>
+              </select>
+            </div>
+
+            <div class="sc-field">
+              <label for="sc-subject">Subject</label>
+              <input type="text" id="sc-subject" name="subject" autocomplete="off" placeholder="How can we help?">
+            </div>
+
+            <div class="sc-field sc-full">
+              <label for="sc-message">Message <span class="sc-req" aria-hidden="true">*</span></label>
+              <textarea id="sc-message" name="message" rows="5" required aria-describedby="sc-message-error" placeholder="Tell us about your cargo, route and timelines"></textarea>
+              <p class="sc-error" id="sc-message-error" role="alert"></p>
+            </div>
+
+            <div class="sc-field sc-full sc-consent">
+              <label class="sc-check" for="sc-consent">
+                <input type="checkbox" id="sc-consent" name="consent" required aria-describedby="sc-consent-error">
+                <span>I agree to the processing of my details to respond to this inquiry, in line with the privacy policy. <span class="sc-req" aria-hidden="true">*</span></span>
+              </label>
+              <p class="sc-error" id="sc-consent-error" role="alert"></p>
+            </div>
+          </div>
+
+          <button type="submit" class="sc-submit" id="sc-submit">
+            <span class="sc-submit-label">Send Inquiry</span>
+            <span class="sc-spinner" aria-hidden="true"></span>
+          </button>
+
+          <div class="sc-status" id="sc-status" role="status" aria-live="polite" aria-atomic="true" tabindex="-1"></div>
+        </form>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+		<footer class="main-footer seasol-footer" id="site-footer">
+
+			<!-- CTA band -->
+			<div class="auto-container">
+				<div class="sf-cta">
+					<div class="sf-cta__text">
+						<span class="sf-cta__eyebrow">Get a free quote</span>
+						<h3>Ready to move your cargo from India to CIS markets?</h3>
+						<p>Tell us your route and cargo &ndash; our team replies with a tailored freight plan.</p>
+					</div>
+					<div class="sf-cta__actions">
+						<a class="sf-btn sf-btn--amber" href="mailto:venkat@seasolmaritime.com?subject=Quote%20request"><i class="fa-solid fa-paper-plane"></i> Request A Quote</a>
+						<a class="sf-btn sf-btn--ghost" href="tel:+919898286205"><i class="fa-solid fa-phone-volume"></i> +91 98982 86205</a>
+					</div>
+				</div>
+			</div>
+
+			<!-- Link columns -->
+			<div class="sf-main">
+				<div class="auto-container">
+					<div class="sf-grid">
+
+						<div class="sf-col sf-about">
+							<a class="sf-logo" href="index-2.html#home"><img src="images/Seasol Maritime Logo.png" alt="Seasol Maritime India Pvt. Ltd."></a>
+							<p>Seasol Maritime India Pvt. Ltd. provides comprehensive freight forwarding and maritime logistics &ndash; air &amp; ocean freight, breakbulk, NVOCC, ISO tanks and contract logistics connecting India to Central Asia &amp; CIS trade corridors.</p>
+							<ul class="sf-social" aria-label="Social media">
+								<li><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+								<li><a href="#" aria-label="X"><i class="fa fa-x"></i></a></li>
+								<li><a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a></li>
+								<li><a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a></li>
+							</ul>
+						</div>
+
+						<div class="sf-col">
+							<h3 class="widget-title">Explore</h3>
+							<ul class="sf-links">
+								<li><a href="index-2.html#home">Home</a></li>
+								<li><a href="index-2.html#about">About Us</a></li>
+								<li><a href="index-2.html#team">Our Team</a></li>
+								<li><a href="index-2.html#core-values">Core Values</a></li>
+								<li><a href="index-2.html#network">Network &amp; Coverage</a></li>
+								<li><a href="index-2.html#customers">Customers</a></li>
+							</ul>
+						</div>
+
+						<div class="sf-col">
+							<h3 class="widget-title">Our Services</h3>
+							<ul class="sf-links">
+								<li><a href="index-2.html#services">Ocean Freight</a></li>
+								<li><a href="index-2.html#services">Air Freight</a></li>
+								<li><a href="index-2.html#services">Road Freight</a></li>
+								<li><a href="index-2.html#services">Rail Freight</a></li>
+								<li><a href="index-2.html#services">Customs Clearance</a></li>
+								<li><a href="index-2.html#services">Warehousing &amp; Distribution</a></li>
+							</ul>
+						</div>
+
+						<div class="sf-col">
+							<h3 class="widget-title">Get In Touch</h3>
+							<ul class="sf-contact">
+								<li>
+									<span class="sf-ico"><i class="fa-solid fa-phone-volume"></i></span>
+									<div><a href="tel:+919898286205">+91 98982 86205</a><a href="tel:+919619991339">+91 96199 91339</a></div>
+								</li>
+								<li>
+									<span class="sf-ico"><i class="fa-solid fa-envelope"></i></span>
+									<div><a href="mailto:venkat@seasolmaritime.com">venkat@seasolmaritime.com</a><a href="mailto:cs2@seasolmartime.com">cs2@seasolmartime.com</a></div>
+								</li>
+								<li>
+									<span class="sf-ico"><i class="fa-solid fa-clock"></i></span>
+									<div><span>Mon &ndash; Sat: 9:30 AM &ndash; 6:30 PM</span><span>Sunday: Closed</span></div>
+								</li>
+							</ul>
+						</div>
+					</div>
+
+					<!-- Offices strip -->
+					<div class="sf-offices">
+						<div class="sf-office">
+							<span class="sf-ico"><i class="fa-solid fa-location-dot"></i></span>
+							<div>
+								<h5>Registered Office &ndash; Gujarat</h5>
+								<p>203, Amba Arcade, Ward 12A, Gandhidham, Kachchh, Gujarat &ndash; 370201</p>
+							</div>
+						</div>
+						<div class="sf-office">
+							<span class="sf-ico"><i class="fa-solid fa-building"></i></span>
+							<div>
+								<h5>Corporate Office &ndash; Mumbai</h5>
+								<p>404, Goodwill Infinity, Sector 12, Kharghar, Navi Mumbai &ndash; 410210</p>
+							</div>
+						</div>
+						<a class="sf-btn sf-btn--blue" href="index-2.html#india-offices"><i class="fa-solid fa-map-location-dot"></i> View Pan-India Network</a>
+					</div>
+				</div>
+			</div>
+
+			<!--Footer Bottom-->
+			<div class="footer-bottom">
+				<div class="auto-container">
+					<div class="inner-container">
+						<div class="copyright-text">
+							<p>Copyright © 2026 Seasol Maritime India Pvt. Ltd. All Rights Reserved.</p>
+						</div>
+						<div class="copyright-right">
+							<p>Developed by <a href="https://www.hsdigitalmedia.com/" target="_blank" rel="noopener noreferrer">HS Digital Media</a></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</div>
+
+	<!-- Scroll To Top -->
+	<div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-angle-up"></span></div>
+
+	<script src="js/jquery.js"></script>
+	<script src="js/popper.min.js"></script>
+
+
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery.fancybox.js"></script>
+	<script src="js/jquery-ui.js"></script>
+	<script src="js/wow.js"></script>
+	<script src="js/appear.js"></script>
+	<script src="js/bxslider.js"></script>
+	<script src="js/mixitup.js"></script>
+	<script src="js/select2.min.js"></script>
+	<script src="js/swiper.min.js"></script>
+	<script src="js/owl.js"></script>
+	<script src="js/script.js"></script>
+	<script src="js/seasol-network-sections.js"></script>
+	<script src="js/seasol-core-values.js"></script>
+	<script src="contact-section/contact.js"></script>
+</body>
+</html>
