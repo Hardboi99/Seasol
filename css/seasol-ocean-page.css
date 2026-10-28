@@ -1,0 +1,123 @@
+/*
+ * Seasol Maritime - Ocean Freight page extras (loads after css/seasol-service-page.css)
+ * Compact hero (title block only - matching Air Freight, NVOCC & Breakbulk).
+ */
+
+/* ---------- compact hero (title block only) ---------- */
+.sp-hero { min-height: 340px; }
+.sp-hero__inner { padding-top: 30px; padding-bottom: 96px; }
+.sp-hero__bg { background-position: 72% 56%; }
+.sp-hero h1 { margin-bottom: 0; font-size: 46px; }
+.sp-crumbs { margin-bottom: 14px; }
+.sp-float { gap: 14px; padding-bottom: 0; }
+.sp-fcard:nth-child(2) { margin-right: 28px; }
+
+@media (max-width: 767.98px) {
+  .sp-hero { min-height: 0; }
+  .sp-hero__inner { padding-top: 26px; padding-bottom: 84px; }
+  .sp-hero h1 { font-size: 32px; }
+}
+
+/* ==========================================================================
+   What we handle - Asymmetric Cargo Blueprint (scoped: .sp-cargo .ocx-*)
+   ========================================================================== */
+.sp-cargo { background: linear-gradient(180deg, #fff 0%, #F5F9FF 100%); }
+.sp-cargo .ocx-board {
+  position: relative; display: grid; grid-template-columns: repeat(12, 1fr); column-gap: 48px; row-gap: 0;
+  padding: 8px 0 0;
+  background-image: linear-gradient(to right, rgba(7, 87, 232, .06) 1px, transparent 1px);
+  background-size: calc(100% / 12) 100%;
+}
+
+.sp-cargo .ocx-mod {
+  position: relative; display: flex; align-items: flex-start; gap: 24px; min-width: 0;
+  padding: 44px 32px 44px 0; border-top: 1px solid var(--sea-line);
+  outline: none; isolation: isolate;
+  transition: background .4s ease, transform .5s var(--sp-ease), opacity .9s ease;
+}
+.sp-cargo .ocx-mod--wide { grid-column: span 7; }
+.sp-cargo .ocx-mod--small { grid-column: span 5; }
+.sp-cargo .ocx-mod:nth-of-type(odd):not(.ocx-mod--wide) { padding-left: 0; }
+.sp-cargo .ocx-mod--small:nth-of-type(even) { padding-left: 0; }
+
+/* animated accent line on the top rule + route node */
+.sp-cargo .ocx-mod::before {
+  content: ""; position: absolute; left: 0; top: -1px; height: 2px; width: 100%;
+  background: linear-gradient(90deg, var(--sea-cobalt), var(--sea-cyan));
+  transform: scaleX(0); transform-origin: left; transition: transform .7s var(--sp-ease);
+}
+.sp-cargo .ocx-mod::after {
+  content: ""; position: absolute; left: 0; top: -5px; width: 9px; height: 9px; border-radius: 50%;
+  background: #fff; border: 2px solid var(--sea-cobalt); transition: background .3s ease, transform .4s var(--sp-ease);
+}
+.sp-cargo .ocx-mod.is-in::before { transform: scaleX(.18); transition-delay: .35s; }
+.sp-cargo .ocx-mod:hover::before, .sp-cargo .ocx-mod:focus-visible::before { transform: scaleX(1); transition-delay: 0s; }
+.sp-cargo .ocx-mod:hover::after, .sp-cargo .ocx-mod:focus-visible::after { background: var(--sea-amber); border-color: var(--sea-amber); transform: scale(1.25); }
+
+.sp-cargo .ocx-mod__no {
+  position: absolute; right: 24px; top: 14px; z-index: -1; font-size: 84px; line-height: 1; font-weight: 800;
+  color: rgba(7, 87, 232, .07); transition: color .4s ease, transform .5s var(--sp-ease);
+}
+.sp-cargo .ocx-mod__ico {
+  flex-shrink: 0; display: flex; align-items: center; justify-content: center; width: 54px; height: 54px;
+  border-radius: 6px 16px 6px 16px; font-size: 22px; color: var(--sea-cobalt);
+  background: var(--sea-sky); box-shadow: inset 0 0 0 1px var(--sea-line);
+  transition: transform .5s var(--sp-ease), background .3s ease, color .3s ease;
+}
+.sp-cargo .ocx-mod__body { min-width: 0; max-width: 520px; }
+.sp-cargo .ocx-mod h4 { margin: 4px 0 10px; font-size: 21px; line-height: 1.3; font-weight: 700; color: var(--sea-navy); }
+.sp-cargo .ocx-mod p { margin: 0; font-size: 16px; line-height: 1.7; color: var(--sea-text); }
+
+.sp-cargo .ocx-mod:hover, .sp-cargo .ocx-mod:focus-visible { background: linear-gradient(90deg, rgba(234, 243, 255, .85), rgba(234, 243, 255, 0)); transform: translateY(-4px); }
+.sp-cargo .ocx-mod:hover .ocx-mod__ico, .sp-cargo .ocx-mod:focus-visible .ocx-mod__ico { transform: translateX(4px); background: var(--sea-cobalt); color: #fff; }
+.sp-cargo .ocx-mod:hover .ocx-mod__no, .sp-cargo .ocx-mod:focus-visible .ocx-mod__no { color: rgba(7, 87, 232, .2); transform: translateX(-4px); }
+.sp-cargo .ocx-mod:focus-visible { box-shadow: 0 0 0 3px rgba(7, 87, 232, .35); border-radius: 4px; }
+
+/* feature modules: tinted panel with container linework */
+.sp-cargo .ocx-mod--feature {
+  padding-left: 32px; border-top-color: transparent;
+  background: linear-gradient(120deg, #EAF3FF 0%, #E6F6FB 100%);
+  box-shadow: inset 0 0 0 1px var(--sea-line);
+}
+.sp-cargo .ocx-mod--feature::after { left: 32px; }
+.sp-cargo .ocx-mod--feature:hover, .sp-cargo .ocx-mod--feature:focus-visible { background: linear-gradient(120deg, #DCEBFF 0%, #D9F1F8 100%); }
+.sp-cargo .ocx-mod--feature .ocx-mod__ico { background: #fff; }
+
+.sp-cargo .ocx-mod__art {
+  position: absolute; right: 10px; bottom: 6px; z-index: -1; width: 220px; opacity: .22; color: var(--sea-cobalt);
+  transition: opacity .5s ease, transform .6s var(--sp-ease);
+}
+.sp-cargo .ocx-mod__art svg { display: block; width: 100%; height: auto; }
+.sp-cargo .ocx-mod:hover .ocx-mod__art, .sp-cargo .ocx-mod:focus-visible .ocx-mod__art { opacity: .38; transform: translateX(-4px); }
+.sp-cargo .ocx-mod--wide:not(.ocx-mod--feature) .ocx-mod__art { opacity: .16; color: var(--sea-navy); }
+.sp-cargo .ocx-mod--wide .ocx-mod__body { max-width: 400px; }
+
+@media (max-width: 1199.98px) {
+  .sp-cargo .ocx-board { column-gap: 28px; }
+  .sp-cargo .ocx-mod { padding-right: 20px; gap: 18px; }
+  .sp-cargo .ocx-mod__art { width: 170px; }
+  .sp-cargo .ocx-mod--wide .ocx-mod__body { max-width: 340px; }
+}
+@media (max-width: 991.98px) {
+  .sp-cargo .ocx-board { grid-template-columns: repeat(2, 1fr); column-gap: 24px; background-image: none; }
+  .sp-cargo .ocx-mod--wide { grid-column: 1 / -1; }
+  .sp-cargo .ocx-mod--small { grid-column: span 1; }
+  .sp-cargo .ocx-mod--wide .ocx-mod__body { max-width: 440px; }
+  .sp-cargo .ocx-mod__art { width: 190px; }
+}
+@media (max-width: 575.98px) {
+  .sp-cargo .ocx-board { grid-template-columns: 1fr; }
+  .sp-cargo .ocx-mod--wide, .sp-cargo .ocx-mod--small { grid-column: 1 / -1; }
+  .sp-cargo .ocx-mod { padding: 32px 0; }
+  .sp-cargo .ocx-mod--feature { padding: 32px 20px; }
+  .sp-cargo .ocx-mod--feature::after { left: 20px; }
+  .sp-cargo .ocx-mod__no { font-size: 60px; right: 12px; }
+  .sp-cargo .ocx-mod__art { width: 130px; opacity: .14; }
+  .sp-cargo .ocx-mod__body, .sp-cargo .ocx-mod--wide .ocx-mod__body { max-width: none; }
+  .sp-cargo .ocx-mod h4 { font-size: 19px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sp-cargo .ocx-mod, .sp-cargo .ocx-mod::before, .sp-cargo .ocx-mod::after, .sp-cargo .ocx-mod__ico, .sp-cargo .ocx-mod__no, .sp-cargo .ocx-mod__art { transition: none; }
+  .sp-cargo .ocx-mod:hover, .sp-cargo .ocx-mod:focus-visible, .sp-cargo .ocx-mod:hover .ocx-mod__ico, .sp-cargo .ocx-mod:hover .ocx-mod__no, .sp-cargo .ocx-mod:hover .ocx-mod__art { transform: none; }
+  .sp-cargo .ocx-mod.is-in::before { transform: scaleX(1); }
+}

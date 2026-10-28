@@ -1,0 +1,57 @@
+/* Seasol Global Network – detailed world map section (scoped to .global-network) */
+.global-network { padding: 90px 0 80px; position: relative; overflow: hidden; background: linear-gradient(180deg, #fff 0%, var(--sea-sky, #EAF3FF) 100%) !important; }
+.global-network .gn-intro { max-width: 900px; margin: 0 auto 40px; text-align: center; }
+.global-network .gn-intro .text { margin-top: 14px; color: #5b6b82; font-size: 17px; line-height: 1.7; }
+
+.gn-card { position: relative; background: #fff; border: 1px solid #DCE8F7; border-radius: 22px; padding: 18px; box-shadow: 0 24px 60px rgba(7, 27, 58, .10); }
+.gn-stage { position: relative; border-radius: 14px; overflow: hidden; border: 1px solid #D5E6F7; background: #EAF4FC; }
+.gn-scroll { overflow: auto; -webkit-overflow-scrolling: touch; scrollbar-width: thin; touch-action: pan-x pan-y; }
+.gn-canvas { width: 100%; }
+.gn-canvas > svg, .gn-canvas > img { display: block; width: 100%; height: auto; }
+.gn-canvas > svg:focus-visible { outline: 3px solid var(--sea-amber, #FF9A1F); outline-offset: -3px; }
+
+.gn-country { cursor: pointer; transition: fill .18s, stroke .18s; }
+.gn-country.is-active { fill: #00A8E8; stroke: #0757E8; stroke-width: 1.3; }
+.gn-country--india.is-active { fill: #0A3FB8; stroke: #FF9A1F; }
+.gn-country--india { stroke: #fff; stroke-width: .9; }
+.gn-scroll { max-height: min(78vh, 760px); }
+.gn-scroll.is-zoomed { cursor: grab; }
+.gn-scroll.is-dragging { cursor: grabbing; user-select: none; }
+.gn-scroll.is-dragging .gn-country { pointer-events: none; }
+
+/* labels are positioned by js/seasol-global-network.js (collision-aware, zoom-aware) */
+.gn-clabel { user-select: none; }
+.gn-canvas > svg.is-js .gn-clabel, .gn-canvas > svg.is-js .gn-dot { display: inline; opacity: 0; }
+.gn-canvas > svg.is-js .gn-clabel.is-on, .gn-canvas > svg.is-js .gn-dot.is-on { opacity: 1; }
+.gn-canvas > svg.is-js .gn-dot { pointer-events: none; cursor: pointer; }
+.gn-canvas > svg.is-js .gn-dot.is-on { pointer-events: auto; }
+.gn-canvas > svg.is-js .gn-dot.is-on:hover { fill: #00A8E8; }
+.gn-canvas > svg.is-ready .gn-clabel { transition: opacity .25s ease, transform .25s ease, font-size .25s ease; }
+.gn-canvas > svg.is-ready .gn-dot { transition: opacity .25s ease; }
+
+.gn-tools { position: absolute; top: 12px; right: 12px; z-index: 4; display: flex; gap: 6px; }
+.gn-tools button { width: 36px; height: 36px; border: 1px solid #CFE0F5; border-radius: 10px; background: #fff; color: #071B3A; font-size: 20px; line-height: 1; cursor: pointer; box-shadow: 0 6px 16px rgba(7, 27, 58, .12); }
+.gn-tools button:hover, .gn-tools button:focus-visible { background: #0757E8; color: #fff; outline: none; }
+
+.gn-tooltip { position: absolute; z-index: 5; pointer-events: none; padding: 7px 12px; border-radius: 9px; background: #071B3A; color: #fff; font-size: 13px; font-weight: 600; line-height: 1.3; white-space: nowrap; box-shadow: 0 10px 24px rgba(7, 27, 58, .3); opacity: 0; transform: translate(-50%, calc(-100% - 10px)); transition: opacity .12s; }
+.gn-tooltip.is-visible { opacity: 1; }
+.gn-tooltip::after { content: ""; position: absolute; left: 50%; bottom: -4px; width: 8px; height: 8px; background: inherit; transform: translateX(-50%) rotate(45deg); }
+
+.gn-legend { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 26px; margin: 18px 0 0; padding: 0; list-style: none; font-size: 14px; color: #3d4f69; }
+.gn-legend li { display: flex; align-items: center; gap: 8px; }
+.gn-legend svg { width: 14px; height: 14px; flex: none; }
+.gn-note { margin: 12px 0 0; text-align: center; font-size: 13px; color: #7a889c; }
+
+@media (max-width: 1023px) {
+    .gn-canvas { min-width: calc(900px * var(--gn-zoom, 1)); }
+}
+@media (max-width: 767px) {
+    .global-network { padding: 60px 0 50px; }
+    .gn-card { padding: 10px; border-radius: 16px; }
+    .gn-canvas { min-width: calc(1000px * var(--gn-zoom, 1)); }
+    .gn-legend { font-size: 13px; gap: 8px 16px; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .gn-country, .gn-tooltip, .gn-canvas > svg.is-ready .gn-clabel, .gn-canvas > svg.is-ready .gn-dot { transition: none; }
+    .gn-scroll { scroll-behavior: auto; }
+}

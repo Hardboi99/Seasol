@@ -112,7 +112,20 @@
   padding: 12px 0 !important;
 }
 
-.header-style-two .header-lower .logo-box .logo img,
+.header-style-two .header-lower .logo-box {
+  flex: 0 0 auto !important;
+  margin-right: 48px !important; /* keeps the larger logo clear of the nav items */
+}
+
+.header-style-two .header-lower .logo-box .logo img {
+  height: 64px !important;
+  max-height: 64px !important;
+  width: auto !important;
+  object-fit: contain !important;
+  display: block !important;
+  transition: transform 0.3s ease;
+}
+
 .sticky-header .logo img {
   height: 48px !important;
   max-height: 48px !important;
@@ -364,8 +377,8 @@
 }
 
 .sticky-header .logo img {
-  height: 42px !important;
-  max-height: 42px !important;
+  height: 75px !important;
+  max-height: 75px !important;
   width: auto !important;
   object-fit: contain !important;
 }
@@ -1243,4 +1256,27 @@
   /* the Request A Quote button lines up with the menu */
   .header-style-two .header-lower .inner-container { align-items: center !important; }
   .header-style-two .header-lower .main-box { margin-left: auto !important; margin-right: 24px !important; }
+}
+
+/* keep every menu label on a single line */
+@media (min-width: 1200px) {
+  .header-style-two .header-lower .main-box { flex: 1 1 auto !important; min-width: 0 !important; }
+  .header-style-two .header-lower .navigation { flex-wrap: nowrap !important; justify-content: flex-end !important; }
+  .header-style-two .header-lower .navigation > li { flex: 0 0 auto !important; }
+  .header-style-two .header-lower .navigation > li > a { white-space: nowrap !important; }
+}
+
+/* narrower desktops: slightly smaller logo so the menu keeps its spacing */
+@media (min-width: 1200px) and (max-width: 1399px) {
+  .header-style-two .header-lower .navigation { gap: 0 !important; }
+  .header-style-two .header-lower .navigation > li { padding: 28px 9px !important; }
+  .header-style-two .header-lower .navigation > li > a { font-size: 15px !important; gap: 5px !important; }
+  .header-style-two .header-lower .main-box { margin-right: 12px !important; }
+  .header-style-two .header-lower .logo-box { margin-right: 16px !important; }
+  .header-style-two .header-lower .logo-box .logo img { height: 56px !important; max-height: 56px !important; }
+}
+
+@media (max-width: 1199px) {
+  .header-style-two .header-lower .logo-box { margin-right: 0 !important; }
+  .header-style-two .header-lower .logo-box .logo img { height: 52px !important; max-height: 52px !important; }
 }

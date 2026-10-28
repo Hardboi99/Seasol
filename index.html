@@ -6,1099 +6,988 @@
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 
 <head>
-	<meta charset="utf-8">
-	<title>Seasol Maritime | Freight Forwarding &amp; Maritime Logistics for CIS Markets</title>
-	<meta name="description" content="Seasol Maritime India Pvt. Ltd. provides freight forwarding and maritime logistics – air freight, ocean freight, breakbulk, customs brokerage, NVOCC, ISO tanks and contract logistics – connecting India to CIS markets.">
+<meta charset="utf-8">
+<title>Seasol Maritime | Freight Forwarding &amp; Maritime Logistics for CIS Markets</title>
+<meta name="description" content="Seasol Maritime India Pvt. Ltd. provides freight forwarding and maritime logistics – air freight, ocean freight, breakbulk, customs brokerage, NVOCC, ISO tanks and contract logistics – connecting India to CIS markets.">
 
-	<!-- Stylesheets -->
-	<link href="css/bootstrap.min.css" rel="stylesheet">
-
-
-	<link href="css/style.css" rel="stylesheet">
-		<link href="css/seasol-theme copy.css" rel="stylesheet">
-	<link href="css/seasol-network-sections.css" rel="stylesheet">
-	<link href="css/seasol-core-values.css" rel="stylesheet">
-	<link href="css/seasol-services-sections.css" rel="stylesheet">
-	<link href="css/seasol-services-slider.css" rel="stylesheet">
-	<link href="css/seasol-navbar-footer.css" rel="stylesheet">
-	<link href="contact-section/contact.css" rel="stylesheet">
-
-	<!-- Seasol colour system (derived from the logo)
-		 Logo: cobalt #0757E8 + deep navy  -> primary (60%)
-		 Analogous: ocean cyan #0AA5D6     -> secondary (30%): "sea" feel, gradients, eyebrows, icons
-		 Complement of blue: amber #FF9A1F -> accent (10%): CTAs, badges, highlights
-		 Tints: sky / ice / cream          -> light alternating section backgrounds (no dark sections) -->
-	<style>
-		:root {
-			--sea-navy: #0B2A6F;
-			--sea-cobalt: #0757E8;
-			--sea-cobalt-deep: #0A3FB8;
-			--sea-cyan: #0AA5D6;
-			--sea-cyan-text: #0782A8;
-			--sea-amber: #FF9A1F;
-			--sea-amber-deep: #F07F00;
-			--sea-sky: #EAF3FF;
-			--sea-ice: #E6F6FB;
-			--sea-cream: #FFF6E8;
-			--theme-color1: #0B2A6F;
-			--bg-theme-color1: #0B2A6F;
-			--border-theme-color1: #0B2A6F;
-		}
-
-		/* Buttons: cobalt -> cyan gradient; header quote button = amber accent */
-		.theme-btn.btn-style-one { background: linear-gradient(135deg, var(--sea-cobalt) 0%, var(--sea-cyan) 100%) !important; border-color: transparent !important; color: #fff !important; box-shadow: 0 8px 20px rgba(7, 87, 232, .25); }
-		.theme-btn.btn-style-one:hover { background: linear-gradient(135deg, var(--sea-cobalt-deep) 0%, var(--sea-cobalt) 100%) !important; }
-		.main-header .outer-box > .theme-btn.btn-style-one,
-		.about-section-two .theme-btn.btn-style-one,
-		.contact-section .theme-btn.btn-style-one { background: linear-gradient(135deg, var(--sea-amber) 0%, var(--sea-amber-deep) 100%) !important; box-shadow: 0 8px 20px rgba(255, 154, 31, .35); }
-		.main-header .outer-box > .theme-btn.btn-style-one:hover,
-		.about-section-two .theme-btn.btn-style-one:hover,
-		.contact-section .theme-btn.btn-style-one:hover { background: linear-gradient(135deg, var(--sea-amber-deep) 0%, #D96E00 100%) !important; }
-
-		/* Navigation active/hover */
-		.main-menu .navigation > li.current > a,
-		.main-menu .navigation > li:hover > a { color: var(--sea-cobalt) !important; }
-
-		/* Eyebrow labels + headings */
-		.sec-title .sub-title { color: var(--sea-cyan-text) !important; }
-		.sec-title h2, .sec-title h3 { color: var(--sea-navy); }
-		.sec-title .sub-title::before, .sec-title .sub-title::after { background: var(--sea-amber) !important; }
-
-		/* Feature cards under hero */
-		.seasol-feature-cards .inner { background: linear-gradient(135deg, #0A3FB8 0%, #0757E8 60%, #0AA5D6 140%) !important; }
-		.seasol-feature-cards .theme-btn.btn-style-one { background: linear-gradient(135deg, var(--sea-amber) 0%, var(--sea-amber-deep) 100%) !important; }
-
-		/* Icon chips: cyan-tinted gradient with cobalt glyphs */
-		.icon-box, .mvv-icon, .sc-core-values__icon { background: linear-gradient(135deg, var(--sea-sky), var(--sea-ice)) !important; color: var(--sea-cobalt); border-color: #CFE6F5 !important; }
-
-		/* Section backgrounds: soft alternating tints (all light) */
-		.about-section-two { background: #fff; }
-		.fun-fact-section.style-two { background: linear-gradient(180deg, var(--sea-sky) 0%, var(--sea-ice) 100%) !important; }
-		.services-section-two { background: linear-gradient(180deg, #fff 0%, var(--sea-sky) 100%) !important; }
-		.work-section-two { background: var(--sea-cream) !important; }
-		.mission-vision-values { background: #fff; }
-		.sc-core-values { background: linear-gradient(180deg, var(--sea-sky) 0%, #fff 100%) !important; }
-		.team-section-two { background: #fff; }
-		.cis-gateway-section { background: linear-gradient(180deg, var(--sea-ice) 0%, var(--sea-sky) 100%) !important; }
-		.india-office-network { background: linear-gradient(180deg, #fff 0%, var(--sea-ice) 100%) !important; }
-		.valued-customers { background: var(--sea-cream) !important; }
-
-		/* Cards get a coloured top edge for depth */
-		.fun-fact-box .inner-box, .counter-block .inner { border-top: 3px solid var(--sea-cyan); }
-		.work-section-two .work-block .inner-box .icon-box { box-shadow: 0 0 0 6px rgba(255, 154, 31, .15); }
-		.work-section-two .count, .work-section-two .number, .work-section-two [class*="number"] { background: linear-gradient(135deg, var(--sea-amber), var(--sea-amber-deep)) !important; color: #fff !important; }
-
-		/* Year badge in mission block */
-		.mission-vision-values [class*="exp"], .mission-vision-values [class*="year"] { background: linear-gradient(160deg, var(--sea-cobalt), var(--sea-cyan)) !important; }
-
-		/* ---- Navbar / sidebar / footer polish (loads after css/seasol-navbar-footer.css) ---- */
-
-		/* Navbar: amber quote button, cobalt hover line with amber tip */
-		.header-style-two .header-lower .outer-box .btn-style-one { background: linear-gradient(135deg, var(--sea-amber) 0%, var(--sea-amber-deep) 100%) !important; box-shadow: 0 6px 20px rgba(255, 154, 31, .35) !important; }
-		.header-style-two .header-lower .outer-box .btn-style-one:hover { background: linear-gradient(135deg, var(--sea-amber-deep) 0%, #D96E00 100%) !important; box-shadow: 0 10px 25px rgba(240, 127, 0, .45) !important; }
-		.header-style-two .header-lower .navigation > li > a { color: var(--sea-navy) !important; }
-		/* Mobile menu styling fully managed in css/seasol-navbar-footer.css */
-		.header-style-two .header-lower .grid-nav-btn .inner { background: linear-gradient(135deg, var(--sea-cobalt), var(--sea-cyan)) !important; }
-		.scroll-to-top { background: linear-gradient(135deg, var(--sea-amber), var(--sea-amber-deep)) !important; color: #fff !important; }
-	</style>
-	<link href="css/seasol-footer.css" rel="stylesheet">
+<!-- Stylesheets -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
 
 
-	<link rel="shortcut icon" href="images/seasol-favicon.png" type="image/png">
-	<link rel="icon" href="images/seasol-favicon.png" type="image/png">
+<link href="css/style.css" rel="stylesheet">
+<link href="css/seasol-theme copy.css" rel="stylesheet">
+<link href="css/seasol-network-sections.css" rel="stylesheet">
+<link href="css/seasol-global-network.css" rel="stylesheet">
+<link href="css/seasol-core-values.css" rel="stylesheet">
+<link href="css/seasol-services-sections.css" rel="stylesheet">
+<link href="css/seasol-services-slider.css" rel="stylesheet">
+<link href="css/seasol-navbar-footer.css" rel="stylesheet">
+<link href="contact-section/contact.css" rel="stylesheet">
 
-	<!-- Responsive -->
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-	<!--[if lt IE 9]><script src="js/html5shiv.js"></script><![endif]-->
-	<!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
+<!-- Seasol colour system (derived from the logo)
+Logo: cobalt #0757E8 + deep navy  -> primary (60%)
+Analogous: ocean cyan #0AA5D6     -> secondary (30%): "sea" feel, gradients, eyebrows, icons
+Complement of blue: amber #FF9A1F -> accent (10%): CTAs, badges, highlights
+Tints: sky / ice / cream          -> light alternating section backgrounds (no dark sections) -->
+<style>
+:root {
+--sea-navy: #0B2A6F;
+--sea-cobalt: #0757E8;
+--sea-cobalt-deep: #0A3FB8;
+--sea-cyan: #0AA5D6;
+--sea-cyan-text: #0782A8;
+--sea-amber: #FF9A1F;
+--sea-amber-deep: #F07F00;
+--sea-sky: #EAF3FF;
+--sea-ice: #E6F6FB;
+--sea-cream: #FFF6E8;
+--theme-color1: #0B2A6F;
+--bg-theme-color1: #0B2A6F;
+--border-theme-color1: #0B2A6F;
+}
+
+/* Buttons: cobalt -> cyan gradient; header quote button = amber accent */
+.theme-btn.btn-style-one { background: linear-gradient(135deg, var(--sea-cobalt) 0%, var(--sea-cyan) 100%) !important; border-color: transparent !important; color: #fff !important; box-shadow: 0 8px 20px rgba(7, 87, 232, .25); }
+.theme-btn.btn-style-one:hover { background: linear-gradient(135deg, var(--sea-cobalt-deep) 0%, var(--sea-cobalt) 100%) !important; }
+.main-header .outer-box > .theme-btn.btn-style-one,
+.about-section-two .theme-btn.btn-style-one,
+.contact-section .theme-btn.btn-style-one { background: linear-gradient(135deg, var(--sea-amber) 0%, var(--sea-amber-deep) 100%) !important; box-shadow: 0 8px 20px rgba(255, 154, 31, .35); }
+.main-header .outer-box > .theme-btn.btn-style-one:hover,
+.about-section-two .theme-btn.btn-style-one:hover,
+.contact-section .theme-btn.btn-style-one:hover { background: linear-gradient(135deg, var(--sea-amber-deep) 0%, #D96E00 100%) !important; }
+
+/* Navigation active/hover */
+.main-menu .navigation > li.current > a,
+.main-menu .navigation > li:hover > a { color: var(--sea-cobalt) !important; }
+
+/* Eyebrow labels + headings */
+.sec-title .sub-title { color: var(--sea-cyan-text) !important; }
+.sec-title h2, .sec-title h3 { color: var(--sea-navy); }
+.sec-title .sub-title::before, .sec-title .sub-title::after { background: var(--sea-amber) !important; }
+
+/* Feature cards under hero */
+.seasol-feature-cards .inner { background: linear-gradient(135deg, #0A3FB8 0%, #0757E8 60%, #0AA5D6 140%) !important; }
+.seasol-feature-cards .theme-btn.btn-style-one { background: linear-gradient(135deg, var(--sea-amber) 0%, var(--sea-amber-deep) 100%) !important; }
+
+/* Icon chips: cyan-tinted gradient with cobalt glyphs */
+.icon-box, .mvv-icon, .sc-core-values__icon { background: linear-gradient(135deg, var(--sea-sky), var(--sea-ice)) !important; color: var(--sea-cobalt); border-color: #CFE6F5 !important; }
+
+/* Section backgrounds: soft alternating tints (all light) */
+.about-section-two { background: #fff; }
+.fun-fact-section.style-two { background: linear-gradient(180deg, var(--sea-sky) 0%, var(--sea-ice) 100%) !important; }
+.services-section-two { background: linear-gradient(180deg, #fff 0%, var(--sea-sky) 100%) !important; }
+.work-section-two { background: var(--sea-cream) !important; }
+.mission-vision-values { background: #fff; }
+.sc-core-values { background: linear-gradient(180deg, var(--sea-sky) 0%, #fff 100%) !important; }
+.global-network { background: linear-gradient(180deg, #fff 0%, var(--sea-sky) 100%); }
+.cis-gateway-section { background: linear-gradient(180deg, var(--sea-ice) 0%, var(--sea-sky) 100%) !important; }
+.india-office-network { background: linear-gradient(180deg, #fff 0%, var(--sea-ice) 100%) !important; }
+.valued-customers { background: var(--sea-cream) !important; }
+
+/* Cards get a coloured top edge for depth */
+.fun-fact-box .inner-box, .counter-block .inner { border-top: 3px solid var(--sea-cyan); }
+.work-section-two .work-block .inner-box .icon-box { box-shadow: 0 0 0 6px rgba(255, 154, 31, .15); }
+.work-section-two .count, .work-section-two .number, .work-section-two [class*="number"] { background: linear-gradient(135deg, var(--sea-amber), var(--sea-amber-deep)) !important; color: #fff !important; }
+
+/* Year badge in mission block */
+.mission-vision-values [class*="exp"], .mission-vision-values [class*="year"] { background: linear-gradient(160deg, var(--sea-cobalt), var(--sea-cyan)) !important; }
+
+/* ---- Navbar / sidebar / footer polish (loads after css/seasol-navbar-footer.css) ---- */
+
+/* Navbar: amber quote button, cobalt hover line with amber tip */
+.header-style-two .header-lower .outer-box .btn-style-one { background: linear-gradient(135deg, var(--sea-amber) 0%, var(--sea-amber-deep) 100%) !important; box-shadow: 0 6px 20px rgba(255, 154, 31, .35) !important; }
+.header-style-two .header-lower .outer-box .btn-style-one:hover { background: linear-gradient(135deg, var(--sea-amber-deep) 0%, #D96E00 100%) !important; box-shadow: 0 10px 25px rgba(240, 127, 0, .45) !important; }
+.header-style-two .header-lower .navigation > li > a { color: var(--sea-navy) !important; }
+/* Mobile menu styling fully managed in css/seasol-navbar-footer.css */
+.header-style-two .header-lower .grid-nav-btn .inner { background: linear-gradient(135deg, var(--sea-cobalt), var(--sea-cyan)) !important; }
+.scroll-to-top { background: linear-gradient(135deg, var(--sea-amber), var(--sea-amber-deep)) !important; color: #fff !important; }
+</style>
+<link href="css/seasol-footer.css" rel="stylesheet">
+
+
+<link rel="shortcut icon" href="images/seasol-favicon.png" type="image/png">
+<link rel="icon" href="images/seasol-favicon.png" type="image/png">
+
+<!-- Responsive -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<!--[if lt IE 9]><script src="js/html5shiv.js"></script><![endif]-->
+<!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
 </head>
 
 <body>
-	<div class="page-wrapper">
+<div class="page-wrapper">
 
-		<!-- Preloader -->
-		<div class="preloader">
-			<div class="preloader__inner">
-				<div class="preloader__glow"></div>
-				<div class="preloader__logo-wrap">
-					<img src="images/Seasol Maritime Logo.png" alt="Seasol Maritime" class="preloader__logo">
-					<span class="preloader__wave preloader__wave--1"></span>
-					<span class="preloader__wave preloader__wave--2"></span>
-				</div>
-				<div class="preloader__progress">
-					<span class="preloader__progress-bar"></span>
-				</div>
-				<span class="preloader__text">Freight Forwarding &amp; Maritime Logistics</span>
-			</div>
-		</div>
-		<script>
-			// Snappy preloader dismissal: guarantees site reveal within 600ms
-			(function() {
-				function dismissLoader() {
-					var el = document.querySelector('.preloader');
-					if (el && !el.classList.contains('is-loaded')) {
-						el.classList.add('is-loaded');
-						el.style.opacity = '0';
-						setTimeout(function() { if (el && el.parentNode) el.parentNode.removeChild(el); }, 350);
-					}
-				}
-				window.addEventListener('load', dismissLoader);
-				setTimeout(dismissLoader, 600);
-			})();
-		</script>
+<!-- Preloader -->
+<div class="preloader">
+<div class="preloader__inner">
+<div class="preloader__glow"></div>
+<div class="preloader__logo-wrap">
+<img src="images/Seasol Maritime Logo.png" alt="Seasol Maritime" class="preloader__logo">
+<span class="preloader__wave preloader__wave--1"></span>
+<span class="preloader__wave preloader__wave--2"></span>
+</div>
+<div class="preloader__progress">
+<span class="preloader__progress-bar"></span>
+</div>
+<span class="preloader__text">Freight Forwarding &amp; Maritime Logistics</span>
+</div>
+</div>
+<script>
+// Snappy preloader dismissal: guarantees site reveal within 600ms
+(function() {
+function dismissLoader() {
+var el = document.querySelector('.preloader');
+if (el && !el.classList.contains('is-loaded')) {
+el.classList.add('is-loaded');
+el.style.opacity = '0';
+setTimeout(function() { if (el && el.parentNode) el.parentNode.removeChild(el); }, 350);
+}
+}
+window.addEventListener('load', dismissLoader);
+setTimeout(dismissLoader, 600);
+})();
+</script>
 
-		<!-- Main Header-->
-		<header class="main-header header-style-two" id="home">
-			<!-- Header Top -->
-			<div class="header-top">
-				<div class="auto-container">
-					<div class="inner-container">
+<!-- Main Header-->
+<header class="main-header header-style-two" id="home">
+<!-- Header Top -->
+<div class="header-top">
+<div class="auto-container">
+<div class="inner-container">
 
-						<div class="top-left">
-							<div class="top-tagline"><i class="fa-solid fa-ship"></i> Freight Forwarding &amp; Maritime Logistics – India to CIS Markets</div>
-						</div>
+<div class="top-left">
+<div class="top-tagline"><i class="fa-solid fa-ship"></i> NVOCC &amp; Freight Forwarding Services</div>
+</div>
 
-						<div class="top-right">
-							<div class="top-item"><i class="fa-solid fa-phone-volume"></i> <a href="tel:+919898286205">+91 98982 86205</a></div>
-							<div class="top-divider" aria-hidden="true"></div>
-							<div class="top-item"><i class="fa-solid fa-envelope"></i> <a href="mailto:venkat@seasolmaritime.com">venkat@seasolmaritime.com</a></div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- Header Top -->
-			<!-- Header Lower -->
-			<div class="header-lower">
-				<div class="auto-container">
-					<div class="inner-container">
-						<div class="logo-box">
-							<div class="logo">
-								<a href="#home" title="Seasol Maritime India Pvt. Ltd."><img src="images/Seasol Maritime Logo.png" alt=""
-										width="207" height="42" title=""></a>
-							</div>
-						</div>
-						<!-- Main box -->
-						<div class="main-box">
+<div class="top-right">
+<div class="top-item"><i class="fa-solid fa-phone-volume"></i> <a href="tel:+919898286205">+91 98982 86205</a></div>
+<div class="top-divider" aria-hidden="true"></div>
+<div class="top-item"><i class="fa-solid fa-envelope"></i> <a href="mailto:cs2@seasolmaritime.com">cs2@seasolmaritime.com</a></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Header Top -->
+<!-- Header Lower -->
+<div class="header-lower">
+<div class="auto-container">
+<div class="inner-container">
+<div class="logo-box">
+<div class="logo">
+<a href="#home" title="Seasol Maritime India Pvt. Ltd."><img src="images/Seasol Maritime Logo.png" alt=""
+width="207" height="42" title=""></a>
+</div>
+</div>
+<!-- Main box -->
+<div class="main-box">
 
-							<!--Nav Box-->
-							<div class="nav-outer">
+<!--Nav Box-->
+<div class="nav-outer">
 
-								<nav class="nav main-menu">
-									<ul class="navigation">
-										<li class="current"><a href="#home">Home</a></li>
-										<li class="dropdown"><a href="#about">About Us</a>
-											<ul>
-												<li><a href="#about">Our Company</a></li>
-												<li><a href="#team">Our Team</a></li>
-												<li><a href="#core-values">Core Values</a></li>
-											</ul>
-										</li>
-										<li class="dropdown"><a href="#services">Services</a>
-											<ul>
-												<li><a href="ocean-freight.html">Ocean Freight</a></li>
-												<li><a href="air-freight.html">Air Freight</a></li>
-												<li><a href="breakbulk-special-equipment.html">Breakbulk &amp; Special Equipment</a></li>
-												<li><a href="#services">Customs Brokerage &amp; Cross Trading</a></li>
-												<li><a href="nvocc-iso-tanks.html">NVOCC &amp; ISO Tanks</a></li>
-												<li><a href="#services">Others</a></li>
-											</ul>
-										</li>
-										<li class="dropdown"><a href="#network">Network &amp; Coverage</a>
-											<ul>
-												<li><a href="#india-offices">India</a></li>
-												<li><a href="#cis-gateway">CIS Countries</a></li>
-												<li><a href="#network">International Network</a></li>
-											</ul>
-										</li>
-										<li class="dropdown"><a href="#customers">Customers</a>
-											<ul>
-												<li><a href="#customers">Customer Industries</a></li>
-												<li><a href="#customers">Partners</a></li>
-											</ul>
-										</li>
-										<li><a href="#contact">Contact</a></li>
-									</ul>
-								</nav>
-								<!-- Main Menu End-->
-							</div>
-						</div>
-
-
-						<div class="outer-box">
-							<a href="#contact" class="theme-btn btn-style-one"><i
-									class="icon fa fas fa-plus"></i><span class="btn-title">Request A Quote</span></a>
-
-							<!-- Mobile Nav Btn -->
-							<div class="grid-nav-btn mobile-nav-toggler">
-								<div class="inner">
-									<img class="icons" src="images/icons/icon-1.png" alt="Icon">
-								</div>
-							</div>
-						</div>
-
-						<!-- Mobile Nav toggler -->
-						<div class="mobile-nav-toggler"><span class="icon lnr-icon-bars"></span></div>
-					</div>
-				</div>
-			</div>
-
-			<!-- Mobile Menu  -->
-			<div class="mobile-menu">
-				<div class="menu-backdrop"></div>
-
-				<!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
-				<nav class="menu-box">
-					<div class="upper-box">
-						<div class="nav-logo"><a href="#home"><img src="images/Seasol Maritime Logo.png" alt="" title=""></a></div>
-						<div class="close-btn"><i class="icon fa fa-times"></i></div>
-					</div>
-
-					<ul class="navigation clearfix">
-						<!--Keep This Empty / Menu will come through Javascript-->
-					</ul>
-					<ul class="contact-list-one">
-						<li>
-							<!-- Contact Info Box -->
-							<div class="contact-info-box">
-								<i class="icon lnr-icon-phone-handset"></i>
-								<span class="title">Call Now</span>
-								<a href="tel:+919898286205">+91 98982 86205</a>
-							</div>
-						</li>
-						<li>
-							<!-- Contact Info Box -->
-							<div class="contact-info-box">
-								<span class="icon lnr-icon-envelope1"></span>
-								<span class="title">Send Email</span>
-								<a href="mailto:venkat@seasolmaritime.com">venkat@seasolmaritime.com</a>
-							</div>
-						</li>
-						<li>
-							<!-- Contact Info Box -->
-							<div class="contact-info-box">
-								<span class="icon lnr-icon-clock"></span>
-								<span class="title">Working Hours</span>
-								Mon – Sat: 9:30 AM – 6:30 PM<br>Sunday: Closed
-							</div>
-						</li>
-					</ul>
+<nav class="nav main-menu">
+<ul class="navigation">
+<li class="current"><a href="#home">Home</a></li>
+<li class="dropdown"><a href="#about">About Us</a>
+<ul>
+<li><a href="#about">Our Company</a></li>
+<li><a href="#global-network">Global Network</a></li>
+<li><a href="#core-values">Core Values</a></li>
+</ul>
+</li>
+<li class="dropdown"><a href="#services">Services</a>
+<ul>
+<li><a href="ocean-freight.html">Ocean Freight</a></li>
+<li><a href="air-freight.html">Air Freight</a></li>
+<li><a href="breakbulk-special-equipment.html">Breakbulk &amp; Special Equipment</a></li>
+<li><a href="#services">Customs Brokerage &amp; Cross Trading</a></li>
+<li><a href="nvocc-iso-tanks.html">NVOCC &amp; ISO Tanks</a></li>
+<li><a href="other-services.html">Others</a></li>
+</ul>
+</li>
+<li class="dropdown"><a href="#network">Network &amp; Coverage</a>
+<ul>
+<li><a href="india.html">India</a></li>
+<li><a href="#cis-gateway">CIS Countries</a></li>
+<li><a href="#network">International Network</a></li>
+</ul>
+</li>
+<li class="dropdown"><a href="#customers">Customers</a>
+<ul>
+<li><a href="#customers">Customer Industries</a></li>
+<li><a href="#customers">Partners</a></li>
+</ul>
+</li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</nav>
+<!-- Main Menu End-->
+</div>
+</div>
 
 
-					<ul class="social-links">
-						<li><a href="#"><i class="fa fa-x"></i></a></li>
-						<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-						<li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-						<li><a href="#"><i class="fab fa-youtube"></i></a></li>
-					</ul>
-				</nav>
-			</div><!-- End Mobile Menu -->
+<div class="outer-box">
+<a href="contact.html" class="theme-btn btn-style-one"><i
+class="icon fa fas fa-plus"></i><span class="btn-title">Request A Quote</span></a>
 
-			<!-- Header Search -->
-			<div class="search-popup">
-				<span class="search-back-drop"></span>
-				<button class="close-search"><span class="fa fa-times"></span></button>
+<!-- Mobile Nav Btn -->
+<div class="grid-nav-btn mobile-nav-toggler">
+<div class="inner">
+<img class="icons" src="images/icons/icon-1.png" alt="Icon">
+</div>
+</div>
+</div>
 
-				<div class="search-inner">
-					<form method="post" action="https://php.kodesolution.com/2025/transend-php/index.php">
-						<div class="form-group">
-							<input type="search" name="search-field" value="" placeholder="Search..." required="">
-							<button type="submit"><i class="fa fa-search"></i></button>
-						</div>
-					</form>
-				</div>
-			</div>
-			<!-- End Header Search -->
+<!-- Mobile Nav toggler -->
+<div class="mobile-nav-toggler"><span class="icon lnr-icon-bars"></span></div>
+</div>
+</div>
+</div>
 
-			<!-- Sticky Header  -->
-			<div class="sticky-header">
-				<div class="auto-container">
-					<div class="inner-container">
-						<!--Logo-->
-						<div class="logo">
-							<a href="#home" title="Seasol Maritime India Pvt. Ltd."><img src="images/Seasol Maritime Logo.png" alt=""
-									title=""></a>
-						</div>
+<!-- Mobile Menu  -->
+<div class="mobile-menu">
+<div class="menu-backdrop"></div>
 
-						<!--Right Col-->
-						<div class="nav-outer">
-							<!-- Main Menu -->
-							<nav class="main-menu">
-								<div class="navbar-collapse show collapse clearfix">
-									<ul class="navigation clearfix">
-										<!--Keep This Empty / Menu will come through Javascript-->
-									</ul>
-								</div>
-							</nav><!-- Main Menu End-->
+<!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
+<nav class="menu-box">
+<div class="upper-box">
+<div class="nav-logo"><a href="#home"><img src="images/Seasol Maritime Logo.png" alt="" title=""></a></div>
+<div class="close-btn"><i class="icon fa fa-times"></i></div>
+</div>
 
-							<!--Mobile Navigation Toggler-->
-							<div class="mobile-nav-toggler"><span class="icon lnr-icon-bars"></span></div>
-						</div>
-					</div>
-				</div>
-			</div><!-- End Sticky Menu -->
-		</header>
-		<!--End Main Header -->
-		<!-- Banner Section One-->
-		<section class="banner-section banner-section-two">
-			<div class="banner-carousel-two owl-carousel owl-theme">
+<ul class="navigation clearfix">
+<!--Keep This Empty / Menu will come through Javascript-->
+</ul>
+<ul class="contact-list-one">
+<li>
+<!-- Contact Info Box -->
+<div class="contact-info-box">
+<i class="icon lnr-icon-phone-handset"></i>
+<span class="title">Call Now</span>
+<a href="tel:+919898286205">+91 98982 86205</a>
+</div>
+</li>
+<li>
+<!-- Contact Info Box -->
+<div class="contact-info-box">
+<span class="icon lnr-icon-envelope1"></span>
+<span class="title">Send Email</span>
+<a href="mailto:cs2@seasolmaritime.com">cs2@seasolmaritime.com</a>
+</div>
+</li>
+<li>
+<!-- Contact Info Box -->
+<div class="contact-info-box">
+<span class="icon lnr-icon-clock"></span>
+<span class="title">Working Hours</span>
+Mon – Fri: 9:30 AM – 6:30 PM<br>Saturday & Sunday: Closed
+</div>
+</li>
+</ul>
 
-				<!-- Slide Item 1: Ocean Freight -->
-				<div class="slide-item">
-					<div class="bg-image" style="background-image: url('images/main-slider/image.png');"></div>
-					<div class="auto-container">
-						<div class="content-box">
-							<h2 class="sub-title animate-1">Seasol Maritime India Pvt. Ltd.</h2>
-							<h1 class="title animate-2">Connecting India to CIS Markets <br>Through Reliable Freight Forwarding</h1>
-							<div class="btn-box animate-3">
-								<a href="#services" class="theme-btn btn-style-one hvr-light"><i
-										class="icon fa fas fa-plus"></i><span class="btn-title">Explore Our Services</span></a>
 
-								<!-- Mobile Nav Btn -->
-								<div class="grid-nav-btn">
-									<div class="inner">
-										<a class="lightbox-image" href="https://www.youtube.com/watch?v=Fvae8nxzVz4">
-											<img class="icons bg-light" src="images/icons/icon-2.png" alt="Icon">
-										</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
+<ul class="social-links">
+<li><a href="#"><i class="fa fa-x"></i></a></li>
+<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+<li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+<li><a href="#"><i class="fab fa-youtube"></i></a></li>
+</ul>
+</nav>
+</div><!-- End Mobile Menu -->
 
-				<!-- Slide Item 4: Multimodal Transport & Logistics -->
-				<div class="slide-item">
-					<div class="bg-image" style="background-image: url('images/main-slider/image copy 3.png');"></div>
-					<div class="auto-container">
-						<div class="content-box">
-							<h2 class="sub-title animate-1">Air &amp; Ocean Freight · Breakbulk · Contract Logistics</h2>
-							<h1 class="title animate-2">Tailored Logistics Solutions <br>Built on Trusted Partnerships</h1>
-							<div class="btn-box animate-3">
-								<a href="#contact" class="theme-btn btn-style-one hvr-light"><i
-										class="icon fa fas fa-plus"></i><span class="btn-title">Contact Us</span></a>
-							</div>
-						</div>
-					</div>
-				</div>
+<!-- Header Search -->
+<div class="search-popup">
+<span class="search-back-drop"></span>
+<button class="close-search"><span class="fa fa-times"></span></button>
 
-				<!-- Slide Item 3: Breakbulk & Heavy Lift -->
-				<div class="slide-item">
-					<div class="bg-image" style="background-image: url('images/main-slider/image copy 2.png');"></div>
-					<div class="auto-container">
-						<div class="content-box">
-							<h2 class="sub-title animate-1">Specialized Heavy Lift &amp; Breakbulk</h2>
-							<h1 class="title animate-2">Complex Project Cargo <br>Engineered With Expert Care</h1>
-							<div class="btn-box animate-3">
-								<a href="#services" class="theme-btn btn-style-one hvr-light"><i
-										class="icon fa fas fa-plus"></i><span class="btn-title">Explore Our Services</span></a>
-							</div>
-						</div>
-					</div>
-				</div>
+<div class="search-inner">
+<form method="post" action="https://php.kodesolution.com/2025/transend-php/index.php">
+<div class="form-group">
+<input type="search" name="search-field" value="" placeholder="Search..." required="">
+<button type="submit"><i class="fa fa-search"></i></button>
+</div>
+</form>
+</div>
+</div>
+<!-- End Header Search -->
 
-				<!-- Slide Item 2: Air Freight -->
-				<div class="slide-item">
-					<div class="bg-image" style="background-image: url('images/main-slider/image copy.png');"></div>
-					<div class="auto-container">
-						<div class="content-box">
-							<h2 class="sub-title animate-1">Fast &amp; Time-Critical Freight</h2>
-							<h1 class="title animate-2">Global Air Freight Forwarding <br>With Speed, Precision &amp; Safety</h1>
-							<div class="btn-box animate-3">
-								<a href="#services" class="theme-btn btn-style-one hvr-light"><i
-										class="icon fa fas fa-plus"></i><span class="btn-title">Explore Our Services</span></a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-		<!--END Banner Section One --><!-- Call To Action Two -->
-		<section class="call-to-action-two seasol-feature-cards">
-			<div class="auto-container">
-				<div class="outer-box">
-					<div class="row">
+<!-- Sticky Header  -->
+<div class="sticky-header">
+<div class="auto-container">
+<div class="inner-container">
+<!--Logo-->
+<div class="logo">
+<a href="#home" title="Seasol Maritime India Pvt. Ltd."><img src="images/Seasol Maritime Logo.png" alt=""
+title=""></a>
+</div>
 
-						<!-- Feature Card -->
-						<div class="contact-info-block col-lg-6 wow sfc-fade-up">
-							<div class="inner">
-								<div class="content-box">
-									<i class="icon flaticon-cargo-ship"></i>
-									<div class="info-box">
-										<h4 class="sfc-title">Freight Forwarding Solutions</h4>
-									</div>
-								</div>
-								<a href="#services" class="theme-btn btn-style-one"><i
-										class="icon fa fas fa-plus"></i><span class="btn-title">Explore Services</span></a>
-							</div>
-						</div>
+<!--Right Col-->
+<div class="nav-outer">
+<!-- Main Menu -->
+<nav class="main-menu">
+<div class="navbar-collapse show collapse clearfix">
+<ul class="navigation clearfix">
+<!--Keep This Empty / Menu will come through Javascript-->
+</ul>
+</div>
+</nav><!-- Main Menu End-->
 
-						<!-- Feature Card -->
-						<div class="contact-info-block col-lg-6 mb-0 wow sfc-fade-up" data-wow-delay="200ms">
-							<div class="inner">
-								<div class="content-box">
-									<i class="icon flaticon-global-shipping"></i>
-									<div class="info-box">
-										<h4 class="sfc-title">Connecting India to CIS Markets</h4>
-									</div>
-								</div>
-								<a href="#network" class="theme-btn btn-style-one"><i
-										class="icon fa fas fa-plus"></i><span class="btn-title">View Our Network</span></a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-		<!-- End Call To Action Two -->		<!-- About Section -->
+<!--Mobile Navigation Toggler-->
+<div class="mobile-nav-toggler"><span class="icon lnr-icon-bars"></span></div>
+</div>
+</div>
+</div>
+</div><!-- End Sticky Menu -->
+</header>
+<!--End Main Header -->
+<!-- Banner Section One-->
+<section class="banner-section banner-section-two">
+<div class="banner-carousel-two owl-carousel owl-theme">
+
+<!-- Slide Item 1: Ocean Freight -->
+<div class="slide-item">
+<div class="bg-image" style="background-image: url('images/main-slider/image.png');"></div>
+<div class="auto-container">
+<div class="content-box">
+<h2 class="sub-title animate-1">Seasol Maritime India Pvt. Ltd.</h2>
+<h1 class="title animate-2">Connecting India to Global market <br>NVOCC & Freight Forwarding Provider</h1>
+<div class="btn-box animate-3">
+<a href="#services" class="theme-btn btn-style-one hvr-light"><i
+class="icon fa fas fa-plus"></i><span class="btn-title">Explore Our Services</span></a>
+
+<!-- Mobile Nav Btn -->
+<div class="grid-nav-btn">
+<div class="inner">
+<a class="lightbox-image" href="https://www.youtube.com/watch?v=Fvae8nxzVz4">
+<img class="icons bg-light" src="images/icons/icon-2.png" alt="Icon">
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Slide Item 4: Multimodal Transport & Logistics -->
+<div class="slide-item">
+<div class="bg-image" style="background-image: url('images/main-slider/image copy 3.png');"></div>
+<div class="auto-container">
+<div class="content-box">
+<h2 class="sub-title animate-1">Air &amp; Ocean Freight · Breakbulk · Contract Logistics</h2>
+<h1 class="title animate-2">Tailored Logistics Solutions <br>Built on Trusted Partnerships</h1>
+<div class="btn-box animate-3">
+<a href="#contact" class="theme-btn btn-style-one hvr-light"><i
+class="icon fa fas fa-plus"></i><span class="btn-title">Contact Us</span></a>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Slide Item 3: Breakbulk & Heavy Lift -->
+<div class="slide-item">
+<div class="bg-image" style="background-image: url('images/main-slider/image copy 2.png');"></div>
+<div class="auto-container">
+<div class="content-box">
+<h2 class="sub-title animate-1">Specialized Heavy Lift &amp; Breakbulk</h2>
+<h1 class="title animate-2">Complex Project Cargo <br>Engineered With Expert Care</h1>
+<div class="btn-box animate-3">
+<a href="#services" class="theme-btn btn-style-one hvr-light"><i
+class="icon fa fas fa-plus"></i><span class="btn-title">Explore Our Services</span></a>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Slide Item 2: Air Freight -->
+<div class="slide-item">
+<div class="bg-image" style="background-image: url('images/main-slider/image copy.png');"></div>
+<div class="auto-container">
+<div class="content-box">
+<h2 class="sub-title animate-1">Fast &amp; Time-Critical Freight</h2>
+<h1 class="title animate-2">Global Air Freight Forwarding <br>With Speed, Precision &amp; Safety</h1>
+<div class="btn-box animate-3">
+<a href="#services" class="theme-btn btn-style-one hvr-light"><i
+class="icon fa fas fa-plus"></i><span class="btn-title">Explore Our Services</span></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!--END Banner Section One --><!-- Call To Action Two -->
+<section class="call-to-action-two seasol-feature-cards">
+<div class="auto-container">
+<div class="outer-box">
+<div class="row">
+
+<!-- Feature Card -->
+<div class="contact-info-block col-lg-6 wow sfc-fade-up">
+<div class="inner">
+<div class="content-box">
+<i class="icon flaticon-cargo-ship"></i>
+<div class="info-box">
+<h4 class="sfc-title">Freight Forwarding Solutions</h4>
+</div>
+</div>
+<a href="#services" class="theme-btn btn-style-one"><i
+class="icon fa fas fa-plus"></i><span class="btn-title">Explore Services</span></a>
+</div>
+</div>
+
+<!-- Feature Card -->
+<div class="contact-info-block col-lg-6 mb-0 wow sfc-fade-up" data-wow-delay="200ms">
+<div class="inner">
+<div class="content-box">
+<i class="icon flaticon-global-shipping"></i>
+<div class="info-box">
+<h4 class="sfc-title">Connecting India to CIS Markets</h4>
+</div>
+</div>
+<a href="#network" class="theme-btn btn-style-one"><i
+class="icon fa fas fa-plus"></i><span class="btn-title">View Our Network</span></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- End Call To Action Two --> <!-- About Section -->
 
 
 <!-- About Section 2 -->
 <section class="about-section-two" id="about">
-	<div class="auto-container">
-		<div class="row align-items-center">
+<div class="auto-container">
+<div class="row align-items-center">
 
-			<!-- Content Column -->
-			<div class="content-column col-xl-6 order-2 wow fadeInRight" data-wow-delay="400ms">
-				<div class="inner-column">
-					<div class="sec-title">
-						<span class="sub-title">ABOUT SEASOL</span>
-						<h2>Reliable Freight Forwarding &amp; Maritime Logistics Since 2007</h2>
-						<div class="text">
-							<p class="wow fadeInUp" data-wow-delay="500ms">Seasol Maritime Pvt. Ltd. is a proud member of a renowned shipping and maritime group established in 2007 and based in Mumbai, India's financial capital. We provide freight forwarding services to customers across CIS countries.</p>
-							<p class="wow fadeInUp" data-wow-delay="600ms">Our expertise lies in delivering comprehensive logistics solutions and supporting seamless supply chain management across CIS countries and other parts of the world.</p>
-							<p class="wow fadeInUp" data-wow-delay="700ms">We are committed to providing customized logistics solutions that enhance efficiency, reliability, and value for our clients worldwide.</p>
-						</div>
-					</div>
+<!-- Content Column -->
+<div class="content-column col-xl-6 order-2 wow fadeInRight" data-wow-delay="400ms">
+<div class="inner-column">
+<div class="sec-title">
+<span class="sub-title">ABOUT SEASOL</span>
+<h2>Reliable Freight Forwarding &amp; NVOCC Service Provider</h2>
+<div class="text">
+<p class="wow fadeInUp" data-wow-delay="500ms">Seasol Maritime India Pvt. Ltd. is a proud member of a renowned shipping and maritime group established in 2007 and based in Mumbai, India's financial capital. We provide freight forwarding services to customers across CIS countries.</p>
+<p class="wow fadeInUp" data-wow-delay="600ms">Our expertise lies in delivering comprehensive logistics solutions and supporting seamless supply chain management across CIS countries and other parts of the world.</p>
+<p class="wow fadeInUp" data-wow-delay="700ms">We are committed to providing customized logistics solutions that enhance efficiency, reliability, and value for our clients worldwide.</p>
+</div>
+</div>
 
-					<!-- Highlights -->
-					<div class="about-highlights">
-						<div class="about-block wow fadeInUp" data-wow-delay="800ms">
-							<div class="icon-box">
-								<i class="icon flaticon-logistics"></i>
-							</div>
-							<div class="content-box">
-								<h4 class="title">Comprehensive Logistics Solutions</h4>
-								<div class="text">We offer a range of logistics services designed to meet diverse shipping and transportation requirements, helping customers manage their supply chains efficiently.</div>
-							</div>
-						</div>
+<!-- Highlights -->
+<div class="about-highlights">
+<div class="about-block wow fadeInUp" data-wow-delay="800ms">
+<div class="icon-box">
+<i class="icon flaticon-logistics"></i>
+</div>
+<div class="content-box">
+<h4 class="title">Comprehensive Logistics Solutions</h4>
+<div class="text">We offer a range of logistics services designed to meet diverse shipping and transportation requirements, helping customers manage their supply chains efficiently.</div>
+</div>
+</div>
 
-						<div class="about-block mb-0 wow fadeInUp" data-wow-delay="950ms">
-							<div class="icon-box">
-								<i class="icon flaticon-global"></i>
-							</div>
-							<div class="content-box">
-								<h4 class="title">Customized Global Logistics</h4>
-								<div class="text">Our tailored logistics solutions focus on reliability, operational efficiency, and delivering value to clients across international markets.</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+<div class="about-block mb-0 wow fadeInUp" data-wow-delay="950ms">
+<div class="icon-box">
+<i class="icon flaticon-global"></i>
+</div>
+<div class="content-box">
+<h4 class="title">Customized Global Logistics</h4>
+<div class="text">Our tailored logistics solutions focus on reliability, operational efficiency, and delivering value to clients across international markets.</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 
-			<!-- Image Column -->
-			<div class="image-column col-xl-6">
-				<div class="inner-column">
-					<div class="image-box wow fadeInLeft" data-wow-delay="200ms">
-						<span class="deco-frame"></span>
-						<figure class="image mb-0 overlay-anim">
-							<img src="images/home/Untitled.png" alt="Seasol Maritime Shipping Operations">
-						</figure>
-						<div class="experience bounce-y">
-							<h4>Established in 2007</h4>
-							<div class="text">Mumbai, India | Serving CIS Countries &amp; Global Markets</div>
-						</div>
-					</div>
-				</div>
-			</div>
+<!-- Image Column -->
+<div class="image-column col-xl-6">
+<div class="inner-column">
+<div class="image-box wow fadeInLeft" data-wow-delay="200ms">
+<span class="deco-frame"></span>
+<figure class="image mb-0 overlay-anim">
+<img src="images/home/Untitled.png" alt="Seasol Maritime Shipping Operations">
+</figure>
+<div class="experience bounce-y">
+<h4>NVOCC - (BANDAR ABBAS) &amp; <br> Global forwarding</h4>
+<div class="text">Serving CIS Countries &amp; Global Markets</div>
+</div>
+</div>
+</div>
+</div>
 
-		</div>
-	</div>
+</div>
+</div>
 </section>
 <!-- End About Section -->
 
-		<!--Emd About Section --><!-- Fun Fact Section -->
-		<section class="fun-fact-section style-two" id="network">
-			<div class="anim-icons full-width">
-				<span class="icon shape-11"></span>
-			</div>
-			<div class="sec-title text-center wow fadeInUp">
-				<span class="sub-title">Network &amp; Coverage</span>
-				<h2>Connecting India to <br>Central Asia</h2>
-			</div>
-			<div class="auto-container">
-				<!-- Fun Fact Area -->
-				<div class="fun-fact-box">
-					<div class="fact-counter">
-						<div class="row">
+<!--Emd About Section --><!-- Fun Fact Section -->
+<section class="fun-fact-section style-two" id="network">
+<div class="anim-icons full-width">
+<span class="icon shape-11"></span>
+</div>
+<div class="sec-title text-center wow fadeInUp">
+<span class="sub-title">Network &amp; Coverage</span>
+<h2>Bridging India with <br>Global Markets</h2>
+</div>
+<div class="auto-container">
+<!-- Fun Fact Area -->
+<div class="fun-fact-box">
+<div class="fact-counter">
+<div class="row">
 
-							<!-- Counter Block-->
-							<div class="counter-block col-xxl-3 col-xl-6 col-md-6 col-sm-12 wow fadeInUp">
-								<div class="inner justify-content-xxl-start justify-content-center">
-									<div class="icon-box">
-										<i class="icon flaticon-delivery-box-4"></i>
-									</div>
-									<div class="content-box">
-										<div class="count-box"><span class="count-text" data-speed="3000"
-												data-stop="2007">0</span>
-										</div>
-										<h6 class="counter-title">Group Established</h6>
-									</div>
-								</div>
-							</div>
+<!-- Counter Block-->
+<div class="counter-block col-xxl-3 col-xl-6 col-md-6 col-sm-12 wow fadeInUp">
+<div class="inner justify-content-xxl-start justify-content-center">
+<div class="icon-box">
+<i class="icon flaticon-delivery-box-4"></i>
+</div>
+<div class="content-box">
+<div class="count-box"><span class="count-text" data-speed="3000"
+data-stop="2007">0</span>
+</div>
+<h6 class="counter-title">Group Established</h6>
+</div>
+</div>
+</div>
 
-							<!-- Counter Block-->
-							<div class="counter-block col-xxl-3 col-xl-6 col-md-6 col-sm-12 wow fadeInUp"
-								data-wow-delay="300ms">
-								<div class="inner justify-content-center">
-									<div class="icon-box">
-										<i class="icon flaticon-3d-cube"></i>
-									</div>
-									<div class="content-box">
-										<div class="count-box"><span class="count-text" data-speed="3000"
-												data-stop="4">0</span></div>
-										<h6 class="counter-title">Associate Offices</h6>
-									</div>
-								</div>
-							</div>
+<!-- Counter Block-->
+<div class="counter-block col-xxl-3 col-xl-6 col-md-6 col-sm-12 wow fadeInUp"
+data-wow-delay="300ms">
+<div class="inner justify-content-center">
+<div class="icon-box">
+<i class="icon flaticon-3d-cube"></i>
+</div>
+<div class="content-box">
+<div class="count-box"><span class="count-text" data-speed="3000"
+data-stop="4">0</span></div>
+<h6 class="counter-title">Associate Offices</h6>
+</div>
+</div>
+</div>
 
-							<!-- Counter Block-->
-							<div class="counter-block col-xxl-3 col-xl-6 col-md-6 col-sm-12 wow fadeInUp"
-								data-wow-delay="600ms">
-								<div class="inner justify-content-center">
-									<div class="icon-box">
-										<i class="icon flaticon-international-shipping-2"></i>
-									</div>
-									<div class="content-box">
-										<div class="count-box"><span class="count-text" data-speed="3000"
-												data-stop="5">0</span>
-										</div>
-										<h6 class="counter-title">Sales Offices in India</h6>
-									</div>
-								</div>
-							</div>
+<!-- Counter Block-->
+<div class="counter-block col-xxl-3 col-xl-6 col-md-6 col-sm-12 wow fadeInUp"
+data-wow-delay="600ms">
+<div class="inner justify-content-center">
+<div class="icon-box">
+<i class="icon flaticon-international-shipping-2"></i>
+</div>
+<div class="content-box">
+<div class="count-box"><span class="count-text" data-speed="3000"
+data-stop="5">0</span>
+</div>
+<h6 class="counter-title">Sales Offices in India</h6>
+</div>
+</div>
+</div>
 
-							<!-- Counter Block-->
-							<div class="counter-block col-xxl-3 col-xl-6 col-md-6 col-sm-12 wow fadeInUp"
-								data-wow-delay="900ms">
-								<div class="inner justify-content-xxl-end justify-content-center">
-									<div class="icon-box">
-										<i class="icon flaticon-global"></i>
-									</div>
-									<div class="content-box">
-										<div class="count-box counted"><span class="count-text">CIS</span></div>
-										<h6 class="counter-title">Gateway Network</h6>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-		<!-- End Fun Fact Section -->
-		 <!-- Services Section -->
-		<section class="services-section-two" id="services">
-			<div class="auto-container">
-				<div class="sst-header">
-					<div class="sec-title wow fadeInUp">
-						<span class="sub-title">Freight Forwarding Division</span>
-						<h2>Our Services To Explore</h2>
-					</div>
-					<!-- Nav controls aligned right, inline with heading -->
-					<div class="sst-controls" aria-label="Services carousel controls">
-						<span class="sst-progress" id="sst-progress" aria-live="polite" aria-atomic="true">01&ndash;02&nbsp;/&nbsp;06</span>
-						<button class="sst-btn-prev" id="sst-prev" type="button" aria-label="Previous services" disabled>
-							<svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true" focusable="false"><path d="M12.5 15L7.5 10L12.5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-						</button>
-						<button class="sst-btn-next" id="sst-next" type="button" aria-label="Next services">
-							<svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true" focusable="false"><path d="M7.5 5L12.5 10L7.5 15" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-						</button>
-					</div>
-				</div>
+<!-- Counter Block-->
+<div class="counter-block col-xxl-3 col-xl-6 col-md-6 col-sm-12 wow fadeInUp"
+data-wow-delay="900ms">
+<div class="inner justify-content-xxl-end justify-content-center">
+<div class="icon-box">
+<i class="icon flaticon-global"></i>
+</div>
+<div class="content-box">
+<div class="count-box counted"><span class="count-text">CIS</span></div>
+<h6 class="counter-title">Gateway Network</h6>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- End Fun Fact Section -->
+<!-- Services Section -->
+<section class="services-section-two" id="services">
+<div class="auto-container">
+<div class="sst-header">
+<div class="sec-title wow fadeInUp">
+<span class="sub-title">Freight Forwarding Division</span>
+<h2>Our Services To Explore</h2>
+</div>
+<!-- Nav controls aligned right, inline with heading -->
+<div class="sst-controls" aria-label="Services carousel controls">
+<span class="sst-progress" id="sst-progress" aria-live="polite" aria-atomic="true">01&ndash;02&nbsp;/&nbsp;06</span>
+<button class="sst-btn-prev" id="sst-prev" type="button" aria-label="Previous services" disabled>
+<svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true" focusable="false"><path d="M12.5 15L7.5 10L12.5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</button>
+<button class="sst-btn-next" id="sst-next" type="button" aria-label="Next services">
+<svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true" focusable="false"><path d="M7.5 5L12.5 10L7.5 15" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</button>
+</div>
+</div>
 
-				<div class="carousel-outer">
-					<!-- Swiper -->
-					<div class="swiper service-two-slider">
-						<div class="swiper-wrapper">
-							<div class="swiper-slide">
+<div class="carousel-outer">
+<!-- Swiper -->
+<div class="swiper service-two-slider">
+<div class="swiper-wrapper">
+<div class="swiper-slide">
 
-								<!-- Services Block -->
-								<div class="services-block-two">
-									<div class="inner-box">
-										<div class="image-box">
-											<figure class="image mb-0"><a href="air-freight.html"><img
-													src="images/warehouse_foreman_in_safety_gear_390x380/airliner_container_canyon_550x345.png" alt="Cargo aircraft taking off"></a></figure>
-										</div>
-										<div class="content-box">
-											<h4 class="title"><a href="air-freight.html">Air Freight</a></h4>
-											<div class="text">Air cargo forwarding for time-sensitive shipments.</div>
-											<ul class="list-style-two">
-												<li>Air Exports</li>
-												<li>Air Imports</li>
-											</ul>
-											<a href="#contact"
-												class="theme-btn btn-style-two dark-bg"><i
-													class="icon fa fas fa-plus"></i><span class="btn-title">Enquire
-													Now</span></a>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="swiper-slide">
+<!-- Services Block -->
+<div class="services-block-two">
+<div class="inner-box">
+<div class="image-box">
+<figure class="image mb-0"><a href="air-freight.html"><img
+src="images/warehouse_foreman_in_safety_gear_390x380/airliner_container_canyon_550x345.png" alt="Cargo aircraft taking off"></a></figure>
+</div>
+<div class="content-box">
+<h4 class="title"><a href="air-freight.html">Air Freight</a></h4>
+<div class="text">Air cargo forwarding for time-sensitive shipments.</div>
+<ul class="list-style-two">
+<li>Air Exports</li>
+<li>Air Imports</li>
+</ul>
+<a href="#contact"
+class="theme-btn btn-style-two dark-bg"><i
+class="icon fa fas fa-plus"></i><span class="btn-title">Enquire
+Now</span></a>
+</div>
+</div>
+</div>
+</div>
+<div class="swiper-slide">
 
-								<!-- Services Block -->
-								<div class="services-block-two">
-									<div class="inner-box">
-										<div class="image-box">
-											<figure class="image mb-0"><a href="ocean-freight.html"><img
-													src="images/warehouse_foreman_in_safety_gear_390x380/container_ship_550x345.png" alt="Container ship at sea near a port"></a></figure>
-										</div>
-										<div class="content-box">
-											<h4 class="title"><a href="ocean-freight.html">Ocean Freight</a></h4>
-											<div class="text">Sea freight forwarding through international ports.</div>
-											<ul class="list-style-two">
-												<li>Ocean Exports</li>
-												<li>Ocean Imports</li>
-											</ul>
-											<a href="#contact"
-												class="theme-btn btn-style-two dark-bg"><i
-													class="icon fa fas fa-plus"></i><span class="btn-title">Enquire
-													Now</span></a>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="swiper-slide">
+<!-- Services Block -->
+<div class="services-block-two">
+<div class="inner-box">
+<div class="image-box">
+<figure class="image mb-0"><a href="ocean-freight.html"><img
+src="images/warehouse_foreman_in_safety_gear_390x380/container_ship_550x345.png" alt="Container ship at sea near a port"></a></figure>
+</div>
+<div class="content-box">
+<h4 class="title"><a href="ocean-freight.html">Ocean Freight</a></h4>
+<div class="text">Sea freight forwarding through international ports.</div>
+<ul class="list-style-two">
+<li>Ocean Exports</li>
+<li>Ocean Imports</li>
+</ul>
+<a href="#contact"
+class="theme-btn btn-style-two dark-bg"><i
+class="icon fa fas fa-plus"></i><span class="btn-title">Enquire
+Now</span></a>
+</div>
+</div>
+</div>
+</div>
+<div class="swiper-slide">
 
-								<!-- Services Block -->
-								<div class="services-block-two">
-									<div class="inner-box">
-										<div class="image-box">
-											<figure class="image mb-0"><a href="breakbulk-special-equipment.html"><img
-													src="images/warehouse_foreman_in_safety_gear_390x380/warehouse_logistics_550x345.png" alt="Crane lifting a cargo container"></a></figure>
-										</div>
-										<div class="content-box">
-											<h4 class="title"><a href="breakbulk-special-equipment.html">Breakbulk &amp; Special Equipment</a></h4>
-											<div class="text">Handling for non-standard and oversized cargo.</div>
-											<ul class="list-style-two">
-												<li>Breakbulk Handling</li>
-												<li>Special Equipment</li>
-											</ul>
-											<a href="#contact"
-												class="theme-btn btn-style-two dark-bg"><i
-													class="icon fa fas fa-plus"></i><span class="btn-title">Enquire
-													Now</span></a>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="swiper-slide">
+<!-- Services Block -->
+<div class="services-block-two">
+<div class="inner-box">
+<div class="image-box">
+<figure class="image mb-0"><a href="breakbulk-special-equipment.html"><img
+src="images/warehouse_foreman_in_safety_gear_390x380/warehouse_logistics_550x345.png" alt="Crane lifting a cargo container"></a></figure>
+</div>
+<div class="content-box">
+<h4 class="title"><a href="breakbulk-special-equipment.html">Breakbulk &amp; Special Equipment</a></h4>
+<div class="text">Handling for non-standard and oversized cargo.</div>
+<ul class="list-style-two">
+<li>Breakbulk Handling</li>
+<li>Special Equipment</li>
+</ul>
+<a href="#contact"
+class="theme-btn btn-style-two dark-bg"><i
+class="icon fa fas fa-plus"></i><span class="btn-title">Enquire
+Now</span></a>
+</div>
+</div>
+</div>
+</div>
+<div class="swiper-slide">
 
-								<!-- Services Block -->
-								<div class="services-block-two">
-									<div class="inner-box">
-										<div class="image-box">
-											<figure class="image mb-0"><a href="#contact"><img
-													src="images/warehouse_foreman_in_safety_gear_390x380/customs_brokerage_550x345.png" alt="Port terminal with ship and aircraft"></a></figure>
-										</div>
-										<div class="content-box">
-											<h4 class="title"><a href="#contact">Customs Brokerage &amp; Cross Trading</a></h4>
-											<div class="text">Customs brokerage and cross-trade shipments.</div>
-											<ul class="list-style-two">
-												<li>Customs Brokerage (CHB)</li>
-												<li>Cross Trading</li>
-											</ul>
-											<a href="#contact"
-												class="theme-btn btn-style-two dark-bg"><i
-													class="icon fa fas fa-plus"></i><span class="btn-title">Enquire
-													Now</span></a>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="swiper-slide">
+<!-- Services Block -->
+<div class="services-block-two">
+<div class="inner-box">
+<div class="image-box">
+<figure class="image mb-0"><a href="#contact"><img
+src="images/warehouse_foreman_in_safety_gear_390x380/customs_brokerage_550x345.png" alt="Port terminal with ship and aircraft"></a></figure>
+</div>
+<div class="content-box">
+<h4 class="title"><a href="#contact">Customs Brokerage &amp; Cross Trading</a></h4>
+<div class="text">Customs brokerage and cross-trade shipments.</div>
+<ul class="list-style-two">
+<li>Customs Brokerage (CHB)</li>
+<li>Cross Trading</li>
+</ul>
+<a href="#contact"
+class="theme-btn btn-style-two dark-bg"><i
+class="icon fa fas fa-plus"></i><span class="btn-title">Enquire
+Now</span></a>
+</div>
+</div>
+</div>
+</div>
+<div class="swiper-slide">
 
-								<!-- Services Block -->
-								<div class="services-block-two">
-									<div class="inner-box">
-										<div class="image-box">
-											<figure class="image mb-0"><a href="nvocc-iso-tanks.html"><img
-													src="images/warehouse_foreman_in_safety_gear_390x380/Seafront Container Yard Under Blue Skies.png" alt="Container terminal with vessel alongside"></a></figure>
-										</div>
-										<div class="content-box">
-											<h4 class="title"><a href="nvocc-iso-tanks.html">NVOCC &amp; ISO Tanks</a></h4>
-											<div class="text">NVOCC services and ISO tank movements.</div>
-											<ul class="list-style-two">
-												<li>NVOCC (Bandar Abbas)</li>
-												<li>ISO Tanks</li>
-											</ul>
-											<a href="#contact"
-												class="theme-btn btn-style-two dark-bg"><i
-													class="icon fa fas fa-plus"></i><span class="btn-title">Enquire
-													Now</span></a>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="swiper-slide">
+<!-- Services Block -->
+<div class="services-block-two">
+<div class="inner-box">
+<div class="image-box">
+<figure class="image mb-0"><a href="nvocc-iso-tanks.html"><img
+src="images/warehouse_foreman_in_safety_gear_390x380/Seafront Container Yard Under Blue Skies.png" alt="Container terminal with vessel alongside"></a></figure>
+</div>
+<div class="content-box">
+<h4 class="title"><a href="nvocc-iso-tanks.html">NVOCC &amp; ISO Tanks</a></h4>
+<div class="text">NVOCC services and ISO tank movements.</div>
+<ul class="list-style-two">
+<li>NVOCC (Bandar Abbas)</li>
+<li>ISO Tanks</li>
+</ul>
+<a href="#contact"
+class="theme-btn btn-style-two dark-bg"><i
+class="icon fa fas fa-plus"></i><span class="btn-title">Enquire
+Now</span></a>
+</div>
+</div>
+</div>
+</div>
+<div class="swiper-slide">
 
-								<!-- Services Block -->
-								<div class="services-block-two">
-									<div class="inner-box">
-										<div class="image-box">
-											<figure class="image mb-0"><a href="#contact"><img
-													src="images/warehouse_foreman_in_safety_gear_390x380/new.jpeg" alt="Warehouse with palletised goods"></a></figure>
-										</div>
-										<div class="content-box">
-											<h4 class="title"><a href="#contact">Others </a></h4>
-											<div class="text">Your existing warehouse image and services.</div>
-											<ul class="list-style-two">
-												<li>stock management</li>
-												<li>secure storage</li>
-											</ul>
-											<a href="#contact"
-												class="theme-btn btn-style-two dark-bg"><i
-													class="icon fa fas fa-plus"></i><span class="btn-title">Enquire
-													Now</span></a>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-		<!--End Services Section --><!-- Work Section -->
-		<section class="work-section-two">
-			<div class="anim-icons full-width">
-				<span class="icon shape-12"></span>
-			</div>
-			<div class="auto-container">
-				<div class="sec-title style-two text-center wow fadeInUp">
-					<span class="sub-title">Our Comprehensive Range</span>
-					<h2>Other Services We Offer</h2>
-				</div>
+<!-- Services Block -->
+<div class="services-block-two">
+<div class="inner-box">
+<div class="image-box">
+<figure class="image mb-0"><a href="#contact"><img
+src="images/warehouse_foreman_in_safety_gear_390x380/new.jpeg" alt="Warehouse with palletised goods"></a></figure>
+</div>
+<div class="content-box">
+<h4 class="title"><a href="other-services.html">Others </a></h4>
+<div class="text">Your existing warehouse image and services.</div>
+<ul class="list-style-two">
+<li>stock management</li>
+<li>secure storage</li>
+</ul>
+<a href="#contact"
+class="theme-btn btn-style-two dark-bg"><i
+class="icon fa fas fa-plus"></i><span class="btn-title">Enquire
+Now</span></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!--End Services Section --><!-- Work Section -->
+<section class="work-section-two">
+<div class="anim-icons full-width">
+<span class="icon shape-12"></span>
+</div>
+<div class="auto-container">
+<div class="sec-title style-two text-center wow fadeInUp">
+<span class="sub-title">Our Comprehensive Range</span>
+<h2>Other Services We Offer</h2>
+</div>
 
-				<div class="outer-box">
-					<div class="inner-outer">
-						<div class="row">
+<div class="outer-box">
+<div class="inner-outer">
+<div class="row">
 
-							<!-- Service Block Five -->
-							<div class="work-block-two col-xl-3 col-lg-4 col-md-6">
-								<div class="inner-box">
-									<div class="number">01</div>
-									<div class="icon-box">
-										<i class="icon flaticon-logistics-delivery-6"></i>
-									</div>
-									<h4 class="title"><a href="#contact">3PL / <br>Contract Logistics</a></h4>
-									<!-- <div class="text">Warehousing, distribution, implant <br> operation &amp; inventory management</div> -->
-								</div>
-							</div>
+<!-- Service Block Five -->
+<div class="work-block-two col-xl-3 col-lg-4 col-md-6">
+<div class="inner-box">
+<div class="number">01</div>
+<div class="icon-box">
+<i class="icon flaticon-logistics-delivery-6"></i>
+</div>
+<h4 class="title"><a href="other-services.html#3pl">3PL</a></h4>
+<!-- <div class="text">Warehousing, distribution, implant <br> operation &amp; inventory management</div> -->
+</div>
+</div>
 
-							<!-- Service Block Five -->
-							<div class="work-block-two col-xl-3 col-lg-4 col-md-6">
-								<div class="inner-box">
-									<div class="number">02</div>
-									<div class="icon-box">
-										<i class="icon flaticon-container-2"></i>
-									</div>
-									<h4 class="title"><a href="#contact">Contracts &amp;<br>IT Integration</a></h4>
-									<!-- <div class="text">Long-term or short-term contracts <br> with IT integration with customers</div> -->
-								</div>
-							</div>
+<!-- Service Block Five -->
+<div class="work-block-two col-xl-3 col-lg-4 col-md-6">
+<div class="inner-box">
+<div class="number">02</div>
+<div class="icon-box">
+<i class="icon flaticon-container-2"></i>
+</div>
+<h4 class="title"><a href="other-services.html#3pl">Contract Logistics</a></h4>
+<!-- <div class="text">Long-term or short-term contracts <br> with IT integration with customers</div> -->
+</div>
+</div>
 
-							<!-- Service Block Five -->
-							<div class="work-block-two col-xl-3 col-lg-4 col-md-6">
-								<div class="inner-box">
-									<div class="number">03</div>
-									<div class="icon-box">
-										<i class="icon flaticon-stock-1"></i>
-									</div>
-									<h4 class="title"><a href="#contact">Transportation</a></h4>
-									<!-- <div class="text">FTL &amp; port movement (trailer), milk runs <br> &amp; GOH apparel cargo movement</div> -->
-								</div>
-							</div>
+<!-- Service Block Five -->
+<div class="work-block-two col-xl-3 col-lg-4 col-md-6">
+<div class="inner-box">
+<div class="number">03</div>
+<div class="icon-box">
+<i class="icon flaticon-stock-1"></i>
+</div>
+<h4 class="title"><a href="other-services.html#transportation">Transportation</a></h4>
+<!-- <div class="text">FTL &amp; port movement (trailer), milk runs <br> &amp; GOH apparel cargo movement</div> -->
+</div>
+</div>
 
-							<!-- Service Block Five -->
-							<div class="work-block-two col-xl-3 col-lg-4 col-md-6">
-								<div class="inner-box">
-									<div class="number">04</div>
-									<div class="icon-box">
-										<i class="icon flaticon-delivery-box-4"></i>
-									</div>
-									<h4 class="title"><a href="#contact">Value-Added <br> Services</a></h4>
-									<!-- <div class="text">Kitting, stickering, shrink-wrapping, <br> barcoding, tagging &amp; reverse logistics</div> -->
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-		<!-- End Work Section--><!-- Work Progress Section -->
-		<section class="work-progress mission-vision-values">
-			<div class="auto-container">
-				<div class="row">
-					<div class="content-column col-xl-6 order-2" data-wow-delay="600ms">
-						<div class="inner-column">
-							<div class="sec-title wow mvv-fade-up">
-								<span class="sub-title">Mission, Vision &amp; Values</span>
-								<h2>Precision-Driven Freight <br>Forwarding for CIS Markets</h2>
-							</div>
+<!-- Service Block Five -->
+<div class="work-block-two col-xl-3 col-lg-4 col-md-6">
+<div class="inner-box">
+<div class="number">04</div>
+<div class="icon-box">
+<i class="icon flaticon-delivery-box-4"></i>
+</div>
+<h4 class="title"><a href="other-services.html#value-added">Value-Added <br> Services</a></h4>
+<!-- <div class="text">Kitting, stickering, shrink-wrapping, <br> barcoding, tagging &amp; reverse logistics</div> -->
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- End Work Section--><!-- Work Progress Section -->
+<section class="work-progress mission-vision-values">
+<div class="auto-container">
+<div class="row">
+<div class="content-column col-xl-6 order-2" data-wow-delay="600ms">
+<div class="inner-column">
+<div class="sec-title wow mvv-fade-up">
+<span class="sub-title">Mission, Vision &amp; Values</span>
+<h3>Delivering Excellence.<br> Building Trust.<br> Connecting Global Markets </h3>
+</div>
 
-							<div class="mvv-list">
-								<!-- Mission -->
-								<div class="mvv-item wow mvv-fade-up" data-wow-delay="150ms">
-									<div class="mvv-icon wow mvv-icon-in" data-wow-delay="350ms">
-										<i class="fa-light fa-bullseye-arrow" aria-hidden="true"></i>
-									</div>
-									<div class="mvv-content">
-										<h4 class="mvv-title">Our Mission</h4>
-										<p class="mvv-text">To deliver precision-driven freight forwarding solutions across CIS markets, built on operational excellence, trusted partnerships, and seamless cross-border connectivity.</p>
-									</div>
-								</div>
+<div class="mvv-list">
+<!-- Mission -->
+<div class="mvv-item wow mvv-fade-up" data-wow-delay="150ms">
+<div class="mvv-icon wow mvv-icon-in" data-wow-delay="350ms">
+<i class="fa-light fa-bullseye-arrow" aria-hidden="true"></i>
+</div>
+<div class="mvv-content">
+<h4 class="mvv-title">Our Mission</h4>
+<p class="mvv-text">To deliver precision-driven freight forwarding solutions across CIS markets, built on operational excellence, trusted partnerships, and seamless cross-border connectivity.</p>
+</div>
+</div>
 
-								<!-- Vision -->
-								<div class="mvv-item wow mvv-fade-up" data-wow-delay="300ms">
-									<div class="mvv-icon wow mvv-icon-in" data-wow-delay="500ms">
-										<i class="fa-light fa-eye" aria-hidden="true"></i>
-									</div>
-									<div class="mvv-content">
-										<h4 class="mvv-title">Our Vision</h4>
-										<p class="mvv-text">To be the preferred logistics partner for CIS trade, recognized for regional expertise, reliability, and sustainable business growth.</p>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
+<!-- Vision -->
+<div class="mvv-item wow mvv-fade-up" data-wow-delay="300ms">
+<div class="mvv-icon wow mvv-icon-in" data-wow-delay="500ms">
+<i class="fa-light fa-eye" aria-hidden="true"></i>
+</div>
+<div class="mvv-content">
+<h4 class="mvv-title">Our Vision</h4>
+<p class="mvv-text">To be the preferred logistics partner for CIS trade, recognized for regional expertise, reliability, and sustainable business growth.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
 
-					<!-- Image Column -->
-					<div class="image-column col-xl-6">
-						<div class="inner-column">
-							<div class="image-box">
-								<figure class="image-1 mb-0 overlay-anim"><img src="images/resource/work-1.jpg" alt="Container truck and cargo ship at a port">
-								</figure>
-								<figure class="image-2 mb-0 overlay-anim"><img src="images/resource/work-2.jpg" alt="Container ship at a terminal">
-								</figure>
-								<figure class="image-3 mb-0 overlay-anim"><img src="images/resource/work-3.jpg" alt="Aircraft above stacked containers">
-								</figure>
-								<div class="experience">
-									<strong>2007</strong>
-									<div class="text">Year<br>founded</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
+<!-- Image Column -->
+<div class="image-column col-xl-6">
+<div class="inner-column">
+<div class="image-box">
+<figure class="image-1 mb-0 overlay-anim"><img src="images/resource/work-1.jpg" alt="Container truck and cargo ship at a port">
+</figure>
+<figure class="image-2 mb-0 overlay-anim"><img src="images/resource/work-2.jpg" alt="Container ship at a terminal">
+</figure>
+<figure class="image-3 mb-0 overlay-anim"><img src="images/resource/work-3.jpg" alt="Aircraft above stacked containers">
+</figure>
+<div class="experience">
+<strong>India</strong>
+<div class="text">Global Network</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 
-			</div>
-		</section>
-		<!--Emd Work Progress Section -->
-		<!-- Core Values Section -->
-		<section class="sc-core-values" id="core-values" aria-labelledby="sc-core-values-title">
-			<div class="auto-container">
-				<div class="sc-core-values__head">
-					<span class="sc-core-values__eyebrow">What Guides Us</span>
-					<h2 class="sc-core-values__title" id="sc-core-values-title">Our Core Values</h2>
-					<p class="sc-core-values__lead">The principles that guide every shipment, strengthen every partnership, and shape the way we serve our clients across CIS markets.</p>
-				</div>
-				<ul class="sc-core-values__grid">
-					<li class="sc-core-values__item" style="--sc-cv-i: 0;">
-						<span class="sc-core-values__icon" aria-hidden="true"><i class="fa-light fa-shield-check"></i></span>
-						<span class="sc-core-values__num" aria-hidden="true">01</span>
-						<h3 class="sc-core-values__item-title">Reliability</h3>
-						<p class="sc-core-values__text">Dependable handling and consistent follow-through on every cargo movement.</p>
-					</li>
-					<li class="sc-core-values__item" style="--sc-cv-i: 1;">
-						<span class="sc-core-values__icon" aria-hidden="true"><i class="fa-light fa-scale-balanced"></i></span>
-						<span class="sc-core-values__num" aria-hidden="true">02</span>
-						<h3 class="sc-core-values__item-title">Integrity</h3>
-						<p class="sc-core-values__text">Honest, transparent dealings with customers and partners.</p>
-					</li>
-					<li class="sc-core-values__item" style="--sc-cv-i: 2;">
-						<span class="sc-core-values__icon" aria-hidden="true"><i class="fa-light fa-compass"></i></span>
-						<span class="sc-core-values__num" aria-hidden="true">03</span>
-						<h3 class="sc-core-values__item-title">Expertise</h3>
-						<p class="sc-core-values__text">Practical freight-forwarding knowledge for CIS trade.</p>
-					</li>
-					<li class="sc-core-values__item" style="--sc-cv-i: 3;">
-						<span class="sc-core-values__icon" aria-hidden="true"><i class="fa-light fa-crosshairs"></i></span>
-						<span class="sc-core-values__num" aria-hidden="true">04</span>
-						<h3 class="sc-core-values__item-title">Precision</h3>
-						<p class="sc-core-values__text">Careful planning, accurate documentation, and execution at every step.</p>
-					</li>
-					<li class="sc-core-values__item" style="--sc-cv-i: 4;">
-						<span class="sc-core-values__icon" aria-hidden="true"><i class="fa-light fa-handshake"></i></span>
-						<span class="sc-core-values__num" aria-hidden="true">05</span>
-						<h3 class="sc-core-values__item-title">Partnership</h3>
-						<p class="sc-core-values__text">Long-term relationships built on trust and open communication.</p>
-					</li>
-					<li class="sc-core-values__item" style="--sc-cv-i: 5;">
-						<span class="sc-core-values__icon" aria-hidden="true"><i class="fa-light fa-medal"></i></span>
-						<span class="sc-core-values__num" aria-hidden="true">06</span>
-						<h3 class="sc-core-values__item-title">Service Excellence</h3>
-						<p class="sc-core-values__text">Responsive, customer-focused support from enquiry to delivery.</p>
-					</li>
-				</ul>
-			</div>
-		</section>
-		<!-- End Core Values Section -->
-<!-- Team Section -->
-		<section class="team-section-two" id="team">
-			<div class="auto-container">
-				<div class="sec-title wow fadeInUp">
-					<span class="sub-title">Our Team Members</span>
-					<h2>Meet the professionals</h2>
-				</div>
+</div>
+</section>
+<!--Emd Work Progress Section -->
+<!-- Core Values Section -->
+<section class="sc-core-values" id="core-values" aria-labelledby="sc-core-values-title">
+<div class="auto-container">
+<div class="sc-core-values__head">
+<span class="sc-core-values__eyebrow">What Guides Us</span>
+<h2 class="sc-core-values__title" id="sc-core-values-title">Our Core Values</h2>
+<p class="sc-core-values__lead">The principles that guide every shipment, strengthen every partnership, and shape the way we serve our clients across CIS markets.</p>
+</div>
+<ul class="sc-core-values__grid">
+<li class="sc-core-values__item" style="--sc-cv-i: 0;">
+<span class="sc-core-values__icon" aria-hidden="true"><i class="fa-light fa-shield-check"></i></span>
+<span class="sc-core-values__num" aria-hidden="true">01</span>
+<h3 class="sc-core-values__item-title">Reliability</h3>
+<p class="sc-core-values__text">Dependable handling and consistent follow-through on every cargo movement.</p>
+</li>
+<li class="sc-core-values__item" style="--sc-cv-i: 1;">
+<span class="sc-core-values__icon" aria-hidden="true"><i class="fa-light fa-scale-balanced"></i></span>
+<span class="sc-core-values__num" aria-hidden="true">02</span>
+<h3 class="sc-core-values__item-title">Integrity</h3>
+<p class="sc-core-values__text">Honest, transparent dealings with customers and partners.</p>
+</li>
+<li class="sc-core-values__item" style="--sc-cv-i: 2;">
+<span class="sc-core-values__icon" aria-hidden="true"><i class="fa-light fa-compass"></i></span>
+<span class="sc-core-values__num" aria-hidden="true">03</span>
+<h3 class="sc-core-values__item-title">Expertise</h3>
+<p class="sc-core-values__text">Practical freight-forwarding knowledge for CIS trade.</p>
+</li>
+<li class="sc-core-values__item" style="--sc-cv-i: 3;">
+<span class="sc-core-values__icon" aria-hidden="true"><i class="fa-light fa-crosshairs"></i></span>
+<span class="sc-core-values__num" aria-hidden="true">04</span>
+<h3 class="sc-core-values__item-title">Precision</h3>
+<p class="sc-core-values__text">Careful planning, accurate documentation, and execution at every step.</p>
+</li>
+<li class="sc-core-values__item" style="--sc-cv-i: 4;">
+<span class="sc-core-values__icon" aria-hidden="true"><i class="fa-light fa-handshake"></i></span>
+<span class="sc-core-values__num" aria-hidden="true">05</span>
+<h3 class="sc-core-values__item-title">Partnership</h3>
+<p class="sc-core-values__text">Long-term relationships built on trust and open communication.</p>
+</li>
+<li class="sc-core-values__item" style="--sc-cv-i: 5;">
+<span class="sc-core-values__icon" aria-hidden="true"><i class="fa-light fa-medal"></i></span>
+<span class="sc-core-values__num" aria-hidden="true">06</span>
+<h3 class="sc-core-values__item-title">Service Excellence</h3>
+<p class="sc-core-values__text">Responsive, customer-focused support from enquiry to delivery.</p>
+</li>
+</ul>
+</div>
+</section>
+<!-- End Core Values Section -->
+<!-- Global Network Section -->
+<section class="global-network" id="global-network" aria-labelledby="global-network-heading">
+<div class="auto-container">
+<div class="sec-title gn-intro wow fadeInUp">
+<span class="sub-title">Our Global Network</span>
+<h2 id="global-network-heading">Connecting India to Global Markets</h2>
+<div class="text">Seasol Maritime connects businesses to international markets through reliable freight forwarding, ocean and air cargo, and integrated logistics solutions.</div>
+</div>
+<div class="gn-card">
+<div class="gn-stage">
+<div class="gn-tools" role="group" aria-label="Map zoom">
+<button type="button" data-gn-zoom="out" aria-label="Zoom out">&minus;</button>
+<button type="button" data-gn-zoom="reset" aria-label="Reset zoom">&#8634;</button>
+<button type="button" data-gn-zoom="in" aria-label="Zoom in">+</button>
+</div>
+<div class="gn-scroll">
+<div class="gn-canvas" data-src="images/home/seasol-global-network-map.svg"><img src="images/home/seasol-global-network-map.svg" alt="Political world map with India highlighted"></div>
+</div>
+<div class="gn-tooltip" role="status" aria-live="polite"></div>
+</div>
+<ul class="gn-legend">
+<li><svg viewBox="0 0 14 14" aria-hidden="true"><rect width="14" height="14" rx="3" fill="#0757E8"/></svg>India</li>
+<li><svg viewBox="0 0 14 14" aria-hidden="true"><rect width="14" height="14" rx="3" fill="#00A8E8"/></svg>Hover, tap or use arrow keys to see a country name</li>
+</ul>
+<p class="gn-note">Country borders from Natural Earth; zoom in to reveal smaller country names, or hover / tap any country.</p>
+</div>
+</div>
+</section>
+<!-- End Global Network Section -->
 
-				<div class="swiper team-two-slider">
-					<div class="swiper-wrapper">
-						<div class="swiper-slide">
-
-							<!-- Team block -->
-							<div class="team-block-tow">
-								<div class="inner-box">
-									<div class="image-box">
-										<figure class="image"><a href="page-team-details.html"><img
-													src="images/warehouse_foreman_in_safety_gear_390x380//warehouse_worker_portrait_in_industrial_setting_390x380.png" alt=""></a></figure>
-										<div class="social-links">
-											<a href="#"><i class="fab fa-facebook"></i></a>
-											<a href="#"><i class="fa fa-x"></i></a>
-											<a href="#"><i class="fab fa-youtube"></i></a>
-										</div>
-									</div>
-									<div class="info-box">
-										<h4 class="name"><a href="page-team-details.html"></a>Rajesh Kumar</h4>
-										<span class="designation">Branch Manager</span>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="swiper-slide">
-
-							<!-- Team block -->
-							<div class="team-block-tow">
-								<div class="inner-box">
-									<div class="image-box">
-										<figure class="image"><a href="page-team-details.html"><img
-													src="images/warehouse_foreman_in_safety_gear_390x380/confident_warehouse_team_lead_390x380.png" alt=""></a></figure>
-										<div class="social-links">
-											<a href="#"><i class="fab fa-facebook"></i></a>
-											<a href="#"><i class="fa fa-x"></i></a>
-											<a href="#"><i class="fab fa-youtube"></i></a>
-										</div>
-									</div>
-									<div class="info-box">
-										<h4 class="name"><a href="page-team-details.html">Priya Sharma</a></h4>
-										<span class="designation">Branch Manager</span>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="swiper-slide">
-
-							<!-- Team block -->
-							<div class="team-block-tow">
-								<div class="inner-box">
-									<div class="image-box">
-										<figure class="image"><a href="page-team-details.html"><img
-													src="images/warehouse_foreman_in_safety_gear_390x380/warehouse_foreman_in_safety_gear_390x380.png" alt=""></a></figure>
-										<div class="social-links">
-											<a href="#"><i class="fab fa-facebook"></i></a>
-											<a href="#"><i class="fa fa-x"></i></a>
-											<a href="#"><i class="fab fa-youtube"></i></a>
-										</div>
-									</div>
-									<div class="info-box">
-										<h4 class="name"><a href="page-team-details.html">Amit Patel</a></h4>
-										<span class="designation">Branch Manager</span>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="swiper-slide">
-
-							<!-- Team block -->
-							<div class="team-block-tow">
-								<div class="inner-box">
-									<div class="image-box">
-										<figure class="image"><a href="page-team-details.html"><img
-													src="images/warehouse_foreman_in_safety_gear_390x380/smiling_warehouse_worker_in_safety_gear_390x380.png" alt=""></a></figure>
-										<div class="social-links">
-											<a href="#"><i class="fab fa-facebook"></i></a>
-											<a href="#"><i class="fa fa-x"></i></a>
-											<a href="#"><i class="fab fa-youtube"></i></a>
-										</div>
-									</div>
-									<div class="info-box">
-										<h4 class="name"><a href="page-team-details.html">Suresh Singh</a></h4>
-										<span class="designation">Branch Manager</span>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="swiper-slide">
-
-							<!-- Team block -->
-							<div class="team-block-tow">
-								<div class="inner-box">
-									<div class="image-box">
-										<figure class="image"><a href="page-team-details.html"><img
-													src="images/resource/team-4.jpg" alt=""></a></figure>
-										<div class="social-links">
-											<a href="#"><i class="fab fa-facebook"></i></a>
-											<a href="#"><i class="fa fa-x"></i></a>
-											<a href="#"><i class="fab fa-youtube"></i></a>
-										</div>
-									</div>
-									<div class="info-box">
-										<h4 class="name"><a href="page-team-details.html">Amelia Harper</a></h4>
-										<span class="designation">Branch Manager</span>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="swiper-slide">
-
-							<!-- Team block -->
-							<div class="team-block-tow">
-								<div class="inner-box">
-									<div class="image-box">
-										<figure class="image"><a href="page-team-details.html"><img
-													src="images/resource/team-5.jpg" alt=""></a></figure>
-										<div class="social-links">
-											<a href="#"><i class="fab fa-facebook"></i></a>
-											<a href="#"><i class="fa fa-x"></i></a>
-											<a href="#"><i class="fab fa-youtube"></i></a>
-										</div>
-									</div>
-									<div class="info-box">
-										<h4 class="name"><a href="page-team-details.html">Andrew Joseph</a></h4>
-										<span class="designation">Branch Manager</span>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-		<!-- End Team Section -->
-
-		<!-- CIS Gateway Network Section -->
-		<section class="cis-gateway-section" id="cis-gateway" aria-labelledby="cis-gateway-heading">
-			<div class="auto-container">
-				<div class="sec-title cis-reveal">
-					<span class="sub-title">Network Connectivity</span>
-					<h2 id="cis-gateway-heading">Connecting India to Central Asia</h2>
-					<div class="text">Seasol Maritime's profile illustrates freight-forwarding connectivity from India to destinations across the CIS gateway network.</div>
-				</div>
-				<div class="row align-items-center">
-					<div class="col-lg-7">
-												<figure class="cis-map-stage">
-						<div class="cis-map-wrapper">
+<!-- CIS Gateway Network Section -->
+<section class="cis-gateway-section" id="cis-gateway" aria-labelledby="cis-gateway-heading">
+<div class="auto-container">
+<div class="sec-title cis-reveal">
+<span class="sub-title">Network Connectivity</span>
+<h2 id="cis-gateway-heading">Connecting India to Central Asia</h2>
+<div class="text">Seasol Maritime's profile illustrates freight-forwarding connectivity from India to destinations across the CIS gateway network.</div>
+</div>
+<div class="row align-items-center">
+<div class="col-lg-7">
+<figure class="cis-map-stage">
+<div class="cis-map-wrapper">
 <svg id="cis-map" class="cis-map" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 420" width="700" height="420" role="img" aria-label="Map of India and CIS destination countries">
 <defs><linearGradient id="cis-grad-in" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#bcd3fb"/><stop offset="1" stop-color="#8fb4f5"/></linearGradient><linearGradient id="cis-grad-ru" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#dfe8f7" stop-opacity="0"/><stop offset=".3" stop-color="#dfe8f7" stop-opacity="1"/></linearGradient><linearGradient id="cis-grad-route" x1="1" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#1d4ed8"/><stop offset="1" stop-color="#60a5fa"/></linearGradient><style>
 #cis-map .c{transition:filter .3s ease,opacity .3s ease}
@@ -1158,46 +1047,46 @@
 <g class="mk" data-country="uzbekistan" data-city="Tashkent" style="--j:7" transform="translate(398.0,206.0)" tabindex="0" role="button" aria-label="Uzbekistan destination marker"><g class="dot"><circle r="6.5" fill="#fff" stroke="#0b4de0" stroke-width="2"/><circle r="2.4" fill="#0b4de0"/></g><text class="halo" x="-13" y="4.5" text-anchor="end">Uzbekistan</text><text class="lbl" x="-13" y="4.5" text-anchor="end">Uzbekistan</text></g>
 <g class="mk" data-country="tajikistan" data-city="Dushanbe" style="--j:8" transform="translate(397.0,230.8)" tabindex="0" role="button" aria-label="Tajikistan destination marker"><g class="dot"><circle r="6.5" fill="#fff" stroke="#0b4de0" stroke-width="2"/><circle r="2.4" fill="#0b4de0"/></g><text class="halo" x="13" y="4.5" text-anchor="start">Tajikistan</text><text class="lbl" x="13" y="4.5" text-anchor="start">Tajikistan</text></g>
 <g class="mk" data-country="kyrgyzstan" data-city="Bishkek" style="--j:9" transform="translate(431.7,187.7)" tabindex="0" role="button" aria-label="Kyrgyzstan destination marker"><g class="dot"><circle r="6.5" fill="#fff" stroke="#0b4de0" stroke-width="2"/><circle r="2.4" fill="#0b4de0"/></g><text class="halo" x="13" y="4.5" text-anchor="start">Kyrgyzstan</text><text class="lbl" x="13" y="4.5" text-anchor="start">Kyrgyzstan</text></g>
-<g class="del" tabindex="0" role="img" aria-label="India — New Delhi origin hub" transform="translate(472.7,312.2)"><circle class="pulse" r="8" fill="#2563eb" opacity=".4"/><g class="core"><circle r="8" fill="#0a1230" stroke="#fff" stroke-width="2.5"/><circle r="3" fill="#2563eb"/><text class="halo" x="0" y="28" text-anchor="middle" style="font-weight:700;font-size:14px">India — New Delhi</text><text class="lbl" x="0" y="28" text-anchor="middle" style="font-weight:700;font-size:14px">India — New Delhi</text></g></g></g>
+<g class="del" tabindex="0" role="img" aria-label="India origin hub" transform="translate(472.7,312.2)"><circle class="pulse" r="8" fill="#2563eb" opacity=".4"/><g class="core"><circle r="8" fill="#0a1230" stroke="#fff" stroke-width="2.5"/><circle r="3" fill="#2563eb"/><text class="halo" x="0" y="28" text-anchor="middle" style="font-weight:700;font-size:14px">India</text><text class="lbl" x="0" y="28" text-anchor="middle" style="font-weight:700;font-size:14px">India</text></g></g></g>
 </svg>
-						</div>
-						<figcaption class="cis-map-note">Illustrative gateway network; routes and destinations shown for reference.</figcaption>
-						</figure>
-					</div>
-					<div class="col-lg-5">
-						<div class="cis-dest-panel">
-							<p class="cis-dest-panel__origin"><i class="fa-light fa-plane-departure" aria-hidden="true"></i>Origin: India — New Delhi</p>
-							<h3 class="cis-dest-panel__title">Destinations depicted in the profile</h3>
-							<ul class="cis-dest-list">
-								<li class="cis-dest" data-dest="russia" style="--i:0" tabindex="0"><strong class="cis-dest__country">Russia</strong><span class="cis-dest__city">Moscow</span></li>
-								<li class="cis-dest" data-dest="belarus" style="--i:1" tabindex="0"><strong class="cis-dest__country">Belarus</strong><span class="cis-dest__city">Minsk</span></li>
-								<li class="cis-dest" data-dest="ukraine" style="--i:2" tabindex="0"><strong class="cis-dest__country">Ukraine</strong></li>
-								<li class="cis-dest" data-dest="armenia" style="--i:3" tabindex="0"><strong class="cis-dest__country">Armenia</strong><span class="cis-dest__city">Yerevan</span></li>
-								<li class="cis-dest" data-dest="azerbaijan" style="--i:4" tabindex="0"><strong class="cis-dest__country">Azerbaijan</strong><span class="cis-dest__city">Baku</span></li>
-								<li class="cis-dest" data-dest="kazakhstan" style="--i:5" tabindex="0"><strong class="cis-dest__country">Kazakhstan</strong><span class="cis-dest__city">Astana</span></li>
-								<li class="cis-dest" data-dest="uzbekistan" style="--i:6" tabindex="0"><strong class="cis-dest__country">Uzbekistan</strong><span class="cis-dest__city">Tashkent</span></li>
-								<li class="cis-dest" data-dest="kyrgyzstan" style="--i:7" tabindex="0"><strong class="cis-dest__country">Kyrgyzstan</strong><span class="cis-dest__city">Bishkek</span></li>
-								<li class="cis-dest" data-dest="turkmenistan" style="--i:8" tabindex="0"><strong class="cis-dest__country">Turkmenistan</strong><span class="cis-dest__city">Ashgabat</span></li>
-								<li class="cis-dest" data-dest="tajikistan" style="--i:9" tabindex="0"><strong class="cis-dest__country">Tajikistan</strong><span class="cis-dest__city">Dushanbe</span></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-		<!-- End CIS Gateway Network Section -->
+</div>
+<figcaption class="cis-map-note">Illustrative gateway network; routes and destinations shown for reference.</figcaption>
+</figure>
+</div>
+<div class="col-lg-5">
+<div class="cis-dest-panel">
+<p class="cis-dest-panel__origin"><i class="fa-light fa-plane-departure" aria-hidden="true"></i>Origin: India </p>
+<h3 class="cis-dest-panel__title">Destinations depicted in the profile</h3>
+<ul class="cis-dest-list">
+<li class="cis-dest" data-dest="russia" style="--i:0" tabindex="0"><strong class="cis-dest__country">Russia</strong><span class="cis-dest__city">Moscow</span></li>
+<li class="cis-dest" data-dest="belarus" style="--i:1" tabindex="0"><strong class="cis-dest__country">Belarus</strong><span class="cis-dest__city">Minsk</span></li>
+<li class="cis-dest" data-dest="ukraine" style="--i:2" tabindex="0"><strong class="cis-dest__country">Ukraine</strong></li>
+<li class="cis-dest" data-dest="armenia" style="--i:3" tabindex="0"><strong class="cis-dest__country">Armenia</strong><span class="cis-dest__city">Yerevan</span></li>
+<li class="cis-dest" data-dest="azerbaijan" style="--i:4" tabindex="0"><strong class="cis-dest__country">Azerbaijan</strong><span class="cis-dest__city">Baku</span></li>
+<li class="cis-dest" data-dest="kazakhstan" style="--i:5" tabindex="0"><strong class="cis-dest__country">Kazakhstan</strong><span class="cis-dest__city">Astana</span></li>
+<li class="cis-dest" data-dest="uzbekistan" style="--i:6" tabindex="0"><strong class="cis-dest__country">Uzbekistan</strong><span class="cis-dest__city">Tashkent</span></li>
+<li class="cis-dest" data-dest="kyrgyzstan" style="--i:7" tabindex="0"><strong class="cis-dest__country">Kyrgyzstan</strong><span class="cis-dest__city">Bishkek</span></li>
+<li class="cis-dest" data-dest="turkmenistan" style="--i:8" tabindex="0"><strong class="cis-dest__country">Turkmenistan</strong><span class="cis-dest__city">Ashgabat</span></li>
+<li class="cis-dest" data-dest="tajikistan" style="--i:9" tabindex="0"><strong class="cis-dest__country">Tajikistan</strong><span class="cis-dest__city">Dushanbe</span></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- End CIS Gateway Network Section -->
 
-		<!-- Associate Offices Across India Section -->
-		<section class="india-office-network" id="india-offices" aria-labelledby="india-offices-heading">
-			<div class="auto-container">
-				<div class="sec-title ion-reveal">
-					<span class="sub-title">Our India Network</span>
-					<h2 id="india-offices-heading">Associate Offices Across India</h2>
-					<div class="text">Explore the office locations and sales-office network identified in Seasol Maritime's company profile.</div>
-				</div>
-				<div class="row">
-					<div class="col-lg-6">
-												<figure class="ion-map-stage">
+<!-- Associate Offices Across India Section -->
+<section class="india-office-network" id="india-offices" aria-labelledby="india-offices-heading">
+<div class="auto-container">
+<div class="sec-title ion-reveal">
+<span class="sub-title">Our India Network</span>
+<h2 id="india-offices-heading">Associate Offices Across India</h2>
+<div class="text">Explore the office locations and sales-office network identified in Seasol Maritime's company profile.</div>
+</div>
+<div class="row">
+<div class="col-lg-6">
+<figure class="ion-map-stage">
 <svg id="map" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 595" width="520" height="595" role="img" aria-label="Map of India showing associate offices, sales offices and upcoming sales office states">
 <defs>
 <linearGradient id="g-base" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f3f6fd"/><stop offset="1" stop-color="#e3eafa"/></linearGradient>
@@ -1276,735 +1165,863 @@
 <g class="mk" data-city="Chennai" data-state="tamil-nadu" data-type="associate" style="--j:7" transform="translate(218.9,467.1)" tabindex="0" role="img" aria-label="Chennai — Associate office (Tamil Nadu)"><circle class="dot" r="5.5" fill="#0b5ce6" stroke="#fff" stroke-width="2.2"/><text class="halo" x="11" y="8" text-anchor="start">Chennai</text><text class="lbl" x="11" y="8" text-anchor="start">Chennai</text></g>
 <g class="mk" data-city="Tuticorin" data-state="tamil-nadu" data-type="sales" style="--j:8" transform="translate(177.8,547.5)" tabindex="0" role="img" aria-label="Tuticorin — Sales office (Tamil Nadu)"><g class="dot"><path d="M0,-7.5 L7.5,0 L0,7.5 L-7.5,0Z" fill="#0f1b3d" stroke="#fff" stroke-width="2" stroke-linejoin="round"/></g><text class="halo" x="11" y="4.5" text-anchor="start">Tuticorin</text><text class="lbl" x="11" y="4.5" text-anchor="start">Tuticorin</text></g>
 </g></svg>
-							<ul class="ion-legend">
-								<li><svg viewBox="0 0 16 16" aria-hidden="true"><circle class="ion-legend__associate" cx="8" cy="8" r="5.5"/></svg>Associate office</li>
-								<li><svg viewBox="0 0 16 16" aria-hidden="true"><g transform="translate(8 8)"><path class="ion-legend__sales" d="M0,-6.5 L6.5,0 L0,6.5 L-6.5,0Z"/></g></svg>Sales office</li>
-								<li><svg viewBox="0 0 16 16" aria-hidden="true"><rect class="ion-legend__upcoming" x="1.5" y="1.5" width="13" height="13" rx="2"/></svg>Upcoming sales office</li>
-							</ul>
-							<figcaption class="ion-map-note">Illustrative map, not to scale; boundaries and locations are approximate. Upcoming offices are shown in grey.</figcaption>
-						</figure>
-					</div>
-					<div class="col-lg-6">
-												<div class="ion-groups">
-							<div class="ion-group ion-group--associate" style="--g:0">
-								<div class="ion-group__head">
-									<span class="ion-group__icon"><i class="fa-light fa-building" aria-hidden="true"></i></span>
-									<h3 class="ion-group__title">Associate Office Locations Listed in the Profile</h3>
-								</div>
-								<ul class="ion-list">
-									<li class="ion-item" data-city="Delhi" data-state="delhi" style="--chip-i:0" tabindex="0" role="button" aria-label="Delhi — Associate office"><i class="fa-light fa-building" aria-hidden="true"></i><span>Delhi</span></li>
-									<li class="ion-item" data-city="Mumbai" data-state="maharashtra" style="--chip-i:1" tabindex="0" role="button" aria-label="Mumbai — Associate office"><i class="fa-light fa-building" aria-hidden="true"></i><span>Mumbai</span></li>
-									<li class="ion-item" data-city="Chennai" data-state="tamil-nadu" style="--chip-i:2" tabindex="0" role="button" aria-label="Chennai — Associate office"><i class="fa-light fa-building" aria-hidden="true"></i><span>Chennai</span></li>
-									<li class="ion-item" data-city="Kolkata" data-state="west-bengal" style="--chip-i:3" tabindex="0" role="button" aria-label="Kolkata — Associate office"><i class="fa-light fa-building" aria-hidden="true"></i><span>Kolkata</span></li>
-								</ul>
-							</div>
-							<div class="ion-group ion-group--sales" style="--g:1">
-								<div class="ion-group__head">
-									<span class="ion-group__icon"><i class="fa-light fa-location-dot" aria-hidden="true"></i></span>
-									<h3 class="ion-group__title">Sales Offices Listed in the Profile</h3>
-								</div>
-								<ul class="ion-list">
-									<li class="ion-item" data-city="Krishnapatnam" data-state="andhra-pradesh" style="--chip-i:4" tabindex="0" role="button" aria-label="Krishnapatnam — Sales office"><i class="fa-light fa-location-dot" aria-hidden="true"></i><span>Krishnapatnam</span></li>
-									<li class="ion-item" data-city="Ludhiana" data-state="punjab" style="--chip-i:5" tabindex="0" role="button" aria-label="Ludhiana — Sales office"><i class="fa-light fa-location-dot" aria-hidden="true"></i><span>Ludhiana</span></li>
-									<li class="ion-item" data-city="Gujarat" data-state="gujarat" style="--chip-i:6" tabindex="0" role="button" aria-label="Gujarat — Sales office"><i class="fa-light fa-location-dot" aria-hidden="true"></i><span>Gujarat</span></li>
-									<li class="ion-item" data-city="Visakhapatnam" data-state="andhra-pradesh" style="--chip-i:7" tabindex="0" role="button" aria-label="Visakhapatnam — Sales office"><i class="fa-light fa-location-dot" aria-hidden="true"></i><span>Visakhapatnam</span></li>
-									<li class="ion-item" data-city="Tuticorin" data-state="tamil-nadu" style="--chip-i:8" tabindex="0" role="button" aria-label="Tuticorin — Sales office"><i class="fa-light fa-location-dot" aria-hidden="true"></i><span>Tuticorin</span></li>
-								</ul>
-							</div>
-							<div class="ion-group ion-group--upcoming" style="--g:2">
-								<div class="ion-group__head">
-									<span class="ion-group__icon"><i class="fa-light fa-clock" aria-hidden="true"></i></span>
-									<h3 class="ion-group__title">Upcoming Sales Offices</h3>
-									<span class="ion-tag">Upcoming</span>
-								</div>
-								<ul class="ion-list">
-									<li class="ion-item" data-city="Trivandrum" data-state="kerala" style="--chip-i:9" tabindex="0" role="button" aria-label="Trivandrum — Upcoming sales office (Kerala)"><i class="fa-light fa-calendar-clock" aria-hidden="true"></i><span>Trivandrum</span></li>
-									<li class="ion-item" data-city="Bengaluru" data-state="karnataka" style="--chip-i:10" tabindex="0" role="button" aria-label="Bengaluru — Upcoming sales office (Karnataka)"><i class="fa-light fa-calendar-clock" aria-hidden="true"></i><span>Bengaluru</span></li>
-									<li class="ion-item" data-city="Hyderabad" data-state="telangana" style="--chip-i:11" tabindex="0" role="button" aria-label="Hyderabad — Upcoming sales office (Telangana)"><i class="fa-light fa-calendar-clock" aria-hidden="true"></i><span>Hyderabad</span></li>
-									<li class="ion-item" data-city="Bhubaneswar" data-state="odisha" style="--chip-i:12" tabindex="0" role="button" aria-label="Bhubaneswar — Upcoming sales office (Odisha)"><i class="fa-light fa-calendar-clock" aria-hidden="true"></i><span>Bhubaneswar</span></li>
-									<li class="ion-item" data-city="Guwahati" data-state="assam" style="--chip-i:13" tabindex="0" role="button" aria-label="Guwahati — Upcoming sales office (Assam)"><i class="fa-light fa-calendar-clock" aria-hidden="true"></i><span>Guwahati</span></li>
-									<li class="ion-item" data-city="Ranchi" data-state="jharkhand" style="--chip-i:14" tabindex="0" role="button" aria-label="Ranchi — Upcoming sales office (Jharkhand)"><i class="fa-light fa-calendar-clock" aria-hidden="true"></i><span>Ranchi</span></li>
-								</ul>
-								<p class="ion-group__note">Shown in grey on the map.</p>
-							</div>
-						</div>
-						<div id="ion-tooltip" class="ion-tooltip" role="tooltip" aria-hidden="true"></div>
-					</div>
-				</div>
-			</div>
-		</section>
-		<!-- End Associate Offices Across India Section -->
-
-		 
-		<!-- Contact Section -->
-		<!-- <div class="contact-section" id="contact">
-			<div class="outer-box">
-				<div class="bg bg-image" style="background-image: url(images/background/Navy\ Blue\ Banner.png);"></div>
-				<div class="auto-container">
-					<div class="row tabs-box">
-						<div class="contact-info col-xl-6">
-							<div class="inner-column">
-								<div class="sec-title">
-									<span class="sub-title">Contact Us</span>
-									<h2>Request a Freight Quote</h2>
-								</div>
-								<div class="contact-tabs">
-								
-									<ul class="tab-buttons clearfix">
-										<li class="tab-btn active-btn" data-tab="#tab1">Request A Quote</li>
-										<li class="tab-btn" data-tab="#tab2">Our Offices</li>
-									</ul>
-										<div class="tabs-content">
-											<div class="tab active-tab" id="tab1">
-												<div class="text">Share your shipment requirements and our team will help
-													you identify the right freight forwarding or logistics solution.</div>
-												<div class="contact-info-block">
-													<div class="content-box">
-														<i class="icon flaticon-customer-service"></i>
-														<div class="info-box">
-															<span>Call Us Now</span>
-															<a href="tel:+919898286205">+91 98982 86205</a>
-														</div>
-													</div>
-												</div>
-												<div class="services-info-block">
-													<div class="inner-box">
-														<h4 class="title">Our Core Services:</h4>
-														<div class="text">Freight forwarding and logistics support for
-															customers across CIS markets and other international
-															destinations.</div>
-														<div class="row">
-															<ul class="list-style-two col-sm-6">
-																<li>Air &amp; Ocean Freight</li>
-																<li>Breakbulk &amp; Special Equipment</li>
-															</ul>
-															<ul class="list-style-two col-sm-6">
-																<li>Customs Brokerage (CHB)</li>
-																<li>NVOCC &amp; ISO Tanks</li>
-															</ul>
-														</div>
-													</div>
-												</div>
-												<div class="work-info-block">
-													<h4 class="title">How To Reach Us?</h4>
-													<div class="inner-box">
-														<div class="work-info-item">
-															<div class="inner">
-																<div class="number">01</div>
-																<div class="text mb-0">Call us on <br><a href="tel:+919619991339">+91 96199 91339</a></div>
-															</div>
-														</div>
-														<div class="work-info-item">
-															<div class="inner">
-																<div class="number">02</div>
-																<div class="text mb-0">Email us at <br><a href="mailto:venkat@seasolmaritime.com">venkat@seasolmaritime.com</a></div>
-															</div>
-														</div>
-														<div class="work-info-item">
-															<div class="inner">
-																<div class="number">03</div>
-																<div class="text mb-0">Or send your <br>enquiry form</div>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="tab" id="tab2">
-												<div class="text">Visit or write to us at our registered and corporate
-													offices.</div>
-												<div class="contact-info-block">
-													<div class="content-box">
-														<i class="icon flaticon-customer-service"></i>
-														<div class="info-box">
-															<span>Mail Anytime</span>
-															<a href="mailto:cs2@seasolmartime.com">cs2@seasolmartime.com</a>
-														</div>
-													</div>
-												</div>
-												<div class="services-info-block">
-													<div class="inner-box">
-														<h4 class="title">Registered Office:</h4>
-														<div class="text">203, Amba Arcade, Ward 12A, Gandhidham, Kachchh,
-															Gujarat – 370201</div>
-														<h4 class="title">Corporate Office:</h4>
-														<div class="text mb-0">404, Goodwill Infinity, Sector 12, Kharghar,
-															Navi Mumbai – 410210</div>
-													</div>
-												</div>
-											</div>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<div class="contact-form col-xl-6">
-							<div class="inner-column">
-						
-								<div class="contact-form">
-									<div class="title-box">
-										<h4 class="title">Schedule a Free Calculation</h4>
-									</div>
-
-								
-									<form method="post" action="https://php.kodesolution.com/2025/transend-php/get"
-										id="contact-form">
-										<div class="row">
-
-											<div class="col-lg-6 form-group">
-												<label for="yourName" class="form-label">Your name</label>
-												<input type="text" name="your_name" id="yourName" placeholder=""
-													required="">
-											</div>
-
-											<div class="col-lg-6 form-group">
-												<label for="emailAddress" class="form-label">Email address</label>
-												<input type="text" name="email_address" id="emailAddress" placeholder=""
-													required="">
-											</div>
-
-											<div class="col-md-6 col-sm-12 form-group">
-												<label>Company / Individual</label>
-												<select class="custom-select">
-													<option value="">Select Option</option>
-													<option value="">Air Freight</option>
-													<option value="">Ocean Freight</option>
-													<option value="">Rail transport</option>
-													<option value="">Cargo ship</option>
-													<option value="">Bulk cargo</option>
-												</select>
-											</div>
-
-											<div class="col-md-6 col-sm-12 form-group">
-												<label>Freight type</label>
-												<select class="custom-select">
-													<option value="">Select Option</option>
-													<option value="">Air Freight</option>
-													<option value="">Ocean Freight</option>
-													<option value="">Rail transport</option>
-													<option value="">Cargo ship</option>
-													<option value="">Bulk cargo</option>
-												</select>
-											</div>
-
-											<div class="col-lg-6 form-group">
-												<label for="departureCity" class="form-label">Departure City</label>
-												<input type="text" name="departure_city" id="departureCity"
-													placeholder="" required="">
-											</div>
-
-											<div class="col-lg-6 form-group">
-												<label for="deliveryCity" class="form-label">Delivery City</label>
-												<input type="text" name="delivery_city" id="deliveryCity" placeholder=""
-													required="">
-											</div>
-
-											<div class="col-md-3 form-group">
-												<label for="Weight" class="form-label">Weight</label>
-												<input type="text" name="weight" id="Weight" placeholder="" required="">
-											</div>
-
-											<div class="col-md-3 form-group">
-												<label for="Height" class="form-label">Height</label>
-												<input type="text" name="height" id="Height" placeholder="" required="">
-											</div>
-
-											<div class="col-md-3 form-group">
-												<label for="Width" class="form-label">Width</label>
-												<input type="text" name="width" id="Width" placeholder="" required="">
-											</div>
-
-											<div class="col-md-3 form-group">
-												<label for="Length" class="form-label">Length</label>
-												<input type="text" name="length" id="Length" placeholder="" required="">
-											</div>
+<ul class="ion-legend">
+<li><svg viewBox="0 0 16 16" aria-hidden="true"><circle class="ion-legend__associate" cx="8" cy="8" r="5.5"/></svg>Associate office</li>
+<li><svg viewBox="0 0 16 16" aria-hidden="true"><g transform="translate(8 8)"><path class="ion-legend__sales" d="M0,-6.5 L6.5,0 L0,6.5 L-6.5,0Z"/></g></svg>Sales office</li>
+<li><svg viewBox="0 0 16 16" aria-hidden="true"><rect class="ion-legend__upcoming" x="1.5" y="1.5" width="13" height="13" rx="2"/></svg>Upcoming sales office</li>
+</ul>
+<figcaption class="ion-map-note">Illustrative map, not to scale; boundaries and locations are approximate. Upcoming offices are shown in grey.</figcaption>
+</figure>
+</div>
+<div class="col-lg-6">
+<div class="ion-groups">
+<div class="ion-group ion-group--associate" style="--g:0">
+<div class="ion-group__head">
+<span class="ion-group__icon"><i class="fa-light fa-building" aria-hidden="true"></i></span>
+<h3 class="ion-group__title">Associate Office Locations Listed in the Profile</h3>
+</div>
+<ul class="ion-list">
+<li class="ion-item" data-city="Delhi" data-state="delhi" style="--chip-i:0" tabindex="0" role="button" aria-label="Delhi — Associate office"><i class="fa-light fa-building" aria-hidden="true"></i><span>Delhi</span></li>
+<li class="ion-item" data-city="Mumbai" data-state="maharashtra" style="--chip-i:1" tabindex="0" role="button" aria-label="Mumbai — Associate office"><i class="fa-light fa-building" aria-hidden="true"></i><span>Mumbai</span></li>
+<li class="ion-item" data-city="Chennai" data-state="tamil-nadu" style="--chip-i:2" tabindex="0" role="button" aria-label="Chennai — Associate office"><i class="fa-light fa-building" aria-hidden="true"></i><span>Chennai</span></li>
+<li class="ion-item" data-city="Kolkata" data-state="west-bengal" style="--chip-i:3" tabindex="0" role="button" aria-label="Kolkata — Associate office"><i class="fa-light fa-building" aria-hidden="true"></i><span>Kolkata</span></li>
+</ul>
+</div>
+<div class="ion-group ion-group--sales" style="--g:1">
+<div class="ion-group__head">
+<span class="ion-group__icon"><i class="fa-light fa-location-dot" aria-hidden="true"></i></span>
+<h3 class="ion-group__title">Sales Offices Listed in the Profile</h3>
+</div>
+<ul class="ion-list">
+<li class="ion-item" data-city="Krishnapatnam" data-state="andhra-pradesh" style="--chip-i:4" tabindex="0" role="button" aria-label="Krishnapatnam — Sales office"><i class="fa-light fa-location-dot" aria-hidden="true"></i><span>Krishnapatnam</span></li>
+<li class="ion-item" data-city="Ludhiana" data-state="punjab" style="--chip-i:5" tabindex="0" role="button" aria-label="Ludhiana — Sales office"><i class="fa-light fa-location-dot" aria-hidden="true"></i><span>Ludhiana</span></li>
+<li class="ion-item" data-city="Gujarat" data-state="gujarat" style="--chip-i:6" tabindex="0" role="button" aria-label="Gujarat — Sales office"><i class="fa-light fa-location-dot" aria-hidden="true"></i><span>Gujarat</span></li>
+<li class="ion-item" data-city="Visakhapatnam" data-state="andhra-pradesh" style="--chip-i:7" tabindex="0" role="button" aria-label="Visakhapatnam — Sales office"><i class="fa-light fa-location-dot" aria-hidden="true"></i><span>Visakhapatnam</span></li>
+<li class="ion-item" data-city="Tuticorin" data-state="tamil-nadu" style="--chip-i:8" tabindex="0" role="button" aria-label="Tuticorin — Sales office"><i class="fa-light fa-location-dot" aria-hidden="true"></i><span>Tuticorin</span></li>
+</ul>
+</div>
+<div class="ion-group ion-group--upcoming" style="--g:2">
+<div class="ion-group__head">
+<span class="ion-group__icon"><i class="fa-light fa-clock" aria-hidden="true"></i></span>
+<h3 class="ion-group__title">Upcoming Sales Offices</h3>
+<span class="ion-tag">Upcoming</span>
+</div>
+<ul class="ion-list">
+<li class="ion-item" data-city="Trivandrum" data-state="kerala" style="--chip-i:9" tabindex="0" role="button" aria-label="Trivandrum — Upcoming sales office (Kerala)"><i class="fa-light fa-calendar-clock" aria-hidden="true"></i><span>Trivandrum</span></li>
+<li class="ion-item" data-city="Bengaluru" data-state="karnataka" style="--chip-i:10" tabindex="0" role="button" aria-label="Bengaluru — Upcoming sales office (Karnataka)"><i class="fa-light fa-calendar-clock" aria-hidden="true"></i><span>Bengaluru</span></li>
+<li class="ion-item" data-city="Hyderabad" data-state="telangana" style="--chip-i:11" tabindex="0" role="button" aria-label="Hyderabad — Upcoming sales office (Telangana)"><i class="fa-light fa-calendar-clock" aria-hidden="true"></i><span>Hyderabad</span></li>
+<li class="ion-item" data-city="Bhubaneswar" data-state="odisha" style="--chip-i:12" tabindex="0" role="button" aria-label="Bhubaneswar — Upcoming sales office (Odisha)"><i class="fa-light fa-calendar-clock" aria-hidden="true"></i><span>Bhubaneswar</span></li>
+<li class="ion-item" data-city="Guwahati" data-state="assam" style="--chip-i:13" tabindex="0" role="button" aria-label="Guwahati — Upcoming sales office (Assam)"><i class="fa-light fa-calendar-clock" aria-hidden="true"></i><span>Guwahati</span></li>
+<li class="ion-item" data-city="Ranchi" data-state="jharkhand" style="--chip-i:14" tabindex="0" role="button" aria-label="Ranchi — Upcoming sales office (Jharkhand)"><i class="fa-light fa-calendar-clock" aria-hidden="true"></i><span>Ranchi</span></li>
+</ul>
+<p class="ion-group__note">Shown in grey on the map.</p>
+</div>
+</div>
+<div id="ion-tooltip" class="ion-tooltip" role="tooltip" aria-hidden="true"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- End Associate Offices Across India Section -->
 
 
-											<div class="form-group">
-												<label for="Message" class="form-label">Message</label>
-												<textarea name="message" id="Message" placeholder=""
-													required></textarea>
-											</div>
+<!-- Contact Section -->
+<!-- <div class="contact-section" id="contact">
+<div class="outer-box">
+<div class="bg bg-image" style="background-image: url(images/background/Navy\ Blue\ Banner.png);"></div>
+<div class="auto-container">
+<div class="row tabs-box">
+<div class="contact-info col-xl-6">
+<div class="inner-column">
+<div class="sec-title">
+<span class="sub-title">Contact Us</span>
+<h2>Request a Freight Quote</h2>
+</div>
+<div class="contact-tabs">
 
-											<div class="check-box">
-												<div class="form-check">
-													<input class="form-check-input" type="radio" name="flexRadioDefault"
-														id="flexRadioDefault1" checked>
-													<label class="form-check-label"
-														for="flexRadioDefault1">Fragile</label>
-												</div>
-												<div class="form-check">
-													<input class="form-check-input" type="radio" name="flexRadioDefault"
-														id="flexRadioDefault2">
-													<label class="form-check-label" for="flexRadioDefault2">Express
-														Delivery</label>
-												</div>
-												<div class="form-check">
-													<input class="form-check-input" type="radio" name="flexRadioDefault"
-														id="flexRadioDefault3">
-													<label class="form-check-label"
-														for="flexRadioDefault3">Insurance</label>
-												</div>
-												<div class="form-check">
-													<input class="form-check-input" type="radio" name="flexRadioDefault"
-														id="flexRadioDefault4">
-													<label class="form-check-label"
-														for="flexRadioDefault4">Packaging</label>
-												</div>
-											</div>
+<ul class="tab-buttons clearfix">
+<li class="tab-btn active-btn" data-tab="#tab1">Request A Quote</li>
+<li class="tab-btn" data-tab="#tab2">Our Offices</li>
+</ul>
+<div class="tabs-content">
+<div class="tab active-tab" id="tab1">
+<div class="text">Share your shipment requirements and our team will help
+you identify the right freight forwarding or logistics solution.</div>
+<div class="contact-info-block">
+<div class="content-box">
+<i class="icon flaticon-customer-service"></i>
+<div class="info-box">
+<span>Call Us Now</span>
+<a href="tel:+919898286205">+91 98982 86205</a>
+</div>
+</div>
+</div>
+<div class="services-info-block">
+<div class="inner-box">
+<h4 class="title">Our Core Services:</h4>
+<div class="text">Freight forwarding and logistics support for
+customers across CIS markets and other international
+destinations.</div>
+<div class="row">
+<ul class="list-style-two col-sm-6">
+<li>Air &amp; Ocean Freight</li>
+<li>Breakbulk &amp; Special Equipment</li>
+</ul>
+<ul class="list-style-two col-sm-6">
+<li>Customs Brokerage (CHB)</li>
+<li>NVOCC &amp; ISO Tanks</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="work-info-block">
+<h4 class="title">How To Reach Us?</h4>
+<div class="inner-box">
+<div class="work-info-item">
+<div class="inner">
+<div class="number">01</div>
+<div class="text mb-0">Call us on <br><a href="tel:+919619991339">+91 96199 91339</a></div>
+</div>
+</div>
+<div class="work-info-item">
+<div class="inner">
+<div class="number">02</div>
+<div class="text mb-0">Email us at <br><a href="mailto:venkat@seasolmaritime.com">venkat@seasolmaritime.com</a></div>
+</div>
+</div>
+<div class="work-info-item">
+<div class="inner">
+<div class="number">03</div>
+<div class="text mb-0">Or send your <br>enquiry form</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="tab" id="tab2">
+<div class="text">Visit or write to us at our registered and corporate
+offices.</div>
+<div class="contact-info-block">
+<div class="content-box">
+<i class="icon flaticon-customer-service"></i>
+<div class="info-box">
+<span>Mail Anytime</span>
+<a href="mailto:cs2@seasolmartime.com">cs2@seasolmartime.com</a>
+</div>
+</div>
+</div>
+<div class="services-info-block">
+<div class="inner-box">
+<h4 class="title">Registered Office:</h4>
+<div class="text">203, Amba Arcade, Ward 12A, Gandhidham, Kachchh,
+Gujarat – 370201</div>
+<h4 class="title">Corporate Office:</h4>
+<div class="text mb-0">404, Goodwill Infinity, Sector 12, Kharghar,
+Navi Mumbai – 410210</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 
+<div class="contact-form col-xl-6">
+<div class="inner-column">
 
-											<div class="form-group">
-												<a href="#contact" class="theme-btn btn-style-one"><i
-														class="icon fa fas fa-plus"></i><span class="btn-title">Cost
-														Calculation</span></a>
-											</div>
-										</div>
-									</form>
-								</div>
-							
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div> -->
-		<!-- End Contact Section -->
-		 
-		<!-- Testimonial Section -->
-		<!-- <section class="testimonial-section-two">
-			<div class="auto-container">
-				<div class="testimonials">
-					
-					<div class="swiper testimonial-two-slider">
-						<div class="swiper-wrapper">
-
-							<div class="swiper-slide">
-								
-								<div class="testimonial-block-two">
-									<div class="row">
-										<div class="image-column col-lg-6 col-md-12">
-											<figure class="image"><img src="images/resource/testimonial-2-1.png" alt="">
-											</figure>
-										</div>
-										<div class="content-column col-lg-6 col-md-12">
-											<span class="icon icon-quote"></span>
-											<div class="text">I recently had the pleasure of experiencing great
-												logistics support from <span>LogiSend</span>. From the moment I reached
-												out to their customer service team, I was impressed by their knowledge,
-												professionalism, and willingness to assist.</div>
-											<div class="info-box">
-												<h4 class="name">Daniel Kobra</h4>
-												<div class="designation">Manager at <span>Logisfare</span></div>
-											
-												<div class="testimonial-pagination"></div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-
-							<div class="swiper-slide">
-								
-								<div class="testimonial-block-two">
-									<div class="row">
-										<div class="image-column col-lg-6 col-md-12">
-											<figure class="image"><img src="images/resource/testimonial-2-1.png" alt="">
-											</figure>
-										</div>
-										<div class="content-column col-lg-6 col-md-12">
-											<span class="icon icon-quote"></span>
-											<div class="text">I recently had the pleasure of experiencing great
-												logistics support from <span>LogiSend</span>. From the moment I reached
-												out to their customer service team, I was impressed by their knowledge,
-												professionalism, and willingness to assist.</div>
-											<div class="info-box">
-												<h4 class="name">Daniel Kobra</h4>
-												<div class="designation">Manager at <span>Logisfare</span></div>
-											
-												<div class="testimonial-pagination"></div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-
-							<div class="swiper-slide">
-								
-								<div class="testimonial-block-two">
-									<div class="row">
-										<div class="image-column col-lg-6 col-md-12">
-											<figure class="image"><img src="images/resource/testimonial-2-1.png" alt="">
-											</figure>
-										</div>
-										<div class="content-column col-lg-6 col-md-12">
-											<span class="icon icon-quote"></span>
-											<div class="text">I recently had the pleasure of experiencing great
-												logistics support from <span>LogiSend</span>. From the moment I reached
-												out to their customer service team, I was impressed by their knowledge,
-												professionalism, and willingness to assist.</div>
-											<div class="info-box">
-												<h4 class="name">Daniel Kobra</h4>
-												<div class="designation">Manager at <span>Logisfare</span></div>
-												
-												<div class="testimonial-pagination"></div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-
-							<div class="swiper-slide">
-							
-								<div class="testimonial-block-two">
-									<div class="row">
-										<div class="image-column col-lg-6 col-md-12">
-											<figure class="image"><img src="images/resource/testimonial-2-1.png" alt="">
-											</figure>
-										</div>
-										<div class="content-column col-lg-6 col-md-12">
-											<span class="icon icon-quote"></span>
-											<div class="text">I recently had the pleasure of experiencing great
-												logistics support from <span>LogiSend</span>. From the moment I reached
-												out to their customer service team, I was impressed by their knowledge,
-												professionalism, and willingness to assist.</div>
-											<div class="info-box">
-												<h4 class="name">Daniel Kobra</h4>
-												<div class="designation">Manager at <span>Logisfare</span></div>
-											
-												<div class="testimonial-pagination"></div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-
-							<div class="swiper-slide">
-							
-								<div class="testimonial-block-two">
-									<div class="row">
-										<div class="image-column col-lg-6 col-md-12">
-											<figure class="image"><img src="images/resource/testimonial-2-1.png" alt="">
-											</figure>
-										</div>
-										<div class="content-column col-lg-6 col-md-12">
-											<span class="icon icon-quote"></span>
-											<div class="text">I recently had the pleasure of experiencing great
-												logistics support from <span>LogiSend</span>. From the moment I reached
-												out to their customer service team, I was impressed by their knowledge,
-												professionalism, and willingness to assist.</div>
-											<div class="info-box">
-												<h4 class="name">Daniel Kobra</h4>
-												<div class="designation">Manager at <span>Logisfare</span></div>
-											
-												<div class="testimonial-pagination"></div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-
-				
-					<div class="swiper-button-prev"></div>
-					<div class="swiper-button-next"></div>
-				</div>
-			</div>
-		</section> -->
+<div class="contact-form">
+<div class="title-box">
+<h4 class="title">Schedule a Free Calculation</h4>
+</div>
 
 
-	
-		<!-- Valued Customers Slider -->
-		<section class="valued-customers" id="customers" aria-labelledby="valued-customers-heading">
-			<div class="auto-container">
-				<div class="sec-title text-center">
-					<span class="sub-title">Partners In Progress</span>
-					<h2 id="valued-customers-heading" class="valued-customers-title">
-						Trusted By Our Valued Customers
-					</h2>
-					<div class="text">Delivering reliable freight forwarding and specialized maritime logistics to leading enterprises worldwide.</div>
-				</div>
-			</div>
+<form method="post" action="https://php.kodesolution.com/2025/transend-php/get"
+id="contact-form">
+<div class="row">
 
-			<div class="customer-marquee">
-				<div class="customer-track">
-					<div class="customer-logo">
-						<img src="images/customers/Aditya Space Venture Logo.png"
-							alt="Customer 1">
-					</div>
-					<div class="customer-logo">
-						<img src="images/customers/Al Khatib International Logo.png"
-							alt="Customer 2">
-					</div>
-					<div class="customer-logo">
-						<img src="images/customers/AMAN Trade Alliance Logo.png"
-							alt="Customer 3">
-					</div>
-					<div class="customer-logo">
-						<img src="images/customers/Chetak_2172x724.png"
-							alt="Customer 4">
-					</div>
-					<div class="customer-logo">
-						<img src="images/customers/Global Gases Group Logo.png"
-							alt="Customer 5">
-					</div>
-					<div class="customer-logo">
-						<img src="images/customers/KDR_Industries_2172x724.png"
-							alt="Customer 6">
-					</div>
-					<div class="customer-logo">
-						<img src="images/customers/Vintage_International_2172x724.png"
-							alt="Customer 7">
-					</div>
-					<div class="customer-logo">
-						<img src="images/customers/WebTech_Peak_Logo_2172x724.png"
-							alt="Customer 8">
-					</div>
-					<div class="customer-logo" aria-hidden="true">
-						<img src="images/customers/Aditya Space Venture Logo.png" alt="">
-					</div>
-					<div class="customer-logo" aria-hidden="true">
-						<img src="images/customers/Al Khatib International Logo.png" alt="">
-					</div>
-					<div class="customer-logo" aria-hidden="true">
-						<img src="images/customers/AMAN Trade Alliance Logo.png" alt="">
-					</div>
-					<div class="customer-logo" aria-hidden="true">
-						<img src="images/customers/Chetak_2172x724.png" alt="">
-					</div>
-					<div class="customer-logo" aria-hidden="true">
-						<img src="images/customers/Global Gases Group Logo.png" alt="">
-					</div>
-					<div class="customer-logo" aria-hidden="true">
-						<img src="images/customers/KDR_Industries_2172x724.png" alt="">
-					</div>
-					<div class="customer-logo" aria-hidden="true">
-						<img src="images/customers/Vintage_International_2172x724.png" alt="">
-					</div>
-					<div class="customer-logo" aria-hidden="true">
-						<img src="images/customers/WebTech_Peak_Logo_2172x724.png" alt="">
-					</div>
-					
-				</div>
-			</div>
-		</section>
-			<!-- Why Choose Us Section -->
-		<div class="why-choose-us">
-			<div class="anim-icons full-width">
-				<span class="icon shape-7"></span>
-				<span class="icon shape-8"></span>
-			</div>
-			<div class="auto-container">
-				<div class="row g-0 align-items-center">
-					<div class="content-column col-lg-7 col-md-12 order-2">
-						<div class="inner-column">
-							<div class="sec-title style-three">
-								<span class="sub-title">Why Should You Choose Us?</span>
-								<h2>Our fleet covers your needs <br>& pricing range</h2>
-							</div>
+<div class="col-lg-6 form-group">
+<label for="yourName" class="form-label">Your name</label>
+<input type="text" name="your_name" id="yourName" placeholder=""
+required="">
+</div>
 
-							<div class="text">We pride ourselves on providing the best transport and shipping services available <br>allover the world. Our skilled personnel, utilising the latest communications.</div>
+<div class="col-lg-6 form-group">
+<label for="emailAddress" class="form-label">Email address</label>
+<input type="text" name="email_address" id="emailAddress" placeholder=""
+required="">
+</div>
 
-							<ul class="list-style-two">
-								<li>Quality Control System, 100% Satisfaction Guarantee</li>
-								<li>Highly Professional Staff, Accurate Testing Processes</li>
-								<li>Unrivalled workmanship, Professional and Qualified</li>
-							</ul>
+<div class="col-md-6 col-sm-12 form-group">
+<label>Company / Individual</label>
+<select class="custom-select">
+<option value="">Select Option</option>
+<option value="">Air Freight</option>
+<option value="">Ocean Freight</option>
+<option value="">Rail transport</option>
+<option value="">Cargo ship</option>
+<option value="">Bulk cargo</option>
+</select>
+</div>
 
-							<a href="page-about.html" class="theme-btn btn-style-two hvr-light"><i class="icon fa fas fa-plus"></i><span class="btn-title">More About Us</span></a>
-						</div>
-					</div>
-					<div class="image-column col-lg-5 col-md-12 order-lg-2">
-						<div class="inner-column">
-							<div class="image-box">
-								<figure class="image overlay-anim mb-0"><img src="images/resource/why-choose-us-1.jpg" alt=""></figure>
-							</div>
-							<div class="experience bounce-y">
-								<div class="inner">
-									<figure class="image overlay-anim"><img src="images/warehouse_foreman_in_safety_gear_390x380/indian_warehouse_team_clean_115x104_web.png" alt=""></figure>
-									<div class="content">
-										<strong>1.5M</strong>
-										<div class="text">Happy Client’s</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+<div class="col-md-6 col-sm-12 form-group">
+<label>Freight type</label>
+<select class="custom-select">
+<option value="">Select Option</option>
+<option value="">Air Freight</option>
+<option value="">Ocean Freight</option>
+<option value="">Rail transport</option>
+<option value="">Cargo ship</option>
+<option value="">Bulk cargo</option>
+</select>
+</div>
+
+<div class="col-lg-6 form-group">
+<label for="departureCity" class="form-label">Departure City</label>
+<input type="text" name="departure_city" id="departureCity"
+placeholder="" required="">
+</div>
+
+<div class="col-lg-6 form-group">
+<label for="deliveryCity" class="form-label">Delivery City</label>
+<input type="text" name="delivery_city" id="deliveryCity" placeholder=""
+required="">
+</div>
+
+<div class="col-md-3 form-group">
+<label for="Weight" class="form-label">Weight</label>
+<input type="text" name="weight" id="Weight" placeholder="" required="">
+</div>
+
+<div class="col-md-3 form-group">
+<label for="Height" class="form-label">Height</label>
+<input type="text" name="height" id="Height" placeholder="" required="">
+</div>
+
+<div class="col-md-3 form-group">
+<label for="Width" class="form-label">Width</label>
+<input type="text" name="width" id="Width" placeholder="" required="">
+</div>
+
+<div class="col-md-3 form-group">
+<label for="Length" class="form-label">Length</label>
+<input type="text" name="length" id="Length" placeholder="" required="">
+</div>
+
+
+<div class="form-group">
+<label for="Message" class="form-label">Message</label>
+<textarea name="message" id="Message" placeholder=""
+required></textarea>
+</div>
+
+<div class="check-box">
+<div class="form-check">
+<input class="form-check-input" type="radio" name="flexRadioDefault"
+id="flexRadioDefault1" checked>
+<label class="form-check-label"
+for="flexRadioDefault1">Fragile</label>
+</div>
+<div class="form-check">
+<input class="form-check-input" type="radio" name="flexRadioDefault"
+id="flexRadioDefault2">
+<label class="form-check-label" for="flexRadioDefault2">Express
+Delivery</label>
+</div>
+<div class="form-check">
+<input class="form-check-input" type="radio" name="flexRadioDefault"
+id="flexRadioDefault3">
+<label class="form-check-label"
+for="flexRadioDefault3">Insurance</label>
+</div>
+<div class="form-check">
+<input class="form-check-input" type="radio" name="flexRadioDefault"
+id="flexRadioDefault4">
+<label class="form-check-label"
+for="flexRadioDefault4">Packaging</label>
+</div>
+</div>
+
+
+<div class="form-group">
+<a href="#contact" class="theme-btn btn-style-one"><i
+class="icon fa fas fa-plus"></i><span class="btn-title">Cost
+Calculation</span></a>
+</div>
+</div>
+</form>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div> -->
+<!-- End Contact Section -->
+
+<!-- Testimonial Section -->
+<!-- <section class="testimonial-section-two">
+<div class="auto-container">
+<div class="testimonials">
+
+<div class="swiper testimonial-two-slider">
+<div class="swiper-wrapper">
+
+<div class="swiper-slide">
+
+<div class="testimonial-block-two">
+<div class="row">
+<div class="image-column col-lg-6 col-md-12">
+<figure class="image"><img src="images/resource/testimonial-2-1.png" alt="">
+</figure>
+</div>
+<div class="content-column col-lg-6 col-md-12">
+<span class="icon icon-quote"></span>
+<div class="text">I recently had the pleasure of experiencing great
+logistics support from <span>LogiSend</span>. From the moment I reached
+out to their customer service team, I was impressed by their knowledge,
+professionalism, and willingness to assist.</div>
+<div class="info-box">
+<h4 class="name">Daniel Kobra</h4>
+<div class="designation">Manager at <span>Logisfare</span></div>
+
+<div class="testimonial-pagination"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="swiper-slide">
+
+<div class="testimonial-block-two">
+<div class="row">
+<div class="image-column col-lg-6 col-md-12">
+<figure class="image"><img src="images/resource/testimonial-2-1.png" alt="">
+</figure>
+</div>
+<div class="content-column col-lg-6 col-md-12">
+<span class="icon icon-quote"></span>
+<div class="text">I recently had the pleasure of experiencing great
+logistics support from <span>LogiSend</span>. From the moment I reached
+out to their customer service team, I was impressed by their knowledge,
+professionalism, and willingness to assist.</div>
+<div class="info-box">
+<h4 class="name">Daniel Kobra</h4>
+<div class="designation">Manager at <span>Logisfare</span></div>
+
+<div class="testimonial-pagination"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="swiper-slide">
+
+<div class="testimonial-block-two">
+<div class="row">
+<div class="image-column col-lg-6 col-md-12">
+<figure class="image"><img src="images/resource/testimonial-2-1.png" alt="">
+</figure>
+</div>
+<div class="content-column col-lg-6 col-md-12">
+<span class="icon icon-quote"></span>
+<div class="text">I recently had the pleasure of experiencing great
+logistics support from <span>LogiSend</span>. From the moment I reached
+out to their customer service team, I was impressed by their knowledge,
+professionalism, and willingness to assist.</div>
+<div class="info-box">
+<h4 class="name">Daniel Kobra</h4>
+<div class="designation">Manager at <span>Logisfare</span></div>
+
+<div class="testimonial-pagination"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="swiper-slide">
+
+<div class="testimonial-block-two">
+<div class="row">
+<div class="image-column col-lg-6 col-md-12">
+<figure class="image"><img src="images/resource/testimonial-2-1.png" alt="">
+</figure>
+</div>
+<div class="content-column col-lg-6 col-md-12">
+<span class="icon icon-quote"></span>
+<div class="text">I recently had the pleasure of experiencing great
+logistics support from <span>LogiSend</span>. From the moment I reached
+out to their customer service team, I was impressed by their knowledge,
+professionalism, and willingness to assist.</div>
+<div class="info-box">
+<h4 class="name">Daniel Kobra</h4>
+<div class="designation">Manager at <span>Logisfare</span></div>
+
+<div class="testimonial-pagination"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="swiper-slide">
+
+<div class="testimonial-block-two">
+<div class="row">
+<div class="image-column col-lg-6 col-md-12">
+<figure class="image"><img src="images/resource/testimonial-2-1.png" alt="">
+</figure>
+</div>
+<div class="content-column col-lg-6 col-md-12">
+<span class="icon icon-quote"></span>
+<div class="text">I recently had the pleasure of experiencing great
+logistics support from <span>LogiSend</span>. From the moment I reached
+out to their customer service team, I was impressed by their knowledge,
+professionalism, and willingness to assist.</div>
+<div class="info-box">
+<h4 class="name">Daniel Kobra</h4>
+<div class="designation">Manager at <span>Logisfare</span></div>
+
+<div class="testimonial-pagination"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+<div class="swiper-button-prev"></div>
+<div class="swiper-button-next"></div>
+</div>
+</div>
+</section> -->
+
+
+
+<!-- Valued Customers Slider -->
+<section class="valued-customers" id="customers" aria-labelledby="valued-customers-heading">
+<div class="auto-container">
+<div class="sec-title text-center">
+<span class="sub-title">Partners In Progress</span>
+<h2 id="valued-customers-heading" class="valued-customers-title">
+Trusted By Our Valued Customers
+</h2>
+<div class="text">Delivering reliable freight forwarding and specialized maritime logistics to leading enterprises worldwide.</div>
+</div>
+</div>
+
+<div class="customer-marquee">
+<div class="customer-track">
+<div class="customer-logo">
+<img src="images/customers/Aditya Space Venture Logo.png"
+alt="Customer 1">
+</div>
+<div class="customer-logo">
+<img src="images/customers/Al Khatib International Logo.png"
+alt="Customer 2">
+</div>
+<div class="customer-logo">
+<img src="images/customers/AMAN Trade Alliance Logo.png"
+alt="Customer 3">
+</div>
+<div class="customer-logo">
+<img src="images/customers/Chetak_2172x724.png"
+alt="Customer 4">
+</div>
+<div class="customer-logo">
+<img src="images/customers/Global Gases Group Logo.png"
+alt="Customer 5">
+</div>
+<div class="customer-logo">
+<img src="images/customers/KDR_Industries_2172x724.png"
+alt="Customer 6">
+</div>
+<div class="customer-logo">
+<img src="images/customers/Vintage_International_2172x724.png"
+alt="Customer 7">
+</div>
+<div class="customer-logo">
+<img src="images/customers/WebTech_Peak_Logo_2172x724.png"
+alt="Customer 8">
+</div>
+<div class="customer-logo" aria-hidden="true">
+<img src="images/customers/Aditya Space Venture Logo.png" alt="">
+</div>
+<div class="customer-logo" aria-hidden="true">
+<img src="images/customers/Al Khatib International Logo.png" alt="">
+</div>
+<div class="customer-logo" aria-hidden="true">
+<img src="images/customers/AMAN Trade Alliance Logo.png" alt="">
+</div>
+<div class="customer-logo" aria-hidden="true">
+<img src="images/customers/Chetak_2172x724.png" alt="">
+</div>
+<div class="customer-logo" aria-hidden="true">
+<img src="images/customers/Global Gases Group Logo.png" alt="">
+</div>
+<div class="customer-logo" aria-hidden="true">
+<img src="images/customers/KDR_Industries_2172x724.png" alt="">
+</div>
+<div class="customer-logo" aria-hidden="true">
+<img src="images/customers/Vintage_International_2172x724.png" alt="">
+</div>
+<div class="customer-logo" aria-hidden="true">
+<img src="images/customers/WebTech_Peak_Logo_2172x724.png" alt="">
+</div>
+
+</div>
+</div>
+</section>
+<!-- Why Choose Us Section -->
+<style>
+.why-choose-us {
+position: relative;
+padding: 100px 0 110px;
+background-color: #f2f7fd;
+background-image: url('images/background/why-choose-us-bg.png');
+background-repeat: no-repeat;
+background-position: center center;
+background-size: cover;
+overflow: hidden;
+}
+.why-choose-us::before {
+content: "";
+position: absolute;
+inset: 0;
+background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.45) 0%, rgba(255, 255, 255, 0.15) 100%);
+pointer-events: none;
+}
+.why-choose-us .auto-container { position: relative; z-index: 2; }
+.why-choose-us .wcu-wrap { max-width: 1040px; margin: 0 auto; }
+.why-choose-us .sec-title { margin-bottom: 34px; }
+.why-choose-us .sec-title h2 {
+font-size: 40px;
+line-height: 1.25;
+color: var(--sea-navy, #0B2A6F);
+margin: 0 0 18px;
+max-width: 960px;
+font-weight: 700;
+letter-spacing: -0.5px;
+}
+.why-choose-us .sec-title .text {
+font-size: 17px;
+line-height: 1.85;
+color: #4b5b73;
+max-width: 880px;
+margin: 0 0 38px;
+}
+.why-choose-us .wcu-sub {
+display: flex;
+align-items: center;
+gap: 16px;
+font-size: clamp(24px, 2.8vw, 32px);
+line-height: 1.25;
+font-weight: 700;
+color: var(--sea-navy, #0B2A6F);
+margin: 0 0 30px;
+}
+.why-choose-us .wcu-sub::after {
+content: "";
+flex: 1;
+height: 3px;
+border-radius: 3px;
+background: linear-gradient(90deg, #0AA5D6 0%, #0757E8 30%, #f59e0b 70%, transparent 100%);
+transform-origin: left center;
+}
+.why-choose-us .wcu-list {
+list-style: none;
+margin: 0;
+padding: 0;
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+gap: 18px 26px;
+}
+.why-choose-us .wcu-list li {
+display: flex;
+align-items: center;
+gap: 18px;
+padding: 22px 26px;
+min-height: 88px;
+background: rgba(255, 255, 255, 0.9);
+border: 1px solid rgba(255, 255, 255, 0.95);
+border-radius: 16px;
+color: var(--sea-navy, #0B2A6F);
+font-weight: 600;
+font-size: 18px;
+line-height: 1.45;
+box-shadow: 0 10px 28px rgba(11, 42, 111, 0.08);
+backdrop-filter: blur(10px);
+-webkit-backdrop-filter: blur(10px);
+transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.6s ease, background 0.3s ease, border-color 0.3s ease, box-shadow 0.35s ease;
+}
+.why-choose-us .wcu-list li:hover {
+transform: translateY(-5px);
+background: #ffffff;
+border-color: rgba(7, 87, 232, 0.4);
+box-shadow: 0 16px 36px rgba(7, 87, 232, 0.16);
+}
+.why-choose-us .wcu-list i {
+flex: none;
+width: 38px;
+height: 38px;
+border-radius: 50%;
+background: linear-gradient(135deg, #0757E8 0%, #0AA5D6 100%);
+color: #fff;
+font-size: 15px;
+display: inline-flex;
+align-items: center;
+justify-content: center;
+box-shadow: 0 4px 12px rgba(7, 87, 232, 0.35);
+transition: transform 0.3s ease;
+}
+.why-choose-us .wcu-list li:hover i {
+transform: scale(1.1);
+}
+/* Scroll-reveal (active once JS adds .wcu-anim; reveal triggered by .wcu-in) */
+.why-choose-us.wcu-anim .wcu-sub,
+.why-choose-us.wcu-anim .wcu-list li { opacity: 0; transform: translateY(24px); }
+.why-choose-us.wcu-anim .wcu-sub::after { transform: scaleX(0); }
+.why-choose-us.wcu-anim .wcu-list i { transform: scale(0); }
+.why-choose-us.wcu-anim.wcu-in .wcu-sub { opacity: 1; transform: none; transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.25, 1, 0.5, 1); }
+.why-choose-us.wcu-anim.wcu-in .wcu-sub::after { transform: scaleX(1); transition: transform 0.9s cubic-bezier(0.25, 1, 0.5, 1) 0.25s; }
+.why-choose-us.wcu-anim.wcu-in .wcu-list li { opacity: 1; transform: none; transition-delay: calc(0.2s + var(--i, 0) * 0.1s), calc(0.2s + var(--i, 0) * 0.1s), 0s, 0s, 0s; }
+.why-choose-us.wcu-anim.wcu-in .wcu-list li:hover { transform: translateY(-5px); transition-delay: 0s; }
+.why-choose-us.wcu-anim.wcu-in .wcu-list i { transform: scale(1); transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) calc(0.4s + var(--i, 0) * 0.1s); }
+.why-choose-us.wcu-anim.wcu-in .wcu-list li:hover i { transform: scale(1.1); transition-delay: 0s; transition-duration: 0.3s; }
+@media (prefers-reduced-motion: reduce) {
+.why-choose-us.wcu-anim .wcu-sub,
+.why-choose-us.wcu-anim .wcu-list li,
+.why-choose-us.wcu-anim .wcu-list i { opacity: 1; transform: none; transition: none !important; }
+.why-choose-us.wcu-anim .wcu-sub::after { transform: none; transition: none !important; }
+.why-choose-us .wcu-list li:hover, .why-choose-us .wcu-list li:hover i { transform: none; }
+}
+@media (max-width: 991px) {
+.why-choose-us .wcu-list li { font-size: 17px; padding: 20px 22px; }
+.why-choose-us { padding: 80px 0; background-position: 65% center; }
+.why-choose-us .sec-title h2 { font-size: 32px; }
+}
+@media (max-width: 767px) {
+.why-choose-us { padding: 60px 0; background-position: 75% center; }
+.why-choose-us .sec-title h2 { font-size: 26px; }
+.why-choose-us .sec-title .text { font-size: 16px; margin-bottom: 28px; }
+.why-choose-us .wcu-list li { min-height: 0; padding: 16px 18px; gap: 14px; font-size: 16px; }
+.why-choose-us .wcu-list i { width: 36px; height: 36px; }
+.why-choose-us .wcu-list { grid-template-columns: 1fr; gap: 14px; }
+.why-choose-us .wcu-list li { background: rgba(255, 255, 255, 0.94); }
+}
+</style>
+<section class="why-choose-us" aria-labelledby="wcu-heading">
+<div class="auto-container">
+<div class="wcu-wrap">
+<div class="sec-title wow fadeInUp">
+<span class="sub-title">What Sets Us Apart</span>
+<h2 id="wcu-heading">More Than Logistics. A Partnership Built on Trust, Commitment &amp; Global Connection</h2>
+<div class="text">At Seasol, we deliver dependable freight forwarding and NVOCC solutions designed to simplify international trade. Connecting India with Bandar Abbas and CIS markets, our ambition extends beyond moving cargo. We strive to become a trusted extension of your supply chain, supporting your international trade ambitions through dependable service, collaborative partnerships, and a commitment to long-term value.</div>
+</div>
+<h3 class="wcu-sub">The Difference We Deliver</h3>
+<ul class="wcu-list">
+<li><i class="fa-solid fa-check" aria-hidden="true"></i>Reliable NVOCC &amp; Freight Forwarding Solutions</li>
+<li><i class="fa-solid fa-check" aria-hidden="true"></i>Strategic Global Connectivity</li>
+<li><i class="fa-solid fa-check" aria-hidden="true"></i>Cost-Conscious Freight Planning</li>
+<li><i class="fa-solid fa-check" aria-hidden="true"></i>Personalized Service &amp; Support</li>
+<li><i class="fa-solid fa-check" aria-hidden="true"></i>Excellence Through Accountability</li>
+<li><i class="fa-solid fa-check" aria-hidden="true"></i>Tailored Logistics Solutions</li>
+</ul>
+</div>
+</div>
+</section>
+<script>
+(function () {
+var sec = document.querySelector('.why-choose-us');
+if (!sec) return;
+var items = sec.querySelectorAll('.wcu-list li');
+for (var i = 0; i < items.length; i++) items[i].style.setProperty('--i', i);
+if (!('IntersectionObserver' in window)) return;
+sec.classList.add('wcu-anim');
+var io = new IntersectionObserver(function (entries) {
+if (entries[0].isIntersecting) { sec.classList.add('wcu-in'); io.disconnect(); }
+}, { threshold: 0.2 });
+io.observe(sec.querySelector('.wcu-sub'));
+})();
+</script>
 <!-- End Why Choose Us Section -->
 
-		<!--End Valued Customers Slider -->
-		<!-- Main Footer -->
-		<footer class="main-footer seasol-footer" id="contact">
+<!--End Valued Customers Slider -->
+<!-- Main Footer -->
+<footer class="main-footer seasol-footer" id="contact">
 
-			<!-- CTA band -->
-			<div class="auto-container">
-				<div class="sf-cta">
-					<div class="sf-cta__text">
-						<span class="sf-cta__eyebrow">Get a free quote</span>
-						<h3>Ready to move your cargo from India to CIS markets?</h3>
-						<p>Tell us your route and cargo &ndash; our team replies with a tailored freight plan.</p>
-					</div>
-					<div class="sf-cta__actions">
-						<a class="sf-btn sf-btn--amber" href="mailto:venkat@seasolmaritime.com?subject=Quote%20request"><i class="fa-solid fa-paper-plane"></i> Request A Quote</a>
-						<a class="sf-btn sf-btn--ghost" href="tel:+919898286205"><i class="fa-solid fa-phone-volume"></i> +91 98982 86205</a>
-					</div>
-				</div>
-			</div>
+<!-- CTA band -->
+<div class="auto-container">
+<div class="sf-cta">
+<div class="sf-cta__text">
+<span class="sf-cta__eyebrow">Get a free quote</span>
+<h3>Ready to move your cargo from India to CIS markets?</h3>
+<p>Tell us your route and cargo &ndash; our team replies with a tailored freight plan.</p>
+</div>
+<div class="sf-cta__actions">
+<a class="sf-btn sf-btn--amber" href="mailto:venkat@seasolmaritime.com?subject=Quote%20request"><i class="fa-solid fa-paper-plane"></i> Request A Quote</a>
+<a class="sf-btn sf-btn--ghost" href="tel:+919898286205"><i class="fa-solid fa-phone-volume"></i> +91 98982 86205</a>
+</div>
+</div>
+</div>
 
-			<!-- Link columns -->
-			<div class="sf-main">
-				<div class="auto-container">
-					<div class="sf-grid">
+<!-- Link columns -->
+<div class="sf-main">
+<div class="auto-container">
+<div class="sf-grid">
 
-						<div class="sf-col sf-about">
-							<a class="sf-logo" href="#home"><img src="images/Seasol Maritime Logo.png" alt="Seasol Maritime India Pvt. Ltd."></a>
-							<p>Seasol Maritime India Pvt. Ltd. provides comprehensive freight forwarding and maritime logistics &ndash; air &amp; ocean freight, breakbulk, NVOCC, ISO tanks and contract logistics connecting India to Central Asia &amp; CIS trade corridors.</p>
-							<ul class="sf-social" aria-label="Social media">
-								<li><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></li>
-								<li><a href="#" aria-label="X"><i class="fa fa-x"></i></a></li>
-								<li><a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a></li>
-								<li><a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a></li>
-							</ul>
-						</div>
+<div class="sf-col sf-about">
+<a class="sf-logo" href="#home"><img src="images/Seasol Maritime Logo.png" alt="Seasol Maritime India Pvt. Ltd."></a>
+<p>Seasol Maritime India Pvt. Ltd. provides comprehensive freight forwarding and maritime logistics &ndash; air &amp; ocean freight, breakbulk, NVOCC, ISO tanks and contract logistics connecting India to Central Asia &amp; CIS trade corridors.</p>
+<ul class="sf-social" aria-label="Social media">
+<li><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+<li><a href="#" aria-label="X"><i class="fa fa-x"></i></a></li>
+<li><a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a></li>
+<li><a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a></li>
+</ul>
+</div>
 
-						<div class="sf-col">
-							<h3 class="widget-title">Explore</h3>
-							<ul class="sf-links">
-								<li><a href="#home">Home</a></li>
-								<li><a href="#about">About Us</a></li>
-								<li><a href="#team">Our Team</a></li>
-								<li><a href="#core-values">Core Values</a></li>
-								<li><a href="#network">Network &amp; Coverage</a></li>
-								<li><a href="#customers">Customers</a></li>
-							</ul>
-						</div>
+<div class="sf-col">
+<h3 class="widget-title">Explore</h3>
+<ul class="sf-links">
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About Us</a></li>
+<li><a href="#global-network">Global Network</a></li>
+<li><a href="#core-values">Core Values</a></li>
+<li><a href="#network">Network &amp; Coverage</a></li>
+<li><a href="#customers">Customers</a></li>
+</ul>
+</div>
 
-						<div class="sf-col">
-							<h3 class="widget-title">Our Services</h3>
-							<ul class="sf-links">
-								<li><a href="ocean-freight.html">Ocean Freight</a></li>
-								<li><a href="air-freight.html">Air Freight</a></li>
-								<li><a href="breakbulk-special-equipment.html">Breakbulk &amp; Special Equipment</a></li>
-								<li><a href="#services">Customs Brokerage &amp; Cross Trading</a></li>
-								<li><a href="nvocc-iso-tanks.html">NVOCC &amp; ISO Tanks</a></li>
-								<li><a href="#services">Others</a></li>
-							</ul>
-						</div>
+<div class="sf-col">
+<h3 class="widget-title">Our Services</h3>
+<ul class="sf-links">
+<li><a href="ocean-freight.html">Ocean Freight</a></li>
+<li><a href="air-freight.html">Air Freight</a></li>
+<li><a href="breakbulk-special-equipment.html">Breakbulk &amp; Special Equipment</a></li>
+<li><a href="#services">Customs Brokerage &amp; Cross Trading</a></li>
+<li><a href="nvocc-iso-tanks.html">NVOCC &amp; ISO Tanks</a></li>
+<li><a href="other-services.html">Others</a></li>
+</ul>
+</div>
 
-						<div class="sf-col">
-							<h3 class="widget-title">Get In Touch</h3>
-							<ul class="sf-contact">
-								<li>
-									<span class="sf-ico"><i class="fa-solid fa-phone-volume"></i></span>
-									<div><a href="tel:+919898286205">+91 98982 86205</a><a href="tel:+919619991339">+91 96199 91339</a></div>
-								</li>
-								<li>
-									<span class="sf-ico"><i class="fa-solid fa-envelope"></i></span>
-									<div><a href="mailto:venkat@seasolmaritime.com">venkat@seasolmaritime.com</a><a href="mailto:cs2@seasolmartime.com">cs2@seasolmartime.com</a></div>
-								</li>
-								<li>
-									<span class="sf-ico"><i class="fa-solid fa-clock"></i></span>
-									<div><span>Mon &ndash; Sat: 9:30 AM &ndash; 6:30 PM</span><span>Sunday: Closed</span></div>
-								</li>
-							</ul>
-						</div>
-					</div>
+<div class="sf-col">
+<h3 class="widget-title">Get In Touch</h3>
+<ul class="sf-contact">
+<li>
+<span class="sf-ico"><i class="fa-solid fa-phone-volume"></i></span>
+<div><a href="tel:+919898286205">+91 98982 86205</a><a href="tel:+919619991339">+91 96199 91339</a></div>
+</li>
+<li>
+<span class="sf-ico"><i class="fa-solid fa-envelope"></i></span>
+<div><a href="mailto:venkat@seasolmaritime.com">venkat@seasolmaritime.com</a><a href="mailto:cs2@seasolmartime.com">cs2@seasolmartime.com</a></div>
+</li>
+<li>
+<span class="sf-ico"><i class="fa-solid fa-clock"></i></span>
+<div><span>Mon &ndash; Sat: 9:30 AM &ndash; 6:30 PM</span><span>Sunday: Closed</span></div>
+</li>
+</ul>
+</div>
+</div>
 
-					<!-- Offices strip -->
-					<div class="sf-offices">
-						<div class="sf-office">
-							<span class="sf-ico"><i class="fa-solid fa-location-dot"></i></span>
-							<div>
-								<h5>Registered Office &ndash; Gujarat</h5>
-								<p>203, Amba Arcade, Ward 12A, Gandhidham, Kachchh, Gujarat &ndash; 370201</p>
-							</div>
-						</div>
-						<div class="sf-office">
-							<span class="sf-ico"><i class="fa-solid fa-building"></i></span>
-							<div>
-								<h5>Corporate Office &ndash; Mumbai</h5>
-								<p>404, Goodwill Infinity, Sector 12, Kharghar, Navi Mumbai &ndash; 410210</p>
-							</div>
-						</div>
-						<a class="sf-btn sf-btn--blue" href="#india-offices"><i class="fa-solid fa-map-location-dot"></i> View Pan-India Network</a>
-					</div>
-				</div>
-			</div>
+<!-- Offices strip -->
+<div class="sf-offices">
+<div class="sf-office">
+<span class="sf-ico"><i class="fa-solid fa-location-dot"></i></span>
+<div>
+<h5>Registered Office &ndash; Gujarat</h5>
+<p>203, Amba Arcade, Ward 12A, Gandhidham, Kachchh, Gujarat &ndash; 370201</p>
+</div>
+</div>
+<div class="sf-office">
+<span class="sf-ico"><i class="fa-solid fa-building"></i></span>
+<div>
+<h5>Corporate Office &ndash; Mumbai</h5>
+<p>404, Goodwill Infinity, Sector 12, Kharghar, Navi Mumbai &ndash; 410210</p>
+</div>
+</div>
+<a class="sf-btn sf-btn--blue" href="india.html"><i class="fa-solid fa-map-location-dot"></i> View Pan-India Network</a>
+</div>
+</div>
+</div>
 
-			<!--Footer Bottom-->
-			<div class="footer-bottom">
-				<div class="auto-container">
-					<div class="inner-container">
-						<div class="copyright-text">
-							<p>Copyright © 2026 Seasol Maritime India Pvt. Ltd. All Rights Reserved.</p>
-						</div>
-						<div class="copyright-right">
-							<p>Developed by <a href="https://www.hsdigitalmedia.com/" target="_blank" rel="noopener noreferrer">HS Digital Media</a></p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</footer>
-		<!--End Main Footer -->
+<!--Footer Bottom-->
+<div class="footer-bottom">
+<div class="auto-container">
+<div class="inner-container">
+<div class="copyright-text">
+<p>Copyright © 2026 Seasol Maritime India Pvt. Ltd. All Rights Reserved.</p>
+</div>
+<div class="copyright-right">
+<p>Developed by <a href="https://www.hsdigitalmedia.com/" target="_blank" rel="noopener noreferrer">HS Digital Media</a></p>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<!--End Main Footer -->
 
-	<!-- Scroll To Top -->
-	<div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-angle-up"></span></div>
+<!-- Scroll To Top -->
+<div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-angle-up"></span></div>
 
-	<script src="js/jquery.js"></script>
-	<script src="js/popper.min.js"></script>
+<script src="js/jquery.js"></script>
+<script src="js/popper.min.js"></script>
 
 
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/jquery.fancybox.js"></script>
-	<script src="js/jquery-ui.js"></script>
-	<script src="js/wow.js"></script>
-	<script src="js/appear.js"></script>
-	<script src="js/bxslider.js"></script>
-	<script src="js/mixitup.js"></script>
-	<script src="js/select2.min.js"></script>
-	<script src="js/swiper.min.js"></script>
-	<script src="js/owl.js"></script>
-	<script src="js/script.js"></script>
-	<script src="js/seasol-services-slider.js"></script>
-	<script src="js/seasol-network-sections.js"></script>
-	<script src="js/seasol-core-values.js"></script>
-	<script src="js/seasol-navbar-footer.js"></script>
-	<script src="contact-section/contact.js"></script>
-	<script>
-		// Enquiry form: no server-side handler exists, so open the visitor's email app with the details.
-		(function () {
-			var form = document.getElementById('contact-form');
-			var status = document.getElementById('formStatus');
-			if (!form) { return; }
-			form.addEventListener('submit', function (e) {
-				e.preventDefault();
-				if (!form.checkValidity()) {
-					form.reportValidity();
-					return;
-				}
-				var v = function (name) { return form.elements[name].value.trim(); };
-				var body = [
-					'Name: ' + v('your_name'),
-					'Email: ' + v('email_address'),
-					'Company / Individual: ' + v('enquiry_type'),
-					'Service required: ' + v('service'),
-					'Origin: ' + v('origin'),
-					'Destination: ' + v('destination'),
-					'Weight: ' + v('weight') + '  Height: ' + v('height') + '  Width: ' + v('width') + '  Length: ' + v('length'),
-					'',
-					v('message')
-				].join('\n');
-				window.location.href = 'mailto:venkat@seasolmaritime.com' +
-					'?subject=' + encodeURIComponent('Freight enquiry' + (v('service') ? ': ' + v('service') : '')) +
-					'&body=' + encodeURIComponent(body);
-				status.textContent = 'Your email application should now open with the enquiry filled in. ' +
-					'If it does not, email venkat@seasolmaritime.com or call +91 98982 86205.';
-			});
-		})();
-	</script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.fancybox.js"></script>
+<script src="js/jquery-ui.js"></script>
+<script src="js/wow.js"></script>
+<script src="js/appear.js"></script>
+<script src="js/bxslider.js"></script>
+<script src="js/mixitup.js"></script>
+<script src="js/select2.min.js"></script>
+<script src="js/swiper.min.js"></script>
+<script src="js/owl.js"></script>
+<script src="js/script.js"></script>
+<script src="js/seasol-services-slider.js"></script>
+<script src="js/seasol-network-sections.js"></script>
+<script src="js/seasol-global-network.js"></script>
+<script src="js/seasol-core-values.js"></script>
+<script src="js/seasol-navbar-footer.js"></script>
+<script src="contact-section/contact.js"></script>
+<script>
+// Enquiry form: no server-side handler exists, so open the visitor's email app with the details.
+(function () {
+var form = document.getElementById('contact-form');
+var status = document.getElementById('formStatus');
+if (!form) { return; }
+form.addEventListener('submit', function (e) {
+e.preventDefault();
+if (!form.checkValidity()) {
+form.reportValidity();
+return;
+}
+var v = function (name) { return form.elements[name].value.trim(); };
+var body = [
+'Name: ' + v('your_name'),
+'Email: ' + v('email_address'),
+'Company / Individual: ' + v('enquiry_type'),
+'Service required: ' + v('service'),
+'Origin: ' + v('origin'),
+'Destination: ' + v('destination'),
+'Weight: ' + v('weight') + '  Height: ' + v('height') + '  Width: ' + v('width') + '  Length: ' + v('length'),
+'',
+v('message')
+].join('\n');
+window.location.href = 'mailto:venkat@seasolmaritime.com' +
+'?subject=' + encodeURIComponent('Freight enquiry' + (v('service') ? ': ' + v('service') : '')) +
+'&body=' + encodeURIComponent(body);
+status.textContent = 'Your email application should now open with the enquiry filled in. ' +
+'If it does not, email venkat@seasolmaritime.com or call +91 98982 86205.';
+});
+})();
+</script>
 </body>
 
 <!-- Mirrored from https://php.kodesolution.com/2025/transend-php/index-2.php by HTTrack Website Copier/3.x [XR&CO], Mon, 19 Oct 2026 10:35:14 GMT -->
