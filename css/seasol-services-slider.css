@@ -57,7 +57,7 @@
   position: absolute; inset: 0; border-radius: 12px; transform-origin: left; transform: scaleX(0);
   background: linear-gradient(90deg, #0757E8, #0AA5D6 70%, #FF9A1F);
 }
-.sst-dot.is-active i { animation: sst-fill var(--sst-interval, 5500ms) linear forwards; }
+.sst-dot.is-active i { animation: sst-fill var(--sst-interval, 2000ms) linear forwards; }
 .sst-pager.is-paused .sst-dot.is-active i { animation: none; transform: scaleX(1); }
 @keyframes sst-fill { from { transform: scaleX(0); } to { transform: scaleX(1); } }
 

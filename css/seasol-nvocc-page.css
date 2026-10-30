@@ -15,7 +15,50 @@
   .sp-hero { min-height: 0; }
   .sp-hero__inner { padding-top: 26px; padding-bottom: 84px; }
   .sp-hero h1 { font-size: 32px; }
+  .sp-tank-transit { top: 18%; }
 }
+
+/* NVOCC & ISO Tank fleet route transit across the hero */
+.sp-tank-transit {
+  position: absolute;
+  left: -30%;
+  top: 24%;
+  width: 38%;
+  height: 3px;
+  z-index: -1;
+  border-radius: 3px;
+  background: linear-gradient(90deg, transparent, rgba(10, 165, 214, .3) 30%, rgba(255, 196, 119, .95) 100%);
+  box-shadow: 0 0 12px rgba(255, 154, 31, .65);
+  opacity: 0;
+  animation: sp-tank-transit 11s ease-in-out 1.2s infinite;
+}
+.sp-tank-transit::after {
+  content: "\f21a";
+  font-family: "Font Awesome 6 Pro", "Font Awesome 5 Free", "FontAwesome";
+  font-weight: 900;
+  position: absolute;
+  right: -14px;
+  top: -12px;
+  color: #fff;
+  font-size: 24px;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, .45)) drop-shadow(0 0 10px rgba(255, 154, 31, .8));
+  animation: sp-tank-bob 2.8s ease-in-out infinite;
+}
+@keyframes sp-tank-bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+@keyframes sp-tank-transit {
+  0% { transform: translate(0, 0); opacity: 0; }
+  8% { opacity: 1; }
+  75% { opacity: 1; }
+  100% { transform: translate(320%, 0); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sp-tank-transit, .sp-tank-transit::after { animation: none !important; }
+}
+
 
 /* ==========================================================================
    What is an NVOCC - animated flow

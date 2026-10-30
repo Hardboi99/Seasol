@@ -15,7 +15,50 @@
   .sp-hero { min-height: 0; }
   .sp-hero__inner { padding-top: 26px; padding-bottom: 84px; }
   .sp-hero h1 { font-size: 32px; }
+  .sp-heavy-transit { top: 18%; }
 }
+
+/* Heavy-Lift & Project cargo route transit across the hero */
+.sp-heavy-transit {
+  position: absolute;
+  left: -30%;
+  top: 24%;
+  width: 38%;
+  height: 3px;
+  z-index: -1;
+  border-radius: 3px;
+  background: linear-gradient(90deg, transparent, rgba(7, 87, 232, .4) 30%, rgba(255, 154, 31, .95) 100%);
+  box-shadow: 0 0 12px rgba(255, 154, 31, .75);
+  opacity: 0;
+  animation: sp-heavy-transit 12s ease-in-out 1s infinite;
+}
+.sp-heavy-transit::after {
+  content: "\f21a";
+  font-family: "Font Awesome 6 Pro", "Font Awesome 5 Free", "FontAwesome";
+  font-weight: 900;
+  position: absolute;
+  right: -14px;
+  top: -12px;
+  color: #fff;
+  font-size: 24px;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, .45)) drop-shadow(0 0 12px rgba(255, 154, 31, .85));
+  animation: sp-heavy-bob 3.2s ease-in-out infinite;
+}
+@keyframes sp-heavy-bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-2px); }
+}
+@keyframes sp-heavy-transit {
+  0% { transform: translate(0, 0); opacity: 0; }
+  8% { opacity: 1; }
+  75% { opacity: 1; }
+  100% { transform: translate(320%, 0); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sp-heavy-transit, .sp-heavy-transit::after { animation: none !important; }
+}
+
 
 /* ==========================================================================
    Handling methods (3 cards with animated top bar)

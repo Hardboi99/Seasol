@@ -97,7 +97,29 @@ var THEMEMASCOT = {};
 		
 		//Dropdown Button
 		$('.mobile-menu li.dropdown .dropdown-btn').on('click', function() {
-			$(this).prev('ul').slideToggle(500);
+			var sub = $(this).prev('ul')[0];
+				if(sub){
+					// Height accordion: animate 0 <-> measured content height, then settle on auto (collapsed = display:none)
+					var open = !$(this).hasClass('active');
+					var ms = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 220;
+					clearTimeout(sub._accTimer);
+					sub.style.overflow = 'hidden';
+					sub.style.transition = ms ? 'height ' + ms + 'ms ease' : 'none';
+					if(open){
+						if(sub.style.display !== 'block'){
+							sub.style.display = 'block';
+							sub.style.height = '0px';
+						}
+						void sub.offsetHeight;
+						sub.style.height = sub.scrollHeight + 'px';
+						sub._accTimer = setTimeout(function(){ sub.style.height = 'auto'; }, ms);
+					}else{
+						sub.style.height = sub.offsetHeight + 'px';
+						void sub.offsetHeight;
+						sub.style.height = '0px';
+						sub._accTimer = setTimeout(function(){ sub.style.display = 'none'; sub.style.height = ''; }, ms);
+					}
+				}
 			$(this).toggleClass('active');
 		});
 
