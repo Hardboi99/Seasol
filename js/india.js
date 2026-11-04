@@ -33,7 +33,7 @@
 			if (!o || !d || !c) { msg.hidden = false; return; }
 			msg.hidden = true;
 			var body = 'Hello Seasol Maritime team,\n\nPlease share a freight plan for:\nOrigin: ' + o + '\nDestination: ' + d + '\nCargo type: ' + c + '\n\nCommodity, weight/volume and ready date: \n\nThank you.';
-			window.location.href = 'mailto:venkat@seasolmaritime.com?subject=' + encodeURIComponent('Route enquiry: ' + o + ' to ' + d) + '&body=' + encodeURIComponent(body);
+			window.location.href = 'mailto:cs2@seasolmaritime.com?subject=' + encodeURIComponent('Route enquiry: ' + o + ' to ' + d) + '&body=' + encodeURIComponent(body);
 		});
 	}
 })();

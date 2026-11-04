@@ -70,7 +70,7 @@
       var body = 'Hello Seasol Maritime team,\n\nI would like to enquire about:\n' +
         (on.length ? on.map(function (s) { return '- ' + s; }).join('\n') : '- (please advise)') +
         '\n\nCargo / commodity:\nLocations:\nExpected volumes:\n\nThank you.';
-      send.href = 'mailto:venkat@seasolmaritime.com?subject=' + encodeURIComponent('Other services enquiry') + '&body=' + encodeURIComponent(body);
+      send.href = 'mailto:cs2@seasolmaritime.com?subject=' + encodeURIComponent('Other services enquiry') + '&body=' + encodeURIComponent(body);
     }
     wrap.addEventListener('click', function (e) {
       var b = e.target.closest ? e.target.closest('.os-opt') : null;
