@@ -32,8 +32,46 @@
 			var msg = form.querySelector('.in-form__msg');
 			if (!o || !d || !c) { msg.hidden = false; return; }
 			msg.hidden = true;
-			var body = 'Hello Seasol Maritime team,\n\nPlease share a freight plan for:\nOrigin: ' + o + '\nDestination: ' + d + '\nCargo type: ' + c + '\n\nCommodity, weight/volume and ready date: \n\nThank you.';
-			window.location.href = 'mailto:cs2@seasolmaritime.com?subject=' + encodeURIComponent('Route enquiry: ' + o + ' to ' + d) + '&body=' + encodeURIComponent(body);
+
+			var submitBtn = form.querySelector('button[type="submit"]');
+			var originalText = submitBtn ? submitBtn.innerHTML : 'Request plan';
+			if (submitBtn) {
+				submitBtn.disabled = true;
+				submitBtn.innerHTML = 'Sending plan request...';
+			}
+
+			fetch('contact-handler.php', {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+				body: JSON.stringify({
+					form_type: 'route_enquiry',
+					origin: o,
+					destination: d,
+					cargo: c,
+					subject: 'Route Enquiry: ' + o + ' to ' + d,
+					message: 'Route plan request for ' + c + ' from ' + o + ' to ' + d + '.'
+				})
+			})
+			.then(function (res) { return res.json(); })
+			.then(function (resData) {
+				if (resData.status === 'success') {
+					if (submitBtn) submitBtn.innerHTML = 'Request Sent!';
+					alert('Thank you! Your route enquiry has been sent to cs2@seasolmaritime.com. Our team will contact you shortly.');
+					form.reset();
+				} else {
+					throw new Error(resData.message || 'Error');
+				}
+			})
+			.catch(function () {
+				var body = 'Hello Seasol Maritime team,\n\nPlease share a freight plan for:\nOrigin: ' + o + '\nDestination: ' + d + '\nCargo type: ' + c + '\n\nCommodity, weight/volume and ready date: \n\nThank you.';
+				window.location.href = 'mailto:cs2@seasolmaritime.com?subject=' + encodeURIComponent('Route enquiry: ' + o + ' to ' + d) + '&body=' + encodeURIComponent(body);
+			})
+			.finally(function () {
+				if (submitBtn) {
+					submitBtn.disabled = false;
+					setTimeout(function () { submitBtn.innerHTML = originalText; }, 3000);
+				}
+			});
 		});
 	}
 })();

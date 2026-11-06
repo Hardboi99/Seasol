@@ -1,0 +1,351 @@
+/**
+ * Seasol Maritime - Premium "Request A Quote" Modal
+ * Matches Seasol brand styling with high-end animations and responsive design
+ */
+
+/* Modal Backdrop */
+.sq-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 999999;
+  background: rgba(5, 22, 58, 0.68);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.35s ease;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.sq-modal-backdrop.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* Modal Card with subtle gradient border (cobalt-cyan to amber) */
+.sq-modal-card {
+  position: relative;
+  width: 100%;
+  max-width: 580px;
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 34px 36px 36px;
+  margin: auto;
+  box-shadow: 0 25px 70px rgba(5, 22, 58, 0.3), 0 10px 25px rgba(0, 0, 0, 0.08);
+  /* Elegant gradient border */
+  border: 2px solid transparent;
+  background: linear-gradient(#ffffff, #ffffff) padding-box,
+              linear-gradient(135deg, #0AA5D6 0%, #0757E8 40%, #FF9A1F 100%) border-box;
+  transform: scale(0.92) translateY(24px);
+  opacity: 0;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s ease;
+  will-change: transform, opacity;
+}
+
+.sq-modal-backdrop.is-open .sq-modal-card {
+  transform: scale(1) translateY(0);
+  opacity: 1;
+}
+
+/* Close button */
+.sq-modal-close {
+  position: absolute;
+  top: 20px;
+  right: 22px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: none;
+  background: #F1F5F9;
+  color: #475569;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 1;
+  transition: all 0.25s ease;
+  outline: none;
+  z-index: 2;
+}
+
+.sq-modal-close:hover {
+  background: #E2E8F0;
+  color: #0F172A;
+  transform: rotate(90deg) scale(1.08);
+}
+
+.sq-modal-close:focus-visible {
+  box-shadow: 0 0 0 3px rgba(7, 87, 232, 0.3);
+}
+
+/* Header typography */
+.sq-modal-header {
+  margin-bottom: 22px;
+  padding-right: 36px;
+}
+
+.sq-modal-title {
+  margin: 0 0 6px 0;
+  color: #0B2A6F;
+  font-size: 27px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.sq-modal-subtitle {
+  margin: 0;
+  color: #64748B;
+  font-size: 13.5px;
+  line-height: 1.4;
+}
+
+.sq-req {
+  color: #0757E8;
+  font-weight: 700;
+}
+
+/* Form Layout */
+.sq-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px 18px;
+}
+
+.sq-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.sq-full {
+  grid-column: 1 / -1;
+}
+
+.sq-field label {
+  font-size: 13px;
+  font-weight: 700;
+  color: #1E293B;
+  margin-bottom: 7px;
+  display: block;
+}
+
+/* Inputs, Select, Textarea */
+.sq-field input[type="text"],
+.sq-field input[type="email"],
+.sq-field input[type="tel"],
+.sq-field select,
+.sq-field textarea {
+  width: 100%;
+  border-radius: 12px;
+  border: 1.5px solid #E2E8F0;
+  background: #FFFFFF;
+  color: #0F172A;
+  font-size: 14px;
+  font-family: inherit;
+  transition: border-color 0.22s ease, box-shadow 0.22s ease;
+  box-sizing: border-box;
+}
+
+.sq-field input[type="text"],
+.sq-field input[type="email"],
+.sq-field input[type="tel"],
+.sq-field select {
+  height: 46px;
+  padding: 0 14px;
+}
+
+.sq-field textarea {
+  padding: 12px 14px;
+  min-height: 104px;
+  resize: vertical;
+  line-height: 1.5;
+}
+
+.sq-field input::placeholder,
+.sq-field textarea::placeholder {
+  color: #94A3B8;
+  opacity: 1;
+}
+
+.sq-field select {
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%230757E8'%3E%3Cpath fill-rule='evenodd' d='M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z' clip-rule='evenodd'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  background-size: 18px;
+  padding-right: 38px;
+  cursor: pointer;
+}
+
+.sq-field input:focus,
+.sq-field select:focus,
+.sq-field textarea:focus {
+  border-color: #0757E8;
+  box-shadow: 0 0 0 4px rgba(7, 87, 232, 0.12);
+  outline: none;
+}
+
+/* Input validation error state */
+.sq-field.has-error input,
+.sq-field.has-error select,
+.sq-field.has-error textarea {
+  border-color: #EF4444;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.12);
+}
+
+.sq-error-text {
+  color: #EF4444;
+  font-size: 11.5px;
+  margin-top: 5px;
+  display: none;
+}
+
+.sq-field.has-error .sq-error-text {
+  display: block;
+}
+
+/* Checkbox consent */
+.sq-consent {
+  margin-top: 2px;
+}
+
+.sq-consent-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  cursor: pointer;
+  user-select: none;
+  font-size: 12.5px;
+  line-height: 1.45;
+  color: #475569;
+}
+
+.sq-consent-label input[type="checkbox"] {
+  margin-top: 2px;
+  width: 17px;
+  height: 17px;
+  border-radius: 4px;
+  border: 1.5px solid #CBD5E1;
+  accent-color: #0757E8;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+/* Submit Button */
+.sq-submit-btn {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  margin-top: 18px;
+  border-radius: 12px;
+  border: none;
+  background: linear-gradient(135deg, #0757E8 0%, #0AA5D6 100%);
+  color: #ffffff;
+  font-size: 15.5px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(7, 87, 232, 0.32);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  outline: none;
+}
+
+.sq-submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(7, 87, 232, 0.42);
+  filter: brightness(1.05);
+}
+
+.sq-submit-btn:active {
+  transform: translateY(0);
+}
+
+.sq-submit-btn:disabled {
+  opacity: 0.75;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Button Spinner */
+.sq-btn-spinner {
+  display: none;
+  width: 18px;
+  height: 18px;
+  border: 2.5px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: sq-spin 0.8s linear infinite;
+}
+
+.sq-submit-btn.is-loading .sq-btn-spinner {
+  display: inline-block;
+}
+
+.sq-submit-btn.is-loading .sq-btn-text {
+  opacity: 0.85;
+}
+
+@keyframes sq-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Status Message Box */
+.sq-status-box {
+  margin-top: 14px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  font-size: 13.5px;
+  line-height: 1.45;
+  display: none;
+  text-align: center;
+}
+
+.sq-status-box.is-success {
+  display: block;
+  background: #ECFDF5;
+  color: #065F46;
+  border: 1px solid #A7F3D0;
+  animation: sq-fade-in 0.3s ease;
+}
+
+.sq-status-box.is-error {
+  display: block;
+  background: #FEF2F2;
+  color: #991B1B;
+  border: 1px solid #FECACA;
+  animation: sq-fade-in 0.3s ease;
+}
+
+@keyframes sq-fade-in {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .sq-modal-card {
+    padding: 26px 20px 28px;
+    border-radius: 20px;
+  }
+  .sq-modal-title {
+    font-size: 22px;
+  }
+  .sq-form-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+}
+

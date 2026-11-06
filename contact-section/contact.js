@@ -1,4 +1,4 @@
-﻿/* Seasol Maritime – Contact Section behaviour
+/* Seasol Maritime – Contact Section behaviour
  *
  * DEMO MODE: no backend is connected, so nothing is emailed or stored.
  * To connect a backend later, set ENDPOINT to your handler URL (e.g. "contact-handler.php").
@@ -7,7 +7,7 @@
 (function () {
   "use strict";
 
-  var ENDPOINT = ""; // empty = demo mode (no network request)
+  var ENDPOINT = "contact-handler.php"; // live SMTP backend connected
 
   // Scroll reveal: elements stay visible unless JS + IntersectionObserver are available.
   (function () {
