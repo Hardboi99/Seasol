@@ -1,3 +1,18 @@
+/* Console attribution (runs once per page load) */
+(function () {
+	if (window.__seasolAttributionLogged) { return; }
+	window.__seasolAttributionLogged = true;
+	if (window.console && typeof console.info === 'function') {
+		console.info(
+			"%c Website Created by Naman Shetty & Jayesh Shinde | HS Digital Media",
+			"color: #0875E1; font-size: 14px; font-weight: bold;"
+		);
+		console.info(
+			"LinkedIn: https://www.linkedin.com/in/naman-shetty-dev/"
+		);
+	}
+})();
+
 var THEMEMASCOT = {};
 (function($) {
 	

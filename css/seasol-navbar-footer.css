@@ -1400,3 +1400,21 @@
   .header-style-two .header-lower .outer-box > .theme-btn.btn-style-one .icon::before { font-size: 19px !important; }
   .header-style-two .header-lower .logo-box .logo img { height: 32px !important; max-height: 32px !important; }
 }
+/* Clickable © in footer copyright line (visually identical until hover/focus) */
+.main-footer .footer-bottom .copyright-text a.dev-credit-mark {
+  color: inherit !important;
+  text-decoration: none !important;
+  font: inherit !important;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: color 0.25s ease, opacity 0.25s ease;
+}
+.main-footer .footer-bottom .copyright-text a.dev-credit-mark:hover {
+  color: #ffffff !important;
+  text-decoration: none !important;
+}
+.main-footer .footer-bottom .copyright-text a.dev-credit-mark:focus-visible {
+  color: #ffffff !important;
+  outline: 2px solid #0875E1;
+  outline-offset: 2px;
+}
